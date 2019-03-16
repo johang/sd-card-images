@@ -1,0 +1,22 @@
+#!/bin/sh
+# Build SD card image
+
+IMAGE="${1}" # For example "boot-bananapi.bin"
+DEFCONFIG="${2}" # For example "Bananapi_defconfig"
+TUPLE="${3}" # For example "arm-linux-gnueabihf"
+
+set -e
+
+# Create fresh empty directory
+TMP=$(mktemp -d tmp.XXXXXX)
+cd "${TMP}"
+
+build-image tmp.img
+build-u_boot u-boot "${DEFCONFIG}" "${TUPLE}"
+
+# Copy U-Boot to 8192 bytes from start
+dd if=u-boot/u-boot-sunxi-with-spl.bin of=tmp.img bs=1K seek=8
+
+truncate -s 32M tmp.img
+gzip tmp.img
+cp tmp.img.gz "${IMAGE}.bin.gz"

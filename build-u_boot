@@ -1,0 +1,40 @@
+#!/bin/sh
+# Download and build latest version of U-Boot
+
+UBOOTDIR="${1}"
+DEFCONFIG="${2}"
+TUPLE="${3}"
+
+set -e
+
+# U-Boot version to build
+VERSION=$(git ls-remote --tags --refs "git://git.denx.de/u-boot.git" "v????.??" | \
+          cut -f 2 | \
+          grep -o "v....\..." | \
+          tail -n 1)
+
+# Download U-Boot
+git clone -b "$VERSION" --depth 1 "git://git.denx.de/u-boot.git" "${UBOOTDIR}"
+
+# Step into U-Boot directory
+cd "${UBOOTDIR}"
+
+# Setup ARCH
+case "${TUPLE}" in
+arm-*)
+	export ARCH="arm"
+	;;
+aarch64-*)
+	export ARCH="aarch64"
+	;;
+*)
+	echo "Can't decide \$ARCH for tuple \"${TUPLE}\""
+	exit 1
+	;;
+esac
+
+# CROSS_COMPILE must point to a valid compiler path prefix
+export CROSS_COMPILE=$(dirname $(which "${TUPLE}-gcc"))/"${TUPLE}-"
+
+# Build U-Boot
+make "${DEFCONFIG}" && make

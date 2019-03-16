@@ -1,0 +1,8 @@
+#!/bin/sh
+# Generate initrd.uimg and update U-Boot boot.scr
+
+# Kernel ABI string
+ABI="${1}"
+
+# Delete U-Boot ramdisk image
+rm -f "/boot/initrd.uimg-${ABI}"

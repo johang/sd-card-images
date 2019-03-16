@@ -1,0 +1,83 @@
+#!/bin/sh
+# Build Debian root filesystem
+
+IMAGE2="$1"
+ARCH="$2"
+DIST="$3"
+
+set -e
+
+case "${ARCH}" in
+armhf)
+	KERNEL=linux-image-armmp
+	;;
+arm64)
+	KERNEL=linux-image-arm64
+	;;
+*)
+	echo "Can't decide kernel package for \"${ARCH}\""
+	exit 1
+	;;
+esac
+
+# Create fresh empty directory
+TMP=$(mktemp -d tmp.XXXXXX)
+cd "${TMP}"
+
+# Build a Debian root filesystem (first stage)
+debootstrap \
+  --arch="${ARCH}" \
+  --verbose \
+  --variant=minbase \
+  --foreign \
+  --include=\
+netbase,\
+ifupdown,\
+net-tools,\
+isc-dhcp-client,\
+${KERNEL},\
+systemd-sysv,\
+u-boot-tools,\
+openssh-server \
+  "${DIST}" \
+  debian \
+  "http://ftp.se.debian.org/debian/"
+
+# Randomly generated root password
+PASSWORD=$(pwgen -B -A 8 1)
+
+cp -rv --preserve=mode ../pre-2nd-stage-files/* debian
+
+# Copy ARM emulation stuff
+cp /usr/bin/qemu-*-static debian/usr/bin
+
+# Build a Debian root filesystem (second stage)
+chroot debian sh -e <<- EOF
+	/debootstrap/debootstrap --second-stage
+	/usr/bin/apt-get clean
+	/bin/rm -rf /var/lib/apt/lists/*
+	/bin/rm -f /var/log/*.log
+	/bin/echo root:${PASSWORD} | /usr/sbin/chpasswd
+	/bin/sed -i "s/#*\s*PermitRootLogin .*/PermitRootLogin yes/" /etc/ssh/sshd_config
+EOF
+
+# Remove ARM emulation stuff again
+rm debian/usr/bin/qemu-*-static
+
+cp -rv --preserve=mode ../post-2nd-stage-files/* debian
+
+# Write apt sources config
+cat <<- EOF > debian/etc/apt/sources.list
+	deb http://deb.debian.org/debian ${DIST} main
+	deb-src http://deb.debian.org/debian ${DIST} main
+	deb http://security.debian.org/debian-security ${DIST}/updates main
+	deb-src http://security.debian.org/debian-security ${DIST}/updates main
+EOF
+
+# Make a ext4 filesystem of this and put it into the image
+rm -f ext4.img
+fallocate -l 900MiB ext4.img
+mkfs.ext4 -d debian ext4.img
+gzip ext4.img
+
+cp ext4.img.gz "${IMAGE2}-${PASSWORD}.bin.gz"

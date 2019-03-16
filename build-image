@@ -1,0 +1,14 @@
+#!/bin/sh
+# Build empty image
+
+IMAGE="${1}"
+
+set -e
+
+rm -f "${IMAGE}"
+fallocate -l 1GB "${IMAGE}" # 1,000,000,000 bytes
+
+parted -s "${IMAGE}" mklabel msdos
+parted -s "${IMAGE}" mkpart primary fat32 -- 1MiB 32MiB # 31 MiB (32,505,856 bytes)
+parted -s "${IMAGE}" mkpart primary ext2 -- 32MiB -1
+parted -s "${IMAGE}" set 2 boot on
