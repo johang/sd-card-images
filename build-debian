@@ -46,6 +46,14 @@ openssh-server \
 # Randomly generated root password
 PASSWORD=$(pwgen -B -A 8 1)
 
+# Write apt sources config
+cat <<- EOF > debian/tmp/sources.list
+	deb http://deb.debian.org/debian ${DIST} main
+	deb-src http://deb.debian.org/debian ${DIST} main
+	deb http://security.debian.org/debian-security ${DIST}/updates main
+	deb-src http://security.debian.org/debian-security ${DIST}/updates main
+EOF
+
 cp -rv --preserve=mode ../pre-2nd-stage-files/* debian
 
 # Copy ARM emulation stuff
@@ -54,6 +62,9 @@ cp /usr/bin/qemu-*-static debian/usr/bin
 # Build a Debian root filesystem (second stage)
 chroot debian sh -e <<- EOF
 	/debootstrap/debootstrap --second-stage
+	mv /tmp/sources.list /etc/apt/sources.list
+	/usr/bin/apt-get update
+	/usr/bin/apt-get -y upgrade
 	/usr/bin/apt-get clean
 	/bin/rm -rf /var/lib/apt/lists/*
 	/bin/rm -f /var/log/*.log
@@ -65,14 +76,6 @@ EOF
 rm debian/usr/bin/qemu-*-static
 
 cp -rv --preserve=mode ../post-2nd-stage-files/* debian
-
-# Write apt sources config
-cat <<- EOF > debian/etc/apt/sources.list
-	deb http://deb.debian.org/debian ${DIST} main
-	deb-src http://deb.debian.org/debian ${DIST} main
-	deb http://security.debian.org/debian-security ${DIST}/updates main
-	deb-src http://security.debian.org/debian-security ${DIST}/updates main
-EOF
 
 # Make a ext4 filesystem of this and put it into the image
 rm -f ext4.img
