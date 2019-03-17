@@ -41,7 +41,7 @@ u-boot-tools,\
 openssh-server \
   "${DIST}" \
   debian \
-  "http://ftp.se.debian.org/debian/"
+  "http://deb.debian.org/debian/"
 
 # Randomly generated root password
 PASSWORD=$(pwgen -B -A 8 1)
