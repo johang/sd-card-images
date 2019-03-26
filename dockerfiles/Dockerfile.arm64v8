@@ -1,0 +1,20 @@
+FROM debian:latest
+RUN apt-get update
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get -y install debootstrap \
+                       debian-archive-keyring \
+                       git \
+                       build-essential \
+                       gcc-arm-linux-gnueabihf \
+                       device-tree-compiler \
+                       bc \
+                       bison \
+                       flex \
+                       python-dev \
+                       swig \
+                       parted \
+                       e2fsprogs \
+                       pwgen
+ENV PATH="/debimg:${PATH}"
+COPY . /debimg
+WORKDIR /debimg
