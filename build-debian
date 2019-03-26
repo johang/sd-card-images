@@ -59,7 +59,7 @@ EOF
 cp -rv --preserve=mode ../pre-2nd-stage-files/* debian
 
 # Copy ARM emulation stuff
-cp /usr/bin/qemu-*-static debian/usr/bin
+cp /usr/bin/qemu-*-static debian/usr/bin || :
 
 # Build a Debian root filesystem (second stage)
 chroot debian sh -e <<- EOF
@@ -75,7 +75,7 @@ chroot debian sh -e <<- EOF
 EOF
 
 # Remove ARM emulation stuff again
-rm debian/usr/bin/qemu-*-static
+rm debian/usr/bin/qemu-*-static || :
 
 cp -rv --preserve=mode ../post-2nd-stage-files/* debian
 
