@@ -14,6 +14,8 @@ RUN apt-get -y install debootstrap \
                        swig \
                        parted \
                        e2fsprogs \
+                       dosfstools \
+                       mtools \
                        pwgen
 ENV PATH="/debimg:${PATH}"
 COPY . /debimg

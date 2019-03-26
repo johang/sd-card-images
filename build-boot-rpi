@@ -1,0 +1,44 @@
+#!/bin/sh
+# Build SD card image
+
+IMAGE="${1}" # For example "boot-bananapi.bin"
+DEFCONFIG="${2}" # For example "Bananapi_defconfig"
+TUPLE="${3}" # For example "arm-linux-gnueabihf"
+
+set -e
+
+# Create fresh empty directory
+TMP=$(mktemp -d tmp.XXXXXX)
+cd "${TMP}"
+
+build-image tmp.img
+build-u_boot u-boot "${DEFCONFIG}" "${TUPLE}"
+
+# Write Raspberry Pi boot config
+cat << EOF > config.txt
+kernel=u-boot.bin
+boot_delay=0
+boot_delay_ms=100
+gpu_mem=16
+EOF
+
+# Download Raspberry Pi boot files
+FIRMWARE="https://github.com/raspberrypi/firmware/blob/stable"
+wget "${FIRMWARE}/boot/fixup.dat" \
+     "${FIRMWARE}/boot/start.elf" \
+     "${FIRMWARE}/boot/bootcode.bin"
+
+# Create empty FAT partition
+rm -f vfat.img
+fallocate -l 31MiB vfat.img
+mkfs.vfat vfat.img
+
+# Copy boot files to FAT partition
+mcopy -v -i vfat.img u-boot/u-boot.bin config.txt fixup.dat start.elf bootcode.bin ::
+
+# Copy FAT partition to image
+dd if=vfat.img of=tmp.img bs=1K seek=1K
+
+truncate -s 32M tmp.img
+gzip tmp.img
+cp tmp.img.gz "${IMAGE}.bin.gz"
