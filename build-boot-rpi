@@ -20,13 +20,28 @@ kernel=u-boot.bin
 boot_delay=0
 boot_delay_ms=100
 gpu_mem=16
+enable_uart=1
 EOF
 
+if [ "${TUPLE}" = "aarch64-linux-gnu" ]
+then
+    echo "arm_64bit=1" >> config.txt
+fi
+
 # Download Raspberry Pi boot files
-FIRMWARE="https://github.com/raspberrypi/firmware/blob/stable"
+FIRMWARE="https://github.com/raspberrypi/firmware/raw/stable"
 wget "${FIRMWARE}/boot/fixup.dat" \
+     "${FIRMWARE}/boot/fixup_x.dat" \
+     "${FIRMWARE}/boot/fixup_cd.dat" \
+     "${FIRMWARE}/boot/fixup_db.dat" \
      "${FIRMWARE}/boot/start.elf" \
+     "${FIRMWARE}/boot/start_x.elf" \
+     "${FIRMWARE}/boot/start_cd.elf" \
+     "${FIRMWARE}/boot/start_db.elf" \
      "${FIRMWARE}/boot/bootcode.bin"
+
+# Magic thing to get debug output
+sed -i -e "s/BOOT_UART=0/BOOT_UART=1/" bootcode.bin
 
 # Create empty FAT partition
 rm -f vfat.img
@@ -34,7 +49,7 @@ fallocate -l 31MiB vfat.img
 mkfs.vfat vfat.img
 
 # Copy boot files to FAT partition
-mcopy -v -i vfat.img u-boot/u-boot.bin config.txt fixup.dat start.elf bootcode.bin ::
+mcopy -v -i vfat.img u-boot/u-boot.bin config.txt fixup*.dat start*.elf bootcode.bin ::
 
 # Copy FAT partition to image
 dd if=vfat.img of=tmp.img bs=1K seek=1K
