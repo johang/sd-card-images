@@ -57,6 +57,7 @@ deb-src http://security.debian.org/debian-security ${DIST}/updates main
 EOF
 
 cp -rv --preserve=mode ../pre-2nd-stage-files/* debian
+cp -rv --preserve=mode ../pre-2nd-stage-files-${ARCH}/* debian
 
 # Copy ARM emulation stuff
 cp /usr/bin/qemu-*-static debian/usr/bin || :
