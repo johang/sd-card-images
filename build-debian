@@ -1,9 +1,9 @@
 #!/bin/sh
 # Build Debian root filesystem
 
-IMAGE2="$1"
-ARCH="$2"
-DIST="$3"
+IMAGE2="$1" # For example "/artifacts/debian-buster-armhf"
+ARCH="$2" # For example "armhf"
+DIST="$3" # For example "buster"
 
 set -e
 
@@ -48,12 +48,12 @@ PASSWORD=$(pwgen -B -A 8 1)
 
 # Write apt sources config
 cat <<- EOF > debian/tmp/sources.list
-	deb http://deb.debian.org/debian ${DIST} main
-	deb-src http://deb.debian.org/debian ${DIST} main
-	deb http://deb.debian.org/debian ${DIST}-updates main
-	deb-src http://deb.debian.org/debian ${DIST}-updates main
-	deb http://security.debian.org/debian-security ${DIST}/updates main
-	deb-src http://security.debian.org/debian-security ${DIST}/updates main
+deb http://deb.debian.org/debian ${DIST} main
+deb-src http://deb.debian.org/debian ${DIST} main
+deb http://deb.debian.org/debian ${DIST}-updates main
+deb-src http://deb.debian.org/debian ${DIST}-updates main
+deb http://security.debian.org/debian-security ${DIST}/updates main
+deb-src http://security.debian.org/debian-security ${DIST}/updates main
 EOF
 
 cp -rv --preserve=mode ../pre-2nd-stage-files/* debian
@@ -62,16 +62,16 @@ cp -rv --preserve=mode ../pre-2nd-stage-files/* debian
 cp /usr/bin/qemu-*-static debian/usr/bin || :
 
 # Build a Debian root filesystem (second stage)
-chroot debian sh -e <<- EOF
-	/debootstrap/debootstrap --second-stage
-	mv /tmp/sources.list /etc/apt/sources.list
-	/usr/bin/apt-get update
-	/usr/bin/apt-get -y upgrade
-	/usr/bin/apt-get clean
-	/bin/rm -rf /var/lib/apt/lists/*
-	/bin/rm -f /var/log/*.log
-	/bin/echo root:${PASSWORD} | /usr/sbin/chpasswd
-	/bin/sed -i "s/#*\s*PermitRootLogin .*/PermitRootLogin yes/" /etc/ssh/sshd_config
+chroot debian /bin/sh -e <<- EOF
+/debootstrap/debootstrap --second-stage
+mv /tmp/sources.list /etc/apt/sources.list
+/usr/bin/apt-get update
+/usr/bin/apt-get -y upgrade
+/usr/bin/apt-get clean
+/bin/rm -rf /var/lib/apt/lists/*
+/bin/rm -f /var/log/*.log
+/bin/echo root:${PASSWORD} | /usr/sbin/chpasswd
+/bin/sed -i "s/#*\s*PermitRootLogin .*/PermitRootLogin yes/" /etc/ssh/sshd_config
 EOF
 
 # Remove ARM emulation stuff again
