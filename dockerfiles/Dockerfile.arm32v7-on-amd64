@@ -1,6 +1,16 @@
-# Native arm64
-FROM arm64v8/debian:stable-slim
+# Build host is assumed to have "update-binfmts --enable qemu-arm"
+
+# First get qemu-user-static for host...
+FROM debian:stable-slim as host
 ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && \
+    apt-get --assume-yes \
+            install qemu-user-static
+
+# ...then build image for target with help of qemu-user-static
+FROM arm32v7/debian:stable-slim
+ENV DEBIAN_FRONTEND=noninteractive
+COPY --from=host /usr/bin/qemu-arm-static /usr/bin/
 RUN apt-get update && \
     apt-get --assume-yes \
             --no-install-recommends \
@@ -24,6 +34,7 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
     rm -f /var/log/*.log
+RUN rm /usr/bin/qemu-arm-static
 ENV PATH="/debimg:${PATH}"
 COPY . /debimg
 WORKDIR /debimg
