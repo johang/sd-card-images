@@ -12,7 +12,10 @@ docker build -t debimg .
 # Build bootloaders
 docker run $DOCKEROPTS1 debimg build-boot-allwinner "/artifacts/boot-bananapi" "Bananapi_defconfig" "arm-linux-gnueabihf"
 docker run $DOCKEROPTS1 debimg build-boot-rpi "/artifacts/boot-rpi2" "rpi_2_defconfig" "arm-linux-gnueabihf"
+docker run $DOCKEROPTS1 debimg build-boot-rpi "/artifacts/boot-rpi3" "rpi_3_defconfig" "aarch64-linux-gnu"
 
 # Build root filesystems
 docker run $DOCKEROPTS2 debimg build-debian "/artifacts/debian-stretch-armhf" "armhf" "stretch"
 docker run $DOCKEROPTS2 debimg build-debian "/artifacts/debian-buster-armhf" "armhf" "buster"
+docker run $DOCKEROPTS2 debimg build-debian "/artifacts/debian-stretch-arm64" "arm64" "stretch"
+docker run $DOCKEROPTS2 debimg build-debian "/artifacts/debian-buster-arm64" "arm64" "buster"
