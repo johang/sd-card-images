@@ -16,7 +16,7 @@ VERSION=$(git ls-remote --tags --refs "git://git.denx.de/u-boot.git" "v????.??" 
 # Download U-Boot
 git clone --branch "$VERSION" \
           --depth 1 \
-          --reference-if-able "/tmp/debimg/u-boot.git" \
+          --reference-if-able "/mnt/git-cache/u-boot.git" \
           --dissociate \
           "git://git.denx.de/u-boot.git" "${UBOOTDIR}"
 
