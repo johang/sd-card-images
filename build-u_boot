@@ -1,9 +1,9 @@
 #!/bin/sh
 # Download and build latest version of U-Boot
 
-UBOOTDIR="${1}"
-DEFCONFIG="${2}"
-TUPLE="${3}"
+UBOOTDIR="${1}" # For example "u-boot"
+DEFCONFIG="${2}" # For example "rpi_3_defconfig"
+TUPLE="${3}" # For example "aarch64-linux-gnu"
 
 set -e
 
@@ -14,7 +14,11 @@ VERSION=$(git ls-remote --tags --refs "git://git.denx.de/u-boot.git" "v????.??" 
           tail -n 1)
 
 # Download U-Boot
-git clone -b "$VERSION" --depth 1 "git://git.denx.de/u-boot.git" "${UBOOTDIR}"
+git clone --branch "$VERSION" \
+          --depth 1 \
+          --reference-if-able "/tmp/debimg/u-boot.git" \
+          --dissociate \
+          "git://git.denx.de/u-boot.git" "${UBOOTDIR}"
 
 # Step into U-Boot directory
 cd "${UBOOTDIR}"
