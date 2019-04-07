@@ -4,3 +4,6 @@ rpi_3b,Raspberry Pi 3 B,Raspberry Pi Foundation,bcm2837,rpi_3_defconfig,aarch64-
 
 # Allwinner A20 (sun7i) boards
 bananapi_m1,Banana Pi M1,Sinovoip,sun7i,Bananapi_defconfig,arm-linux-gnueabihf,allwinner
+
+# Allwinner A31/A31s (sun6i) boards
+bananapi_m2,Banana Pi M2,Sinovoip,sun6i,Sinovoip_BPI_M2_defconfig,arm-linux-gnueabihf,allwinner
