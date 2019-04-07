@@ -4,3 +4,4 @@ bcm2837,BCM2837,Broadcom,ARM Cortex A53,armv8
 
 # Allwinner
 sun7i,A20,Allwinner,ARM Cortex A7,armv7
+sun6i,A31,Allwinner,ARM Cortex A7,armv7
