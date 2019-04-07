@@ -1,0 +1,7 @@
+# Stable
+stretch,armhf
+stretch,arm64
+
+# Testing
+buster,armhf
+buster,arm64

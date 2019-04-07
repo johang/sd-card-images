@@ -1,0 +1,17 @@
+#!/bin/sh
+# Rebuilds boot images
+
+docker build -t debimg .
+
+mkdir -p /tmp/debimg/artifacts || exit
+
+IFS=,
+grep -vE "^#|^\s*$" boards.csv | while read BOARD_ID MODEL MAKE CHIP DEFCONFIG TUPLE TYPE
+do
+    docker run --rm \
+               -v /tmp/debimg/artifacts:/artifacts \
+               -v /tmp/debimg/u-boot.git:/tmp/debimg/u-boot.git \
+               debimg \
+               build-boot-"${TYPE}" /artifacts/boot-"${BOARD_ID}" "${DEFCONFIG}" "${TUPLE}"
+done
+unset IFS

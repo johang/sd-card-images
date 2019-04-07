@@ -1,0 +1,17 @@
+#!/bin/sh
+# Rebuilds Debian images
+
+docker build -t debimg .
+
+mkdir -p /tmp/debimg/artifacts || exit
+
+IFS=,
+grep -vE "^#|^\s*$" debians.csv | while read DIST ARCH
+do
+    docker run --rm \
+               -v /tmp/debimg/artifacts:/artifacts \
+               --privileged \
+               debimg \
+               build-debian /artifacts/debian-"${DIST}"-"${ARCH}" "${ARCH}" "${DIST}"
+done
+unset IFS
