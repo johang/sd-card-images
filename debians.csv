@@ -5,3 +5,7 @@ stretch,arm64
 # Testing
 buster,armhf
 buster,arm64
+
+# Unstable
+sid,armhf
+sid,arm64
