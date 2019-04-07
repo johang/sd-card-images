@@ -44,7 +44,7 @@ openssh-server \
   "http://deb.debian.org/debian/"
 
 # Randomly generated root password
-PASSWORD=$(pwgen -B -A 8 1)
+PASSWORD=$(pwgen -B -A 6 1)
 
 # Write apt sources config
 cat <<- EOF > debian/tmp/sources.list
