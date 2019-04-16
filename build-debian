@@ -75,7 +75,7 @@ cp /usr/bin/qemu-*-static debian/usr/bin || :
 # Build a Debian root filesystem (second stage)
 chroot debian /bin/sh -e <<- EOF
 /debootstrap/debootstrap --second-stage
-mv /tmp/sources.list /etc/apt/sources.list
+/bin/mv /tmp/sources.list /etc/apt/sources.list
 /usr/bin/apt-get update
 /usr/bin/apt-get -y upgrade
 /usr/bin/apt-get clean
