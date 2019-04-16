@@ -1,0 +1,31 @@
+#!/usr/bin/env python3
+import csv, os, glob
+for x in glob.glob("docs/_boards/*.md"):
+	os.remove(x)
+chips = {}
+with open("chips.csv") as csvfile:
+	chipsf = csv.reader(csvfile)
+	for row in chipsf:
+		if not row:
+			continue
+		if row[0].strip().startswith("#"):
+			continue
+		chips[row[0]] = row
+with open("boards.csv") as csvfile:
+	boardsf = csv.reader(csvfile)
+	for row in boardsf:
+		if not row:
+			continue
+		if row[0].strip().startswith("#"):
+			continue
+		with open("docs/_boards/%s.md" % row[0], "w") as boardf:
+			boardf.write("---\n")
+			boardf.write("layout: board\n")
+			boardf.write("board_id: %s\n" % (row[0]))
+			boardf.write("board_name: %s\n" % (row[1]))
+			boardf.write("board_maker_name: %s\n" % (row[2]))
+			boardf.write("board_soc_name: %s %s (%s)\n" % (chips[row[3]][2],
+				chips[row[3]][1], chips[row[3]][0]))
+			boardf.write("board_cpu_name: %s (%s)\n" % (chips[row[3]][3],
+				chips[row[3]][4]))
+			boardf.write("---\n")

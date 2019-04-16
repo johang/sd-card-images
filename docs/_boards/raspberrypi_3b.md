@@ -1,0 +1,8 @@
+---
+layout: board
+board_id: raspberrypi_3b
+board_name: Raspberry Pi 3 B
+board_maker_name: Raspberry Pi Foundation
+board_soc_name: Broadcom BCM2837 (bcm2837)
+board_cpu_name: ARM Cortex A53 (armv8)
+---

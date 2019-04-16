@@ -1,0 +1,20 @@
+<table class="table table-sm table-hover" id="boards">
+	<thead>
+		<tr>
+			<th scope="col">Board</th>
+			<th scope="col">Board maker</th>
+			<th scope="col">SoC</th>
+			<th scope="col">CPU</th>
+		</tr>
+	</thead>
+	<tbody>
+{% for board in site.boards %}
+		<tr data-href="/boards/{{ board.board_id }}.html">
+			<td>{{ board.board_name }}</td>
+			<td>{{ board.board_maker_name }}</td>
+			<td>{{ board.board_soc_name }}</td>
+			<td>{{ board.board_cpu_name }}</td>
+		</tr>
+{% endfor %}
+	</tbody>
+</table>

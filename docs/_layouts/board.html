@@ -1,0 +1,60 @@
+---
+layout: default
+---
+<main role="main">
+	<div class="container">
+		<h2>Banana Pi</h2>
+		<hr />
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-6 text-right px-2"><strong>Board name</strong></div>
+			<div class="col-6 px-2">{{ page.board_name }}</div>
+		</div>
+		<div class="row">
+			<div class="col-6 text-right px-2"><strong>Board maker</strong></div>
+			<div class="col-6 px-2">{{ page.board_maker_name }}</div>
+		</div>
+		<div class="row">
+			<div class="col-6 text-right px-2"><strong>SoC</strong></div>
+			<div class="col-6 px-2">{{ page.board_soc_name }}</div>
+		</div>
+		<div class="row">
+			<div class="col-6 text-right px-2"><strong>CPU</strong></div>
+			<div class="col-6 px-2">{{ page.board_cpu_name }}</div>
+		</div>
+		<hr />
+	</div>
+	<div class="container">
+		<h3>Install instructions</h3>
+		<p class="bg-dark p-2">
+			<code class="text-light ">
+				$ wget http://debimg.johang.se/boot/boot-<strong>raspberrypi_3b</strong>.bin.gz<br />
+				$ wget http://debimg.johang.se/debian/armhf/<strong>debian-armhf-stretch</strong>-XXXXXX.bin.gz<br />
+				$ zcat boot-<strong>raspberrypi_3b</strong>.bin.gz <strong>debian-armhf-stretch</strong>-XXXXXX.bin.gz > sd-card.img<br />
+				# dd if=sd-card.img of=/dev/sdXXX <span class="text-info"># ...where /dev/sdXXX is your SD card</span><br />
+			</code>
+		</p>
+		<p>When the <code>dd</code> command is done, put the SD card in your board and power it on. The board will boot up and assign itself an IP address using DHCP. The last part of the Debian image filename is the default root password.</p>
+		<hr />
+	</div>
+	<div class="container">
+		<h3>Downloads</h3>
+		<ul>
+			<li><a href="http://debimg.johang.se/boot/boot-raspberrypi_3b.bin.gz">boot-raspberrypi_3b.bin.gz</a> (350 kB)</li>
+			<li><a href="http://debimg.johang.se/debian/armhf/debian-armhf-stretch-XXXXXX.bin.gz">debian-armhf-stretch-XXXXXX.bin.gz</a> (120 MB)</li>
+			<li><a href="http://debimg.johang.se/debian/armhf/debian-armhf-buster-XXXXXX.bin.gz">debian-armhf-buster-XXXXXX.bin.gz</a> (120 MB)</li>
+			<li><a href="http://debimg.johang.se/debian/armhf/debian-armhf-sid-XXXXXX.bin.gz">debian-armhf-sid-XXXXXX.bin</a> (120 MB)</li>
+		</ul>
+		<hr />
+	</div>
+	<div class="container">
+{% include digitalocean.html %}
+		<hr />
+	</div>
+	<div class="container">
+		<h3>Other boards</h3>
+{% include boards.html %}
+		<hr />
+	</div>
+</main>
