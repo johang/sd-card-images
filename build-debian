@@ -70,7 +70,7 @@ cp -rv --preserve=mode ../pre-2nd-stage-files/* debian
 cp -rv --preserve=mode ../pre-2nd-stage-files-${ARCH}/* debian
 
 # Copy ARM emulation stuff
-cp /usr/bin/qemu-*-static debian/usr/bin || :
+cp -v /usr/bin/qemu-*-static debian/usr/bin || :
 
 # Build a Debian root filesystem (second stage)
 chroot debian /bin/sh -e <<- EOF
@@ -86,7 +86,7 @@ chroot debian /bin/sh -e <<- EOF
 EOF
 
 # Remove ARM emulation stuff again
-rm debian/usr/bin/qemu-*-static || :
+rm -v debian/usr/bin/qemu-*-static || :
 
 cp -rv --preserve=mode ../post-2nd-stage-files/* debian
 
@@ -96,4 +96,4 @@ fallocate -l 900MiB ext4.img
 mkfs.ext4 -d debian ext4.img
 gzip ext4.img
 
-cp ext4.img.gz "${IMAGE2}-${PASSWORD}.bin.gz"
+cp -v ext4.img.gz "${IMAGE2}-${PASSWORD}.bin.gz"
