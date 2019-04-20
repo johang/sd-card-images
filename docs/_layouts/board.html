@@ -27,27 +27,62 @@ layout: default
 	</div>
 	<div class="container">
 		<h3>Install instructions</h3>
-		<p class="bg-dark p-2">
-			<code class="text-light ">
-				$ wget http://debimg.johang.se/boot/boot-<strong>raspberrypi_3b</strong>.bin.gz<br />
-				$ wget http://debimg.johang.se/debian/armhf/<strong>debian-armhf-stretch</strong>-XXXXXX.bin.gz<br />
-				$ zcat boot-<strong>raspberrypi_3b</strong>.bin.gz <strong>debian-armhf-stretch</strong>-XXXXXX.bin.gz > sd-card.img<br />
-				# dd if=sd-card.img of=/dev/sdXXX <span class="text-info"># ...where /dev/sdXXX is your SD card</span><br />
-			</code>
+		<p class="bg-dark py-2 px-3">
+			<code class="shell-normal text-light">wget http://debimg.johang.se<span id="boot_path">/PLACEHOLDER1.bin.gz</span></code><br />
+			<code class="shell-normal text-light">wget http://debimg.johang.se<span id="debian_path">/PLACEHOLDER2.bin.gz</span></code><br />
+			<code class="shell-normal text-light">zcat <span id="boot_file">boot.bin.gz</span> <span id="debian_file">debian.bin.gz</span> &gt; sd-card.img</code><br />
+			<code class="shell-root text-light">dd if=sd-card.img of=/dev/sdXXX <span class="text-info"># ...where /dev/sdXXX is your SD card</span></code><br />
 		</p>
 		<p>When the <code>dd</code> command is done, put the SD card in your board and power it on. The board will boot up and assign itself an IP address using DHCP. The last part of the Debian image filename is the default root password.</p>
 		<hr />
 	</div>
 	<div class="container">
 		<h3>Downloads</h3>
-		<ul>
-			<li><a href="http://debimg.johang.se/boot/boot-raspberrypi_3b.bin.gz">boot-raspberrypi_3b.bin.gz</a> (350 kB)</li>
-			<li><a href="http://debimg.johang.se/debian/armhf/debian-armhf-stretch-XXXXXX.bin.gz">debian-armhf-stretch-XXXXXX.bin.gz</a> (120 MB)</li>
-			<li><a href="http://debimg.johang.se/debian/armhf/debian-armhf-buster-XXXXXX.bin.gz">debian-armhf-buster-XXXXXX.bin.gz</a> (120 MB)</li>
-			<li><a href="http://debimg.johang.se/debian/armhf/debian-armhf-sid-XXXXXX.bin.gz">debian-armhf-sid-XXXXXX.bin</a> (120 MB)</li>
+		<ul id="downloads">
 		</ul>
 		<hr />
 	</div>
+	<script>
+		base_url = "http://debimg.johang.se";
+		board = "{{ page.board_id }}";
+		arch = "{{ page.board_cpu_arch_debian }}";
+		dist = "stretch";
+		function basename(path) {
+			return path.substring(Math.max(0, path.lastIndexOf("/") + 1));
+		}
+		function handle_boots(boots) {
+			boots.forEach(function(boot) {
+				if (boot["board"] == board) {
+					// Update install instructions
+					$("#boot_path").text(boot["path"]);
+					$("#boot_file").text(basename(boot["path"]));
+
+					// Update downloads
+					$("<li><a href=\"" + base_url + boot["path"] +
+						"\">" + basename(boot["path"]) +
+						"</a></li>").appendTo("ul#downloads");
+				}
+			});
+		}
+		function handle_debians(debians) {
+			debians.forEach(function(debian) {
+				if (debian["arch"] == arch) {
+					if (debian["dist"] == dist) {
+						// Update install instructions
+						$("#debian_path").text(debian["path"]);
+						$("#debian_file").text(basename(debian["path"]));
+					}
+
+					// Update downloads
+					$("<li><a href=\"" + base_url + debian["path"] +
+						"\">" + basename(debian["path"]) +
+						"</a></li>").appendTo("ul#downloads");
+				}
+			});
+		}
+	</script>
+	<script src="http://debimg.johang.se/index-boots.js" type="text/javascript"></script>
+	<script src="http://debimg.johang.se/index-debians.js" type="text/javascript"></script>
 	<div class="container">
 {% include digitalocean.html %}
 		<hr />
