@@ -3,6 +3,10 @@ import csv, os, glob
 for x in glob.glob("docs/_boards/*.md"):
 	os.remove(x)
 chips = {}
+isa_to_arch = {
+	"armv7": "armhf",
+	"armv8": "arm64",
+}
 with open("chips.csv") as csvfile:
 	chipsf = csv.reader(csvfile)
 	for row in chipsf:
@@ -28,4 +32,7 @@ with open("boards.csv") as csvfile:
 				chips[row[3]][1], chips[row[3]][0]))
 			boardf.write("board_cpu_name: %s (%s)\n" % (chips[row[3]][3],
 				chips[row[3]][4]))
+			boardf.write("board_cpu_arch_isa: %s\n" % (chips[row[3]][4]))
+			boardf.write("board_cpu_arch_debian: %s\n" % (
+				isa_to_arch[chips[row[3]][4]]))
 			boardf.write("---\n")
