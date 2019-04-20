@@ -28,8 +28,8 @@ layout: default
 	<div class="container">
 		<h3>Install instructions</h3>
 		<p class="bg-dark py-2 px-3">
-			<code class="shell-normal text-light">wget http://debimg.johang.se<span id="boot_path">/PLACEHOLDER1.bin.gz</span></code><br />
-			<code class="shell-normal text-light">wget http://debimg.johang.se<span id="debian_path">/PLACEHOLDER2.bin.gz</span></code><br />
+			<code class="shell-normal text-light">wget http://ftp.sd-card-images.johang.se<span id="boot_path">/PLACEHOLDER1.bin.gz</span></code><br />
+			<code class="shell-normal text-light">wget http://ftp.sd-card-images.johang.se<span id="debian_path">/PLACEHOLDER2.bin.gz</span></code><br />
 			<code class="shell-normal text-light">zcat <span id="boot_file">boot.bin.gz</span> <span id="debian_file">debian.bin.gz</span> &gt; sd-card.img</code><br />
 			<code class="shell-root text-light">dd if=sd-card.img of=/dev/sdXXX <span class="text-info"># ...where /dev/sdXXX is your SD card</span></code><br />
 		</p>
@@ -43,7 +43,7 @@ layout: default
 		<hr />
 	</div>
 	<script>
-		base_url = "http://debimg.johang.se";
+		base_url = "http://ftp.sd-card-images.johang.se";
 		board = "{{ page.board_id }}";
 		arch = "{{ page.board_cpu_arch_debian }}";
 		dist = "stretch";
@@ -81,8 +81,8 @@ layout: default
 			});
 		}
 	</script>
-	<script src="http://debimg.johang.se/index-boots.js" type="text/javascript"></script>
-	<script src="http://debimg.johang.se/index-debians.js" type="text/javascript"></script>
+	<script src="https://ftp.sd-card-images.johang.se/index-boots.js" type="text/javascript"></script>
+	<script src="https://ftp.sd-card-images.johang.se/index-debians.js" type="text/javascript"></script>
 	<div class="container">
 {% include digitalocean.html %}
 		<hr />
