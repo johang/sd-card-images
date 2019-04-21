@@ -1,5 +1,6 @@
 ---
 layout: board
+title: SD card images - Raspberry Pi 2 B
 board_id: raspberrypi_2b
 board_name: Raspberry Pi 2 B
 board_maker_name: Raspberry Pi Foundation

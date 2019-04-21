@@ -1,5 +1,6 @@
 ---
 layout: board
+title: SD card images - Banana Pi M1
 board_id: bananapi_m1
 board_name: Banana Pi M1
 board_maker_name: Sinovoip

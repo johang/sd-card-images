@@ -1,5 +1,6 @@
 ---
 layout: board
+title: SD card images - Raspberry Pi 3 B
 board_id: raspberrypi_3b
 board_name: Raspberry Pi 3 B
 board_maker_name: Raspberry Pi Foundation
