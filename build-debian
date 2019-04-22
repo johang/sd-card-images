@@ -90,6 +90,9 @@ rm -v debian/usr/bin/qemu-*-static || :
 
 cp -rv --preserve=mode ../post-2nd-stage-files/* debian
 
+# List all files
+find debian ! -type d -printf "/%P\n" | sort > "/artifacts/debian-${DIST}-${ARCH}.files.txt"
+
 # Make a ext4 filesystem of this and put it into the image
 rm -f ext4.img
 fallocate -l 900MiB ext4.img
