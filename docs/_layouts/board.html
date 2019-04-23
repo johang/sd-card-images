@@ -27,13 +27,17 @@ layout: default
 	</div>
 	<div class="container">
 		<h3>Install instructions</h3>
-		<p class="bg-dark py-2 px-3">
-			<code class="shell-normal text-light">wget http://ftp.sd-card-images.johang.se<span id="boot_path">/PLACEHOLDER1.bin.gz</span></code><br />
-			<code class="shell-normal text-light">wget http://ftp.sd-card-images.johang.se<span id="debian_path">/PLACEHOLDER2.bin.gz</span></code><br />
-			<code class="shell-normal text-light">zcat <span id="boot_file">boot.bin.gz</span> <span id="debian_file">debian.bin.gz</span> &gt; sd-card.img</code><br />
-			<code class="shell-root text-light">dd if=sd-card.img of=/dev/sdXXX <span class="text-info"># ...where /dev/sdXXX is your SD card</span></code><br />
-		</p>
-		<p>When the <code>dd</code> command is done, put the SD card in your board and power it on. The board will boot up and assign itself an IP address using DHCP. The last part of the Debian image filename is the default root password.</p>
+		<div id="install-instructions">
+			<p class="bg-dark py-2 px-3">
+				<code class="shell-normal text-light">wget http://ftp.sd-card-images.johang.se<span id="boot_path">/PLACEHOLDER1.bin.gz</span></code><br />
+				<code class="shell-normal text-light">wget http://ftp.sd-card-images.johang.se<span id="debian_path">/PLACEHOLDER2.bin.gz</span></code><br />
+				<code class="shell-normal text-light">zcat <span id="boot_file">boot.bin.gz</span> <span id="debian_file">debian.bin.gz</span> &gt; sd-card.img</code><br />
+				<code class="shell-root text-light">dd if=sd-card.img of=/dev/sdXXX <span class="text-info"># ...where /dev/sdXXX is your SD card</span></code><br />
+			</p>
+			<p>When the <code>dd</code> command is done, put the SD card in your board and power it on. The board will boot up and assign itself an IP address using DHCP. The last part of the Debian image filename is the default root password.</p>
+		</div>
+		<div class="alert alert-warning" role="alert" style="display: none;" id="unsupported-boot-warning"></div>
+		<div class="alert alert-warning" role="alert" style="display: none;" id="unsupported-debian-warning"></div>
 		<hr />
 	</div>
 	<div class="container">
@@ -46,13 +50,16 @@ layout: default
 		base_url = "http://ftp.sd-card-images.johang.se";
 		board = "{{ page.board_id }}";
 		arch = "{{ page.board_cpu_arch_debian }}";
-		dist = "stretch";
+		dtb = "{{ page.board_dtb_name }}";
 		function basename(path) {
 			return path.substring(Math.max(0, path.lastIndexOf("/") + 1));
 		}
 		function handle_boots(boots) {
+			supported = 0;
 			boots.forEach(function(boot) {
 				if (boot["board"] == board) {
+					supported++;
+
 					// Update install instructions
 					$("#boot_path").text(boot["path"]);
 					$("#boot_file").text(basename(boot["path"]));
@@ -63,11 +70,30 @@ layout: default
 						"</a></li>").appendTo("ul#downloads");
 				}
 			});
+			if (supported <= 0) {
+				// Board's unsupported
+				$("#install-instructions").hide();
+				$("#unsupported-boot-warning").text("This board is not supported by any boot image").show();
+			}
 		}
 		function handle_debians(debians) {
+			supported = [];
 			debians.forEach(function(debian) {
 				if (debian["arch"] == arch) {
-					if (debian["dist"] == dist) {
+					debian["dtbs"].forEach(function(_dtb) {
+						if (_dtb == dtb)
+							supported.push(debian);
+					});
+				}
+			});
+			if (supported.length <= 0) {
+				// Board's unsupported
+				$("#install-instructions").hide();
+				$("#unsupported-debian-warning").text("This board is not supported by any Debian image").show();
+			}
+			supported.forEach(function(debian) {
+				if (debian["arch"] == arch) {
+					if (debian == supported[0]) {
 						// Update install instructions
 						$("#debian_path").text(debian["path"]);
 						$("#debian_file").text(basename(debian["path"]));
