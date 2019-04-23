@@ -8,7 +8,7 @@ docker build -t debimg .
 mkdir -p /tmp/debimg/artifacts || exit
 
 IFS=,
-grep -vE "^#|^\s*$" debians.csv | while read DIST ARCH
+grep -vE "^#|^\s*$" debians.csv | while read DIST ARCH _
 do
     docker run --rm \
                -v "${ARTIFACTS_DIR}":/artifacts \

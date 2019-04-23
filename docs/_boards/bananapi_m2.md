@@ -2,6 +2,7 @@
 layout: board
 title: SD card images - Banana Pi M2
 board_id: bananapi_m2
+board_dtb_name: sun6i-a31s-sinovoip-bpi-m2
 board_name: Banana Pi M2
 board_maker_name: Sinovoip
 board_soc_name: Allwinner A31 (sun6i)

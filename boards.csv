@@ -1,9 +1,9 @@
 # Raspberry Pi boards
-raspberrypi_2b,Raspberry Pi 2 B,Raspberry Pi Foundation,bcm2836,rpi_2_defconfig,arm-linux-gnueabihf,rpi
-raspberrypi_3b,Raspberry Pi 3 B,Raspberry Pi Foundation,bcm2837,rpi_3_defconfig,aarch64-linux-gnu,rpi
+raspberrypi_2b,Raspberry Pi 2 B,Raspberry Pi Foundation,bcm2836,rpi_2_defconfig,arm-linux-gnueabihf,rpi,bcm2836-rpi-2-b
+raspberrypi_3b,Raspberry Pi 3 B,Raspberry Pi Foundation,bcm2837,rpi_3_defconfig,aarch64-linux-gnu,rpi,bcm2837-rpi-3-b
 
 # Allwinner A20 (sun7i) boards
-bananapi_m1,Banana Pi M1,Sinovoip,sun7i,Bananapi_defconfig,arm-linux-gnueabihf,sunxi
+bananapi_m1,Banana Pi M1,Sinovoip,sun7i,Bananapi_defconfig,arm-linux-gnueabihf,sunxi,sun7i-a20-bananapi
 
 # Allwinner A31/A31s (sun6i) boards
-bananapi_m2,Banana Pi M2,Sinovoip,sun6i,Sinovoip_BPI_M2_defconfig,arm-linux-gnueabihf,sunxi
+bananapi_m2,Banana Pi M2,Sinovoip,sun6i,Sinovoip_BPI_M2_defconfig,arm-linux-gnueabihf,sunxi,sun6i-a31s-sinovoip-bpi-m2

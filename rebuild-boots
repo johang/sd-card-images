@@ -10,7 +10,7 @@ mkdir -p /tmp/debimg/artifacts || exit
 mkdir -p /tmp/debimg/git-cache || exit
 
 IFS=,
-grep -vE "^#|^\s*$" boards.csv | while read BOARD_ID MODEL MAKE CHIP DEFCONFIG TUPLE TYPE
+grep -vE "^#|^\s*$" boards.csv | while read BOARD_ID MODEL MAKE CHIP DEFCONFIG TUPLE TYPE DTB _
 do
     docker run --rm \
                -v "${ARTIFACTS_DIR}":/artifacts \
