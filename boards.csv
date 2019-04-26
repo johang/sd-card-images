@@ -5,7 +5,34 @@ raspberrypi_3a_plus,Raspberry Pi 3 A+,Raspberry Pi Foundation,bcm2837,rpi_3_defc
 raspberrypi_3b_plus,Raspberry Pi 3 B+,Raspberry Pi Foundation,bcm2837,rpi_3_defconfig,aarch64-linux-gnu,rpi,bcm2837-rpi-3-b-plus
 
 # Allwinner A20 (sun7i) boards
+ainol_aw1,AW1,Ainol,sun7i,Ainol_AW1_defconfig,arm-linux-gnueabihf,sunxi,sun7i-a20-ainol-aw1
 bananapi_m1,Banana Pi M1,Sinovoip,sun7i,Bananapi_defconfig,arm-linux-gnueabihf,sunxi,sun7i-a20-bananapi
+bananapi_m1plus,Banana Pi M1+,Sinovoip,sun7i,bananapi_m1_plus_defconfig,arm-linux-gnueabihf,sunxi,sun7i-a20-bananapi-m1-plus
+bananapro,Banana Pro,LeMaker,sun7i,Bananapro_defconfig,arm-linux-gnueabihf,sunxi,sun7i-a20-bananapro
+cubieboard_2,Cubieboad 2,Cubieboard,sun7i,Cubieboard2_defconfig,arm-linux-gnueabihf,sunxi,sun7i-a20-cubieboard2
+cubietruck,Cubietruck,Cubieboard,sun7i,Cubietruck_defconfig,arm-linux-gnueabihf,sunxi,sun7i-a20-cubietruck
+i12_tvbox,I12,Semitime,sun7i,i12-tvbox_defconfig,arm-linux-gnueabihf,sunxi,sun7i-a20-i12-tvbox
+icnova_a20,ICnova A20,In-Circuit,sun7i,icnova-a20-swac_defconfig,arm-linux-gnueabihf,sunxi,sun7i-a20-icnova-swac
+itead_ibox,Itead IBOX,Itead,sun7i,Itead_Ibox_A20_defconfig,arm-linux-gnueabihf,sunxi,sun7i-a20-itead-ibox
+lamobo_r1,Lamobo R1,Lamobo,sun7i,Lamobo_R1_defconfig,arm-linux-gnueabihf,sunxi,sun7i-a20-lamobo-r1
+mele_m3,Mele M3,Mele,sun7i,Mele_M3_defconfig,arm-linux-gnueabihf,sunxi,sun7i-a20-m3
+mele_m5,Mele M5,Mele,sun7i,Mele_M5_defconfig,arm-linux-gnueabihf,sunxi,sun7i-a20-m5
+mk808c,MK808C,,sun7i,MK808C_defconfig,arm-linux-gnueabihf,sunxi,sun7i-a20-mk808c
+olimex_a20_som_evb,A20-SOM-EVB,Olimex,sun7i,A20-Olimex-SOM-EVB_defconfig,arm-linux-gnueabihf,sunxi,sun7i-a20-olimex-som-evb
+olimex_a20_som204_evb,A20-SOM204-EVB,Olimex,sun7i,A20-Olimex-SOM204-EVB_defconfig,arm-linux-gnueabihf,sunxi,sun7i-a20-olimex-som204-evb
+olimex_a20_som204_evb_emmc,A20-SOM204-EVB w/ eMMC,Olimex,sun7i,A20-Olimex-SOM204-EVB-eMMC_defconfig,arm-linux-gnueabihf,sunxi,sun7i-a20-olimex-som204-evb-emmc
+olinuxino_lime,OLinuXino Lime,Olimex,sun7i,A20-OLinuXino-Lime_defconfig,arm-linux-gnueabihf,sunxi,sun7i-a20-olinuxino-lime
+olinuxino_lime2,OLinuXino Lime 2,Olimex,sun7i,A20-OLinuXino-Lime2_defconfig,arm-linux-gnueabihf,sunxi,sun7i-a20-olinuxino-lime2
+olinuxino_lime_emmc,OLinuXino Lime w/ eMMC,Olimex,sun7i,A20-OLinuXino-Lime2-eMMC_defconfig,arm-linux-gnueabihf,sunxi,sun7i-a20-olinuxino-lime2-emmc
+olinuxino_micro,OLinuXino MICRO,Olimex,sun7i,A20-OLinuXino_MICRO_defconfig,arm-linux-gnueabihf,sunxi,sun7i-a20-olinuxino-micro
+olinuxino_micro_emmc,OLinuXino MICRO w/ eMMC,Olimex,sun7i,A20-OLinuXino_MICRO-eMMC_defconfig,arm-linux-gnueabihf,sunxi,sun7i-a20-olinuxino-micro-emmc
+orangepi,Orange Pi,Orange Pi,sun7i,Orangepi_defconfig,arm-linux-gnueabihf,sunxi,sun7i-a20-orangepi
+orangepi_mini,Orange Pi Mini,Orange Pi,sun7i,Orangepi_mini_defconfig,arm-linux-gnueabihf,sunxi,sun7i-a20-orangepi-mini
+pcduino3,pcDuino3,LinkSprite,sun7i,Linksprite_pcDuino3_defconfig,arm-linux-gnueabihf,sunxi,sun7i-a20-pcduino3
+pcduino3_nano,pcDuino3 Nano,LinkSprite,sun7i,Linksprite_pcDuino3_Nano_defconfig,arm-linux-gnueabihf,sunxi,sun7i-a20-pcduino3-nano
+msi_primo73,Primo73,MSI,sun7i,MSI_Primo73_defconfig,arm-linux-gnueabihf,sunxi,sun7i-a20-primo73
+tab7200,TAB7200,Wexler,sun7i,Wexler_TAB7200_defconfig,arm-linux-gnueabihf,sunxi,sun7i-a20-wexler-tab7200
+bd1078,BD1078,Yones Toptech,sun7i,Yones_Toptech_BD1078_defconfig,arm-linux-gnueabihf,sunxi,sun7i-a20-yones-toptech-bd1078
 
 # Allwinner A31/A31s (sun6i) boards
 bananapi_m2,Banana Pi M2,Sinovoip,sun6i,Sinovoip_BPI_M2_defconfig,arm-linux-gnueabihf,sunxi,sun6i-a31s-sinovoip-bpi-m2
