@@ -4,6 +4,21 @@ raspberrypi_3b,Raspberry Pi 3 B,Raspberry Pi Foundation,bcm2837,rpi_3_defconfig,
 raspberrypi_3a_plus,Raspberry Pi 3 A+,Raspberry Pi Foundation,bcm2837,rpi_3_defconfig,aarch64-linux-gnu,rpi,bcm2837-rpi-3-a-plus
 raspberrypi_3b_plus,Raspberry Pi 3 B+,Raspberry Pi Foundation,bcm2837,rpi_3_defconfig,aarch64-linux-gnu,rpi,bcm2837-rpi-3-b-plus
 
+# Allwinner A31/A31s (sun6i) boards
+colombus,Colombus,WITS,sun6i,Colombus_defconfig,arm-linux-gnueabihf,sunxi,sun6i-a31-colombus
+hummingbird,Hummingbird,Merrii,sun6i,Hummingbird_A31_defconfig,arm-linux-gnueabihf,sunxi,sun6i-a31-hummingbird
+mele_i7,Mele I7,Mele,sun6i,Mele_I7_defconfig,arm-linux-gnueabihf,sunxi,sun6i-a31-i7
+mele_m9,Mele M9,Mele,sun6i,Mele_M9_defconfig,arm-linux-gnueabihf,sunxi,sun6i-a31-m9
+mele_a1000g,Mele A1000G,Mele,sun6i,Mele_A1000G_quad_defconfig,arm-linux-gnueabihf,sunxi,sun6i-a31-mele-a1000g-quad
+loftq,LOFT-Q,Mixtile,sun6i,mixtile_loftq_defconfig,arm-linux-gnueabihf,sunxi,sun6i-a31-mixtile-loftq
+e708_q1,E708 Q1,Colorfly,sun6i,colorfly_e708_q1_defconfig,arm-linux-gnueabihf,sunxi,sun6i-a31s-colorfly-e708-q1
+cs908,CS908,CSQ,sun6i,CSQ_CS908_defconfig,arm-linux-gnueabihf,sunxi,sun6i-a31s-cs908
+inet_q972,iNet Q972,iNet,sun6i,inet_q972_defconfig,arm-linux-gnueabihf,sunxi,sun6i-a31s-inet-q972
+msi_primo81,Primo81,MSI,sun6i,MSI_Primo81_defconfig,arm-linux-gnueabihf,sunxi,sun6i-a31s-primo81
+sina31s,SinA31s,Sinlinx,sun6i,Sinlinx_SinA31s_defconfig,arm-linux-gnueabihf,sunxi,sun6i-a31s-sina31s
+bananapi_m2,Banana Pi M2,Sinovoip,sun6i,Sinovoip_BPI_M2_defconfig,arm-linux-gnueabihf,sunxi,sun6i-a31s-sinovoip-bpi-m2
+bs1078_v2,BS1078 V2,Yones Toptech,sun6i,Yones_Toptech_BS1078_V2_defconfig,arm-linux-gnueabihf,sunxi,sun6i-a31s-yones-toptech-bs1078-v2
+
 # Allwinner A20 (sun7i) boards
 ainol_aw1,AW1,Ainol,sun7i,Ainol_AW1_defconfig,arm-linux-gnueabihf,sunxi,sun7i-a20-ainol-aw1
 bananapi_m1,Banana Pi M1,Sinovoip,sun7i,Bananapi_defconfig,arm-linux-gnueabihf,sunxi,sun7i-a20-bananapi
@@ -33,6 +48,3 @@ pcduino3_nano,pcDuino3 Nano,LinkSprite,sun7i,Linksprite_pcDuino3_Nano_defconfig,
 msi_primo73,Primo73,MSI,sun7i,MSI_Primo73_defconfig,arm-linux-gnueabihf,sunxi,sun7i-a20-primo73
 tab7200,TAB7200,Wexler,sun7i,Wexler_TAB7200_defconfig,arm-linux-gnueabihf,sunxi,sun7i-a20-wexler-tab7200
 bd1078,BD1078,Yones Toptech,sun7i,Yones_Toptech_BD1078_defconfig,arm-linux-gnueabihf,sunxi,sun7i-a20-yones-toptech-bd1078
-
-# Allwinner A31/A31s (sun6i) boards
-bananapi_m2,Banana Pi M2,Sinovoip,sun6i,Sinovoip_BPI_M2_defconfig,arm-linux-gnueabihf,sunxi,sun6i-a31s-sinovoip-bpi-m2
