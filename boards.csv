@@ -4,6 +4,26 @@ raspberrypi_3b,Raspberry Pi 3 B,Raspberry Pi Foundation,bcm2837,rpi_3_defconfig,
 raspberrypi_3a_plus,Raspberry Pi 3 A+,Raspberry Pi Foundation,bcm2837,rpi_3_defconfig,aarch64-linux-gnu,rpi,bcm2837-rpi-3-a-plus
 raspberrypi_3b_plus,Raspberry Pi 3 B+,Raspberry Pi Foundation,bcm2837,rpi_3_defconfig,aarch64-linux-gnu,rpi,bcm2837-rpi-3-b-plus
 
+# Allwinner A10s/A13/R8/GR8 (sun5i) boards
+auxtek_t003,T003,Auxtek,sun5i,Auxtek-T003_defconfig,arm-linux-gnueabihf,sunxi,sun5i-a10s-auxtek-t003
+auxtek_t004,T004,Auxtek,sun5i,Auxtek-T004_defconfig,arm-linux-gnueabihf,sunxi,sun5i-a10s-auxtek-t004
+mk802,MK802,Rikomagic,sun5i,mk802_a10s_defconfig,arm-linux-gnueabihf,sunxi,sun5i-a10s-mk802
+a10s_olinuxino_micro,A10s OLinuXino MICRO,Olimex,sun5i,A10s-OLinuXino-M_defconfig,arm-linux-gnueabihf,sunxi,sun5i-a10s-olinuxino-micro
+r7_a10s_tv_dongle,R7 A10s TV dongle,,sun5i,r7-tv-dongle_defconfig,arm-linux-gnueabihf,sunxi,sun5i-a10s-r7-tv-dongle
+wabo_i5,i5,Wabo,sun5i,Wobo_i5_defconfig,arm-linux-gnueabihf,sunxi,sun5i-a10s-wobo-i5
+ampe_a76,A76,Ampe,sun5i,Ampe_A76_defconfig,arm-linux-gnueabihf,sunxi,sun5i-a13-ampe-a76
+dit4350,DIT4350,Difrnce,sun5i,difrnce_dit4350_defconfig,arm-linux-gnueabihf,sunxi,sun5i-a13-difrnce-dit4350
+empire_d709,D709,Empire ElectroniX,sun5i,Empire_electronix_d709_defconfig,arm-linux-gnueabihf,sunxi,sun5i-a13-empire-electronix-d709
+empire_m712,M712,Empire ElectroniX,sun5i,Empire_electronix_m712_defconfig,arm-linux-gnueabihf,sunxi,sun5i-a13-empire-electronix-m712
+inet_86vs,86VS,iNet,sun5i,iNet_86VS_defconfig,arm-linux-gnueabihf,sunxi,sun5i-a13-inet-86vs
+inet_98v_rev2,98V rev. 2,iNet,sun5i,inet98v_rev2_defconfig,arm-linux-gnueabihf,sunxi,sun5i-a13-inet-98v-rev2
+a13_olinuxino,A13 OLinuXino,Olimex,sun5i,A13-OLinuXino_defconfig,arm-linux-gnueabihf,sunxi,sun5i-a13-olinuxino
+a13_olinuxino_micro,A13 OLinuXino MICRO,Olimex,sun5i,A13-OLinuXinoM_defconfig,arm-linux-gnueabihf,sunxi,sun5i-a13-olinuxino-micro
+q8_a13_tablet,Q8 A13 Tablet,,sun5i,q8_a13_tablet_defconfig,arm-linux-gnueabihf,sunxi,sun5i-a13-q8-tablet
+utoo_p66,P66,Utoo,sun5i,UTOO_P66_defconfig,arm-linux-gnueabihf,sunxi,sun5i-a13-utoo-p66
+chip_pro,CHIP Pro,Next Thing,sun5i,CHIP_pro_defconfig,arm-linux-gnueabihf,sunxi,sun5i-gr8-chip-pro
+chip,CHIP,Next Thing,sun5i,CHIP_defconfig,arm-linux-gnueabihf,sunxi,sun5i-r8-chip
+
 # Allwinner A31/A31s (sun6i) boards
 colombus,Colombus,WITS,sun6i,Colombus_defconfig,arm-linux-gnueabihf,sunxi,sun6i-a31-colombus
 hummingbird,Hummingbird,Merrii,sun6i,Hummingbird_A31_defconfig,arm-linux-gnueabihf,sunxi,sun6i-a31-hummingbird
@@ -39,10 +59,10 @@ olimex_a20_som204_evb_emmc,A20-SOM204-EVB w/ eMMC,Olimex,sun7i,A20-Olimex-SOM204
 olinuxino_lime,OLinuXino Lime,Olimex,sun7i,A20-OLinuXino-Lime_defconfig,arm-linux-gnueabihf,sunxi,sun7i-a20-olinuxino-lime
 olinuxino_lime2,OLinuXino Lime 2,Olimex,sun7i,A20-OLinuXino-Lime2_defconfig,arm-linux-gnueabihf,sunxi,sun7i-a20-olinuxino-lime2
 olinuxino_lime_emmc,OLinuXino Lime w/ eMMC,Olimex,sun7i,A20-OLinuXino-Lime2-eMMC_defconfig,arm-linux-gnueabihf,sunxi,sun7i-a20-olinuxino-lime2-emmc
-olinuxino_micro,OLinuXino MICRO,Olimex,sun7i,A20-OLinuXino_MICRO_defconfig,arm-linux-gnueabihf,sunxi,sun7i-a20-olinuxino-micro
-olinuxino_micro_emmc,OLinuXino MICRO w/ eMMC,Olimex,sun7i,A20-OLinuXino_MICRO-eMMC_defconfig,arm-linux-gnueabihf,sunxi,sun7i-a20-olinuxino-micro-emmc
-orangepi,Orange Pi,Orange Pi,sun7i,Orangepi_defconfig,arm-linux-gnueabihf,sunxi,sun7i-a20-orangepi
-orangepi_mini,Orange Pi Mini,Orange Pi,sun7i,Orangepi_mini_defconfig,arm-linux-gnueabihf,sunxi,sun7i-a20-orangepi-mini
+a20_olinuxino_micro,OLinuXino MICRO,Olimex,sun7i,A20-OLinuXino_MICRO_defconfig,arm-linux-gnueabihf,sunxi,sun7i-a20-olinuxino-micro
+a20_olinuxino_micro_emmc,OLinuXino MICRO w/ eMMC,Olimex,sun7i,A20-OLinuXino_MICRO-eMMC_defconfig,arm-linux-gnueabihf,sunxi,sun7i-a20-olinuxino-micro-emmc
+orangepi,Orange Pi,Xunlong,sun7i,Orangepi_defconfig,arm-linux-gnueabihf,sunxi,sun7i-a20-orangepi
+orangepi_mini,Orange Pi Mini,Xunlong,sun7i,Orangepi_mini_defconfig,arm-linux-gnueabihf,sunxi,sun7i-a20-orangepi-mini
 pcduino3,pcDuino3,LinkSprite,sun7i,Linksprite_pcDuino3_defconfig,arm-linux-gnueabihf,sunxi,sun7i-a20-pcduino3
 pcduino3_nano,pcDuino3 Nano,LinkSprite,sun7i,Linksprite_pcDuino3_Nano_defconfig,arm-linux-gnueabihf,sunxi,sun7i-a20-pcduino3-nano
 msi_primo73,Primo73,MSI,sun7i,MSI_Primo73_defconfig,arm-linux-gnueabihf,sunxi,sun7i-a20-primo73
