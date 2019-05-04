@@ -2,10 +2,14 @@
 # Rebuilds Debian images
 
 ARTIFACTS_DIR=${DEBIMG_ARTIFACTS_DIR:-/tmp/debimg/artifacts}
+LOG_DIR=${DEBIMG_LOG_DIR:-/tmp/debimg/log}
 
 docker build -t debimg .
 
 mkdir -p /tmp/debimg/artifacts || exit
+mkdir -p /tmp/debimg/log || exit
+
+D=$(mktemp -d -p "${LOG_DIR}" rebuild-debians-XXXXXX)
 
 IFS=,
 grep -vE "^#|^\s*$" debians.csv | while read DIST ARCH _
@@ -14,6 +18,8 @@ do
                -v "${ARTIFACTS_DIR}":/artifacts \
                --privileged \
                debimg \
-               build-debian /artifacts/debian-"${DIST}"-"${ARCH}" "${ARCH}" "${DIST}"
+               build-debian /artifacts/debian-"${DIST}"-"${ARCH}" "${ARCH}" "${DIST}" \
+               >"${D}"/"log-${DIST}-${ARCH}.txt" 2>&1 &&
+    rm "${D}"/"log-${DIST}-${ARCH}.txt"
 done
 unset IFS
