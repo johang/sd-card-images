@@ -1,27 +1,42 @@
 #!/bin/sh
 # Download and build latest version of U-Boot
 
-UBOOTDIR="${1}" # For example "u-boot"
-DEFCONFIG="${2}" # For example "rpi_3_defconfig"
-TUPLE="${3}" # For example "aarch64-linux-gnu"
+DEFCONFIG="${1}" # For example "rpi_3_defconfig"
+TUPLE="${2}" # For example "aarch64-linux-gnu"
+
+TARBALL="${U_BOOT_TARBALL}"
+GIT_REV="${U_BOOT_GIT_REV}"
+GIT_URL="${U_BOOT_GIT_URL:-git://git.denx.de/u-boot.git}"
 
 set -e
 
-# U-Boot version to build
-VERSION=$(git ls-remote --tags --refs "git://git.denx.de/u-boot.git" "v????.??" | \
-          cut -f 2 | \
-          grep -o "v....\..." | \
-          tail -n 1)
+if [ ! -s "${TARBALL}" ]
+then
+	if [ -z "${GIT_REV}" ]
+	then
+		# U-Boot version to build
+		GIT_REV=$(git ls-remote --tags \
+		                        --refs \
+		                        "${GIT_URL}" \
+		                        "v????.??" | \
+		          cut -f 2 | \
+		          grep -o "v....\..." | \
+		          tail -n 1)
+	fi
 
-# Download U-Boot
-git clone --branch "$VERSION" \
-          --depth 1 \
-          --reference-if-able "/mnt/git-cache/u-boot.git" \
-          --dissociate \
-          "git://git.denx.de/u-boot.git" "${UBOOTDIR}"
+	# Download U-Boot
+	git clone --branch "${GIT_REV}" \
+	          --depth 1 \
+	          "${GIT_URL}" u-boot
+else
+	# Extract U-Boot
+	tar -xf "${TARBALL}"
+
+	mv u-boot-????.?? u-boot
+fi
 
 # Step into U-Boot directory
-cd "${UBOOTDIR}"
+cd u-boot
 
 # Setup ARCH
 case "${TUPLE}" in

@@ -12,7 +12,7 @@ TMP=$(mktemp -d tmp.XXXXXX)
 cd "${TMP}"
 
 build-image tmp.img
-build-u_boot u-boot "${DEFCONFIG}" "${TUPLE}"
+build-u_boot "${DEFCONFIG}" "${TUPLE}"
 
 # Write Raspberry Pi boot config
 cat << EOF > config.txt

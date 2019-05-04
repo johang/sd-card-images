@@ -2,19 +2,20 @@
 # Rebuilds boot images
 
 ARTIFACTS_DIR=${DEBIMG_ARTIFACTS_DIR:-/tmp/debimg/artifacts}
-GIT_CACHE_DIR=${DEBIMG_GIT_CACHE_DIR:-/tmp/debimg/git-cache}
+CACHE_DIR=${DEBIMG_CACHE_DIR:-/tmp/debimg/cache}
 
 docker build -t debimg .
 
 mkdir -p /tmp/debimg/artifacts || exit
-mkdir -p /tmp/debimg/git-cache || exit
+mkdir -p /tmp/debimg/cache || exit
 
 IFS=,
 grep -vE "^#|^\s*$" boards.csv | while read BOARD_ID MODEL MAKE CHIP DEFCONFIG TUPLE TYPE DTB _
 do
     docker run --rm \
                -v "${ARTIFACTS_DIR}":/artifacts \
-               -v "${GIT_CACHE_DIR}":/mnt/git-cache \
+               -v "${CACHE_DIR}":/mnt/cache:ro \
+               -e U_BOOT_TARBALL=/mnt/cache/u-boot-latest.tar.bz2 \
                debimg \
                build-boot-"${TYPE}" /artifacts/boot-"${BOARD_ID}" "${DEFCONFIG}" "${TUPLE}"
 done

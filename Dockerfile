@@ -13,6 +13,7 @@ RUN apt-get update && \
                     make \
                     git \
                     bc \
+                    bzip2 \
                     bison \
                     flex \
                     python-dev \
