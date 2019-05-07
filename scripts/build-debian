@@ -66,8 +66,8 @@ EOF
 	;;
 esac
 
-cp -rv --preserve=mode ../pre-2nd-stage-files/* debian
-cp -rv --preserve=mode ../pre-2nd-stage-files-${ARCH}/* debian
+cp -rv --preserve=mode ../2nd-stage-files/pre-2nd-stage-files/* debian
+cp -rv --preserve=mode ../2nd-stage-files/pre-2nd-stage-files-${ARCH}/* debian
 
 # Copy ARM emulation stuff
 cp -v /usr/bin/qemu-*-static debian/usr/bin || :
@@ -88,7 +88,7 @@ EOF
 # Remove ARM emulation stuff again
 rm -v debian/usr/bin/qemu-*-static || :
 
-cp -rv --preserve=mode ../post-2nd-stage-files/* debian
+cp -rv --preserve=mode ../2nd-stage-files/post-2nd-stage-files/* debian
 
 # List all files
 find debian ! -type d -printf "/%P\n" | sort > "/artifacts/debian-${DIST}-${ARCH}.files.txt"

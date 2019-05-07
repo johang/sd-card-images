@@ -30,6 +30,6 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
     rm -f /var/log/*.log
-ENV PATH="/debimg:${PATH}"
+ENV PATH="/debimg/scripts:${PATH}"
 COPY . /debimg
 WORKDIR /debimg

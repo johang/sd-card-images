@@ -36,6 +36,6 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/* && \
     rm -f /var/log/*.log
 RUN rm /usr/bin/qemu-aarch64-static
-ENV PATH="/debimg:${PATH}"
+ENV PATH="/debimg/scripts:${PATH}"
 COPY . /debimg
 WORKDIR /debimg
