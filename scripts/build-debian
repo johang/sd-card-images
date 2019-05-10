@@ -35,9 +35,9 @@ netbase,\
 ifupdown,\
 net-tools,\
 isc-dhcp-client,\
-${KERNEL},\
 systemd-sysv,\
 u-boot-tools,\
+initramfs-tools,\
 openssh-server \
   "${DIST}" \
   debian \
@@ -77,6 +77,7 @@ chroot debian /bin/sh -e <<- EOF
 /debootstrap/debootstrap --second-stage
 /bin/mv /tmp/sources.list /etc/apt/sources.list
 /usr/bin/apt-get update
+/usr/bin/apt-get -y --no-install-recommends install ${KERNEL}
 /usr/bin/apt-get -y upgrade
 /usr/bin/apt-get clean
 /bin/rm -rf /var/lib/apt/lists/*
