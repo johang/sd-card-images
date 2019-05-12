@@ -7,12 +7,16 @@ ABI="${1}"
 # Create U-Boot ramdisk image
 mkimage -A arm64 -T ramdisk -C none -d "/boot/initrd.img-${ABI}" "/boot/initrd.uimg-${ABI}"
 
+FDT=/usr/lib/linux
+[ -d "/lib/firmware/${ABI}/device-tree" ] && FDT="/lib/firmware/${ABI}/device-tree"
+[ -d "/usr/lib/linux-image-${ABI}" ] && FDT="/usr/lib/linux-image-${ABI}"
+
 # Create U-Boot boot script
 cat << EOF > /boot/boot.cmd
 mmc dev 0
 ext4load mmc 0:2 \${kernel_addr_r} /boot/vmlinuz-${ABI}
 ext4load mmc 0:2 \${ramdisk_addr_r} /boot/initrd.uimg-${ABI}
-ext4load mmc 0:2 \${fdt_addr_r} /usr/lib/linux-image-${ABI}/\${fdtfile}
+ext4load mmc 0:2 \${fdt_addr_r} ${FDT}/\${fdtfile}
 setenv bootargs "root=/dev/mmcblk0p2 rw rootwait"
 booti \${kernel_addr_r} \${ramdisk_addr_r} \${fdt_addr_r}
 EOF

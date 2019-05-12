@@ -6,6 +6,7 @@ RUN apt-get update && \
             --no-install-recommends \
             install debootstrap \
                     debian-archive-keyring \
+                    ubuntu-archive-keyring \
                     ca-certificates \
                     qemu-user-static \
                     device-tree-compiler \

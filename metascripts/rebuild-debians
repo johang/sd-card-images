@@ -12,14 +12,14 @@ mkdir -p /tmp/debimg/log || exit
 D=$(mktemp -d -p "${LOG_DIR}" rebuild-debians-XXXXXX)
 
 IFS=,
-grep -vE "^#|^\s*$" debians.csv | while read DIST ARCH _
+grep -vE "^#|^\s*$" debians.csv | while read OS DIST ARCH _
 do
     docker run --rm \
                -v "${ARTIFACTS_DIR}":/artifacts \
                --privileged \
                debimg \
-               build-debian /artifacts/debian-"${DIST}"-"${ARCH}" "${ARCH}" "${DIST}" \
-               >"${D}"/"log-${DIST}-${ARCH}.txt" 2>&1 &&
-    rm "${D}"/"log-${DIST}-${ARCH}.txt"
+               build-debian "${OS}" "${ARCH}" "${DIST}"
+               >"${D}"/"log-${OS}-${DIST}-${ARCH}.txt" 2>&1 &&
+    rm "${D}"/"log-${OS}-${DIST}-${ARCH}.txt"
 done
 unset IFS

@@ -1,11 +1,19 @@
-# Stable
-stretch,armhf
-stretch,arm64
+# Debian Stable
+debian,stretch,armhf
+debian,stretch,arm64
 
-# Testing
-buster,armhf
-buster,arm64
+# Debian Testing
+debian,buster,armhf
+debian,buster,arm64
 
-# Unstable
-sid,armhf
-sid,arm64
+# Debian Unstable
+debian,sid,armhf
+debian,sid,arm64
+
+# Ubuntu 18.04 (LTS)
+ubuntu,bionic,armhf
+ubuntu,bionic,arm64
+
+# Ubuntu 19.04
+ubuntu,disco,armhf
+ubuntu,disco,arm64
