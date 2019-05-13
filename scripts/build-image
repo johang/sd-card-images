@@ -6,7 +6,7 @@ IMAGE="${1}"
 set -e
 
 rm -f "${IMAGE}"
-fallocate -l 1GB "${IMAGE}" # 1,000,000,000 bytes
+fallocate -l 2GB "${IMAGE}" # 2,000,000,000 bytes
 
 parted -s "${IMAGE}" mklabel msdos
 parted -s "${IMAGE}" mkpart primary fat32 -- 1MiB 32MiB # 31 MiB (32,505,856 bytes)

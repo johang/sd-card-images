@@ -119,7 +119,7 @@ find debian ! -type d -printf "/%P\n" | sort > "/artifacts/${OS}-${DIST}-${ARCH}
 
 # Make a ext4 filesystem of this and put it into the image
 rm -f ext4.img
-fallocate -l 900MiB ext4.img
+fallocate -l 1875MiB ext4.img
 mkfs.ext4 -d debian ext4.img
 gzip ext4.img
 
