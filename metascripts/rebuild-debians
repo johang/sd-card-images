@@ -18,7 +18,7 @@ do
                -v "${ARTIFACTS_DIR}":/artifacts \
                --privileged \
                debimg \
-               build-debian "${OS}" "${ARCH}" "${DIST}"
+               build-debian "${OS}" "${ARCH}" "${DIST}" \
                >"${D}"/"log-${OS}-${DIST}-${ARCH}.txt" 2>&1 &&
     rm "${D}"/"log-${OS}-${DIST}-${ARCH}.txt"
 done
