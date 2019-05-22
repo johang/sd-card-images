@@ -30,15 +30,18 @@ fi
 
 # Download Raspberry Pi boot files
 FIRMWARE="https://github.com/raspberrypi/firmware/raw/stable"
-wget -nv "${FIRMWARE}/boot/fixup.dat" \
-         "${FIRMWARE}/boot/fixup_x.dat" \
-         "${FIRMWARE}/boot/fixup_cd.dat" \
-         "${FIRMWARE}/boot/fixup_db.dat" \
-         "${FIRMWARE}/boot/start.elf" \
-         "${FIRMWARE}/boot/start_x.elf" \
-         "${FIRMWARE}/boot/start_cd.elf" \
-         "${FIRMWARE}/boot/start_db.elf" \
-         "${FIRMWARE}/boot/bootcode.bin"
+wget --tries 3 \
+     --retry-on-http-error 500,502,503,504 \
+     --no-verbose \
+     "${FIRMWARE}/boot/fixup.dat" \
+     "${FIRMWARE}/boot/fixup_x.dat" \
+     "${FIRMWARE}/boot/fixup_cd.dat" \
+     "${FIRMWARE}/boot/fixup_db.dat" \
+     "${FIRMWARE}/boot/start.elf" \
+     "${FIRMWARE}/boot/start_x.elf" \
+     "${FIRMWARE}/boot/start_cd.elf" \
+     "${FIRMWARE}/boot/start_db.elf" \
+     "${FIRMWARE}/boot/bootcode.bin"
 
 # Magic thing to get debug output
 sed -i -e "s/BOOT_UART=0/BOOT_UART=1/" bootcode.bin
