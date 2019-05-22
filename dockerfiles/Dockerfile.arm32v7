@@ -1,5 +1,5 @@
 # Native armhf
-FROM arm32v7/debian:stable-slim
+FROM arm32v7/debian:buster-slim
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
     apt-get --assume-yes \

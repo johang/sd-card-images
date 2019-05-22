@@ -1,14 +1,14 @@
 # Build host is assumed to have "update-binfmts --enable qemu-aarch64"
 
 # First get qemu-user-static for host...
-FROM debian:stable-slim as host
+FROM debian:buster-slim as host
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
     apt-get --assume-yes \
             install qemu-user-static
 
 # ...then build image for target with help of qemu-user-static
-FROM arm64v8/debian:stable-slim
+FROM arm64v8/debian:buster-slim
 ENV DEBIAN_FRONTEND=noninteractive
 COPY --from=host /usr/bin/qemu-aarch64-static /usr/bin/
 RUN apt-get update && \

@@ -1,14 +1,14 @@
 # Build host is assumed to have "update-binfmts --enable qemu-arm"
 
 # First get qemu-user-static for host...
-FROM debian:stable-slim as host
+FROM debian:buster-slim as host
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
     apt-get --assume-yes \
             install qemu-user-static
 
 # ...then build image for target with help of qemu-user-static
-FROM arm32v7/debian:stable-slim
+FROM arm32v7/debian:buster-slim
 ENV DEBIAN_FRONTEND=noninteractive
 COPY --from=host /usr/bin/qemu-arm-static /usr/bin/
 RUN apt-get update && \

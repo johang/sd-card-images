@@ -1,5 +1,5 @@
 # Native arm64
-FROM arm64v8/debian:stable-slim
+FROM arm64v8/debian:buster-slim
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
     apt-get --assume-yes \

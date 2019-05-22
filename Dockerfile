@@ -1,5 +1,5 @@
 # Native amd64
-FROM debian:stable-slim
+FROM debian:buster-slim
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
     apt-get --assume-yes \
