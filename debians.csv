@@ -9,11 +9,3 @@ debian,buster,arm64
 # Debian Unstable
 debian,sid,armhf
 debian,sid,arm64
-
-# Ubuntu 18.04 (LTS)
-ubuntu,bionic,armhf
-ubuntu,bionic,arm64
-
-# Ubuntu 19.04
-ubuntu,disco,armhf
-ubuntu,disco,arm64
