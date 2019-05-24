@@ -4,6 +4,28 @@ raspberrypi_3b,Raspberry Pi 3 B,Raspberry Pi Foundation,bcm2837,rpi_3_defconfig,
 raspberrypi_3a_plus,Raspberry Pi 3 A+,Raspberry Pi Foundation,bcm2837,rpi_3_defconfig,aarch64-linux-gnu,rpi,bcm2837-rpi-3-a-plus
 raspberrypi_3b_plus,Raspberry Pi 3 B+,Raspberry Pi Foundation,bcm2837,rpi_3_defconfig,aarch64-linux-gnu,rpi,bcm2837-rpi-3-b-plus
 
+# Allwinner A10 (sun4i) boards
+mele_a1000,Mele A1000,Mele,sun4i,Mele_A1000_defconfig,arm-linux-gnueabihf,sunxi,sun4i-a10-a1000
+ba12_tv_box,BA10 TV box,,sun4i,ba10_tv_box_defconfig,arm-linux-gnueabihf,sunxi,sun4i-a10-ba10-tvbox
+chuwi_b7_cw0825,V7 CW0825,Chuwi,sun4i,Chuwi_V7_CW0825_defconfig,arm-linux-gnueabihf,sunxi,sun4i-a10-chuwi-v7-cw0825
+cubieboard,Cubieboard,Cubieboard,sun4i,Cubieboard_defconfig,arm-linux-gnueabihf,sunxi,sun4i-a10-cubieboard
+dserve_dsrv9703c,DSRV9703C,Dserve,sun4i,dserve_dsrv9703c_defconfig,arm-linux-gnueabihf,sunxi,sun4i-a10-dserve-dsrv9703c
+gemei_g9,G9,Gemei Technologies,sun4i,sunxi_Gemei_G9_defconfig,arm-linux-gnueabihf,sunxi,sun4i-a10-gemei-g9
+hyundai_a7hd,Hyundai A7HD,Hyundai Digital,sun4i,Hyundai_A7HD_defconfig,arm-linux-gnueabihf,sunxi,sun4i-a10-hyundai-a7hd
+inet_3f,iNet 3F,iNet,sun4i,iNet_3F_defconfig,arm-linux-gnueabihf,sunxi,sun4i-a10-inet-3f
+inet_3w,iNet 3W,iNet,sun4i,iNet_3W_defconfig,arm-linux-gnueabihf,sunxi,sun4i-a10-inet-3w
+inet_1,iNet 1,iNet,sun4i,inet1_defconfig,arm-linux-gnueabihf,sunxi,sun4i-a10-inet1
+inet_96fv2,iNet 97Fv2,iNet,sun4i,inet97fv2_defconfig,arm-linux-gnueabihf,sunxi,sun4i-a10-inet97fv2
+inet_9f,iNet 9F,iNet,sun4i,inet9f_rev03_defconfig,arm-linux-gnueabihf,sunxi,sun4i-a10-inet9f-rev03
+jesurun_q5,Q5,Jesurun,sun4i,jesurun_q5_defconfig,arm-linux-gnueabihf,sunxi,sun4i-a10-jesurun-q5
+marsboard_a10,Marsboard A10,HAOYU Electronics,sun4i,Marsboard_A10_defconfig,arm-linux-gnueabihf,sunxi,sun4i-a10-marsboard
+mini_xplus,Mini XPlus,PineRiver,sun4i,Mini-X_defconfig,arm-linux-gnueabihf,sunxi,sun4i-a10-mini-xplus
+mk802,MK802,,sun4i,mk802_defconfig,arm-linux-gnueabihf,sunxi,sun4i-a10-mk802
+mk802ii,MK802II,,sun4i,mk802ii_defconfig,arm-linux-gnueabihf,sunxi,sun4i-a10-mk802ii
+a10_olinuxino_lime,A10-OLinuXino-Lime,Olimex,sun4i,A10-OLinuXino-Lime_defconfig,arm-linux-gnueabihf,sunxi,sun4i-a10-olinuxino-lime
+pcduino,pcDuino,LinkSprite,sun4i,Linksprite_pcDuino_defconfig,arm-linux-gnueabihf,sunxi,sun4i-a10-pcduino
+protab2_ips9,ProTab2 IPS9,Point of View,sun4i,pov_protab2_ips9_defconfig,arm-linux-gnueabihf,sunxi,sun4i-a10-pov-protab2-ips9
+
 # Allwinner A10s/A13/R8/GR8 (sun5i) boards
 auxtek_t003,T003,Auxtek,sun5i,Auxtek-T003_defconfig,arm-linux-gnueabihf,sunxi,sun5i-a10s-auxtek-t003
 auxtek_t004,T004,Auxtek,sun5i,Auxtek-T004_defconfig,arm-linux-gnueabihf,sunxi,sun5i-a10s-auxtek-t004
