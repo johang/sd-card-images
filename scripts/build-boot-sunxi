@@ -4,12 +4,19 @@
 IMAGE="${1}" # For example "boot-bananapi.bin"
 DEFCONFIG="${2}" # For example "Bananapi_defconfig"
 TUPLE="${3}" # For example "arm-linux-gnueabihf"
+PLAT="${4}" # For example "sun50i_a64"
 
 set -e
 
 # Create fresh empty directory
 TMP=$(mktemp -d tmp.XXXXXX)
 cd "${TMP}"
+
+if [ "${TUPLE}" = "aarch64-linux-gnu" ]
+then
+    build-atf "${PLAT}" "${TUPLE}"
+    export BL31="$(pwd)/arm-trusted-firmware/build/${PLAT}/debug/bl31.bin"
+fi
 
 build-image tmp.img
 build-u_boot "${DEFCONFIG}" "${TUPLE}"

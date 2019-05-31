@@ -1,0 +1,45 @@
+#!/bin/sh
+# Download and build latest version of ARM Trusted Firmware
+
+PLAT="${1}" # For example "sun50i_a64"
+TUPLE="${2}" # For example "aarch64-linux-gnu"
+
+TARBALL="${ATF_TARBALL}"
+GIT_REV="${ATF_GIT_REV}"
+GIT_URL="${ATF_GIT_URL:-https://github.com/ARM-software/arm-trusted-firmware.git}"
+
+set -e
+
+if [ ! -s "${TARBALL}" ]
+then
+	if [ -z "${GIT_REV}" ]
+	then
+		# ATF version to build
+		GIT_REV=$(git ls-remote --tags \
+		                        --refs \
+		                        "${GIT_URL}" \
+		                        "v*" | \
+		          cut -f 2 | \
+		          grep -Eo "v[0-9]+\.[0-9]+$" | \
+		          tail -n 1)
+	fi
+
+	# Download ATF
+	git clone --branch "${GIT_REV}" \
+	          --depth 1 \
+	          "${GIT_URL}" arm-trusted-firmware
+else
+	# Extract ATF
+	tar -xf "${TARBALL}"
+
+	mv arm-trusted-firmware-* arm-trusted-firmware
+fi
+
+# Step into ATF directory
+cd arm-trusted-firmware
+
+# CROSS_COMPILE must point to a valid compiler path prefix
+export CROSS_COMPILE=$(dirname $(which "${TUPLE}-gcc"))/"${TUPLE}-"
+
+# Build ATF
+make PLAT="${PLAT}" DEBUG=1 bl31
