@@ -1,11 +1,8 @@
-# Debian Stable
 debian,stretch,armhf
 debian,stretch,arm64
 
-# Debian Testing
 debian,buster,armhf
 debian,buster,arm64
 
-# Debian Unstable
 debian,sid,armhf
 debian,sid,arm64

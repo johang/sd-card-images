@@ -1,10 +1,8 @@
-# Raspberry Pi boards
 raspberrypi_2b,Raspberry Pi 2 B,Raspberry Pi Foundation,bcm2836,rpi_2_defconfig,arm-linux-gnueabihf,rpi,bcm2836-rpi-2-b
 raspberrypi_3b,Raspberry Pi 3 B,Raspberry Pi Foundation,bcm2837,rpi_3_defconfig,aarch64-linux-gnu,rpi,bcm2837-rpi-3-b
 raspberrypi_3a_plus,Raspberry Pi 3 A+,Raspberry Pi Foundation,bcm2837,rpi_3_defconfig,aarch64-linux-gnu,rpi,bcm2837-rpi-3-a-plus
 raspberrypi_3b_plus,Raspberry Pi 3 B+,Raspberry Pi Foundation,bcm2837,rpi_3_defconfig,aarch64-linux-gnu,rpi,bcm2837-rpi-3-b-plus
 
-# Allwinner A10 (sun4i) boards
 mele_a1000,Mele A1000,Mele,sun4i,Mele_A1000_defconfig,arm-linux-gnueabihf,sunxi,sun4i-a10-a1000
 ba12_tv_box,BA10 TV box,,sun4i,ba10_tv_box_defconfig,arm-linux-gnueabihf,sunxi,sun4i-a10-ba10-tvbox
 chuwi_b7_cw0825,V7 CW0825,Chuwi,sun4i,Chuwi_V7_CW0825_defconfig,arm-linux-gnueabihf,sunxi,sun4i-a10-chuwi-v7-cw0825
@@ -26,7 +24,6 @@ a10_olinuxino_lime,A10-OLinuXino-Lime,Olimex,sun4i,A10-OLinuXino-Lime_defconfig,
 pcduino,pcDuino,LinkSprite,sun4i,Linksprite_pcDuino_defconfig,arm-linux-gnueabihf,sunxi,sun4i-a10-pcduino
 protab2_ips9,ProTab2 IPS9,Point of View,sun4i,pov_protab2_ips9_defconfig,arm-linux-gnueabihf,sunxi,sun4i-a10-pov-protab2-ips9
 
-# Allwinner A10s/A13/R8/GR8 (sun5i) boards
 auxtek_t003,T003,Auxtek,sun5i,Auxtek-T003_defconfig,arm-linux-gnueabihf,sunxi,sun5i-a10s-auxtek-t003
 auxtek_t004,T004,Auxtek,sun5i,Auxtek-T004_defconfig,arm-linux-gnueabihf,sunxi,sun5i-a10s-auxtek-t004
 mk802,MK802,Rikomagic,sun5i,mk802_a10s_defconfig,arm-linux-gnueabihf,sunxi,sun5i-a10s-mk802
@@ -46,7 +43,6 @@ utoo_p66,P66,Utoo,sun5i,UTOO_P66_defconfig,arm-linux-gnueabihf,sunxi,sun5i-a13-u
 chip_pro,CHIP Pro,Next Thing,sun5i,CHIP_pro_defconfig,arm-linux-gnueabihf,sunxi,sun5i-gr8-chip-pro
 chip,CHIP,Next Thing,sun5i,CHIP_defconfig,arm-linux-gnueabihf,sunxi,sun5i-r8-chip
 
-# Allwinner A31/A31s (sun6i) boards
 colombus,Colombus,WITS,sun6i,Colombus_defconfig,arm-linux-gnueabihf,sunxi,sun6i-a31-colombus
 hummingbird,Hummingbird,Merrii,sun6i,Hummingbird_A31_defconfig,arm-linux-gnueabihf,sunxi,sun6i-a31-hummingbird
 mele_i7,Mele I7,Mele,sun6i,Mele_I7_defconfig,arm-linux-gnueabihf,sunxi,sun6i-a31-i7
@@ -61,7 +57,6 @@ sina31s,SinA31s,Sinlinx,sun6i,Sinlinx_SinA31s_defconfig,arm-linux-gnueabihf,sunx
 bananapi_m2,Banana Pi M2,Sinovoip,sun6i,Sinovoip_BPI_M2_defconfig,arm-linux-gnueabihf,sunxi,sun6i-a31s-sinovoip-bpi-m2
 bs1078_v2,BS1078 V2,Yones Toptech,sun6i,Yones_Toptech_BS1078_V2_defconfig,arm-linux-gnueabihf,sunxi,sun6i-a31s-yones-toptech-bs1078-v2
 
-# Allwinner A20 (sun7i) boards
 ainol_aw1,AW1,Ainol,sun7i,Ainol_AW1_defconfig,arm-linux-gnueabihf,sunxi,sun7i-a20-ainol-aw1
 bananapi_m1,Banana Pi M1,Sinovoip,sun7i,Bananapi_defconfig,arm-linux-gnueabihf,sunxi,sun7i-a20-bananapi
 bananapi_m1plus,Banana Pi M1+,Sinovoip,sun7i,bananapi_m1_plus_defconfig,arm-linux-gnueabihf,sunxi,sun7i-a20-bananapi-m1-plus
