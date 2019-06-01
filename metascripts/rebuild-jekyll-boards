@@ -9,6 +9,7 @@ isa_to_arch = {
 }
 with open("chips.csv") as csvfile:
 	chipsf = csv.reader(csvfile)
+	next(chipsf)
 	for row in chipsf:
 		if not row:
 			continue
@@ -17,6 +18,7 @@ with open("chips.csv") as csvfile:
 		chips[row[0]] = row
 with open("boards.csv") as csvfile:
 	boardsf = csv.reader(csvfile)
+	next(boardsf)
 	for row in boardsf:
 		if not row:
 			continue

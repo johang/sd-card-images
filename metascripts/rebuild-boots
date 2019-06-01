@@ -14,7 +14,7 @@ mkdir -p /tmp/debimg/log || exit
 D=$(mktemp -d -p "${LOG_DIR}" rebuild-boots-XXXXXX)
 
 IFS=,
-grep -vE "^#|^\s*$" boards.csv | while read BOARD_ID MODEL MAKE CHIP DEFCONFIG TUPLE TYPE DTB _
+grep -vE "^#|^\s*$" boards.csv | tail -n +2 | while read BOARD_ID MODEL MAKE CHIP DEFCONFIG TUPLE TYPE DTB _
 do
     docker run --rm \
                -v "${ARTIFACTS_DIR}":/artifacts \

@@ -1,3 +1,5 @@
+Chip ID,Chip name,Chip maker,CPU,CPU architecture
+
 bcm2836,BCM2836,Broadcom,ARM Cortex A7,armv7
 bcm2837,BCM2837,Broadcom,ARM Cortex A53,armv8
 

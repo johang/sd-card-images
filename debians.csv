@@ -1,3 +1,5 @@
+OS,Dist,Arch
+
 debian,stretch,armhf
 debian,stretch,arm64
 

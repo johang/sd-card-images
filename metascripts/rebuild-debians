@@ -12,7 +12,7 @@ mkdir -p /tmp/debimg/log || exit
 D=$(mktemp -d -p "${LOG_DIR}" rebuild-debians-XXXXXX)
 
 IFS=,
-grep -vE "^#|^\s*$" debians.csv | while read OS DIST ARCH _
+grep -vE "^#|^\s*$" debians.csv | tail -n +2 | while read OS DIST ARCH _
 do
     docker run --rm \
                -v "${ARTIFACTS_DIR}":/artifacts \
