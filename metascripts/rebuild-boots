@@ -14,14 +14,14 @@ mkdir -p /tmp/debimg/log || exit
 D=$(mktemp -d -p "${LOG_DIR}" rebuild-boots-XXXXXX)
 
 IFS=,
-grep -vE "^#|^\s*$" boards.csv | tail -n +2 | while read BOARD_ID MODEL MAKE CHIP DEFCONFIG TUPLE TYPE DTB _
+grep -vE "^#|^\s*$" boards.csv | tail -n +2 | while read BOARD_ID MODEL MAKE CHIP_ID DEFCONFIG TUPLE TYPE DTB _
 do
     docker run --rm \
                -v "${ARTIFACTS_DIR}":/artifacts \
                -v "${CACHE_DIR}":/mnt/cache:ro \
                -e U_BOOT_TARBALL=/mnt/cache/u-boot-latest.tar.bz2 \
                debimg \
-               build-boot-"${TYPE}" /artifacts/boot-"${BOARD_ID}" "${DEFCONFIG}" "${TUPLE}" \
+               build-boot "${BOARD_ID}" "${CHIP_ID}" "${DEFCONFIG}" "${TUPLE}" \
                >"${D}"/"log-${BOARD_ID}.txt" 2>&1 &&
     rm "${D}"/"log-${BOARD_ID}.txt"
 done

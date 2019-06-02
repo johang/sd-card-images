@@ -1,29 +1,27 @@
 #!/bin/sh
 # Build SD card image
 
-IMAGE="${1}" # For example "boot-bananapi.bin"
-DEFCONFIG="${2}" # For example "Bananapi_defconfig"
-TUPLE="${3}" # For example "arm-linux-gnueabihf"
-PLAT="${4}" # For example "sun50i_a64"
+BOARD_ID="${1}" # For example "bananapi"
+CHIP_ID="${2}" # For example "allwinner-a10"
+DEFCONFIG="${3}" # For example "Bananapi_defconfig"
+TUPLE="${4}" # For example "arm-linux-gnueabihf"
 
 set -e
 
-# Create fresh empty directory
-TMP=$(mktemp -d tmp.XXXXXX)
-cd "${TMP}"
+case "${CHIP_ID}" in
+*a64|*h5)
+    build-atf sun50i_a64 "${TUPLE}"
+    export BL31="$(pwd)/arm-trusted-firmware/build/sun50i_a64/debug/bl31.bin"
+    ;;
+*h6)
+    build-atf sun50i_h6 "${TUPLE}"
+    export BL31="$(pwd)/arm-trusted-firmware/build/sun50i_h6/debug/bl31.bin"
+    ;;
+*)
+    ;;
+esac
 
-if [ "${TUPLE}" = "aarch64-linux-gnu" ]
-then
-    build-atf "${PLAT}" "${TUPLE}"
-    export BL31="$(pwd)/arm-trusted-firmware/build/${PLAT}/debug/bl31.bin"
-fi
-
-build-image tmp.img
 build-u_boot "${DEFCONFIG}" "${TUPLE}"
 
 # Copy U-Boot to 8192 bytes from start
 dd if=u-boot/u-boot-sunxi-with-spl.bin of=tmp.img bs=1K seek=8
-
-truncate -s 32M tmp.img
-gzip tmp.img
-cp tmp.img.gz "${IMAGE}.bin.gz"
