@@ -29,7 +29,7 @@ with open("boards.csv") as csvfile:
 			boardf.write("layout: board\n")
 			boardf.write("title: SD card images - %s\n" % (row[1]))
 			boardf.write("board_id: %s\n" % (row[0]))
-			boardf.write("board_dtb_name: %s\n" % (row[7]))
+			boardf.write("board_dtb_name: %s\n" % (row[6]))
 			boardf.write("board_name: %s\n" % (row[1]))
 			boardf.write("board_maker_name: %s\n" % (row[2]))
 			boardf.write("board_soc_name: %s %s\n" % (chips[row[3]][2],
