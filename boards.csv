@@ -87,3 +87,25 @@ pcduino3_nano,pcDuino3 Nano,LinkSprite,allwinner-a20,Linksprite_pcDuino3_Nano_de
 msi_primo73,Primo73,MSI,allwinner-a20,MSI_Primo73_defconfig,arm-linux-gnueabihf,sun7i-a20-primo73
 tab7200,TAB7200,Wexler,allwinner-a20,Wexler_TAB7200_defconfig,arm-linux-gnueabihf,sun7i-a20-wexler-tab7200
 bd1078,BD1078,Yones Toptech,allwinner-a20,Yones_Toptech_BD1078_defconfig,arm-linux-gnueabihf,sun7i-a20-yones-toptech-bd1078
+
+amarula_a64_relic,A64-Relic,Amarula,allwinner-a64,amarula_a64_relic_defconfig,aarch64-linux-gnu,sun50i-a64-amarula-relic
+banana_pi_m64,Banana Pi M64,Sinovoip,allwinner-a64,bananapi_m64_defconfig,aarch64-linux-gnu,sun50i-a64-bananapi-m64
+nano_pi_a64,Nano Pi A64,FriendlyARM,allwinner-a64,nanopi_a64_defconfig,aarch64-linux-gnu,sun50i-a64-nanopi-a64
+a64_olinuxino,A64 OLinuXino,Olimex,allwinner-a64,a64-olinuxino_defconfig,aarch64-linux-gnu,sun50i-a64-olinuxino
+orange_pi_win,Orange Pi Win,Xunlong,allwinner-a64,orangepi_win_defconfig,aarch64-linux-gnu,sun50i-a64-orangepi-win
+pine64_lts,Pine64 LTS,Pine64,allwinner-a64,pine64-lts_defconfig,aarch64-linux-gnu,sun50i-a64-pine64-lts
+pine64_plus,Pine64 Plus,Pine64,allwinner-a64,pine64_plus_defconfig,aarch64-linux-gnu,sun50i-a64-pine64-plus
+pinebook,Pinebook,Pine64,allwinner-a64,pinebook_defconfig,aarch64-linux-gnu,sun50i-a64-pinebook
+sopine_baseboard,SoPine baseboard,Pine64,allwinner-a64,sopine_baseboard_defconfig,aarch64-linux-gnu,sun50i-a64-sopine-baseboard
+banana_pi_m2_plus,Banana Pi M2+,Sinovoip,allwinner-h5,bananapi_m2_plus_h5_defconfig,aarch64-linux-gnu,sun50i-h5-bananapi-m2-plus
+neutis_n5_devboard,Neutis N5 devboard,Emlid,allwinner-h5,emlid_neutis_n5_devboard_defconfig,aarch64-linux-gnu,sun50i-h5-emlid-neutis-n5-devboard
+libretech_all_h3_cc_h5,ALL-H3-CC H5,Libre Computer,allwinner-h5,libretech_all_h3_cc_h5_defconfig,aarch64-linux-gnu,sun50i-h5-libretech-all-h3-cc
+nano_pi_neo_plus2,Nano Pi Neo Plus2,FriendlyARM,allwinner-h5,nanopi_neo_plus2_defconfig,aarch64-linux-gnu,sun50i-h5-nanopi-neo-plus2
+nano_pi_neo2,Nano Pi Neo2,FriendlyARM,allwinner-h5,nanopi_neo2_defconfig,aarch64-linux-gnu,sun50i-h5-nanopi-neo2
+orange_pi_pc2,Orange Pi PC2,Xunlong,allwinner-h5,orangepi_pc2_defconfig,aarch64-linux-gnu,sun50i-h5-orangepi-pc2
+orange_pi_prime,Orange Pi Prime,Xunlong,allwinner-h5,orangepi_prime_defconfig,aarch64-linux-gnu,sun50i-h5-orangepi-prime
+orange_pi_zero_plus,Orange Pi Zero Plus,Xunlong,allwinner-h5,orangepi_zero_plus_defconfig,aarch64-linux-gnu,sun50i-h5-orangepi-zero-plus
+orange_pi_zero_plus2,Orange Pi Zero Plus2,Xunlong,allwinner-h5,orangepi_zero_plus2_defconfig,aarch64-linux-gnu,sun50i-h5-orangepi-zero-plus2
+orange_pi_lite2,Orange Pi Lite2,Xunlong,allwinner-h6,orangepi_lite2_defconfig,aarch64-linux-gnu,sun50i-h6-orangepi-lite2
+orange_pi_one_plus,Orange Pi One Plus,Xunlong,allwinner-h6,orangepi_one_plus_defconfig,aarch64-linux-gnu,sun50i-h6-orangepi-one-plus
+pine_h64,Pine H64,Pine64,allwinner-h6,pine_h64_defconfig,aarch64-linux-gnu,sun50i-h6-pine-h64

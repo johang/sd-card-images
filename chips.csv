@@ -11,3 +11,6 @@ allwinner-r8,R8,Allwinner,ARM Cortex A8,armv7
 allwinner-a31,A31,Allwinner,ARM Cortex A7,armv7
 allwinner-a31s,A31s,Allwinner,ARM Cortex A7,armv7
 allwinner-a20,A20,Allwinner,ARM Cortex A7,armv7
+allwinner-a64,A64,Allwinner,ARM Cortex A53,armv8
+allwinner-h5,H5,Allwinner,ARM Cortex A53,armv8
+allwinner-h6,H6,Allwinner,ARM Cortex A53,armv8
