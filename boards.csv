@@ -20,15 +20,15 @@ inet_9f,iNet 9F,iNet,allwinner-a10,inet9f_rev03_defconfig,arm-linux-gnueabihf,su
 jesurun_q5,Q5,Jesurun,allwinner-a10,jesurun_q5_defconfig,arm-linux-gnueabihf,sun4i-a10-jesurun-q5
 marsboard_a10,Marsboard A10,HAOYU Electronics,allwinner-a10,Marsboard_A10_defconfig,arm-linux-gnueabihf,sun4i-a10-marsboard
 mini_xplus,Mini XPlus,PineRiver,allwinner-a10,Mini-X_defconfig,arm-linux-gnueabihf,sun4i-a10-mini-xplus
-mk802,MK802,,allwinner-a10,mk802_defconfig,arm-linux-gnueabihf,sun4i-a10-mk802
-mk802ii,MK802II,,allwinner-a10,mk802ii_defconfig,arm-linux-gnueabihf,sun4i-a10-mk802ii
+mk802,MK802,Rikomagic,allwinner-a10,mk802_defconfig,arm-linux-gnueabihf,sun4i-a10-mk802
+mk802ii,MK802ii,Rikomagic,allwinner-a10,mk802ii_defconfig,arm-linux-gnueabihf,sun4i-a10-mk802ii
 a10_olinuxino_lime,A10-OLinuXino-Lime,Olimex,allwinner-a10,A10-OLinuXino-Lime_defconfig,arm-linux-gnueabihf,sun4i-a10-olinuxino-lime
 pcduino,pcDuino,LinkSprite,allwinner-a10,Linksprite_pcDuino_defconfig,arm-linux-gnueabihf,sun4i-a10-pcduino
 protab2_ips9,ProTab2 IPS9,Point of View,allwinner-a10,pov_protab2_ips9_defconfig,arm-linux-gnueabihf,sun4i-a10-pov-protab2-ips9
 
 auxtek_t003,T003,Auxtek,allwinner-a10s,Auxtek-T003_defconfig,arm-linux-gnueabihf,sun5i-a10s-auxtek-t003
 auxtek_t004,T004,Auxtek,allwinner-a10s,Auxtek-T004_defconfig,arm-linux-gnueabihf,sun5i-a10s-auxtek-t004
-mk802,MK802,Rikomagic,allwinner-a10s,mk802_a10s_defconfig,arm-linux-gnueabihf,sun5i-a10s-mk802
+semitime_g2,G2,Semitime,allwinner-a10s,mk802_a10s_defconfig,arm-linux-gnueabihf,sun5i-a10s-mk802
 a10s_olinuxino_micro,A10s OLinuXino MICRO,Olimex,allwinner-a10s,A10s-OLinuXino-M_defconfig,arm-linux-gnueabihf,sun5i-a10s-olinuxino-micro
 r7_a10s_tv_dongle,R7 A10s TV dongle,,allwinner-a10s,r7-tv-dongle_defconfig,arm-linux-gnueabihf,sun5i-a10s-r7-tv-dongle
 wabo_i5,i5,Wabo,allwinner-a10s,Wobo_i5_defconfig,arm-linux-gnueabihf,sun5i-a10s-wobo-i5
