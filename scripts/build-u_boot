@@ -6,7 +6,7 @@ TUPLE="${2}" # For example "aarch64-linux-gnu"
 
 TARBALL="${U_BOOT_TARBALL}"
 GIT_REV="${U_BOOT_GIT_REV}"
-GIT_URL="${U_BOOT_GIT_URL:-git://git.denx.de/u-boot.git}"
+GIT_URL="${U_BOOT_GIT_URL:-https://gitlab.denx.de/u-boot/u-boot.git}"
 
 set -e
 
