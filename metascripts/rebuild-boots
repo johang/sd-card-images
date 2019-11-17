@@ -20,6 +20,7 @@ do
                -v "${ARTIFACTS_DIR}":/artifacts \
                -v "${CACHE_DIR}":/mnt/cache:ro \
                -e U_BOOT_TARBALL=/mnt/cache/u-boot-latest.tar.bz2 \
+               -e ATF_TARBALL=/mnt/cache/arm-trusted-firmware-latest.tar.bz2 \
                debimg \
                build-boot "${BOARD_ID}" "${CHIP_ID}" "${DEFCONFIG}" "${TUPLE}" \
                >"${D}"/"log-${BOARD_ID}.txt" 2>&1 &&
