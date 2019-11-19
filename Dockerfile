@@ -17,7 +17,8 @@ RUN apt-get update && \
                     bzip2 \
                     bison \
                     flex \
-                    python-dev \
+                    python2-dev \
+                    python3-dev \
                     swig \
                     parted \
                     e2fsprogs \
