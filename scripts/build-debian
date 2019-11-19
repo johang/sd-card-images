@@ -64,6 +64,14 @@ deb http://deb.debian.org/debian ${DIST} main
 deb-src http://deb.debian.org/debian ${DIST} main
 EOF
 	;;
+debian-bullseye)
+	tee debian/tmp/sources.list <<- EOF
+deb http://deb.debian.org/debian ${DIST} main
+deb-src http://deb.debian.org/debian ${DIST} main
+deb http://deb.debian.org/debian ${DIST}-updates main
+deb-src http://deb.debian.org/debian ${DIST}-updates main
+EOF
+	;;
 debian-*)
 	tee debian/tmp/sources.list <<- EOF
 deb http://deb.debian.org/debian ${DIST} main
@@ -72,14 +80,6 @@ deb http://deb.debian.org/debian ${DIST}-updates main
 deb-src http://deb.debian.org/debian ${DIST}-updates main
 deb http://security.debian.org/debian-security ${DIST}/updates main
 deb-src http://security.debian.org/debian-security ${DIST}/updates main
-EOF
-	;;
-debian-bullseye)
-	tee debian/tmp/sources.list <<- EOF
-deb http://deb.debian.org/debian ${DIST} main
-deb-src http://deb.debian.org/debian ${DIST} main
-deb http://deb.debian.org/debian ${DIST}-updates main
-deb-src http://deb.debian.org/debian ${DIST}-updates main
 EOF
 	;;
 ubuntu-*)
