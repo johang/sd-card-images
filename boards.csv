@@ -2,7 +2,8 @@ Board ID,Board name,Board maker,Chip ID,U-Boot defconfig,Build tuple,Device tree
 
 raspberrypi_2b,Raspberry Pi 2 B,Raspberry Pi Foundation,bcm2836,rpi_2_defconfig,arm-linux-gnueabihf,bcm2836-rpi-2-b
 raspberrypi_3b,Raspberry Pi 3 B,Raspberry Pi Foundation,bcm2837,rpi_3_defconfig,aarch64-linux-gnu,bcm2837-rpi-3-b
-raspberrypi_3b_plus,Raspberry Pi 3 B+,Raspberry Pi Foundation,bcm2837,rpi_3_b_plus_defconfig,aarch64-linux-gnu,bcm2837-rpi-3-b-plus
+raspberrypi_3a_plus,Raspberry Pi 3 A+,Raspberry Pi Foundation,bcm2837,rpi_3_defconfig,aarch64-linux-gnu,bcm2837-rpi-3-a-plus
+raspberrypi_3b_plus,Raspberry Pi 3 B+,Raspberry Pi Foundation,bcm2837,rpi_3_defconfig,aarch64-linux-gnu,bcm2837-rpi-3-b-plus
 
 mele_a1000,Mele A1000,Mele,allwinner-a10,Mele_A1000_defconfig,arm-linux-gnueabihf,sun4i-a10-a1000
 ba12_tv_box,BA10 TV box,,allwinner-a10,ba10_tv_box_defconfig,arm-linux-gnueabihf,sun4i-a10-ba10-tvbox
