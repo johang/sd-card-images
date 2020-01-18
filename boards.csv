@@ -4,6 +4,9 @@ raspberrypi_2b,Raspberry Pi 2 B,Raspberry Pi Foundation,bcm2836,rpi_2_defconfig,
 raspberrypi_3b,Raspberry Pi 3 B,Raspberry Pi Foundation,bcm2837,rpi_3_defconfig,aarch64-linux-gnu,bcm2837-rpi-3-b
 raspberrypi_3a_plus,Raspberry Pi 3 A+,Raspberry Pi Foundation,bcm2837,rpi_3_defconfig,aarch64-linux-gnu,bcm2837-rpi-3-a-plus
 raspberrypi_3b_plus,Raspberry Pi 3 B+,Raspberry Pi Foundation,bcm2837,rpi_3_defconfig,aarch64-linux-gnu,bcm2837-rpi-3-b-plus
+raspberrypi_cm3,Raspberry Pi Compute Module 3,Raspberry Pi Foundation,bcm2837,rpi_3_defconfig,aarch64-linux-gnu,bcm2837-rpi-cm3
+raspberrypi_cm3_plus,Raspberry Pi Compute Module 3+,Raspberry Pi Foundation,bcm2837,rpi_3_defconfig,aarch64-linux-gnu,bcm2837-rpi-cm3
+raspberrypi_4b,Raspberry Pi 4 B,Raspberry Pi Foundation,bcm2711,rpi_4_defconfig,aarch64-linux-gnu,bcm2711-rpi-4-b
 
 mele_a1000,Mele A1000,Mele,allwinner-a10,Mele_A1000_defconfig,arm-linux-gnueabihf,sun4i-a10-a1000
 ba12_tv_box,BA10 TV box,,allwinner-a10,ba10_tv_box_defconfig,arm-linux-gnueabihf,sun4i-a10-ba10-tvbox
