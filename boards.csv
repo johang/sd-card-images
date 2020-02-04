@@ -9,75 +9,62 @@ raspberrypi_cm3_plus,Raspberry Pi Compute Module 3+,Raspberry Pi Foundation,bcm2
 raspberrypi_4b,Raspberry Pi 4 B,Raspberry Pi Foundation,bcm2711,rpi_4_defconfig,aarch64-linux-gnu,bcm2711-rpi-4-b
 
 mele_a1000,Mele A1000,Mele,allwinner-a10,Mele_A1000_defconfig,arm-linux-gnueabihf,sun4i-a10-a1000
-ba12_tv_box,BA10 TV box,,allwinner-a10,ba10_tv_box_defconfig,arm-linux-gnueabihf,sun4i-a10-ba10-tvbox
-chuwi_b7_cw0825,V7 CW0825,Chuwi,allwinner-a10,Chuwi_V7_CW0825_defconfig,arm-linux-gnueabihf,sun4i-a10-chuwi-v7-cw0825
 cubieboard,Cubieboard,Cubieboard,allwinner-a10,Cubieboard_defconfig,arm-linux-gnueabihf,sun4i-a10-cubieboard
-dserve_dsrv9703c,DSRV9703C,Dserve,allwinner-a10,dserve_dsrv9703c_defconfig,arm-linux-gnueabihf,sun4i-a10-dserve-dsrv9703c
-gemei_g9,G9,Gemei Technologies,allwinner-a10,sunxi_Gemei_G9_defconfig,arm-linux-gnueabihf,sun4i-a10-gemei-g9
-hyundai_a7hd,Hyundai A7HD,Hyundai Digital,allwinner-a10,Hyundai_A7HD_defconfig,arm-linux-gnueabihf,sun4i-a10-hyundai-a7hd
-inet_3f,iNet 3F,iNet,allwinner-a10,iNet_3F_defconfig,arm-linux-gnueabihf,sun4i-a10-inet-3f
-inet_3w,iNet 3W,iNet,allwinner-a10,iNet_3W_defconfig,arm-linux-gnueabihf,sun4i-a10-inet-3w
-inet_1,iNet 1,iNet,allwinner-a10,inet1_defconfig,arm-linux-gnueabihf,sun4i-a10-inet1
-inet_96fv2,iNet 97Fv2,iNet,allwinner-a10,inet97fv2_defconfig,arm-linux-gnueabihf,sun4i-a10-inet97fv2
-inet_9f,iNet 9F,iNet,allwinner-a10,inet9f_rev03_defconfig,arm-linux-gnueabihf,sun4i-a10-inet9f-rev03
-jesurun_q5,Q5,Jesurun,allwinner-a10,jesurun_q5_defconfig,arm-linux-gnueabihf,sun4i-a10-jesurun-q5
 marsboard_a10,Marsboard A10,HAOYU Electronics,allwinner-a10,Marsboard_A10_defconfig,arm-linux-gnueabihf,sun4i-a10-marsboard
-mini_xplus,Mini XPlus,PineRiver,allwinner-a10,Mini-X_defconfig,arm-linux-gnueabihf,sun4i-a10-mini-xplus
 mk802,MK802,Rikomagic,allwinner-a10,mk802_defconfig,arm-linux-gnueabihf,sun4i-a10-mk802
 mk802ii,MK802ii,Rikomagic,allwinner-a10,mk802ii_defconfig,arm-linux-gnueabihf,sun4i-a10-mk802ii
 a10_olinuxino_lime,A10-OLinuXino-Lime,Olimex,allwinner-a10,A10-OLinuXino-Lime_defconfig,arm-linux-gnueabihf,sun4i-a10-olinuxino-lime
 pcduino,pcDuino,LinkSprite,allwinner-a10,Linksprite_pcDuino_defconfig,arm-linux-gnueabihf,sun4i-a10-pcduino
-protab2_ips9,ProTab2 IPS9,Point of View,allwinner-a10,pov_protab2_ips9_defconfig,arm-linux-gnueabihf,sun4i-a10-pov-protab2-ips9
 
-auxtek_t003,T003,Auxtek,allwinner-a10s,Auxtek-T003_defconfig,arm-linux-gnueabihf,sun5i-a10s-auxtek-t003
-auxtek_t004,T004,Auxtek,allwinner-a10s,Auxtek-T004_defconfig,arm-linux-gnueabihf,sun5i-a10s-auxtek-t004
-semitime_g2,G2,Semitime,allwinner-a10s,mk802_a10s_defconfig,arm-linux-gnueabihf,sun5i-a10s-mk802
+banana_pi_m64,Banana Pi M64,Sinovoip,allwinner-a64,bananapi_m64_defconfig,aarch64-linux-gnu,sun50i-a64-bananapi-m64
+nano_pi_a64,Nano Pi A64,FriendlyARM,allwinner-a64,nanopi_a64_defconfig,aarch64-linux-gnu,sun50i-a64-nanopi-a64
+a64_olinuxino,A64 OLinuXino,Olimex,allwinner-a64,a64-olinuxino_defconfig,aarch64-linux-gnu,sun50i-a64-olinuxino
+a64_olinuxino_emmc,A64 OLinuXino w/ eMMC,Olimex,allwinner-a64,a64-olinuxino-emmc_defconfig,aarch64-linux-gnu,sun50i-a64-olinuxino-emmc
+orange_pi_win,Orange Pi Win,Xunlong,allwinner-a64,orangepi_win_defconfig,aarch64-linux-gnu,sun50i-a64-orangepi-win
+pine64_lts,Pine64 LTS,Pine64,allwinner-a64,pine64-lts_defconfig,aarch64-linux-gnu,sun50i-a64-pine64-lts
+pine64_plus,Pine64 Plus,Pine64,allwinner-a64,pine64_plus_defconfig,aarch64-linux-gnu,sun50i-a64-pine64-plus
+pinebook,Pinebook,Pine64,allwinner-a64,pinebook_defconfig,aarch64-linux-gnu,sun50i-a64-pinebook
+sopine_baseboard,SoPine baseboard,Pine64,allwinner-a64,sopine_baseboard_defconfig,aarch64-linux-gnu,sun50i-a64-sopine-baseboard
+
+banana_pi_m2_plus,Banana Pi M2+,Sinovoip,allwinner-h5,bananapi_m2_plus_h5_defconfig,aarch64-linux-gnu,sun50i-h5-bananapi-m2-plus
+libretech_all_h3_cc_h5,ALL-H3-CC H5,Libre Computer,allwinner-h5,libretech_all_h3_cc_h5_defconfig,aarch64-linux-gnu,sun50i-h5-libretech-all-h3-cc
+nano_pi_neo_plus2,Nano Pi Neo Plus2,FriendlyARM,allwinner-h5,nanopi_neo_plus2_defconfig,aarch64-linux-gnu,sun50i-h5-nanopi-neo-plus2
+nano_pi_neo2,Nano Pi Neo2,FriendlyARM,allwinner-h5,nanopi_neo2_defconfig,aarch64-linux-gnu,sun50i-h5-nanopi-neo2
+orange_pi_pc2,Orange Pi PC2,Xunlong,allwinner-h5,orangepi_pc2_defconfig,aarch64-linux-gnu,sun50i-h5-orangepi-pc2
+orange_pi_prime,Orange Pi Prime,Xunlong,allwinner-h5,orangepi_prime_defconfig,aarch64-linux-gnu,sun50i-h5-orangepi-prime
+orange_pi_zero_plus,Orange Pi Zero Plus,Xunlong,allwinner-h5,orangepi_zero_plus_defconfig,aarch64-linux-gnu,sun50i-h5-orangepi-zero-plus
+orange_pi_zero_plus2,Orange Pi Zero Plus2,Xunlong,allwinner-h5,orangepi_zero_plus2_defconfig,aarch64-linux-gnu,sun50i-h5-orangepi-zero-plus2
+
+orange_pi_lite2,Orange Pi Lite2,Xunlong,allwinner-h6,orangepi_lite2_defconfig,aarch64-linux-gnu,sun50i-h6-orangepi-lite2
+orange_pi_one_plus,Orange Pi One Plus,Xunlong,allwinner-h6,orangepi_one_plus_defconfig,aarch64-linux-gnu,sun50i-h6-orangepi-one-plus
+pine_h64,Pine H64,Pine64,allwinner-h6,pine_h64_defconfig,aarch64-linux-gnu,sun50i-h6-pine-h64
+
 a10s_olinuxino_micro,A10s OLinuXino MICRO,Olimex,allwinner-a10s,A10s-OLinuXino-M_defconfig,arm-linux-gnueabihf,sun5i-a10s-olinuxino-micro
-r7_a10s_tv_dongle,R7 A10s TV dongle,,allwinner-a10s,r7-tv-dongle_defconfig,arm-linux-gnueabihf,sun5i-a10s-r7-tv-dongle
-wabo_i5,i5,Wabo,allwinner-a10s,Wobo_i5_defconfig,arm-linux-gnueabihf,sun5i-a10s-wobo-i5
 
-ampe_a76,A76,Ampe,allwinner-a13,Ampe_A76_defconfig,arm-linux-gnueabihf,sun5i-a13-ampe-a76
-dit4350,DIT4350,Difrnce,allwinner-a13,difrnce_dit4350_defconfig,arm-linux-gnueabihf,sun5i-a13-difrnce-dit4350
-empire_d709,D709,Empire ElectroniX,allwinner-a13,Empire_electronix_d709_defconfig,arm-linux-gnueabihf,sun5i-a13-empire-electronix-d709
-empire_m712,M712,Empire ElectroniX,allwinner-a13,Empire_electronix_m712_defconfig,arm-linux-gnueabihf,sun5i-a13-empire-electronix-m712
-inet_86vs,86VS,iNet,allwinner-a13,iNet_86VS_defconfig,arm-linux-gnueabihf,sun5i-a13-inet-86vs
-inet_98v_rev2,98V rev. 2,iNet,allwinner-a13,inet98v_rev2_defconfig,arm-linux-gnueabihf,sun5i-a13-inet-98v-rev2
 a13_olinuxino,A13 OLinuXino,Olimex,allwinner-a13,A13-OLinuXino_defconfig,arm-linux-gnueabihf,sun5i-a13-olinuxino
 a13_olinuxino_micro,A13 OLinuXino MICRO,Olimex,allwinner-a13,A13-OLinuXinoM_defconfig,arm-linux-gnueabihf,sun5i-a13-olinuxino-micro
-q8_a13_tablet,Q8 A13 Tablet,,allwinner-a13,q8_a13_tablet_defconfig,arm-linux-gnueabihf,sun5i-a13-q8-tablet
-utoo_p66,P66,Utoo,allwinner-a13,UTOO_P66_defconfig,arm-linux-gnueabihf,sun5i-a13-utoo-p66
 
 chip_pro,CHIP Pro,Next Thing,allwinner-gr8,CHIP_pro_defconfig,arm-linux-gnueabihf,sun5i-gr8-chip-pro
 
 chip,CHIP,Next Thing,allwinner-r8,CHIP_defconfig,arm-linux-gnueabihf,sun5i-r8-chip
 
-colombus,Colombus,WITS,allwinner-a31,Colombus_defconfig,arm-linux-gnueabihf,sun6i-a31-colombus
 hummingbird,Hummingbird,Merrii,allwinner-a31,Hummingbird_A31_defconfig,arm-linux-gnueabihf,sun6i-a31-hummingbird
 mele_i7,Mele I7,Mele,allwinner-a31,Mele_I7_defconfig,arm-linux-gnueabihf,sun6i-a31-i7
 mele_m9,Mele M9,Mele,allwinner-a31,Mele_M9_defconfig,arm-linux-gnueabihf,sun6i-a31-m9
 mele_a1000g,Mele A1000G,Mele,allwinner-a31,Mele_A1000G_quad_defconfig,arm-linux-gnueabihf,sun6i-a31-mele-a1000g-quad
-loftq,LOFT-Q,Mixtile,allwinner-a31,mixtile_loftq_defconfig,arm-linux-gnueabihf,sun6i-a31-mixtile-loftq
-e708_q1,E708 Q1,Colorfly,allwinner-a31s,colorfly_e708_q1_defconfig,arm-linux-gnueabihf,sun6i-a31s-colorfly-e708-q1
-cs908,CS908,CSQ,allwinner-a31s,CSQ_CS908_defconfig,arm-linux-gnueabihf,sun6i-a31s-cs908
-inet_q972,iNet Q972,iNet,allwinner-a31s,inet_q972_defconfig,arm-linux-gnueabihf,sun6i-a31s-inet-q972
+
 msi_primo81,Primo81,MSI,allwinner-a31s,MSI_Primo81_defconfig,arm-linux-gnueabihf,sun6i-a31s-primo81
 sina31s,SinA31s,Sinlinx,allwinner-a31s,Sinlinx_SinA31s_defconfig,arm-linux-gnueabihf,sun6i-a31s-sina31s
-bananapi_m2,Banana Pi M2,Sinovoip,allwinner-a31s,Sinovoip_BPI_M2_defconfig,arm-linux-gnueabihf,sun6i-a31s-sinovoip-bpi-m2
-bs1078_v2,BS1078 V2,Yones Toptech,allwinner-a31s,Yones_Toptech_BS1078_V2_defconfig,arm-linux-gnueabihf,sun6i-a31s-yones-toptech-bs1078-v2
+banana_pi_m2,Banana Pi M2,Sinovoip,allwinner-a31s,Sinovoip_BPI_M2_defconfig,arm-linux-gnueabihf,sun6i-a31s-sinovoip-bpi-m2
 
-ainol_aw1,AW1,Ainol,allwinner-a20,Ainol_AW1_defconfig,arm-linux-gnueabihf,sun7i-a20-ainol-aw1
-bananapi_m1,Banana Pi M1,Sinovoip,allwinner-a20,Bananapi_defconfig,arm-linux-gnueabihf,sun7i-a20-bananapi
-bananapi_m1plus,Banana Pi M1+,Sinovoip,allwinner-a20,bananapi_m1_plus_defconfig,arm-linux-gnueabihf,sun7i-a20-bananapi-m1-plus
+banana_pi_m1,Banana Pi M1,Sinovoip,allwinner-a20,Bananapi_defconfig,arm-linux-gnueabihf,sun7i-a20-bananapi
+banana_pi_m1plus,Banana Pi M1+,Sinovoip,allwinner-a20,bananapi_m1_plus_defconfig,arm-linux-gnueabihf,sun7i-a20-bananapi-m1-plus
 bananapro,Banana Pro,LeMaker,allwinner-a20,Bananapro_defconfig,arm-linux-gnueabihf,sun7i-a20-bananapro
 cubieboard_2,Cubieboad 2,Cubieboard,allwinner-a20,Cubieboard2_defconfig,arm-linux-gnueabihf,sun7i-a20-cubieboard2
 cubietruck,Cubietruck,Cubieboard,allwinner-a20,Cubietruck_defconfig,arm-linux-gnueabihf,sun7i-a20-cubietruck
-i12_tvbox,I12,Semitime,allwinner-a20,i12-tvbox_defconfig,arm-linux-gnueabihf,sun7i-a20-i12-tvbox
-icnova_a20,ICnova A20,In-Circuit,allwinner-a20,icnova-a20-swac_defconfig,arm-linux-gnueabihf,sun7i-a20-icnova-swac
-itead_ibox,Itead IBOX,Itead,allwinner-a20,Itead_Ibox_A20_defconfig,arm-linux-gnueabihf,sun7i-a20-itead-ibox
 lamobo_r1,Lamobo R1,Lamobo,allwinner-a20,Lamobo_R1_defconfig,arm-linux-gnueabihf,sun7i-a20-lamobo-r1
 mele_m3,Mele M3,Mele,allwinner-a20,Mele_M3_defconfig,arm-linux-gnueabihf,sun7i-a20-m3
 mele_m5,Mele M5,Mele,allwinner-a20,Mele_M5_defconfig,arm-linux-gnueabihf,sun7i-a20-m5
-mk808c,MK808C,,allwinner-a20,MK808C_defconfig,arm-linux-gnueabihf,sun7i-a20-mk808c
 olimex_a20_som_evb,A20-SOM-EVB,Olimex,allwinner-a20,A20-Olimex-SOM-EVB_defconfig,arm-linux-gnueabihf,sun7i-a20-olimex-som-evb
 olimex_a20_som204_evb,A20-SOM204-EVB,Olimex,allwinner-a20,A20-Olimex-SOM204-EVB_defconfig,arm-linux-gnueabihf,sun7i-a20-olimex-som204-evb
 olimex_a20_som204_evb_emmc,A20-SOM204-EVB w/ eMMC,Olimex,allwinner-a20,A20-Olimex-SOM204-EVB-eMMC_defconfig,arm-linux-gnueabihf,sun7i-a20-olimex-som204-evb-emmc
@@ -91,32 +78,40 @@ orangepi_mini,Orange Pi Mini,Xunlong,allwinner-a20,Orangepi_mini_defconfig,arm-l
 pcduino3,pcDuino3,LinkSprite,allwinner-a20,Linksprite_pcDuino3_defconfig,arm-linux-gnueabihf,sun7i-a20-pcduino3
 pcduino3_nano,pcDuino3 Nano,LinkSprite,allwinner-a20,Linksprite_pcDuino3_Nano_defconfig,arm-linux-gnueabihf,sun7i-a20-pcduino3-nano
 msi_primo73,Primo73,MSI,allwinner-a20,MSI_Primo73_defconfig,arm-linux-gnueabihf,sun7i-a20-primo73
-tab7200,TAB7200,Wexler,allwinner-a20,Wexler_TAB7200_defconfig,arm-linux-gnueabihf,sun7i-a20-wexler-tab7200
-bd1078,BD1078,Yones Toptech,allwinner-a20,Yones_Toptech_BD1078_defconfig,arm-linux-gnueabihf,sun7i-a20-yones-toptech-bd1078
 
-amarula_a64_relic,A64-Relic,Amarula,allwinner-a64,amarula_a64_relic_defconfig,aarch64-linux-gnu,sun50i-a64-amarula-relic
-banana_pi_m64,Banana Pi M64,Sinovoip,allwinner-a64,bananapi_m64_defconfig,aarch64-linux-gnu,sun50i-a64-bananapi-m64
-nano_pi_a64,Nano Pi A64,FriendlyARM,allwinner-a64,nanopi_a64_defconfig,aarch64-linux-gnu,sun50i-a64-nanopi-a64
-5205_5inmfd,5205 5inMFD,Oceanic Systems,allwinner-a64,oceanic_5205_5inmfd_defconfig,aarch64-linux-gnu,sun50i-a64-oceanic-5205-5inmfd
-a64_olinuxino,A64 OLinuXino,Olimex,allwinner-a64,a64-olinuxino_defconfig,aarch64-linux-gnu,sun50i-a64-olinuxino
-orange_pi_win,Orange Pi Win,Xunlong,allwinner-a64,orangepi_win_defconfig,aarch64-linux-gnu,sun50i-a64-orangepi-win
-pine64_lts,Pine64 LTS,Pine64,allwinner-a64,pine64-lts_defconfig,aarch64-linux-gnu,sun50i-a64-pine64-lts
-pine64_plus,Pine64 Plus,Pine64,allwinner-a64,pine64_plus_defconfig,aarch64-linux-gnu,sun50i-a64-pine64-plus
-pinebook,Pinebook,Pine64,allwinner-a64,pinebook_defconfig,aarch64-linux-gnu,sun50i-a64-pinebook
-sopine_baseboard,SoPine baseboard,Pine64,allwinner-a64,sopine_baseboard_defconfig,aarch64-linux-gnu,sun50i-a64-sopine-baseboard
-teres_i,TERES-I,Olimex,allwinner-a64,teres_i_defconfig,aarch64-linux-gnu,sun50i-a64-teres-i
+a33_olinuxino,A33 OLinuXino,Olimex,allwinner-a23,A33-OLinuXino_defconfig,arm-linux-gnueabihf,sun8i-a33-olinuxino
+sinlinx_a23,SinA33,Sinlinx,allwinner-a23,Sinlinx_SinA33_defconfig,arm-linux-gnueabihf,sun8i-a33-sinlinx-sina33
 
-banana_pi_m2_plus,Banana Pi M2+,Sinovoip,allwinner-h5,bananapi_m2_plus_h5_defconfig,aarch64-linux-gnu,sun50i-h5-bananapi-m2-plus
-neutis_n5_devboard,Neutis N5 devboard,Emlid,allwinner-h5,emlid_neutis_n5_devboard_defconfig,aarch64-linux-gnu,sun50i-h5-emlid-neutis-n5-devboard
-libretech_all_h3_cc_h5,ALL-H3-CC H5,Libre Computer,allwinner-h5,libretech_all_h3_cc_h5_defconfig,aarch64-linux-gnu,sun50i-h5-libretech-all-h3-cc
-nano_pi_neo_plus2,Nano Pi Neo Plus2,FriendlyARM,allwinner-h5,nanopi_neo_plus2_defconfig,aarch64-linux-gnu,sun50i-h5-nanopi-neo-plus2
-nano_pi_neo2,Nano Pi Neo2,FriendlyARM,allwinner-h5,nanopi_neo2_defconfig,aarch64-linux-gnu,sun50i-h5-nanopi-neo2
-orange_pi_pc2,Orange Pi PC2,Xunlong,allwinner-h5,orangepi_pc2_defconfig,aarch64-linux-gnu,sun50i-h5-orangepi-pc2
-orange_pi_prime,Orange Pi Prime,Xunlong,allwinner-h5,orangepi_prime_defconfig,aarch64-linux-gnu,sun50i-h5-orangepi-prime
-orange_pi_zero_plus,Orange Pi Zero Plus,Xunlong,allwinner-h5,orangepi_zero_plus_defconfig,aarch64-linux-gnu,sun50i-h5-orangepi-zero-plus
-orange_pi_zero_plus2,Orange Pi Zero Plus2,Xunlong,allwinner-h5,orangepi_zero_plus2_defconfig,aarch64-linux-gnu,sun50i-h5-orangepi-zero-plus2
+banana_pi_m3,Banana Pi M3,Sinovoip,allwinner-a83t,Sinovoip_BPI_M3_defconfig,arm-linux-gnueabihf,sun8i-a83t-bananapi-m3
+cubietruck_plus,Cubietruck Plus,Cubieboard,allwinner-a83t,Cubietruck_plus_defconfig,arm-linux-gnueabihf,sun8i-a83t-cubietruck-plus
 
-beelink_gs1,Beelink GS1,AZW,allwinner-h6,beelink_gs1_defconfig,aarch64-linux-gnu,sun50i-h6-beelink-gs1
-orange_pi_lite2,Orange Pi Lite2,Xunlong,allwinner-h6,orangepi_lite2_defconfig,aarch64-linux-gnu,sun50i-h6-orangepi-lite2
-orange_pi_one_plus,Orange Pi One Plus,Xunlong,allwinner-h6,orangepi_one_plus_defconfig,aarch64-linux-gnu,sun50i-h6-orangepi-one-plus
-pine_h64,Pine H64,Pine64,allwinner-h6,pine_h64_defconfig,aarch64-linux-gnu,sun50i-h6-pine-h64
+banana_pi_m2_zero,Banana Pi M2 Zero,Sinovoip,allwinner-h2+,bananapi_m2_zero_defconfig,arm-linux-gnueabihf,sun8i-h2-plus-bananapi-m2-zero
+libretech_all_h3_cc_h2_plus,ALL-H3-CC H2 Plus,Libre Computer,allwinner-h2+,libretech_all_h3_cc_h2_plus_defconfig,arm-linux-gnueabihf,sun8i-h2-plus-libretech-all-h3-cc
+orange_pi_r1,Orange Pi R1,Xunlong,allwinner-h2+,orangepi_r1_defconfig,arm-linux-gnueabihf,sun8i-h2-plus-orangepi-r1
+orange_pi_zero,Orange Pi Zero,Xunlong,allwinner-h2+,orangepi_zero_defconfig,arm-linux-gnueabihf,sun8i-h2-plus-orangepi-zero
+
+banana_pi_m2_plus_h3,Banana Pi M2 Plus H3,Sinovoip,allwinner-h3,bananapi_m2_plus_h3_defconfig,arm-linux-gnueabihf,sun8i-h3-bananapi-m2-plus
+libretech_all_h3_cc_h3,ALL-H3-CC H3,Libre Computer,allwinner-h3,libretech_all_h3_cc_h3_defconfig,arm-linux-gnueabihf,sun8i-h3-libretech-all-h3-cc
+nano_pi_m1,Neo Pi M1,FriendlyARM,allwinner-h3,nanopi_m1_defconfig,arm-linux-gnueabihf,sun8i-h3-nanopi-m1
+nano_pi_m1_plus,Neo Pi M1 Plus,FriendlyARM,allwinner-h3,nanopi_m1_plus_defconfig,arm-linux-gnueabihf,sun8i-h3-nanopi-m1-plus
+nano_pi_neo,Neo Pi Neo,FriendlyARM,allwinner-h3,nanopi_neo_defconfig,arm-linux-gnueabihf,sun8i-h3-nanopi-neo
+nano_pi_neo_air,Neo Pi,FriendlyARM,allwinner-h3,nanopi_neo_air_defconfig,arm-linux-gnueabihf,sun8i-h3-nanopi-neo-air
+orange_pi_2,Orange Pi 2,Xunlong,allwinner-h3,orangepi_2_defconfig,arm-linux-gnueabihf,sun8i-h3-orangepi-2
+orange_pi_lite,Orange Pi Lite,Xunlong,allwinner-h3,orangepi_lite_defconfig,arm-linux-gnueabihf,sun8i-h3-orangepi-lite
+orange_pi_one,Orange Pi One,Xunlong,allwinner-h3,orangepi_one_defconfig,arm-linux-gnueabihf,sun8i-h3-orangepi-one
+orange_pi_pc,Orange Pi PC,Xunlong,allwinner-h3,orangepi_pc_defconfig,arm-linux-gnueabihf,sun8i-h3-orangepi-pc
+orange_pi_pc_plus,Orange Pi PC Plus,Xunlong,allwinner-h3,orangepi_pc_plus_defconfig,arm-linux-gnueabihf,sun8i-h3-orangepi-pc-plus
+orange_pi_plus,Orange Pi Plus,Xunlong,allwinner-h3,orangepi_plus_defconfig,arm-linux-gnueabihf,sun8i-h3-orangepi-plus
+orange_pi_plus2e,Orange Pi Plus2E,Xunlong,allwinner-h3,orangepi_plus2e_defconfig,arm-linux-gnueabihf,sun8i-h3-orangepi-plus2e
+orange_pi_zero_plus2_h3,Orange Pi Zero Plus2 H3,Xunlong,allwinner-h3,orangepi_zero_plus2_h3_defconfig,arm-linux-gnueabihf,sun8i-h3-orangepi-zero-plus2
+
+banana_pi_m2m,Banana Pi M2M,Sinovoip,allwinner-r16,Bananapi_m2m_defconfig,arm-linux-gnueabihf,sun8i-r16-bananapi-m2m
+
+banana_pi_m2_ultra,Banana Pi M2 Ultra,Sinovoip,allwinner-r40,Bananapi_M2_Ultra_defconfig,arm-linux-gnueabihf,sun8i-r40-bananapi-m2-ultra
+
+lichee_pi_zero,LicheePi Zero,Zepan,allwinner-v3s,LicheePi_Zero_defconfig,arm-linux-gnueabihf,sun8i-v3s-licheepi-zero
+
+banana_pi_m2_berry,Banana Pi M2 Berry,Sinovoip,allwinner-v40,bananapi_m2_berry_defconfig,arm-linux-gnueabihf,sun8i-v40-bananapi-m2-berry
+
+cubieboard4,Cubieboard 4,Cubieboard,allwinner-a80,Cubieboard4_defconfig,arm-linux-gnueabihf,sun9i-a80-cubieboard4
+merrii_a80_optimus,Merrii A80 Optimus,Merrii,allwinner-a80,Merrii_A80_Optimus_defconfig,arm-linux-gnueabihf,sun9i-a80-optimus
