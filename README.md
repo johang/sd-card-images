@@ -15,31 +15,29 @@ The generated SD card images are made up of two separate images:
 
 These two images are the concatenated to a single image, which is then written to SD card, for example like this:
 
-    $ zcat boot-raspberrypi_2b.bin.gz debian-stretch-armhf-XXXXXX.bin.gz > sd-card.img
+    $ zcat boot-raspberrypi_3b.bin.gz debian-buster-arm64-XXXXXX.bin.gz > sd-card.img
     # dd if=sd-card.img of=/dev/sdXXX
 
-<!--
-### Build a boot image
+### Build your own boot image
 
-To build a boot image for Raspberry Pi 3B:
-
-    git clone https://github.com/johang/debian-sd-card-images.git debian-sd-card-images
-    cd sd-images
-    docker build -t sd-images .
-    mkdir -p /tmp/sd-images
-    docker run --rm -v /tmp/sd-images:/artifacts sd-images boot raspberrypi_3b
-
-Image will end up in /tmp/sd-images on the host.
-
-### Build a Debian ext4 root filesystem image
-
-To build a Debian image for arm64:
+To build a boot image for Raspberry Pi 3 B:
 
     git clone https://github.com/johang/debian-sd-card-images.git debian-sd-card-images
     cd sd-images
     docker build -t sd-images .
     mkdir -p /tmp/sd-images
-    docker run --rm -v /tmp/sd-images:/artifacts sd-images debian arm64 stretch
+    docker run --rm -v /tmp/sd-images:/artifacts sd-images build-boot raspberrypi_3b bcm2837 rpi_3_defconfig aarch64-linux-gnu
 
-Image will end up in /tmp/sd-images on the host.
--->
+The image will end up in /tmp/sd-images on the host.
+
+### Build your own Debian ext4 root filesystem image
+
+To build a Debian ext4 root filesystem image for arm64:
+
+    git clone https://github.com/johang/debian-sd-card-images.git debian-sd-card-images
+    cd sd-images
+    docker build -t sd-images .
+    mkdir -p /tmp/sd-images
+    docker run --rm -v /tmp/sd-images:/artifacts sd-images build-debian debian arm64 buster
+
+The image will end up in /tmp/sd-images on the host.
