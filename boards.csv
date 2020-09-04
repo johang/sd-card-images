@@ -28,6 +28,8 @@ sopine_baseboard,SoPine baseboard,Pine64,allwinner-a64,sopine_baseboard_defconfi
 
 banana_pi_m2_plus,Banana Pi M2+,Sinovoip,allwinner-h5,bananapi_m2_plus_h5_defconfig,aarch64-linux-gnu,sun50i-h5-bananapi-m2-plus
 libretech_all_h3_cc_h5,ALL-H3-CC H5,Libre Computer,allwinner-h5,libretech_all_h3_cc_h5_defconfig,aarch64-linux-gnu,sun50i-h5-libretech-all-h3-cc
+libretech_all_h3_it_h5,ALL-H3-IT H5,Libre Computer,allwinner-h5,libretech_all_h3_it_h5_defconfig,aarch64-linux-gnu,sun50i-h5-libretech-all-h3-it
+libretech_all_h5_cc_h5,ALL-H5-CC H5,Libre Computer,allwinner-h5,libretech_all_h5_cc_h5_defconfig,aarch64-linux-gnu,sun50i-h5-libretech-all-h5-cc
 nano_pi_neo_plus2,Nano Pi Neo Plus2,FriendlyARM,allwinner-h5,nanopi_neo_plus2_defconfig,aarch64-linux-gnu,sun50i-h5-nanopi-neo-plus2
 nano_pi_neo2,Nano Pi Neo2,FriendlyARM,allwinner-h5,nanopi_neo2_defconfig,aarch64-linux-gnu,sun50i-h5-nanopi-neo2
 orange_pi_pc2,Orange Pi PC2,Xunlong,allwinner-h5,orangepi_pc2_defconfig,aarch64-linux-gnu,sun50i-h5-orangepi-pc2
