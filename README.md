@@ -22,7 +22,7 @@ These two images are the concatenated to a single image, which is then written t
 
 To build a boot image for Raspberry Pi 3 B:
 
-    git clone https://github.com/johang/debian-sd-card-images.git debian-sd-card-images
+    git clone https://github.com/johang/debian-sd-card-images.git sd-images
     cd sd-images
     docker build -t sd-images .
     mkdir -p /tmp/sd-images
@@ -34,7 +34,7 @@ The image will end up in /tmp/sd-images on the host.
 
 To build a Debian ext4 root filesystem image for arm64:
 
-    git clone https://github.com/johang/debian-sd-card-images.git debian-sd-card-images
+    git clone https://github.com/johang/debian-sd-card-images.git sd-images
     cd sd-images
     docker build -t sd-images .
     mkdir -p /tmp/sd-images
