@@ -11,6 +11,7 @@ RUN apt-get update && \
                     qemu-user-static \
                     device-tree-compiler \
                     gcc \
+                    gcc-arm-none-eabi \
                     make \
                     git \
                     bc \

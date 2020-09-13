@@ -21,6 +21,9 @@ allwinner*)
 bcm2836|bcm2837|bcm2711)
     build-boot-rpi "${BOARD_ID}" "${CHIP_ID}" "${DEFCONFIG}" "${TUPLE}"
     ;;
+rk*)
+    build-boot-rk "${BOARD_ID}" "${CHIP_ID}" "${DEFCONFIG}" "${TUPLE}"
+    ;;
 *)
     echo Unknown CHIP_ID
     exit 1

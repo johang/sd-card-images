@@ -10,6 +10,7 @@ RUN apt-get update && \
                     ca-certificates \
                     device-tree-compiler \
                     gcc \
+                    gcc-arm-none-eabi \
                     make \
                     git \
                     bc \
