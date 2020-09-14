@@ -23,7 +23,6 @@ roc_rk3328_cc,ROC-RK3328-CC,Firefy,rk3328,roc-cc-rk3328_defconfig,aarch64-linux-
 rock_pi_e,ROCK Pi E,ROCKPI,rk3328,rock-pi-e-rk3328_defconfig,aarch64-linux-gnu,rk3328-rock-pi-e
 rock64,ROCK64,Pine64,rk3328,rock64-rk3328_defconfig,aarch64-linux-gnu,rk3328-rock64
 
-geekbox,GeekBox,GeekBox,rk3368,geekbox_defconfig,aarch64-linux-gnu,rk3368-geekbox
 px5,PX5 EVB,Rockchip,rk3368,evb-px5_defconfig,aarch64-linux-gnu,rk3368-px5-evb
 
 rk3399_evb,RK3399 EVB,Rockchip,rk3399,evb-rk3399_defconfig,aarch64-linux-gnu,rk3399-evb
