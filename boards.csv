@@ -18,9 +18,6 @@ tinker_board,Tinker Board,ASUS,rk3288,tinker-rk3288_defconfig,arm-linux-gnueabih
 tinker_board_s,Tinker Board S,ASUS,rk3288,tinker-s-rk3288_defconfig,arm-linux-gnueabihf,rk3288-tinker-s
 vyasa,Vyasa,Amarula,rk3288,vyasa-rk3288_defconfig,arm-linux-gnueabihf,rk3288-vyasa
 
-rk3308_evb,RK3308 EVB,Rockchip,rk3308,evb-rk3308_defconfig,aarch64-linux-gnu,rk3308-evb
-rock_rk3308_cc,ROC-RK3308-CC,Firefly,rk3308,roc-cc-rk3308_defconfig,aarch64-linux-gnu,rk3308-roc-cc
-
 rk3328_evb,rk3328 EVB,Rockchip,rk3328,evb-rk3328_defconfig,aarch64-linux-gnu,rk3328-evb
 roc_rk3328_cc,ROC-RK3328-CC,Firefy,rk3328,roc-cc-rk3328_defconfig,aarch64-linux-gnu,rk3328-roc-cc
 rock_pi_e,ROCK Pi E,ROCKPI,rk3328,rock-pi-e-rk3328_defconfig,aarch64-linux-gnu,rk3328-rock-pi-e

@@ -9,7 +9,7 @@ TUPLE="${4}" # For example "arm-linux-gnueabihf"
 set -e
 
 case "${CHIP_ID}" in
-rk3308|rk3328|rk3368|rk3399)
+rk3328|rk3368|rk3399)
     build-atf "${CHIP_ID}" "${TUPLE}"
     export BL31="$(pwd)/arm-trusted-firmware/build/${CHIP_ID}/debug/bl31/bl31.elf"
     ;;
