@@ -13,12 +13,16 @@ FDT=/usr/lib/linux
 
 # Create U-Boot boot script
 cat << EOF > /boot/boot.cmd
-mmc dev 0
-ext4load mmc 0:2 \${kernel_addr_r} /boot/vmlinuz-${ABI}
-ext4load mmc 0:2 \${ramdisk_addr_r} /boot/initrd.uimg-${ABI}
-ext4load mmc 0:2 \${fdt_addr_r} ${FDT}/\${fdtfile}
-setenv bootargs "root=/dev/mmcblk0p2 rw rootwait"
-bootz \${kernel_addr_r} \${ramdisk_addr_r} \${fdt_addr_r}
+load \${devtype} \${devnum}:\${distro_bootpart} \${kernel_addr_r} /boot/vmlinuz-${ABI}
+load \${devtype} \${devnum}:\${distro_bootpart} \${ramdisk_addr_r} /boot/initrd.uimg-${ABI}
+part uuid \${devtype} \${devnum}:\${distro_bootpart} partuuid
+setenv bootargs root=PARTUUID=\${partuuid} rw rootwait
+if test -e \${devtype} \${devnum}:\${distro_bootpart} ${FDT}/\${fdtfile}; then
+  load \${devtype} \${devnum}:\${distro_bootpart} \${fdt_addr_r} ${FDT}/\${fdtfile}
+  bootz \${kernel_addr_r} \${ramdisk_addr_r} \${fdt_addr_r}
+else
+  bootz \${kernel_addr_r} \${ramdisk_addr_r} \${fdt_addr}
+fi
 EOF
 
 # Create U-Boot boot script
