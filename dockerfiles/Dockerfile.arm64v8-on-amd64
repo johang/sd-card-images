@@ -33,7 +33,8 @@ RUN apt-get update && \
                     e2fsprogs \
                     dosfstools \
                     mtools \
-                    pwgen && \
+                    pwgen \
+                    libssl-dev && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
     rm -f /var/log/*.log

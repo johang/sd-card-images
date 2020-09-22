@@ -25,7 +25,8 @@ RUN apt-get update && \
                     e2fsprogs \
                     dosfstools \
                     mtools \
-                    pwgen && \
+                    pwgen \
+                    libssl-dev && \
     ([ "$(uname -m)" = "x86_64" ] && \
      apt-get --assume-yes \
              install gcc-aarch64-linux-gnu \

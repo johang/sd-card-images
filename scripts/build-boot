@@ -24,6 +24,9 @@ bcm2836|bcm2837|bcm2711)
 rk*)
     build-boot-rk "${BOARD_ID}" "${CHIP_ID}" "${DEFCONFIG}" "${TUPLE}"
     ;;
+qemu*)
+    build-boot-qemu "${BOARD_ID}" "${CHIP_ID}" "${DEFCONFIG}" "${TUPLE}"
+    ;;
 *)
     echo Unknown CHIP_ID
     exit 1

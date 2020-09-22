@@ -1,0 +1,14 @@
+#!/bin/sh
+# Build SD card image
+
+BOARD_ID="${1}" # For example "bananapi"
+CHIP_ID="${2}" # For example "allwinner-a10"
+DEFCONFIG="${3}" # For example "Bananapi_defconfig"
+TUPLE="${4}" # For example "arm-linux-gnueabihf"
+
+set -e
+
+build-u_boot "${DEFCONFIG}" "${TUPLE}"
+
+# Copy U-Boot to 16 sectors from start
+dd if=u-boot/u-boot.bin of=tmp.img seek=16
