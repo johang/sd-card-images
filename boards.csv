@@ -151,3 +151,6 @@ banana_pi_m2_berry,Banana Pi M2 Berry,Sinovoip,allwinner-v40,bananapi_m2_berry_d
 
 cubieboard4,Cubieboard 4,Cubieboard,allwinner-a80,Cubieboard4_defconfig,arm-linux-gnueabihf,sun9i-a80-cubieboard4
 merrii_a80_optimus,Merrii A80 Optimus,Merrii,allwinner-a80,Merrii_A80_Optimus_defconfig,arm-linux-gnueabihf,sun9i-a80-optimus
+
+qemu_arm_virt,QEMU arm virt,QEMU,qemu-arm,qemu_arm_defconfig,arm-linux-gnueabihf,N/A
+qemu_aarch64_virt,QEMU aarch64 virt,QEMU,qemu-aarch64,qemu_arm64_defconfig,aarch64-linux-gnu,N/A
