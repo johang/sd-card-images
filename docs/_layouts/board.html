@@ -80,10 +80,14 @@ layout: default
 			supported = [];
 			debians.forEach(function(debian) {
 				if (debian["arch"] == arch) {
-					debian["dtbs"].forEach(function(_dtb) {
-						if (_dtb == dtb)
-							supported.push(debian);
-					});
+					if (dtb == "N/A") {
+						supported.push(debian);
+					} else {
+						debian["dtbs"].forEach(function(_dtb) {
+							if (_dtb == dtb)
+								supported.push(debian);
+						});
+					}
 				}
 			});
 			if (supported.length <= 0) {
