@@ -128,10 +128,10 @@ orange_pi_zero,Orange Pi Zero,Xunlong,allwinner-h2+,orangepi_zero_defconfig,arm-
 
 banana_pi_m2_plus_h3,Banana Pi M2 Plus H3,Sinovoip,allwinner-h3,bananapi_m2_plus_h3_defconfig,arm-linux-gnueabihf,sun8i-h3-bananapi-m2-plus
 libretech_all_h3_cc_h3,ALL-H3-CC H3,Libre Computer,allwinner-h3,libretech_all_h3_cc_h3_defconfig,arm-linux-gnueabihf,sun8i-h3-libretech-all-h3-cc
-nano_pi_m1,Neo Pi M1,FriendlyARM,allwinner-h3,nanopi_m1_defconfig,arm-linux-gnueabihf,sun8i-h3-nanopi-m1
-nano_pi_m1_plus,Neo Pi M1 Plus,FriendlyARM,allwinner-h3,nanopi_m1_plus_defconfig,arm-linux-gnueabihf,sun8i-h3-nanopi-m1-plus
-nano_pi_neo,Neo Pi Neo,FriendlyARM,allwinner-h3,nanopi_neo_defconfig,arm-linux-gnueabihf,sun8i-h3-nanopi-neo
-nano_pi_neo_air,Neo Pi,FriendlyARM,allwinner-h3,nanopi_neo_air_defconfig,arm-linux-gnueabihf,sun8i-h3-nanopi-neo-air
+nano_pi_m1,Nano Pi M1,FriendlyARM,allwinner-h3,nanopi_m1_defconfig,arm-linux-gnueabihf,sun8i-h3-nanopi-m1
+nano_pi_m1_plus,Nano Pi M1 Plus,FriendlyARM,allwinner-h3,nanopi_m1_plus_defconfig,arm-linux-gnueabihf,sun8i-h3-nanopi-m1-plus
+nano_pi_neo,Nano Pi Neo,FriendlyARM,allwinner-h3,nanopi_neo_defconfig,arm-linux-gnueabihf,sun8i-h3-nanopi-neo
+nano_pi_neo_air,Nano Pi Neo Air,FriendlyARM,allwinner-h3,nanopi_neo_air_defconfig,arm-linux-gnueabihf,sun8i-h3-nanopi-neo-air
 orange_pi_2,Orange Pi 2,Xunlong,allwinner-h3,orangepi_2_defconfig,arm-linux-gnueabihf,sun8i-h3-orangepi-2
 orange_pi_lite,Orange Pi Lite,Xunlong,allwinner-h3,orangepi_lite_defconfig,arm-linux-gnueabihf,sun8i-h3-orangepi-lite
 orange_pi_one,Orange Pi One,Xunlong,allwinner-h3,orangepi_one_defconfig,arm-linux-gnueabihf,sun8i-h3-orangepi-one
