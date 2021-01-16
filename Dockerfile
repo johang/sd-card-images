@@ -20,6 +20,7 @@ RUN apt-get update && \
                     flex \
                     python2-dev \
                     python3-dev \
+                    python3-pkg-resources \
                     swig \
                     parted \
                     e2fsprogs \
