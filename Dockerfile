@@ -27,7 +27,8 @@ RUN apt-get update && \
                     dosfstools \
                     mtools \
                     pwgen \
-                    libssl-dev && \
+                    libssl-dev \
+                    parallel && \
     ([ "$(uname -m)" = "x86_64" ] && \
      apt-get --assume-yes \
              install gcc-aarch64-linux-gnu \
