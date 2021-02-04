@@ -31,7 +31,7 @@ RUN apt-get update && \
     ([ "$(uname -m)" = "x86_64" ] && \
      apt-get --assume-yes \
              install gcc-aarch64-linux-gnu \
-                     gcc-arm-linux-gnueabihf) && \
+                     gcc-arm-linux-gnueabihf || :) && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
     rm -f /var/log/*.log
