@@ -41,9 +41,7 @@ debootstrap \
   --foreign \
   --include=\
 netbase,\
-ifupdown,\
 net-tools,\
-isc-dhcp-client,\
 systemd-sysv,\
 u-boot-tools,\
 initramfs-tools,\
@@ -109,6 +107,7 @@ chroot debian /bin/sh -e <<- EOF
 /usr/bin/apt-get -y upgrade
 /usr/bin/apt-get clean
 /bin/rm -rf /var/lib/apt/lists/*
+/usr/bin/systemctl enable systemd-networkd.service
 /bin/rm -f /var/log/*.log
 /bin/echo root:${PASSWORD} | /usr/sbin/chpasswd
 /bin/sed -i "s/#*\s*PermitRootLogin .*/PermitRootLogin yes/" /etc/ssh/sshd_config
