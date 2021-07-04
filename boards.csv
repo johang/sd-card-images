@@ -96,7 +96,7 @@ banana_pi_m2,Banana Pi M2,Sinovoip,allwinner-a31s,Sinovoip_BPI_M2_defconfig,arm-
 banana_pi_m1,Banana Pi M1,Sinovoip,allwinner-a20,Bananapi_defconfig,arm-linux-gnueabihf,sun7i-a20-bananapi
 banana_pi_m1plus,Banana Pi M1+,Sinovoip,allwinner-a20,bananapi_m1_plus_defconfig,arm-linux-gnueabihf,sun7i-a20-bananapi-m1-plus
 bananapro,Banana Pro,LeMaker,allwinner-a20,Bananapro_defconfig,arm-linux-gnueabihf,sun7i-a20-bananapro
-cubieboard_2,Cubieboad 2,Cubieboard,allwinner-a20,Cubieboard2_defconfig,arm-linux-gnueabihf,sun7i-a20-cubieboard2
+cubieboard_2,Cubieboard 2,Cubieboard,allwinner-a20,Cubieboard2_defconfig,arm-linux-gnueabihf,sun7i-a20-cubieboard2
 cubietruck,Cubietruck,Cubieboard,allwinner-a20,Cubietruck_defconfig,arm-linux-gnueabihf,sun7i-a20-cubietruck
 lamobo_r1,Lamobo R1,Lamobo,allwinner-a20,Lamobo_R1_defconfig,arm-linux-gnueabihf,sun7i-a20-lamobo-r1
 mele_m3,Mele M3,Mele,allwinner-a20,Mele_M3_defconfig,arm-linux-gnueabihf,sun7i-a20-m3
