@@ -27,4 +27,4 @@ cd arm-trusted-firmware
 export CROSS_COMPILE=$(dirname $(which "${TUPLE}-gcc"))/"${TUPLE}-"
 
 # Build ATF
-make PLAT="${PLAT}" DEBUG=1 bl31
+make ${MAKEFLAGS} PLAT="${PLAT}" DEBUG=1 bl31

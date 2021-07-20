@@ -41,4 +41,4 @@ esac
 export CROSS_COMPILE=$(dirname $(which "${TUPLE}-gcc"))/"${TUPLE}-"
 
 # Build U-Boot
-make "${DEFCONFIG}" && make
+make ${MAKEFLAGS} "${DEFCONFIG}" && make ${MAKEFLAGS}
