@@ -6,7 +6,7 @@ CHIP_ID="${2}" # For example "allwinner-a10"
 DEFCONFIG="${3}" # For example "Bananapi_defconfig"
 TUPLE="${4}" # For example "arm-linux-gnueabihf"
 
-set -e
+set -ex
 
 # Create fresh empty directory
 TMP=$(mktemp -d tmp.XXXXXX)
