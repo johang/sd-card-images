@@ -4,35 +4,20 @@
 DEFCONFIG="${1}" # For example "rpi_3_defconfig"
 TUPLE="${2}" # For example "aarch64-linux-gnu"
 
-TARBALL="${U_BOOT_TARBALL}"
-GIT_REV="${U_BOOT_GIT_REV}"
-GIT_URL="${U_BOOT_GIT_URL:-https://gitlab.denx.de/u-boot/u-boot.git}"
+set -ex
 
-set -e
+U_BOOT_GIT_URL_DEFAULT="https://gitlab.denx.de/u-boot/u-boot.git"
 
-if [ ! -s "${TARBALL}" ]
+if [ ! -z "${U_BOOT_GIT_REV}" ]
 then
-	if [ -z "${GIT_REV}" ]
-	then
-		# U-Boot version to build
-		GIT_REV=$(git ls-remote --tags \
-		                        --refs \
-		                        "${GIT_URL}" \
-		                        "v????.??" | \
-		          cut -f 2 | \
-		          grep -o "v....\..." | \
-		          tail -n 1)
-	fi
-
-	# Download U-Boot
-	git clone --branch "${GIT_REV}" \
-	          --depth 1 \
-	          "${GIT_URL}" u-boot
+	git clone --depth 1 \
+	          --reference-if-able "${WORKDIR}/u-boot" \
+	          --branch "${U_BOOT_GIT_REV}" \
+	          "${U_BOOT_GIT_URL:-${U_BOOT_GIT_URL_DEFAULT}}" u-boot
 else
-	# Extract U-Boot
-	tar -xf "${TARBALL}"
-
-	mv u-boot-????.?? u-boot
+	git clone --depth 1 \
+	          --reference-if-able "${WORKDIR}/u-boot" \
+	          "${U_BOOT_GIT_URL:-${U_BOOT_GIT_URL_DEFAULT}}" u-boot
 fi
 
 # Step into U-Boot directory
