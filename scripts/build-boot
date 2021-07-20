@@ -28,7 +28,7 @@ qemu*)
     build-boot-qemu "${BOARD_ID}" "${CHIP_ID}" "${DEFCONFIG}" "${TUPLE}"
     ;;
 *)
-    echo Unknown CHIP_ID
+    echo "Unknown CHIP_ID \"${CHIP_ID}\""
     exit 1
     ;;
 esac
