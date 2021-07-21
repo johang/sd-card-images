@@ -27,6 +27,9 @@ RUN apt-get update && \
                     pwgen \
                     libssl-dev \
                     parallel && \
+    ([ "$(uname -m)" = "aarch64" ] && \
+     apt-get --assume-yes \
+             install gcc-arm-linux-gnueabihf || :) && \
     ([ "$(uname -m)" = "x86_64" ] && \
      apt-get --assume-yes \
              install gcc-aarch64-linux-gnu \
