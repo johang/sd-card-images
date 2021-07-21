@@ -26,7 +26,8 @@ RUN apt-get update && \
                     mtools \
                     pwgen \
                     libssl-dev \
-                    parallel && \
+                    parallel \
+                    awscli && \
     ([ "$(uname -m)" = "aarch64" ] && \
      apt-get --assume-yes \
              install gcc-arm-linux-gnueabihf || :) && \
