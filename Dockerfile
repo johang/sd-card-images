@@ -1,12 +1,10 @@
-# Native amd64
-FROM debian:buster-slim
+FROM public.ecr.aws/ubuntu/ubuntu:latest
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
     apt-get --assume-yes \
             --no-install-recommends \
             install debootstrap \
                     debian-archive-keyring \
-                    ubuntu-archive-keyring \
                     ca-certificates \
                     qemu-user-static \
                     device-tree-compiler \
