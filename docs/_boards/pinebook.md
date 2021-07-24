@@ -1,6 +1,7 @@
 ---
 layout: board
-title: SD card images - Pinebook
+title: Pinebook SD card images
+description: "Debian arm64 SD card images for Pinebook by Pine64, SoC: Allwinner A64, CPU ISA: armv8"
 board_id: pinebook
 board_dtb_name: sun50i-a64-pinebook
 board_name: Pinebook

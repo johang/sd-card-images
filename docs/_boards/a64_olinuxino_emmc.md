@@ -1,6 +1,7 @@
 ---
 layout: board
-title: SD card images - A64 OLinuXino w/ eMMC
+title: A64 OLinuXino w/ eMMC SD card images
+description: "Debian arm64 SD card images for A64 OLinuXino w/ eMMC by Olimex, SoC: Allwinner A64, CPU ISA: armv8"
 board_id: a64_olinuxino_emmc
 board_dtb_name: sun50i-a64-olinuxino-emmc
 board_name: A64 OLinuXino w/ eMMC

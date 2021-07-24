@@ -1,6 +1,7 @@
 ---
 layout: board
-title: SD card images - OLinuXino MICRO w/ eMMC
+title: OLinuXino MICRO w/ eMMC SD card images
+description: "Debian armhf SD card images for OLinuXino MICRO w/ eMMC by Olimex, SoC: Allwinner A20, CPU ISA: armv7"
 board_id: a20_olinuxino_micro_emmc
 board_dtb_name: sun7i-a20-olinuxino-micro-emmc
 board_name: OLinuXino MICRO w/ eMMC

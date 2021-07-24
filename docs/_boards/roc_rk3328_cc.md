@@ -1,6 +1,7 @@
 ---
 layout: board
-title: SD card images - ROC-RK3328-CC
+title: ROC-RK3328-CC SD card images
+description: "Debian arm64 SD card images for ROC-RK3328-CC by Firefy, SoC: Rockchip RK3328, CPU ISA: armv8"
 board_id: roc_rk3328_cc
 board_dtb_name: rk3328-roc-cc
 board_name: ROC-RK3328-CC

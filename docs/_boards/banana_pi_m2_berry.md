@@ -1,6 +1,7 @@
 ---
 layout: board
-title: SD card images - Banana Pi M2 Berry
+title: Banana Pi M2 Berry SD card images
+description: "Debian armhf SD card images for Banana Pi M2 Berry by Sinovoip, SoC: Allwinner V40, CPU ISA: armv7"
 board_id: banana_pi_m2_berry
 board_dtb_name: sun8i-v40-bananapi-m2-berry
 board_name: Banana Pi M2 Berry

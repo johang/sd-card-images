@@ -1,6 +1,7 @@
 ---
 layout: board
-title: SD card images - Cubieboard 4
+title: Cubieboard 4 SD card images
+description: "Debian armhf SD card images for Cubieboard 4 by Cubieboard, SoC: Allwinner A80, CPU ISA: armv7"
 board_id: cubieboard4
 board_dtb_name: sun9i-a80-cubieboard4
 board_name: Cubieboard 4

@@ -1,6 +1,7 @@
 ---
 layout: board
-title: SD card images - Edge V
+title: Edge V SD card images
+description: "Debian arm64 SD card images for Edge V by Khadas, SoC: Rockchip RK3399, CPU ISA: armv8"
 board_id: khadas_edge_v
 board_dtb_name: rk3399-khadas-edge-v
 board_name: Edge V

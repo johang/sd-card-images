@@ -1,6 +1,7 @@
 ---
 layout: board
-title: SD card images - Nano Pi Neo4
+title: Nano Pi Neo4 SD card images
+description: "Debian arm64 SD card images for Nano Pi Neo4 by FriendlyARM, SoC: Rockchip RK3399, CPU ISA: armv8"
 board_id: nanopi_neo4
 board_dtb_name: rk3399-nanopi-neo4
 board_name: Nano Pi Neo4

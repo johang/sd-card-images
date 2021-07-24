@@ -1,6 +1,7 @@
 ---
 layout: board
-title: SD card images - Leez P720
+title: Leez P720 SD card images
+description: "Debian arm64 SD card images for Leez P720 by Leez, SoC: Rockchip RK3399, CPU ISA: armv8"
 board_id: leez_p710
 board_dtb_name: rk3399-leez-p710
 board_name: Leez P720

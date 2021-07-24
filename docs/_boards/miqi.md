@@ -1,6 +1,7 @@
 ---
 layout: board
-title: SD card images - MiQi
+title: MiQi SD card images
+description: "Debian armhf SD card images for MiQi by MQMaker, SoC: Rockchip RK3288, CPU ISA: armv7"
 board_id: miqi
 board_dtb_name: rk3288-miqi
 board_name: MiQi

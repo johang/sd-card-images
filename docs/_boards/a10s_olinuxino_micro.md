@@ -1,6 +1,7 @@
 ---
 layout: board
-title: SD card images - A10s OLinuXino MICRO
+title: A10s OLinuXino MICRO SD card images
+description: "Debian armhf SD card images for A10s OLinuXino MICRO by Olimex, SoC: Allwinner A10s, CPU ISA: armv7"
 board_id: a10s_olinuxino_micro
 board_dtb_name: sun5i-a10s-olinuxino-micro
 board_name: A10s OLinuXino MICRO

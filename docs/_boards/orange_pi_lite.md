@@ -1,6 +1,7 @@
 ---
 layout: board
-title: SD card images - Orange Pi Lite
+title: Orange Pi Lite SD card images
+description: "Debian armhf SD card images for Orange Pi Lite by Xunlong, SoC: Allwinner H3, CPU ISA: armv7"
 board_id: orange_pi_lite
 board_dtb_name: sun8i-h3-orangepi-lite
 board_name: Orange Pi Lite

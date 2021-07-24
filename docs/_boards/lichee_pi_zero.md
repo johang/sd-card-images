@@ -1,6 +1,7 @@
 ---
 layout: board
-title: SD card images - LicheePi Zero
+title: LicheePi Zero SD card images
+description: "Debian armhf SD card images for LicheePi Zero by Zepan, SoC: Allwinner V3s, CPU ISA: armv7"
 board_id: lichee_pi_zero
 board_dtb_name: sun8i-v3s-licheepi-zero
 board_name: LicheePi Zero

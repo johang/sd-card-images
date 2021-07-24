@@ -1,6 +1,7 @@
 ---
 layout: board
-title: SD card images - SoPine baseboard
+title: SoPine baseboard SD card images
+description: "Debian arm64 SD card images for SoPine baseboard by Pine64, SoC: Allwinner A64, CPU ISA: armv8"
 board_id: sopine_baseboard
 board_dtb_name: sun50i-a64-sopine-baseboard
 board_name: SoPine baseboard

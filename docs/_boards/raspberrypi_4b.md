@@ -1,6 +1,7 @@
 ---
 layout: board
-title: SD card images - Raspberry Pi 4 B
+title: Raspberry Pi 4 B SD card images
+description: "Debian arm64 SD card images for Raspberry Pi 4 B by Raspberry Pi Foundation, SoC: Broadcom BCM2711, CPU ISA: armv8"
 board_id: raspberrypi_4b
 board_dtb_name: bcm2711-rpi-4-b
 board_name: Raspberry Pi 4 B

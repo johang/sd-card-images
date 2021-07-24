@@ -1,6 +1,7 @@
 ---
 layout: board
-title: SD card images - Orange Pi R1
+title: Orange Pi R1 SD card images
+description: "Debian armhf SD card images for Orange Pi R1 by Xunlong, SoC: Allwinner H2+, CPU ISA: armv7"
 board_id: orange_pi_r1
 board_dtb_name: sun8i-h2-plus-orangepi-r1
 board_name: Orange Pi R1

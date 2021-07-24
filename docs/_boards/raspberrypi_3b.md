@@ -1,6 +1,7 @@
 ---
 layout: board
-title: SD card images - Raspberry Pi 3 B
+title: Raspberry Pi 3 B SD card images
+description: "Debian arm64 SD card images for Raspberry Pi 3 B by Raspberry Pi Foundation, SoC: Broadcom BCM2837, CPU ISA: armv8"
 board_id: raspberrypi_3b
 board_dtb_name: bcm2837-rpi-3-b
 board_name: Raspberry Pi 3 B

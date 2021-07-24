@@ -1,6 +1,7 @@
 ---
 layout: board
-title: SD card images - A33 OLinuXino
+title: A33 OLinuXino SD card images
+description: "Debian armhf SD card images for A33 OLinuXino by Olimex, SoC: Allwinner A23, CPU ISA: armv7"
 board_id: a33_olinuxino
 board_dtb_name: sun8i-a33-olinuxino
 board_name: A33 OLinuXino

@@ -1,6 +1,7 @@
 ---
 layout: board
-title: SD card images - Raspberry Pi Compute Module 3
+title: Raspberry Pi Compute Module 3 SD card images
+description: "Debian arm64 SD card images for Raspberry Pi Compute Module 3 by Raspberry Pi Foundation, SoC: Broadcom BCM2837, CPU ISA: armv8"
 board_id: raspberrypi_cm3
 board_dtb_name: bcm2837-rpi-cm3
 board_name: Raspberry Pi Compute Module 3

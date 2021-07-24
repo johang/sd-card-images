@@ -1,6 +1,7 @@
 ---
 layout: board
-title: SD card images - Nano Pi M4
+title: Nano Pi M4 SD card images
+description: "Debian arm64 SD card images for Nano Pi M4 by FriendlyARM, SoC: Rockchip RK3399, CPU ISA: armv8"
 board_id: nanopi_m4
 board_dtb_name: rk3399-nanopi-m4
 board_name: Nano Pi M4

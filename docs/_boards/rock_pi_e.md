@@ -1,6 +1,7 @@
 ---
 layout: board
-title: SD card images - ROCK Pi E
+title: ROCK Pi E SD card images
+description: "Debian arm64 SD card images for ROCK Pi E by ROCKPI, SoC: Rockchip RK3328, CPU ISA: armv8"
 board_id: rock_pi_e
 board_dtb_name: rk3328-rock-pi-e
 board_name: ROCK Pi E

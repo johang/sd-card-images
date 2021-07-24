@@ -1,6 +1,7 @@
 ---
 layout: board
-title: SD card images - RK3399 EVB
+title: RK3399 EVB SD card images
+description: "Debian arm64 SD card images for RK3399 EVB by Rockchip, SoC: Rockchip RK3399, CPU ISA: armv8"
 board_id: rk3399_evb
 board_dtb_name: rk3399-evb
 board_name: RK3399 EVB

@@ -1,6 +1,7 @@
 ---
 layout: board
-title: SD card images - A20-SOM204-EVB
+title: A20-SOM204-EVB SD card images
+description: "Debian armhf SD card images for A20-SOM204-EVB by Olimex, SoC: Allwinner A20, CPU ISA: armv7"
 board_id: olimex_a20_som204_evb
 board_dtb_name: sun7i-a20-olimex-som204-evb
 board_name: A20-SOM204-EVB

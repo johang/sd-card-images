@@ -1,6 +1,7 @@
 ---
 layout: board
-title: SD card images - ALL-H5-CC H5
+title: ALL-H5-CC H5 SD card images
+description: "Debian arm64 SD card images for ALL-H5-CC H5 by Libre Computer, SoC: Allwinner H5, CPU ISA: armv8"
 board_id: libretech_all_h5_cc_h5
 board_dtb_name: sun50i-h5-libretech-all-h5-cc
 board_name: ALL-H5-CC H5

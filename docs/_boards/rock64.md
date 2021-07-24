@@ -1,6 +1,7 @@
 ---
 layout: board
-title: SD card images - ROCK64
+title: ROCK64 SD card images
+description: "Debian arm64 SD card images for ROCK64 by Pine64, SoC: Rockchip RK3328, CPU ISA: armv8"
 board_id: rock64
 board_dtb_name: rk3328-rock64
 board_name: ROCK64

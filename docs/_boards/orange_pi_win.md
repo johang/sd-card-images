@@ -1,6 +1,7 @@
 ---
 layout: board
-title: SD card images - Orange Pi Win
+title: Orange Pi Win SD card images
+description: "Debian arm64 SD card images for Orange Pi Win by Xunlong, SoC: Allwinner A64, CPU ISA: armv8"
 board_id: orange_pi_win
 board_dtb_name: sun50i-a64-orangepi-win
 board_name: Orange Pi Win

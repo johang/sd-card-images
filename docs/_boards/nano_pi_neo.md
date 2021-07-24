@@ -1,6 +1,7 @@
 ---
 layout: board
-title: SD card images - Nano Pi Neo
+title: Nano Pi Neo SD card images
+description: "Debian armhf SD card images for Nano Pi Neo by FriendlyARM, SoC: Allwinner H3, CPU ISA: armv7"
 board_id: nano_pi_neo
 board_dtb_name: sun8i-h3-nanopi-neo
 board_name: Nano Pi Neo

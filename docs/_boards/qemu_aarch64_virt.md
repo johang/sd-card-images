@@ -1,6 +1,7 @@
 ---
 layout: board
-title: SD card images - QEMU aarch64 virt
+title: QEMU aarch64 virt SD card images
+description: "Debian arm64 SD card images for QEMU aarch64 virt by QEMU, SoC: QEMU aarch64, CPU ISA: armv8"
 board_id: qemu_aarch64_virt
 board_dtb_name: N/A
 board_name: QEMU aarch64 virt
