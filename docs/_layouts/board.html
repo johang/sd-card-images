@@ -7,22 +7,16 @@ layout: default
 		<hr />
 	</div>
 	<div class="container">
-		<div class="row">
-			<div class="col-6 text-right px-2"><strong>Board name</strong></div>
-			<div class="col-6 px-2">{{ page.board_name }}</div>
-		</div>
-		<div class="row">
-			<div class="col-6 text-right px-2"><strong>Board maker</strong></div>
-			<div class="col-6 px-2">{{ page.board_maker_name }}</div>
-		</div>
-		<div class="row">
-			<div class="col-6 text-right px-2"><strong>SoC</strong></div>
-			<div class="col-6 px-2">{{ page.board_soc_name }}</div>
-		</div>
-		<div class="row">
-			<div class="col-6 text-right px-2"><strong>CPU</strong></div>
-			<div class="col-6 px-2">{{ page.board_cpu_name }}</div>
-		</div>
+		<dl class="row">
+			<dt class="col-6 text-right"><strong>Board name</strong></dt>
+			<dd class="col-6">{{ page.board_name }}</dd>
+			<dt class="col-6 text-right"><strong>Board maker</strong></dt>
+			<dd class="col-6">{{ page.board_maker_name }}</dd>
+			<dt class="col-6 text-right"><strong>SoC</strong></dt>
+			<dd class="col-6">{{ page.board_soc_name }}</dd>
+			<dt class="col-6 text-right"><strong>CPU</strong></dt>
+			<dd class="col-6">{{ page.board_cpu_name }}</dd>
+		</dl>
 		<hr />
 	</div>
 	<div class="container">
