@@ -3,7 +3,7 @@
 
 IMAGE="${1}"
 
-set -e
+set -ex
 
 rm -f "${IMAGE}"
 fallocate -l 2GB "${IMAGE}" # 2,000,000,000 bytes
