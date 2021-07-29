@@ -5,7 +5,7 @@ OS="$1" # For example "debian"
 ARCH="$2" # For example "armhf"
 DIST="$3" # For example "buster"
 
-set -e
+set -ex
 
 case "${OS}-${ARCH}" in
 debian-armhf)
@@ -99,7 +99,7 @@ cp -rv --preserve=mode ../2nd-stage-files/pre-2nd-stage-files-${ARCH}/* debian
 cp -v /usr/bin/qemu-*-static debian/usr/bin || :
 
 # Build a Debian root filesystem (second stage)
-chroot debian /bin/sh -e <<- EOF
+chroot debian /bin/sh -ex <<- EOF
 /debootstrap/debootstrap --second-stage
 /bin/mv /tmp/sources.list /etc/apt/sources.list
 /usr/bin/apt-get update
