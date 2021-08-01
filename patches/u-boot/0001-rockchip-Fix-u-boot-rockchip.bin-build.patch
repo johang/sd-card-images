@@ -1,0 +1,48 @@
+From 2deecba0dc6322429a6ed510728d02881ce4e018 Mon Sep 17 00:00:00 2001
+From: Johan Gunnarsson <johan.gunnarsson@gmail.com>
+Date: Sun, 20 Jun 2021 20:32:41 +0200
+Subject: [PATCH] rockchip: Fix u-boot-rockchip.bin build
+
+Currently there are a few arm32 rockchip board configs that don't generate
+u-boot-rockchip.bin when running make because CONFIG_BINMAN is not enabled.
+This patch changes CONFIG_ARCH_ROCKCHIP to also select CONFIG_BINMAN if
+CONFIG_SPL and !CONFIG_ARM64.
+
+Example builds that don't generate u-boot-rockchip.bin without this patch:
+
+export ARCH=arm
+export CROSS_COMPILE=/usr/bin/arm-linux-gnueabihf-
+make kylin-rk3036_defconfig
+make
+
+export ARCH=arm
+export CROSS_COMPILE=/usr/bin/arm-linux-gnueabihf-
+make rock_defconfig
+make
+
+export ARCH=arm
+export CROSS_COMPILE=/usr/bin/arm-linux-gnueabihf-
+make tinker-rk3288_defconfig
+make
+
+Signed-off-by: Johan Gunnarsson <johan.gunnarsson@gmail.com>
+---
+ arch/arm/Kconfig | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/arch/arm/Kconfig b/arch/arm/Kconfig
+index 0448787b8b..19558752a9 100644
+--- a/arch/arm/Kconfig
++++ b/arch/arm/Kconfig
+@@ -1747,7 +1747,7 @@ config ARCH_STM32MP
+ config ARCH_ROCKCHIP
+ 	bool "Support Rockchip SoCs"
+ 	select BLK
+-	select BINMAN if SPL_OPTEE
++	select BINMAN if SPL_OPTEE || (SPL && !ARM64)
+ 	select DM
+ 	select DM_GPIO
+ 	select DM_I2C
+-- 
+2.25.1
+
