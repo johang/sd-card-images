@@ -23,6 +23,11 @@ fi
 # Step into ATF directory
 cd arm-trusted-firmware
 
+# Apply patches
+if [ -d "${ATF_PATCHES_DIR}" ]; then
+	git apply "${ATF_PATCHES_DIR}"/*.patch || :
+fi
+
 # CROSS_COMPILE must point to a valid compiler path prefix
 export CROSS_COMPILE=$(dirname $(which "${TUPLE}-gcc"))/"${TUPLE}-"
 
