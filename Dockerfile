@@ -7,6 +7,7 @@ RUN apt-get update && \
                     debian-archive-keyring \
                     ca-certificates \
                     qemu-user-static \
+                    qemu-system-arm \
                     device-tree-compiler \
                     gcc \
                     gcc-arm-none-eabi \
