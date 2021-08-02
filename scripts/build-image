@@ -6,9 +6,17 @@ IMAGE="${1}"
 set -ex
 
 rm -f "${IMAGE}"
-fallocate -l 2GB "${IMAGE}" # 2,000,000,000 bytes
+fallocate -v -l 2GB "${IMAGE}" # 2,000,000,000 bytes
 
 parted -s "${IMAGE}" mklabel msdos
-parted -s "${IMAGE}" mkpart primary fat32 -- 1MiB 32MiB # 31 MiB (32,505,856 bytes)
+parted -s "${IMAGE}" mkpart primary fat32 -- 4MiB 32MiB # 28 MiB (50,331,648 bytes)
 parted -s "${IMAGE}" mkpart primary ext2 -- 32MiB -1
 parted -s "${IMAGE}" set 2 boot on
+
+# Create empty FAT partition
+rm -f vfat.img
+fallocate -l 28MiB vfat.img
+mkfs.vfat vfat.img
+
+# Copy FAT partition to image
+dd if=vfat.img of="${IMAGE}" bs=1K seek=4K conv=notrunc

@@ -44,11 +44,11 @@ sed -i -e "s/BOOT_UART=0/BOOT_UART=1/" bootcode.bin
 
 # Create empty FAT partition
 rm -f vfat.img
-fallocate -l 31MiB vfat.img
+fallocate -l 28MiB vfat.img
 mkfs.vfat vfat.img
 
 # Copy boot files to FAT partition
 mcopy -v -i vfat.img u-boot/u-boot.bin config.txt fixup*.dat start*.elf bootcode.bin ::
 
 # Copy FAT partition to image
-dd if=vfat.img of=tmp.img bs=1K seek=1K
+dd if=vfat.img of=tmp.img bs=1K seek=1K conv=notrunc

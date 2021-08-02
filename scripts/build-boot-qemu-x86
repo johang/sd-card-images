@@ -10,17 +10,5 @@ set -ex
 
 build-u_boot "${DEFCONFIG}" "${TUPLE}"
 
-case "${CHIP_ID}" in
-qemu-x86|qemu-x86_64)
-	FILE=u-boot.rom
-	;;
-qemu-arm|qemu-aarch64)
-	FILE=u-boot.bin
-	;;
-*)
-	echo "Unknown CHIP_ID \"${CHIP_ID}\""
-	exit 1
-esac
-
 # Copy U-Boot to 16 sectors from start
-dd if=u-boot/"${FILE}" of=tmp.img seek=16 conv=notrunc
+dd if=u-boot/u-boot.rom of=tmp.img seek=16 conv=notrunc

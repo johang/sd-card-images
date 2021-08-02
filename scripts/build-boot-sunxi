@@ -24,4 +24,4 @@ esac
 build-u_boot "${DEFCONFIG}" "${TUPLE}"
 
 # Copy U-Boot to 8192 bytes from start
-dd if=u-boot/u-boot-sunxi-with-spl.bin of=tmp.img bs=1K seek=8
+dd if=u-boot/u-boot-sunxi-with-spl.bin of=tmp.img bs=1K seek=8 conv=notrunc

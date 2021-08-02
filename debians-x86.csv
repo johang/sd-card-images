@@ -1,0 +1,10 @@
+OS,Dist,Arch
+
+debian,buster,i386
+debian,buster,amd64
+
+debian,bullseye,i386
+debian,bullseye,amd64
+
+debian,sid,i386
+debian,sid,amd64

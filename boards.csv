@@ -154,3 +154,5 @@ merrii_a80_optimus,Merrii A80 Optimus,Merrii,allwinner-a80,Merrii_A80_Optimus_de
 
 qemu_arm_virt,QEMU arm virt,QEMU,qemu-arm,qemu_arm_defconfig,arm-linux-gnueabihf,N/A
 qemu_aarch64_virt,QEMU aarch64 virt,QEMU,qemu-aarch64,qemu_arm64_defconfig,aarch64-linux-gnu,N/A
+qemu_x86_virt,QEMU x86 virt,QEMU,qemu-x86,qemu-x86_defconfig,i686-linux-gnu,N/A
+qemu_x86_64_virt,QEMU x86_64 virt,QEMU,qemu-x86_64,qemu-x86_64_defconfig,x86_64-linux-gnu,N/A

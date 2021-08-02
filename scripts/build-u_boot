@@ -36,6 +36,9 @@ arm-*)
 aarch64-*)
 	export ARCH="aarch64"
 	;;
+x86_64-*|i?86-*)
+	export ARCH="x86"
+	;;
 *)
 	echo "Can't decide \$ARCH for tuple \"${TUPLE}\""
 	exit 1

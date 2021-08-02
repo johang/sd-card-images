@@ -1,0 +1,17 @@
+#!/bin/sh
+# Generate initrd.uimg and update U-Boot boot.scr
+
+# Kernel ABI string
+ABI="${1}"
+
+# Create U-Boot boot script
+cat << EOF > /boot/boot.cmd
+load \${devtype} \${devnum}:\${distro_bootpart} \${kernel_addr_r} /boot/vmlinuz-${ABI}
+load \${devtype} \${devnum}:\${distro_bootpart} \${ramdisk_addr_r} /boot/initrd.img-${ABI}
+part uuid \${devtype} \${devnum}:\${distro_bootpart} partuuid
+setenv bootargs root=PARTUUID=\${partuuid} rw rootwait
+zboot \${kernel_addr_r} - \${ramdisk_addr_r} 0x2000000
+EOF
+
+# Create U-Boot boot script
+mkimage -A x86 -T script -C none -d /boot/boot.cmd /boot/boot.scr

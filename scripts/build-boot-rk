@@ -20,4 +20,4 @@ esac
 build-u_boot "${DEFCONFIG}" "${TUPLE}"
 
 # Copy U-Boot to 64 sectors from start
-dd if=u-boot/u-boot-rockchip.bin of=tmp.img seek=64
+dd if=u-boot/u-boot-rockchip.bin of=tmp.img seek=64 conv=notrunc

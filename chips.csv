@@ -33,3 +33,5 @@ rk3399,RK3399,Rockchip,ARM Cortex A72/A53,armv8
 
 qemu-arm,arm,QEMU,ARM Cortex A15,armv7
 qemu-aarch64,aarch64,QEMU,ARM Cortex A53,armv8
+qemu-x86_64,x86_64,QEMU,x86 qemu64,x86-64
+qemu-x86,x86,QEMU,x86 qemu64,x86

@@ -18,7 +18,17 @@ debian-arm64)
 	URL=http://deb.debian.org/debian
 	SCRIPT=/usr/share/debootstrap/scripts/sid
 	;;
-ubuntu-armhf|ubuntu-arm64)
+debian-i386)
+	KERNEL=linux-image-686
+	URL=http://deb.debian.org/debian
+	SCRIPT=/usr/share/debootstrap/scripts/sid
+	;;
+debian-amd64)
+	KERNEL=linux-image-amd64
+	URL=http://deb.debian.org/debian
+	SCRIPT=/usr/share/debootstrap/scripts/sid
+	;;
+ubuntu-armhf|ubuntu-arm64|ubuntu-amd64)
 	KERNEL=linux-image-generic
 	URL=http://ports.ubuntu.com/ubuntu-ports
 	SCRIPT=/usr/share/debootstrap/scripts/gutsy
