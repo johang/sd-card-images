@@ -28,6 +28,7 @@ RUN apt-get update && \
                     pwgen \
                     libssl-dev \
                     parallel \
+                    sshpass \
                     awscli && \
     ([ "$(uname -m)" = "aarch64" ] && \
      apt-get --assume-yes \
