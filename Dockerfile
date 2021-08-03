@@ -8,6 +8,7 @@ RUN apt-get update && \
                     ca-certificates \
                     qemu-user-static \
                     qemu-system-arm \
+                    qemu-system-x86 \
                     device-tree-compiler \
                     gcc \
                     gcc-arm-none-eabi \
@@ -28,6 +29,7 @@ RUN apt-get update && \
                     pwgen \
                     libssl-dev \
                     parallel \
+                    ssh \
                     sshpass \
                     awscli && \
     ([ "$(uname -m)" = "aarch64" ] && \
