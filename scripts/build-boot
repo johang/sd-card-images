@@ -9,7 +9,8 @@ TUPLE="${4}" # For example "arm-linux-gnueabihf"
 set -ex
 
 # Create fresh empty directory
-TMP=$(mktemp -d tmp.XXXXXX)
+TMP=$(mktemp -d -p "${PWD}" tmp-XXXXXX)
+trap 'rm -rf "${TMP}"' EXIT INT TERM
 cd "${TMP}"
 
 build-image tmp.img
