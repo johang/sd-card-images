@@ -40,7 +40,8 @@ ubuntu-armhf|ubuntu-arm64|ubuntu-amd64)
 esac
 
 # Create fresh empty directory
-TMP=$(mktemp -d tmp.XXXXXX)
+TMP=$(mktemp -d -p "${PWD}" tmp-XXXXXX)
+trap 'rm -rf "${TMP}"' EXIT INT TERM
 cd "${TMP}"
 
 # Build a Debian root filesystem (first stage)
