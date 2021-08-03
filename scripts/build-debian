@@ -132,7 +132,9 @@ cp -rv --preserve=mode ../2nd-stage-files/post-2nd-stage-files/* debian
 echo "${OS}" > debian/etc/hostname
 
 # List all files
-find debian ! -type d -printf "/%P\n" | sort > "/artifacts/${OS}-${DIST}-${ARCH}.files.txt"
+find debian ! -type d -printf "/%P\n" | sort > files.txt
+
+cp files.txt "/artifacts/${OS}-${DIST}-${ARCH}-${PASSWORD}.bin.gz.files.txt"
 
 # Make a ext4 filesystem of this and put it into the image
 rm -f ext4.img
