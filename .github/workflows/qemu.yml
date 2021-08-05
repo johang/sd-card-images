@@ -1,0 +1,78 @@
+name: sd-card-images CI
+
+on:
+  push:
+    branches: "*"
+  schedule:
+    - cron: "00 03 * * 0"
+
+env:
+  MAKEFLAGS: -j2
+
+jobs:
+  bullseye-x86:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Install dependencies
+      timeout-minutes: 5
+      env:
+        DEBIAN_FRONTEND: noninteractive
+      run: |
+        sudo apt-get update
+        sudo apt-get --assume-yes \
+                     --no-install-recommends \
+                     install bc \
+                             bison \
+                             bzip2 \
+                             ca-certificates \
+                             debian-archive-keyring \
+                             debootstrap \
+                             device-tree-compiler \
+                             dosfstools \
+                             e2fsprogs \
+                             flex \
+                             gcc \
+                             gcc-arm-none-eabi \
+                             gcc-i686-linux-gnu \
+                             git \
+                             libssl-dev \
+                             make \
+                             mtools \
+                             parted \
+                             pwgen \
+                             python2-dev \
+                             python3-dev \
+                             python3-pkg-resources \
+                             qemu-system-x86 \
+                             ssh \
+                             sshpass \
+                             swig
+
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Build qemu_x86_virt
+      timeout-minutes: 5
+      run: |
+        env PATH=$GITHUB_WORKSPACE/scripts:$PATH \
+            ARTIFACTS_DIR=$RUNNER_TEMP \
+            build-boot qemu_x86_virt \
+                       qemu-x86 \
+                       qemu-x86_defconfig \
+                       i686-linux-gnu
+
+    - name: Build bullseye i386
+      timeout-minutes: 5
+      run: |
+        sudo env PATH=$GITHUB_WORKSPACE/scripts:$PATH \
+                 ARTIFACTS_DIR=$RUNNER_TEMP \
+                 build-debian debian \
+                              i386 \
+                              bullseye
+
+    - name: Test qemu_x86_virt + bullseye i386
+      timeout-minutes: 5
+      run: |
+        ./test/qemu.sh $RUNNER_TEMP/boot-qemu_x86_virt.bin.gz \
+                       $RUNNER_TEMP/debian-bullseye-i386-*.bin.gz
