@@ -6,6 +6,8 @@ chips = {}
 isa_to_arch = {
 	"armv7": "armhf",
 	"armv8": "arm64",
+	"x86": "i386",
+	"x86-64": "amd64",
 }
 with open("chips.csv") as csvfile:
 	chipsf = csv.reader(csvfile)
