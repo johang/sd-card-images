@@ -13,7 +13,7 @@
 			body {
 				padding-top: 4.5rem;
 			}
-			#boards tbody tr {
+			#boards tbody tr:not(:first-child) {
 				cursor: pointer;
 			}
 			.pill {
@@ -37,21 +37,13 @@
 				<div class="collapse navbar-collapse" id="navbarCollapse">
 					<ul class="navbar-nav mr-auto">
 						<li class="nav-item">
-							<a class="nav-link" href="/boards.html">Downloads</a>
-						</li>
-						<li class="nav-item">
 							<a class="nav-link" href="/boards.html">Supported boards</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="/boards.html">Install instructions</a>
-						</li>
-<!--
-						<li class="nav-item">
-							<a class="nav-link" href="#">Documentation</a>
-						</li>
--->
-						<li class="nav-item">
 							<a class="nav-link" href="https://github.com/johang/debian-sd-card-images">Source code</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="https://github.com/johang/debian-sd-card-images/issues">Bugs</a>
 						</li>
 					</ul>
 <!--
@@ -70,7 +62,7 @@
 		</footer>
 		<script type="text/javascript">
 			$(document).ready(function($) {
-				$("#boards tbody tr").click(function() {
+				$("#boards tbody tr:not(:first-child)").click(function() {
 					window.document.location = $(this).data("href");
 				});
 			});

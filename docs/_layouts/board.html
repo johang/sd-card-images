@@ -4,6 +4,7 @@ layout: default
 <main role="main">
 	<div class="container">
 		<h2>{{ page.board_name }}</h2>
+		<p>Minimal, pure and up-to-date vanilla Debian SD card image for <i>{{ page.board_name }}</i>.</p>
 		<hr />
 	</div>
 	<div class="container">
@@ -112,8 +113,69 @@ layout: default
 		<hr />
 	</div>
 	<div class="container">
-		<h3>Other boards</h3>
-{% include boards.html %}
+		<h3>Boards by {{ page.board_maker_name }}</h3>
+		<table class="table table-sm table-hover" id="boards">
+			<caption>Boards made by {{ page.board_maker_name }}.</caption>
+			<thead>
+				<tr>
+					<th scope="col">Board</th>
+					<th scope="col">Board maker</th>
+					<th scope="col">SoC</th>
+					<th scope="col">CPU</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr data-href="/boards/{{ page.board_id }}.html">
+					<td><i>{{ page.board_name }}</i></td>
+					<td><i>{{ page.board_maker_name }}</i></td>
+					<td><i>{{ page.board_soc_name }}</i></td>
+					<td><i>{{ page.board_cpu_name }}</i></td>
+				</tr>
+{% for board in site.boards %}
+{% if board.board_maker_name == page.board_maker_name and board.board_id != page.board_id %}
+				<tr data-href="/boards/{{ board.board_id }}.html">
+					<td><a href="/boards/{{ board.board_id }}.html">{{ board.board_name }}</a></td>
+					<td>{{ board.board_maker_name }}</td>
+					<td>{{ board.board_soc_name }}</td>
+					<td>{{ board.board_cpu_name }}</td>
+				</tr>
+{% endif %}
+{% endfor %}
+			</tbody>
+		</table>
+		<hr />
+	</div>
+	<div class="container">
+		<h3>Boards with {{ page.board_soc_name }}</h3>
+		<table class="table table-sm table-hover" id="boards">
+			<caption>Boards with {{ page.board_soc_name }} SoC.</caption>
+			<thead>
+				<tr>
+					<th scope="col">Board</th>
+					<th scope="col">Board maker</th>
+					<th scope="col">SoC</th>
+					<th scope="col">CPU</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr data-href="/boards/{{ page.board_id }}.html">
+					<td><i>{{ page.board_name }}</i></td>
+					<td><i>{{ page.board_maker_name }}</i></td>
+					<td><i>{{ page.board_soc_name }}</i></td>
+					<td><i>{{ page.board_cpu_name }}</i></td>
+				</tr>
+{% for board in site.boards %}
+{% if board.board_soc_name == page.board_soc_name and board.board_id != page.board_id %}
+				<tr data-href="/boards/{{ board.board_id }}.html">
+					<td><a href="/boards/{{ board.board_id }}.html">{{ board.board_name }}</a></td>
+					<td>{{ board.board_maker_name }}</td>
+					<td>{{ board.board_soc_name }}</td>
+					<td>{{ board.board_cpu_name }}</td>
+				</tr>
+{% endif %}
+{% endfor %}
+			</tbody>
+		</table>
 		<hr />
 	</div>
 </main>
