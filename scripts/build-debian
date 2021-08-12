@@ -141,6 +141,6 @@ cp files.txt "${ARTIFACTS_DIR:-/artifacts}/${OS}-${DIST}-${ARCH}-${PASSWORD}.bin
 rm -f ext4.img
 fallocate -l 1874MiB ext4.img
 mkfs.ext4 -d debian ext4.img
-gzip ext4.img
+pigz ext4.img
 
 cp -v ext4.img.gz "${ARTIFACTS_DIR:-/artifacts}/${OS}-${DIST}-${ARCH}-${PASSWORD}.bin.gz"

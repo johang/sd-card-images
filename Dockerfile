@@ -16,6 +16,7 @@ RUN apt-get update && \
                     git \
                     bc \
                     bzip2 \
+                    pigz \
                     bison \
                     flex \
                     python2-dev \

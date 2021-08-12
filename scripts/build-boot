@@ -35,5 +35,5 @@ qemu*)
 esac
 
 truncate -s 32M tmp.img
-gzip tmp.img
+pigz tmp.img
 cp tmp.img.gz "${ARTIFACTS_DIR:-/artifacts}/boot-${BOARD_ID}.bin.gz"

@@ -40,6 +40,7 @@ jobs:
                              make \
                              mtools \
                              parted \
+                             pigz \
                              pwgen \
                              python2-dev \
                              python3-dev \
