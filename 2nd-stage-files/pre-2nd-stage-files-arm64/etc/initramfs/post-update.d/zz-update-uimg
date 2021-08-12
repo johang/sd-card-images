@@ -7,9 +7,14 @@ ABI="${1}"
 # Create U-Boot ramdisk image
 mkimage -A arm64 -T ramdisk -C none -d "/boot/initrd.img-${ABI}" "/boot/initrd.uimg-${ABI}"
 
-FDT=/usr/lib/linux
-[ -d "/lib/firmware/${ABI}/device-tree" ] && FDT="/lib/firmware/${ABI}/device-tree"
-[ -d "/usr/lib/linux-image-${ABI}" ] && FDT="/usr/lib/linux-image-${ABI}"
+# List of paths to search for fdtfile in
+FDT="\
+/lib/firmware/${ABI}/device-tree/\${vendor} \
+/lib/firmware/${ABI}/device-tree \
+/usr/lib/linux-image-${ABI}/\${vendor} \
+/usr/lib/linux-image-${ABI} \
+/usr/lib/linux/\${vendor} \
+/usr/lib/linux"
 
 # Create U-Boot boot script
 cat << EOF > /boot/boot.cmd
@@ -17,12 +22,13 @@ load \${devtype} \${devnum}:\${distro_bootpart} \${kernel_addr_r} /boot/vmlinuz-
 load \${devtype} \${devnum}:\${distro_bootpart} \${ramdisk_addr_r} /boot/initrd.uimg-${ABI}
 part uuid \${devtype} \${devnum}:\${distro_bootpart} partuuid
 setenv bootargs root=PARTUUID=\${partuuid} rw rootwait
-if test -e \${devtype} \${devnum}:\${distro_bootpart} ${FDT}/\${fdtfile}; then
-  load \${devtype} \${devnum}:\${distro_bootpart} \${fdt_addr_r} ${FDT}/\${fdtfile}
-  booti \${kernel_addr_r} \${ramdisk_addr_r} \${fdt_addr_r}
-else
-  booti \${kernel_addr_r} \${ramdisk_addr_r} \${fdt_addr}
-fi
+for fdtpath in ${FDT}; do
+  if test -e \${devtype} \${devnum}:\${distro_bootpart} \${fdtpath}/\${fdtfile}; then
+    load \${devtype} \${devnum}:\${distro_bootpart} \${fdt_addr_r} \${fdtpath}/\${fdtfile}
+    booti \${kernel_addr_r} \${ramdisk_addr_r} \${fdt_addr_r}
+  fi
+done
+booti \${kernel_addr_r} \${ramdisk_addr_r} \${fdtcontroladdr}
 EOF
 
 # Create U-Boot boot script
