@@ -51,7 +51,7 @@ arm64)
 armhf)
 	QEMU_ARCH="arm"
 	QEMU_MACHINE="virt"
-	QEMU_CPU="cortex-a9"
+	QEMU_CPU="cortex-a15"
 	;;
 *)
 	echo "Unknown \$ARCH: ${ARCH}"
