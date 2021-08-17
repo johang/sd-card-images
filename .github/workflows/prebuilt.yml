@@ -1,0 +1,58 @@
+name: sd-card-images prebuilt
+
+on:
+  push:
+    branches: "master"
+
+jobs:
+  test-prebuilt:
+    runs-on: ubuntu-latest
+    name: test ${{ matrix.debian }}
+
+    strategy:
+      matrix:
+        include:
+          # Debian i386
+          - boot: boot-qemu_x86_virt
+            debian: debian-buster-i386
+          - boot: boot-qemu_x86_virt
+            debian: debian-bullseye-i386
+          - boot: boot-qemu_x86_virt
+            debian: debian-sid-i386
+      fail-fast: false
+
+    env:
+      BOOT: ${{ matrix.boot }}
+      DEBIAN: ${{ matrix.debian }}
+
+    steps:
+    - name: Install dependencies
+      timeout-minutes: 5
+      env:
+        DEBIAN_FRONTEND: noninteractive
+      run: |
+        sudo apt-get update
+        sudo apt-get --assume-yes \
+                     --no-install-recommends \
+                     install pigz \
+                             qemu-system-x86 \
+                             qemu-system-arm \
+                             ssh \
+                             sshpass \
+                             wget
+
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Download
+      timeout-minutes: 1
+      env:
+        BASE: https://ftp.sd-card-images.johang.se
+      run: |
+        wget $BASE/$(wget -O - $BASE/latest.txt | grep $BOOT)
+        wget $BASE/$(wget -O - $BASE/latest.txt | grep $DEBIAN)
+
+    - name: Test
+      timeout-minutes: 5
+      run: |
+        ./test/qemu.sh $BOOT*.bin.gz $DEBIAN*.bin.gz
