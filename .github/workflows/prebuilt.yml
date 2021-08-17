@@ -1,8 +1,8 @@
 name: sd-card-images prebuilt
 
 on:
-  push:
-    branches: "master"
+  schedule:
+    - cron: "00 12 * * 5"
 
 jobs:
   test-prebuilt:
@@ -12,13 +12,20 @@ jobs:
     strategy:
       matrix:
         include:
-          # Debian i386
-          - boot: boot-qemu_x86_virt
-            debian: debian-buster-i386
-          - boot: boot-qemu_x86_virt
-            debian: debian-bullseye-i386
-          - boot: boot-qemu_x86_virt
-            debian: debian-sid-i386
+          # Debian armhf
+          - boot: boot-qemu_arm_virt
+            debian: debian-buster-armhf
+          - boot: boot-qemu_arm_virt
+            debian: debian-bullseye-armhf
+          - boot: boot-qemu_arm_virt
+            debian: debian-sid-armhf
+          # Debian arm64
+          - boot: boot-qemu_aarch64_virt
+            debian: debian-buster-arm64
+          - boot: boot-qemu_aarch64_virt
+            debian: debian-bullseye-arm64
+          - boot: boot-qemu_aarch64_virt
+            debian: debian-sid-arm64
       fail-fast: false
 
     env:
@@ -49,8 +56,8 @@ jobs:
       env:
         BASE: https://ftp.sd-card-images.johang.se
       run: |
-        wget $BASE/$(wget -O - $BASE/latest.txt | grep $BOOT)
-        wget $BASE/$(wget -O - $BASE/latest.txt | grep $DEBIAN)
+        wget $BASE/$(wget -O - $BASE/latest.txt | grep $BOOT || echo 404)
+        wget $BASE/$(wget -O - $BASE/latest.txt | grep $DEBIAN || echo 404)
 
     - name: Test
       timeout-minutes: 5
