@@ -13,7 +13,7 @@ firefly_rk3288,Firefy-RK3288,Firefy,rk3288,firefly-rk3288_defconfig,arm-linux-gn
 miqi,MiQi,MQMaker,rk3288,miqi-rk3288_defconfig,arm-linux-gnueabihf,rk3288-miqi
 phycore_rk3288,phyCORE-RK3288,Phytec,rk3288,phycore-rk3288_defconfig,arm-linux-gnueabihf,rk3288-phycore-rdk
 popmetal,PopMetal,ChipSPARK,rk3288,popmetal-rk3288_defconfig,arm-linux-gnueabihf,rk3288-popmetal
-rock_pi_n8,ROCK Pi N8,ROCKPI,rk3288,rock-pi-n8-rk3288_defconfig,arm-linux-gnueabihf,rk3288-rock-pi-n8
+rock_pi_n8,ROCK Pi N8,Radxa,rk3288,rock-pi-n8-rk3288_defconfig,arm-linux-gnueabihf,rk3288-rock-pi-n8
 rock2,Rock2,Radxa,rk3288,rock2_defconfig,arm-linux-gnueabihf,rk3288-rock2-square
 tinker_board,Tinker Board,ASUS,rk3288,tinker-rk3288_defconfig,arm-linux-gnueabihf,rk3288-tinker
 tinker_board_s,Tinker Board S,ASUS,rk3288,tinker-s-rk3288_defconfig,arm-linux-gnueabihf,rk3288-tinker-s
@@ -22,7 +22,7 @@ vyasa,Vyasa,Amarula,rk3288,vyasa-rk3288_defconfig,arm-linux-gnueabihf,rk3288-vya
 rk3328_evb,RK3328 EVB,Rockchip,rk3328,evb-rk3328_defconfig,aarch64-linux-gnu,rk3328-evb
 nanopi_r2s,Nano Pi R2S,FriendlyARM,rk3328,nanopi-r2s-rk3328_defconfig,aarch64-linux-gnu,rk3328-nanopi-r2s
 roc_rk3328_cc,ROC-RK3328-CC,Firefly,rk3328,roc-cc-rk3328_defconfig,aarch64-linux-gnu,rk3328-roc-cc
-rock_pi_e,ROCK Pi E,ROCKPI,rk3328,rock-pi-e-rk3328_defconfig,aarch64-linux-gnu,rk3328-rock-pi-e
+rock_pi_e,ROCK Pi E,Radxa,rk3328,rock-pi-e-rk3328_defconfig,aarch64-linux-gnu,rk3328-rock-pi-e
 rock64,ROCK64,Pine64,rk3328,rock64-rk3328_defconfig,aarch64-linux-gnu,rk3328-rock64
 
 px5,PX5 EVB,Rockchip,rk3368,evb-px5_defconfig,aarch64-linux-gnu,rk3368-px5-evb
@@ -42,8 +42,8 @@ nanopi_r4s,Nano Pi R4S,FriendlyARM,rk3399,nanopi-r4s-rk3399_defconfig,aarch64-li
 orangepi_rk3399,Orange Pi rk3399,Xunlong,rk3399,orangepi-rk3399_defconfig,aarch64-linux-gnu,rk3399-orangepi
 pinebook_pro,Pinebook Pro,Pine64,rk3399,pinebook-pro-rk3399_defconfig,aarch64-linux-gnu,rk3399-pinebook-pro
 roc_rk3399_pc,ROC-RK3399-PC,Firefly,rk3399,roc-pc-rk3399_defconfig,aarch64-linux-gnu,rk3399-roc-pc
-rock_pi_4,ROCK Pi 4,ROCKPI,rk3399,rock-pi-4-rk3399_defconfig,aarch64-linux-gnu,rk3399-rock-pi-4
-rock_pi_4c,ROCK Pi 4 model C,ROCKPI,rk3399,rock-pi-4c-rk3399_defconfig,aarch64-linux-gnu,rk3399-rock-pi-4c
+rock_pi_4,ROCK Pi 4,Radxa,rk3399,rock-pi-4-rk3399_defconfig,aarch64-linux-gnu,rk3399-rock-pi-4
+rock_pi_4c,ROCK Pi 4 model C,Radxa,rk3399,rock-pi-4c-rk3399_defconfig,aarch64-linux-gnu,rk3399-rock-pi-4c
 rock960,Rock960,96boards,rk3399,rock960-rk3399_defconfig,aarch64-linux-gnu,rk3399-rock960
 rockpro64,ROCKPro64,Pine64,rk3399,rockpro64-rk3399_defconfig,aarch64-linux-gnu,rk3399-rockpro64
 
