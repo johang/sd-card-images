@@ -1,7 +1,7 @@
 ---
 layout: board
 title: Primo81 SD card images
-description: "Debian armhf SD card images for Primo81 by MSI, SoC: Allwinner A31s, CPU ISA: armv7"
+description: "Minimal, pure and up-to-date vanilla Debian armhf SD card images for Primo81 by MSI, SoC: Allwinner A31s, CPU ISA: armv7"
 board_id: msi_primo81
 board_dtb_name: sun6i-a31s-primo81
 board_name: Primo81

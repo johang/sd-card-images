@@ -1,7 +1,7 @@
 ---
 layout: board
 title: Orange Pi Zero Plus2 SD card images
-description: "Debian arm64 SD card images for Orange Pi Zero Plus2 by Xunlong, SoC: Allwinner H5, CPU ISA: armv8"
+description: "Minimal, pure and up-to-date vanilla Debian arm64 SD card images for Orange Pi Zero Plus2 by Xunlong, SoC: Allwinner H5, CPU ISA: armv8"
 board_id: orange_pi_zero_plus2
 board_dtb_name: sun50i-h5-orangepi-zero-plus2
 board_name: Orange Pi Zero Plus2

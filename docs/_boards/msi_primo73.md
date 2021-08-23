@@ -1,7 +1,7 @@
 ---
 layout: board
 title: Primo73 SD card images
-description: "Debian armhf SD card images for Primo73 by MSI, SoC: Allwinner A20, CPU ISA: armv7"
+description: "Minimal, pure and up-to-date vanilla Debian armhf SD card images for Primo73 by MSI, SoC: Allwinner A20, CPU ISA: armv7"
 board_id: msi_primo73
 board_dtb_name: sun7i-a20-primo73
 board_name: Primo73

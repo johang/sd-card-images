@@ -1,7 +1,7 @@
 ---
 layout: board
 title: Banana Pi M64 SD card images
-description: "Debian arm64 SD card images for Banana Pi M64 by Sinovoip, SoC: Allwinner A64, CPU ISA: armv8"
+description: "Minimal, pure and up-to-date vanilla Debian arm64 SD card images for Banana Pi M64 by Sinovoip, SoC: Allwinner A64, CPU ISA: armv8"
 board_id: banana_pi_m64
 board_dtb_name: sun50i-a64-bananapi-m64
 board_name: Banana Pi M64

@@ -1,7 +1,7 @@
 ---
 layout: board
 title: Orange Pi SD card images
-description: "Debian armhf SD card images for Orange Pi by Xunlong, SoC: Allwinner A20, CPU ISA: armv7"
+description: "Minimal, pure and up-to-date vanilla Debian armhf SD card images for Orange Pi by Xunlong, SoC: Allwinner A20, CPU ISA: armv7"
 board_id: orangepi
 board_dtb_name: sun7i-a20-orangepi
 board_name: Orange Pi

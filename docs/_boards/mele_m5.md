@@ -1,7 +1,7 @@
 ---
 layout: board
 title: Mele M5 SD card images
-description: "Debian armhf SD card images for Mele M5 by Mele, SoC: Allwinner A20, CPU ISA: armv7"
+description: "Minimal, pure and up-to-date vanilla Debian armhf SD card images for Mele M5 by Mele, SoC: Allwinner A20, CPU ISA: armv7"
 board_id: mele_m5
 board_dtb_name: sun7i-a20-m5
 board_name: Mele M5

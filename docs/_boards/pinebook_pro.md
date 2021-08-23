@@ -1,7 +1,7 @@
 ---
 layout: board
 title: Pinebook Pro SD card images
-description: "Debian arm64 SD card images for Pinebook Pro by Pine64, SoC: Rockchip RK3399, CPU ISA: armv8"
+description: "Minimal, pure and up-to-date vanilla Debian arm64 SD card images for Pinebook Pro by Pine64, SoC: Rockchip RK3399, CPU ISA: armv8"
 board_id: pinebook_pro
 board_dtb_name: rk3399-pinebook-pro
 board_name: Pinebook Pro

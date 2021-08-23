@@ -1,7 +1,7 @@
 ---
 layout: board
 title: Banana Pi M1+ SD card images
-description: "Debian armhf SD card images for Banana Pi M1+ by Sinovoip, SoC: Allwinner A20, CPU ISA: armv7"
+description: "Minimal, pure and up-to-date vanilla Debian armhf SD card images for Banana Pi M1+ by Sinovoip, SoC: Allwinner A20, CPU ISA: armv7"
 board_id: banana_pi_m1plus
 board_dtb_name: sun7i-a20-bananapi-m1-plus
 board_name: Banana Pi M1+

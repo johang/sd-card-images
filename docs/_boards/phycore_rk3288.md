@@ -1,7 +1,7 @@
 ---
 layout: board
 title: phyCORE-RK3288 SD card images
-description: "Debian armhf SD card images for phyCORE-RK3288 by Phytec, SoC: Rockchip RK3288, CPU ISA: armv7"
+description: "Minimal, pure and up-to-date vanilla Debian armhf SD card images for phyCORE-RK3288 by Phytec, SoC: Rockchip RK3288, CPU ISA: armv7"
 board_id: phycore_rk3288
 board_dtb_name: rk3288-phycore-rdk
 board_name: phyCORE-RK3288
