@@ -20,7 +20,7 @@ tinker_board_s,Tinker Board S,ASUS,rk3288,tinker-s-rk3288_defconfig,arm-linux-gn
 vyasa,Vyasa,Amarula,rk3288,vyasa-rk3288_defconfig,arm-linux-gnueabihf,rk3288-vyasa
 
 rk3328_evb,RK3328 EVB,Rockchip,rk3328,evb-rk3328_defconfig,aarch64-linux-gnu,rk3328-evb
-nanopi_r2s,Nano Pi R2S,FriendlyARM,rk3328,nanopi-r2s-rk3328_defconfig,aarch64-linux-gnu,rk3328-nanopi-r2s
+nanopi_r2s,Nano Pi R2S,FriendlyElec,rk3328,nanopi-r2s-rk3328_defconfig,aarch64-linux-gnu,rk3328-nanopi-r2s
 roc_rk3328_cc,ROC-RK3328-CC,Firefly,rk3328,roc-cc-rk3328_defconfig,aarch64-linux-gnu,rk3328-roc-cc
 rock_pi_e,ROCK Pi E,Radxa,rk3328,rock-pi-e-rk3328_defconfig,aarch64-linux-gnu,rk3328-rock-pi-e
 rock64,ROCK64,Pine64,rk3328,rock64-rk3328_defconfig,aarch64-linux-gnu,rk3328-rock64
@@ -33,12 +33,12 @@ firefly_rk3399,Firefly-RK3399,Firefly,rk3399,firefly-rk3399_defconfig,aarch64-li
 khadas_edge,Edge,Khadas,rk3399,khadas-edge-rk3399_defconfig,aarch64-linux-gnu,rk3399-khadas-edge
 khadas_edge_v,Edge V,Khadas,rk3399,khadas-edge-v-rk3399_defconfig,aarch64-linux-gnu,rk3399-khadas-edge-v
 leez_p710,Leez P720,Leez,rk3399,leez-rk3399_defconfig,aarch64-linux-gnu,rk3399-leez-p710
-nanopc_t4,NanoPC-T4,FriendlyARM,rk3399,nanopc-t4-rk3399_defconfig,aarch64-linux-gnu,rk3399-nanopc-t4
-nanopi_m4,Nano Pi M4,FriendlyARM,rk3399,nanopi-m4-rk3399_defconfig,aarch64-linux-gnu,rk3399-nanopi-m4
-nanopi_m4_2gb,Nano Pi M4 2GB,FriendlyARM,rk3399,nanopi-m4-2gb-rk3399_defconfig,aarch64-linux-gnu,rk3399-nanopi-m4-2gb
-nanopi_m4b,Nano Pi M4 B,FriendlyARM,rk3399,nanopi-m4b-rk3399_defconfig,aarch64-linux-gnu,rk3399-nanopi-m4b
-nanopi_neo4,Nano Pi Neo4,FriendlyARM,rk3399,nanopi-neo4-rk3399_defconfig,aarch64-linux-gnu,rk3399-nanopi-neo4
-nanopi_r4s,Nano Pi R4S,FriendlyARM,rk3399,nanopi-r4s-rk3399_defconfig,aarch64-linux-gnu,rk3399-nanopi-r4s
+nanopc_t4,NanoPC-T4,FriendlyElec,rk3399,nanopc-t4-rk3399_defconfig,aarch64-linux-gnu,rk3399-nanopc-t4
+nanopi_m4,Nano Pi M4,FriendlyElec,rk3399,nanopi-m4-rk3399_defconfig,aarch64-linux-gnu,rk3399-nanopi-m4
+nanopi_m4_2gb,Nano Pi M4 2GB,FriendlyElec,rk3399,nanopi-m4-2gb-rk3399_defconfig,aarch64-linux-gnu,rk3399-nanopi-m4-2gb
+nanopi_m4b,Nano Pi M4 B,FriendlyElec,rk3399,nanopi-m4b-rk3399_defconfig,aarch64-linux-gnu,rk3399-nanopi-m4b
+nanopi_neo4,Nano Pi Neo4,FriendlyElec,rk3399,nanopi-neo4-rk3399_defconfig,aarch64-linux-gnu,rk3399-nanopi-neo4
+nanopi_r4s,Nano Pi R4S,FriendlyElec,rk3399,nanopi-r4s-rk3399_defconfig,aarch64-linux-gnu,rk3399-nanopi-r4s
 orangepi_rk3399,Orange Pi rk3399,Xunlong,rk3399,orangepi-rk3399_defconfig,aarch64-linux-gnu,rk3399-orangepi
 pinebook_pro,Pinebook Pro,Pine64,rk3399,pinebook-pro-rk3399_defconfig,aarch64-linux-gnu,rk3399-pinebook-pro
 roc_rk3399_pc,ROC-RK3399-PC,Firefly,rk3399,roc-pc-rk3399_defconfig,aarch64-linux-gnu,rk3399-roc-pc
@@ -56,7 +56,7 @@ a10_olinuxino_lime,A10-OLinuXino-Lime,Olimex,allwinner-a10,A10-OLinuXino-Lime_de
 pcduino,pcDuino,LinkSprite,allwinner-a10,Linksprite_pcDuino_defconfig,arm-linux-gnueabihf,sun4i-a10-pcduino
 
 banana_pi_m64,Banana Pi M64,Sinovoip,allwinner-a64,bananapi_m64_defconfig,aarch64-linux-gnu,sun50i-a64-bananapi-m64
-nano_pi_a64,Nano Pi A64,FriendlyARM,allwinner-a64,nanopi_a64_defconfig,aarch64-linux-gnu,sun50i-a64-nanopi-a64
+nano_pi_a64,Nano Pi A64,FriendlyElec,allwinner-a64,nanopi_a64_defconfig,aarch64-linux-gnu,sun50i-a64-nanopi-a64
 a64_olinuxino,A64 OLinuXino,Olimex,allwinner-a64,a64-olinuxino_defconfig,aarch64-linux-gnu,sun50i-a64-olinuxino
 a64_olinuxino_emmc,A64 OLinuXino w/ eMMC,Olimex,allwinner-a64,a64-olinuxino-emmc_defconfig,aarch64-linux-gnu,sun50i-a64-olinuxino-emmc
 orange_pi_win,Orange Pi Win,Xunlong,allwinner-a64,orangepi_win_defconfig,aarch64-linux-gnu,sun50i-a64-orangepi-win
@@ -70,8 +70,8 @@ banana_pi_m2_plus,Banana Pi M2+,Sinovoip,allwinner-h5,bananapi_m2_plus_h5_defcon
 libretech_all_h3_cc_h5,ALL-H3-CC H5,Libre Computer,allwinner-h5,libretech_all_h3_cc_h5_defconfig,aarch64-linux-gnu,sun50i-h5-libretech-all-h3-cc
 libretech_all_h3_it_h5,ALL-H3-IT H5,Libre Computer,allwinner-h5,libretech_all_h3_it_h5_defconfig,aarch64-linux-gnu,sun50i-h5-libretech-all-h3-it
 libretech_all_h5_cc_h5,ALL-H5-CC H5,Libre Computer,allwinner-h5,libretech_all_h5_cc_h5_defconfig,aarch64-linux-gnu,sun50i-h5-libretech-all-h5-cc
-nano_pi_neo_plus2,Nano Pi Neo Plus2,FriendlyARM,allwinner-h5,nanopi_neo_plus2_defconfig,aarch64-linux-gnu,sun50i-h5-nanopi-neo-plus2
-nano_pi_neo2,Nano Pi Neo2,FriendlyARM,allwinner-h5,nanopi_neo2_defconfig,aarch64-linux-gnu,sun50i-h5-nanopi-neo2
+nano_pi_neo_plus2,Nano Pi Neo Plus2,FriendlyElec,allwinner-h5,nanopi_neo_plus2_defconfig,aarch64-linux-gnu,sun50i-h5-nanopi-neo-plus2
+nano_pi_neo2,Nano Pi Neo2,FriendlyElec,allwinner-h5,nanopi_neo2_defconfig,aarch64-linux-gnu,sun50i-h5-nanopi-neo2
 orange_pi_pc2,Orange Pi PC2,Xunlong,allwinner-h5,orangepi_pc2_defconfig,aarch64-linux-gnu,sun50i-h5-orangepi-pc2
 orange_pi_prime,Orange Pi Prime,Xunlong,allwinner-h5,orangepi_prime_defconfig,aarch64-linux-gnu,sun50i-h5-orangepi-prime
 orange_pi_zero_plus,Orange Pi Zero Plus,Xunlong,allwinner-h5,orangepi_zero_plus_defconfig,aarch64-linux-gnu,sun50i-h5-orangepi-zero-plus
@@ -135,10 +135,10 @@ orange_pi_zero,Orange Pi Zero,Xunlong,allwinner-h2+,orangepi_zero_defconfig,arm-
 
 banana_pi_m2_plus_h3,Banana Pi M2 Plus H3,Sinovoip,allwinner-h3,bananapi_m2_plus_h3_defconfig,arm-linux-gnueabihf,sun8i-h3-bananapi-m2-plus
 libretech_all_h3_cc_h3,ALL-H3-CC H3,Libre Computer,allwinner-h3,libretech_all_h3_cc_h3_defconfig,arm-linux-gnueabihf,sun8i-h3-libretech-all-h3-cc
-nano_pi_m1,Nano Pi M1,FriendlyARM,allwinner-h3,nanopi_m1_defconfig,arm-linux-gnueabihf,sun8i-h3-nanopi-m1
-nano_pi_m1_plus,Nano Pi M1 Plus,FriendlyARM,allwinner-h3,nanopi_m1_plus_defconfig,arm-linux-gnueabihf,sun8i-h3-nanopi-m1-plus
-nano_pi_neo,Nano Pi Neo,FriendlyARM,allwinner-h3,nanopi_neo_defconfig,arm-linux-gnueabihf,sun8i-h3-nanopi-neo
-nano_pi_neo_air,Nano Pi Neo Air,FriendlyARM,allwinner-h3,nanopi_neo_air_defconfig,arm-linux-gnueabihf,sun8i-h3-nanopi-neo-air
+nano_pi_m1,Nano Pi M1,FriendlyElec,allwinner-h3,nanopi_m1_defconfig,arm-linux-gnueabihf,sun8i-h3-nanopi-m1
+nano_pi_m1_plus,Nano Pi M1 Plus,FriendlyElec,allwinner-h3,nanopi_m1_plus_defconfig,arm-linux-gnueabihf,sun8i-h3-nanopi-m1-plus
+nano_pi_neo,Nano Pi Neo,FriendlyElec,allwinner-h3,nanopi_neo_defconfig,arm-linux-gnueabihf,sun8i-h3-nanopi-neo
+nano_pi_neo_air,Nano Pi Neo Air,FriendlyElec,allwinner-h3,nanopi_neo_air_defconfig,arm-linux-gnueabihf,sun8i-h3-nanopi-neo-air
 orange_pi_2,Orange Pi 2,Xunlong,allwinner-h3,orangepi_2_defconfig,arm-linux-gnueabihf,sun8i-h3-orangepi-2
 orange_pi_lite,Orange Pi Lite,Xunlong,allwinner-h3,orangepi_lite_defconfig,arm-linux-gnueabihf,sun8i-h3-orangepi-lite
 orange_pi_one,Orange Pi One,Xunlong,allwinner-h3,orangepi_one_defconfig,arm-linux-gnueabihf,sun8i-h3-orangepi-one
@@ -147,7 +147,7 @@ orange_pi_pc_plus,Orange Pi PC Plus,Xunlong,allwinner-h3,orangepi_pc_plus_defcon
 orange_pi_plus,Orange Pi Plus,Xunlong,allwinner-h3,orangepi_plus_defconfig,arm-linux-gnueabihf,sun8i-h3-orangepi-plus
 orange_pi_plus2e,Orange Pi Plus2E,Xunlong,allwinner-h3,orangepi_plus2e_defconfig,arm-linux-gnueabihf,sun8i-h3-orangepi-plus2e
 orange_pi_zero_plus2_h3,Orange Pi Zero Plus2 H3,Xunlong,allwinner-h3,orangepi_zero_plus2_h3_defconfig,arm-linux-gnueabihf,sun8i-h3-orangepi-zero-plus2
-zeropi,Zero Pi,FriendlyARM,allwinner-h3,zeropi_defconfig,arm-linux-gnueabihf,sun8i-h3-zeropi
+zeropi,Zero Pi,FriendlyElec,allwinner-h3,zeropi_defconfig,arm-linux-gnueabihf,sun8i-h3-zeropi
 
 banana_pi_m2m,Banana Pi M2M,Sinovoip,allwinner-r16,Bananapi_m2m_defconfig,arm-linux-gnueabihf,sun8i-r16-bananapi-m2m
 
