@@ -30,7 +30,7 @@ with open("boards.csv") as csvfile:
 			boardf.write("---\n")
 			boardf.write("layout: board\n")
 			boardf.write("title: %s SD card images\n" % (row[1]))
-			boardf.write("description: \"Debian %s SD card images for %s by %s, SoC: %s %s, CPU ISA: %s\"\n" % (isa_to_arch[chips[row[3]][4]], row[1], row[2], chips[row[3]][2], chips[row[3]][1], chips[row[3]][4]))
+			boardf.write("description: \"Minimal, pure and up-to-date vanilla Debian %s SD card images for %s by %s, SoC: %s %s, CPU ISA: %s\"\n" % (isa_to_arch[chips[row[3]][4]], row[1], row[2], chips[row[3]][2], chips[row[3]][1], chips[row[3]][4]))
 			boardf.write("board_id: %s\n" % (row[0]))
 			boardf.write("board_dtb_name: %s\n" % (row[6]))
 			boardf.write("board_name: %s\n" % (row[1]))
