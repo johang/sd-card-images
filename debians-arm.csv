@@ -8,3 +8,12 @@ debian,bullseye,arm64
 
 debian,sid,armhf
 debian,sid,arm64
+
+ubuntu,focal,armhf
+ubuntu,focal,arm64
+
+ubuntu,groovy,armhf
+ubuntu,groovy,arm64
+
+ubuntu,hirsute,armhf
+ubuntu,hirsute,arm64

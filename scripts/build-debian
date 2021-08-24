@@ -28,7 +28,12 @@ debian-amd64)
 	URL=http://deb.debian.org/debian
 	SCRIPT=/usr/share/debootstrap/scripts/sid
 	;;
-ubuntu-armhf|ubuntu-arm64|ubuntu-amd64)
+ubuntu-amd64)
+	KERNEL=linux-image-generic
+	URL=http://archive.ubuntu.com/ubuntu
+	SCRIPT=/usr/share/debootstrap/scripts/gutsy
+	;;
+ubuntu-armhf|ubuntu-arm64)
 	KERNEL=linux-image-generic
 	URL=http://ports.ubuntu.com/ubuntu-ports
 	SCRIPT=/usr/share/debootstrap/scripts/gutsy
@@ -66,14 +71,14 @@ openssh-server \
 PASSWORD=$(pwgen -B -A 6 1)
 
 # Write apt sources config
-case "${OS}-${DIST}" in
-debian-sid)
+case "${OS}-${ARCH}-${DIST}" in
+debian-*-sid)
 	tee debian/tmp/sources.list <<- EOF
 deb http://deb.debian.org/debian ${DIST} main
 deb-src http://deb.debian.org/debian ${DIST} main
 EOF
 	;;
-debian-bullseye)
+debian-*-bullseye)
 	tee debian/tmp/sources.list <<- EOF
 deb http://deb.debian.org/debian ${DIST} main
 deb-src http://deb.debian.org/debian ${DIST} main
@@ -89,6 +94,16 @@ deb http://deb.debian.org/debian ${DIST}-updates main
 deb-src http://deb.debian.org/debian ${DIST}-updates main
 deb http://security.debian.org/debian-security ${DIST}/updates main
 deb-src http://security.debian.org/debian-security ${DIST}/updates main
+EOF
+	;;
+ubuntu-amd64-*)
+	tee debian/tmp/sources.list <<- EOF
+deb http://archive.ubuntu.com/ubuntu ${DIST} main universe
+deb-src http://archive.ubuntu.com/ubuntu ${DIST} main universe
+deb http://archive.ubuntu.com/ubuntu ${DIST}-updates main universe
+deb-src http://archive.ubuntu.com/ubuntu ${DIST}-updates main universe
+deb http://archive.ubuntu.com/ubuntu ${DIST}-security main universe
+deb-src http://archive.ubuntu.com/ubuntu ${DIST}-security main universe
 EOF
 	;;
 ubuntu-*)
