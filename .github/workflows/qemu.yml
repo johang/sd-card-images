@@ -73,10 +73,10 @@ jobs:
       matrix:
         include:
           - os: debian
-            suite: buster
+            suite: bullseye
             arch: i386
           - os: debian
-            suite: bullseye
+            suite: bookworm
             arch: i386
           - os: debian
             suite: sid

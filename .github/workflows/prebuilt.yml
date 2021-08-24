@@ -14,16 +14,16 @@ jobs:
         include:
           # Debian armhf
           - boot: boot-qemu_arm_virt
-            debian: debian-buster-armhf
-          - boot: boot-qemu_arm_virt
             debian: debian-bullseye-armhf
+          - boot: boot-qemu_arm_virt
+            debian: debian-bookworm-armhf
           - boot: boot-qemu_arm_virt
             debian: debian-sid-armhf
           # Debian arm64
           - boot: boot-qemu_aarch64_virt
-            debian: debian-buster-arm64
-          - boot: boot-qemu_aarch64_virt
             debian: debian-bullseye-arm64
+          - boot: boot-qemu_aarch64_virt
+            debian: debian-bookworm-arm64
           - boot: boot-qemu_aarch64_virt
             debian: debian-sid-arm64
       fail-fast: false

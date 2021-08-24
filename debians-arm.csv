@@ -1,10 +1,10 @@
 OS,Dist,Arch
 
-debian,buster,armhf
-debian,buster,arm64
-
 debian,bullseye,armhf
 debian,bullseye,arm64
+
+debian,bookworm,armhf
+debian,bookworm,arm64
 
 debian,sid,armhf
 debian,sid,arm64
