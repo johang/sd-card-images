@@ -11,6 +11,4 @@ debian,sid,amd64
 
 ubuntu,focal,amd64
 
-ubuntu,groovy,amd64
-
 ubuntu,hirsute,amd64
