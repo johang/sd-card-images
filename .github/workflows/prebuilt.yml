@@ -26,6 +26,11 @@ jobs:
             debian: debian-bookworm-arm64
           - boot: boot-qemu_aarch64_virt
             debian: debian-sid-arm64
+          # Ubuntu arm64
+          - boot: boot-qemu_aarch64_virt
+            debian: ubuntu-focal-arm64
+          - boot: boot-qemu_aarch64_virt
+            debian: ubuntu-hirsute-arm64
       fail-fast: false
 
     env:
