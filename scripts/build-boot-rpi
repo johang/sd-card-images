@@ -26,18 +26,33 @@ fi
 
 # Download Raspberry Pi boot files
 FIRMWARE="https://github.com/raspberrypi/firmware/raw/stable"
-wget --tries 3 \
-     --retry-on-http-error 500,502,503,504 \
-     --no-verbose \
-     "${FIRMWARE}/boot/fixup.dat" \
-     "${FIRMWARE}/boot/fixup_x.dat" \
-     "${FIRMWARE}/boot/fixup_cd.dat" \
-     "${FIRMWARE}/boot/fixup_db.dat" \
-     "${FIRMWARE}/boot/start.elf" \
-     "${FIRMWARE}/boot/start_x.elf" \
-     "${FIRMWARE}/boot/start_cd.elf" \
-     "${FIRMWARE}/boot/start_db.elf" \
-     "${FIRMWARE}/boot/bootcode.bin"
+if [ "${CHIP_ID}" = "bcm2711" ]; then
+    wget --tries 3 \
+         --retry-on-http-error 500,502,503,504 \
+         --no-verbose \
+         "${FIRMWARE}/boot/fixup4.dat" \
+         "${FIRMWARE}/boot/fixup4x.dat" \
+         "${FIRMWARE}/boot/fixup4cd.dat" \
+         "${FIRMWARE}/boot/fixup4db.dat" \
+         "${FIRMWARE}/boot/start4.elf" \
+         "${FIRMWARE}/boot/start4x.elf" \
+         "${FIRMWARE}/boot/start4cd.elf" \
+         "${FIRMWARE}/boot/start4db.elf" \
+         "${FIRMWARE}/boot/bootcode.bin"
+else
+    wget --tries 3 \
+         --retry-on-http-error 500,502,503,504 \
+         --no-verbose \
+         "${FIRMWARE}/boot/fixup.dat" \
+         "${FIRMWARE}/boot/fixup_x.dat" \
+         "${FIRMWARE}/boot/fixup_cd.dat" \
+         "${FIRMWARE}/boot/fixup_db.dat" \
+         "${FIRMWARE}/boot/start.elf" \
+         "${FIRMWARE}/boot/start_x.elf" \
+         "${FIRMWARE}/boot/start_cd.elf" \
+         "${FIRMWARE}/boot/start_db.elf" \
+         "${FIRMWARE}/boot/bootcode.bin"
+fi
 
 # Magic thing to get debug output
 sed -i -e "s/BOOT_UART=0/BOOT_UART=1/" bootcode.bin
