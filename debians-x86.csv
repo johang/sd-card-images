@@ -12,3 +12,5 @@ debian,sid,amd64
 ubuntu,focal,amd64
 
 ubuntu,hirsute,amd64
+
+ubuntu,impish,amd64
