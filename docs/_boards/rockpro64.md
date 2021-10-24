@@ -1,7 +1,7 @@
 ---
 layout: board
 title: ROCKPro64 SD card images
-description: "Minimal, pure and up-to-date vanilla Debian arm64 SD card images for ROCKPro64 by Pine64, SoC: Rockchip RK3399, CPU ISA: armv8"
+description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for ROCKPro64 by Pine64, SoC: Rockchip RK3399, CPU ISA: armv8"
 board_id: rockpro64
 board_dtb_name: rk3399-rockpro64
 board_name: ROCKPro64

@@ -1,7 +1,7 @@
 ---
 layout: board
 title: pcDuino3 Nano SD card images
-description: "Minimal, pure and up-to-date vanilla Debian armhf SD card images for pcDuino3 Nano by LinkSprite, SoC: Allwinner A20, CPU ISA: armv7"
+description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu armhf SD card images for pcDuino3 Nano by LinkSprite, SoC: Allwinner A20, CPU ISA: armv7"
 board_id: pcduino3_nano
 board_dtb_name: sun7i-a20-pcduino3-nano
 board_name: pcDuino3 Nano

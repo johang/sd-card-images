@@ -1,7 +1,7 @@
 ---
 layout: board
 title: Orange Pi PC SD card images
-description: "Minimal, pure and up-to-date vanilla Debian armhf SD card images for Orange Pi PC by Xunlong, SoC: Allwinner H3, CPU ISA: armv7"
+description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu armhf SD card images for Orange Pi PC by Xunlong, SoC: Allwinner H3, CPU ISA: armv7"
 board_id: orange_pi_pc
 board_dtb_name: sun8i-h3-orangepi-pc
 board_name: Orange Pi PC

@@ -1,7 +1,7 @@
 ---
 layout: board
 title: Ficus SD card images
-description: "Minimal, pure and up-to-date vanilla Debian arm64 SD card images for Ficus by 96boards, SoC: Rockchip RK3399, CPU ISA: armv8"
+description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for Ficus by 96boards, SoC: Rockchip RK3399, CPU ISA: armv8"
 board_id: ficus
 board_dtb_name: rk3399-ficus
 board_name: Ficus

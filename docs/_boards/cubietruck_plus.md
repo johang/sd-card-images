@@ -1,7 +1,7 @@
 ---
 layout: board
 title: Cubietruck Plus SD card images
-description: "Minimal, pure and up-to-date vanilla Debian armhf SD card images for Cubietruck Plus by Cubieboard, SoC: Allwinner A83T, CPU ISA: armv7"
+description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu armhf SD card images for Cubietruck Plus by Cubieboard, SoC: Allwinner A83T, CPU ISA: armv7"
 board_id: cubietruck_plus
 board_dtb_name: sun8i-a83t-cubietruck-plus
 board_name: Cubietruck Plus

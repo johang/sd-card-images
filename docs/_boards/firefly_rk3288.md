@@ -1,7 +1,7 @@
 ---
 layout: board
 title: Firefy-RK3288 SD card images
-description: "Minimal, pure and up-to-date vanilla Debian armhf SD card images for Firefy-RK3288 by Firefy, SoC: Rockchip RK3288, CPU ISA: armv7"
+description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu armhf SD card images for Firefy-RK3288 by Firefy, SoC: Rockchip RK3288, CPU ISA: armv7"
 board_id: firefly_rk3288
 board_dtb_name: rk3288-firefly
 board_name: Firefy-RK3288

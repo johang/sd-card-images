@@ -1,7 +1,7 @@
 ---
 layout: board
 title: Nano Pi A64 SD card images
-description: "Minimal, pure and up-to-date vanilla Debian arm64 SD card images for Nano Pi A64 by FriendlyElec, SoC: Allwinner A64, CPU ISA: armv8"
+description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for Nano Pi A64 by FriendlyElec, SoC: Allwinner A64, CPU ISA: armv8"
 board_id: nano_pi_a64
 board_dtb_name: sun50i-a64-nanopi-a64
 board_name: Nano Pi A64

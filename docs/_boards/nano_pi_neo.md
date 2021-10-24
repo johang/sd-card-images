@@ -1,7 +1,7 @@
 ---
 layout: board
 title: Nano Pi Neo SD card images
-description: "Minimal, pure and up-to-date vanilla Debian armhf SD card images for Nano Pi Neo by FriendlyElec, SoC: Allwinner H3, CPU ISA: armv7"
+description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu armhf SD card images for Nano Pi Neo by FriendlyElec, SoC: Allwinner H3, CPU ISA: armv7"
 board_id: nano_pi_neo
 board_dtb_name: sun8i-h3-nanopi-neo
 board_name: Nano Pi Neo

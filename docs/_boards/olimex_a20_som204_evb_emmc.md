@@ -1,7 +1,7 @@
 ---
 layout: board
 title: A20-SOM204-EVB w/ eMMC SD card images
-description: "Minimal, pure and up-to-date vanilla Debian armhf SD card images for A20-SOM204-EVB w/ eMMC by Olimex, SoC: Allwinner A20, CPU ISA: armv7"
+description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu armhf SD card images for A20-SOM204-EVB w/ eMMC by Olimex, SoC: Allwinner A20, CPU ISA: armv7"
 board_id: olimex_a20_som204_evb_emmc
 board_dtb_name: sun7i-a20-olimex-som204-evb-emmc
 board_name: A20-SOM204-EVB w/ eMMC

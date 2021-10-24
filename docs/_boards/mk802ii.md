@@ -1,7 +1,7 @@
 ---
 layout: board
 title: MK802ii SD card images
-description: "Minimal, pure and up-to-date vanilla Debian armhf SD card images for MK802ii by Rikomagic, SoC: Allwinner A10, CPU ISA: armv7"
+description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu armhf SD card images for MK802ii by Rikomagic, SoC: Allwinner A10, CPU ISA: armv7"
 board_id: mk802ii
 board_dtb_name: sun4i-a10-mk802ii
 board_name: MK802ii

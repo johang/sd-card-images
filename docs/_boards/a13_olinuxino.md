@@ -1,7 +1,7 @@
 ---
 layout: board
 title: A13 OLinuXino SD card images
-description: "Minimal, pure and up-to-date vanilla Debian armhf SD card images for A13 OLinuXino by Olimex, SoC: Allwinner A13, CPU ISA: armv7"
+description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu armhf SD card images for A13 OLinuXino by Olimex, SoC: Allwinner A13, CPU ISA: armv7"
 board_id: a13_olinuxino
 board_dtb_name: sun5i-a13-olinuxino
 board_name: A13 OLinuXino

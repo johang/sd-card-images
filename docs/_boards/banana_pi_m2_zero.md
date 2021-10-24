@@ -1,7 +1,7 @@
 ---
 layout: board
 title: Banana Pi M2 Zero SD card images
-description: "Minimal, pure and up-to-date vanilla Debian armhf SD card images for Banana Pi M2 Zero by Sinovoip, SoC: Allwinner H2+, CPU ISA: armv7"
+description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu armhf SD card images for Banana Pi M2 Zero by Sinovoip, SoC: Allwinner H2+, CPU ISA: armv7"
 board_id: banana_pi_m2_zero
 board_dtb_name: sun8i-h2-plus-bananapi-m2-zero
 board_name: Banana Pi M2 Zero

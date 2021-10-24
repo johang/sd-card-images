@@ -1,7 +1,7 @@
 ---
 layout: board
 title: RK3288 EVB SD card images
-description: "Minimal, pure and up-to-date vanilla Debian armhf SD card images for RK3288 EVB by Rockchip, SoC: Rockchip RK3288, CPU ISA: armv7"
+description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu armhf SD card images for RK3288 EVB by Rockchip, SoC: Rockchip RK3288, CPU ISA: armv7"
 board_id: rk3288_evb
 board_dtb_name: rk3288-evb
 board_name: RK3288 EVB

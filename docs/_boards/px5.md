@@ -1,7 +1,7 @@
 ---
 layout: board
 title: PX5 EVB SD card images
-description: "Minimal, pure and up-to-date vanilla Debian arm64 SD card images for PX5 EVB by Rockchip, SoC: Rockchip RK3368, CPU ISA: armv8"
+description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for PX5 EVB by Rockchip, SoC: Rockchip RK3368, CPU ISA: armv8"
 board_id: px5
 board_dtb_name: rk3368-px5-evb
 board_name: PX5 EVB

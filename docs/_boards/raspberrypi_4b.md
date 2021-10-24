@@ -1,7 +1,7 @@
 ---
 layout: board
 title: Raspberry Pi 4 B SD card images
-description: "Minimal, pure and up-to-date vanilla Debian arm64 SD card images for Raspberry Pi 4 B by Raspberry Pi Foundation, SoC: Broadcom BCM2711, CPU ISA: armv8"
+description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for Raspberry Pi 4 B by Raspberry Pi Foundation, SoC: Broadcom BCM2711, CPU ISA: armv8"
 board_id: raspberrypi_4b
 board_dtb_name: bcm2711-rpi-4-b
 board_name: Raspberry Pi 4 B

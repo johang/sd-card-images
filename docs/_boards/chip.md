@@ -1,7 +1,7 @@
 ---
 layout: board
 title: CHIP SD card images
-description: "Minimal, pure and up-to-date vanilla Debian armhf SD card images for CHIP by Next Thing, SoC: Allwinner R8, CPU ISA: armv7"
+description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu armhf SD card images for CHIP by Next Thing, SoC: Allwinner R8, CPU ISA: armv7"
 board_id: chip
 board_dtb_name: sun5i-r8-chip
 board_name: CHIP

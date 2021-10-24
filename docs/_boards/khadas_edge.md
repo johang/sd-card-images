@@ -1,7 +1,7 @@
 ---
 layout: board
 title: Edge SD card images
-description: "Minimal, pure and up-to-date vanilla Debian arm64 SD card images for Edge by Khadas, SoC: Rockchip RK3399, CPU ISA: armv8"
+description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for Edge by Khadas, SoC: Rockchip RK3399, CPU ISA: armv8"
 board_id: khadas_edge
 board_dtb_name: rk3399-khadas-edge
 board_name: Edge

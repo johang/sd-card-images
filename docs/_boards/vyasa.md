@@ -1,7 +1,7 @@
 ---
 layout: board
 title: Vyasa SD card images
-description: "Minimal, pure and up-to-date vanilla Debian armhf SD card images for Vyasa by Amarula, SoC: Rockchip RK3288, CPU ISA: armv7"
+description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu armhf SD card images for Vyasa by Amarula, SoC: Rockchip RK3288, CPU ISA: armv7"
 board_id: vyasa
 board_dtb_name: rk3288-vyasa
 board_name: Vyasa

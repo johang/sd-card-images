@@ -1,7 +1,7 @@
 ---
 layout: board
 title: Orange Pi Prime SD card images
-description: "Minimal, pure and up-to-date vanilla Debian arm64 SD card images for Orange Pi Prime by Xunlong, SoC: Allwinner H5, CPU ISA: armv8"
+description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for Orange Pi Prime by Xunlong, SoC: Allwinner H5, CPU ISA: armv8"
 board_id: orange_pi_prime
 board_dtb_name: sun50i-h5-orangepi-prime
 board_name: Orange Pi Prime

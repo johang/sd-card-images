@@ -2,6 +2,8 @@
 import csv, os, glob
 for x in glob.glob("docs/_boards/*.md"):
 	os.remove(x)
+for x in glob.glob("docs/_debians/*.md"):
+	os.remove(x)
 chips = {}
 isa_to_arch = {
 	"armv7": "armhf",
@@ -30,7 +32,7 @@ with open("boards.csv") as csvfile:
 			boardf.write("---\n")
 			boardf.write("layout: board\n")
 			boardf.write("title: %s SD card images\n" % (row[1]))
-			boardf.write("description: \"Minimal, pure and up-to-date vanilla Debian %s SD card images for %s by %s, SoC: %s %s, CPU ISA: %s\"\n" % (isa_to_arch[chips[row[3]][4]], row[1], row[2], chips[row[3]][2], chips[row[3]][1], chips[row[3]][4]))
+			boardf.write("description: \"Minimal, pure and up-to-date vanilla Debian/Ubuntu %s SD card images for %s by %s, SoC: %s %s, CPU ISA: %s\"\n" % (isa_to_arch[chips[row[3]][4]], row[1], row[2], chips[row[3]][2], chips[row[3]][1], chips[row[3]][4]))
 			boardf.write("board_id: %s\n" % (row[0]))
 			boardf.write("board_dtb_name: %s\n" % (row[6]))
 			boardf.write("board_name: %s\n" % (row[1]))
@@ -40,3 +42,17 @@ with open("boards.csv") as csvfile:
 			boardf.write("board_cpu_arch_isa: %s\n" % (chips[row[3]][4]))
 			boardf.write("board_cpu_arch_debian: %s\n" % (isa_to_arch[chips[row[3]][4]]))
 			boardf.write("---\n")
+with open("debians-arm.csv") as csvfile:
+	debiansf = csv.reader(csvfile)
+	next(debiansf)
+	for row in debiansf:
+		if not row:
+			continue
+		if row[0].strip().startswith("#"):
+			continue
+		with open("docs/_debians/%s-%s-%s.md" % (row[0], row[1], row[2]), "w") as debiansf:
+			debiansf.write("---\n")
+			debiansf.write("os: %s\n" % (row[0], ))
+			debiansf.write("dist: %s\n" % (row[1], ))
+			debiansf.write("arch: %s\n" % (row[2], ))
+			debiansf.write("---\n")
