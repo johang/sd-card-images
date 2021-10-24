@@ -2,8 +2,7 @@ name: sd-card-images CI
 
 on:
   push:
-    branches:
-      - "*"
+    branches: "*"
   pull_request:
     branches:
       - "master"
