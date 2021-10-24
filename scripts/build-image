@@ -5,8 +5,11 @@ IMAGE="${1}"
 
 set -ex
 
+# Aim for a 4 GB card but with 5% unpartitioned as a margin
+# >>> (0.95 * 4000000000 // 512) * 512
+# 3800000000.0
 rm -f "${IMAGE}"
-fallocate -v -l 2GB "${IMAGE}" # 2,000,000,000 bytes
+fallocate -v -l 3800000000 "${IMAGE}" # 3,800,000,000 bytes
 
 parted -s "${IMAGE}" mklabel msdos
 parted -s "${IMAGE}" mkpart primary fat32 -- 4MiB 32MiB # 28 MiB (50,331,648 bytes)
