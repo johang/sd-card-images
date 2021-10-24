@@ -20,6 +20,9 @@ echo "Using password ${SSHPASS}"
 # Build image
 zcat "${BOOT}" "${DEBIAN}" > image.bin
 
+# Assume 4GB virtual disk
+fallocate -l 4GB image.bin
+
 # Extract U-Boot (u-boot.rom in x86 case)
 dd if=image.bin of=bios.bin count=2048 skip=16
 
