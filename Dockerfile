@@ -1,4 +1,4 @@
-FROM public.ecr.aws/ubuntu/ubuntu:latest
+FROM public.ecr.aws/lts/ubuntu:20.04_stable
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
     apt-get --assume-yes \
