@@ -84,7 +84,7 @@ until sshpass -e ssh -o "ConnectTimeout=5" \
                      -o "UserKnownHostsFile=/dev/null" \
                      -p 5555 \
                      -q \
-                     root@localhost "sleep 5 && poweroff"; do
+                     root@localhost "sleep 5 && apt-get update && poweroff"; do
 	sleep 1
 done
 
