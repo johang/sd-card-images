@@ -11,4 +11,4 @@ debian,sid,amd64
 
 ubuntu,focal,amd64
 
-ubuntu,jellyfish,amd64
+ubuntu,jammy,amd64

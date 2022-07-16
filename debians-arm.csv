@@ -12,5 +12,5 @@ debian,sid,arm64
 ubuntu,focal,armhf
 ubuntu,focal,arm64
 
-ubuntu,jellyfish,armhf
-ubuntu,jellyfish,arm64
+ubuntu,jammy,armhf
+ubuntu,jammy,arm64
