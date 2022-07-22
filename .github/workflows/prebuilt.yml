@@ -30,9 +30,7 @@ jobs:
           - boot: boot-qemu_aarch64_virt
             debian: ubuntu-focal-arm64
           - boot: boot-qemu_aarch64_virt
-            debian: ubuntu-hirsute-arm64
-          - boot: boot-qemu_aarch64_virt
-            debian: ubuntu-impish-arm64
+            debian: ubuntu-jammy-arm64
       fail-fast: false
 
     env:
