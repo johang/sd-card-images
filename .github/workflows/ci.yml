@@ -153,9 +153,8 @@ jobs:
         if: github.event_name != 'pull_request' && github.ref_name == 'master'
         uses: docker/login-action@v1
         with:
-          registry: public.ecr.aws/johang
-          username: AWS
-          password: ${{ secrets.AWS_ECR_PASSWORD }}
+          username: johang
+          password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
 
       - name: Build and push
         uses: docker/build-push-action@v2
@@ -163,4 +162,4 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64
           push: ${{ github.event_name != 'pull_request' && github.ref_name == 'master' }}
-          tags: public.ecr.aws/johang/sd-card-images:latest
+          tags: johang/sd-card-images:latest
