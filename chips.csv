@@ -33,6 +33,14 @@ rk3368,RK3368,Rockchip,ARM Cortex A53,armv8
 rk3399,RK3399,Rockchip,ARM Cortex A72/A53,armv8
 rk3399pro,RK3399Pro,Rockchip,ARM Cortex A72/A53,armv8
 
+meson-gxbb,S905,Amlogic S905,ARM Cortex A53,armv8
+meson-gxl,S905X/S905W/S905D/S805X,Amlogic S905X/S905W/S905D/S805X,ARM Cortex A53,armv8
+meson-gxm,S912,Amlogic S912,ARM Cortex A53,armv8
+meson-axg,A113X/A113D,Amlogic A113X/A113D,ARM Cortex A53,armv8
+meson-g12a,S905X2/S905Y2/S905D2,Amlogic S905X2/S905Y2/S905D2,ARM Cortex A53,armv8
+meson-g12b,S922X/A311D,Amlogic S922X/A311D,ARM Cortex A73/A53,armv8
+meson-sm1,S905X3/S905Y3/S905D3,Amlogic S905X3/S905Y3/S905D3,ARM Cortex A55,armv8
+
 qemu-arm,arm,QEMU,ARM Cortex A15,armv7
 qemu-aarch64,aarch64,QEMU,ARM Cortex A53,armv8
 qemu-x86_64,x86_64,QEMU,x86 qemu64,x86-64

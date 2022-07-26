@@ -1,0 +1,55 @@
+#!/bin/sh
+# Build SD card image
+
+BOARD_ID="${1}" # For example "bananapi"
+CHIP_ID="${2}" # For example "allwinner-a10"
+DEFCONFIG="${3}" # For example "Bananapi_defconfig"
+TUPLE="${4}" # For example "arm-linux-gnueabihf"
+
+set -ex
+
+AMLOGIC_BOOT_FIP_GIT_URL_DEFAULT="https://github.com/LibreELEC/amlogic-boot-fip/"
+
+if [ ! -z "${AMLOGIC_BOOT_FIP_GIT_REV}" ]
+then
+	git clone --depth 1 \
+	          --reference-if-able "${WORKDIR}/amlogic-boot-fip" \
+	          --branch "${AMLOGIC_BOOT_FIP_GIT_REV}" \
+	          "${AMLOGIC_BOOT_FIP_GIT_URL:-${AMLOGIC_BOOT_FIP_GIT_URL_DEFAULT}}" amlogic-boot-fip
+else
+	git clone --depth 1 \
+	          --reference-if-able "${WORKDIR}/amlogic-boot-fip" \
+	          "${AMLOGIC_BOOT_FIP_GIT_URL:-${AMLOGIC_BOOT_FIP_GIT_URL_DEFAULT}}" amlogic-boot-fip
+fi
+
+build-u_boot "${DEFCONFIG}" "${TUPLE}"
+
+cd amlogic-boot-fip
+case "${BOARD_ID}" in
+libretech_cc*)
+	BOARD=lepotato
+	;;
+libretech_ac*)
+	BOARD=lafrite
+	;;
+libretech_s905d*)
+	BOARD=tartiflette-s905d
+	;;
+libretech_s912*)
+	BOARD=tartiflette-s912
+	;;
+beelink-gsking*)
+	BOARD=beelink-s922x
+	;;
+*)
+	# X_Y_defconfig -> x-y
+	BOARD=`"${DEFCONFIG%_defconfig}" | tr _ -`
+	;;
+esac
+mkdir ../amlogic-boot-fip-output
+./build-fip.sh "${BOARD}" ../u-boot/u-boot.bin ../amlogic-boot-fip-output
+cd ..
+
+# Copy U-Boot but don't overwrite the partition table
+dd if=amlogic-boot-fip-output/u-boot.bin.sd.bin of=tmp.img conv=notrunc bs=1 count=446
+dd if=amlogic-boot-fip-output/u-boot.bin.sd.bin of=tmp.img conv=notrunc bs=512 skip=1 seek=1

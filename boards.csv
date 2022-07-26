@@ -160,6 +160,39 @@ banana_pi_m2_berry,Banana Pi M2 Berry,Sinovoip,allwinner-v40,bananapi_m2_berry_d
 cubieboard4,Cubieboard 4,Cubieboard,allwinner-a80,Cubieboard4_defconfig,arm-linux-gnueabihf,sun9i-a80-cubieboard4
 merrii_a80_optimus,Merrii A80 Optimus,Merrii,allwinner-a80,Merrii_A80_Optimus_defconfig,arm-linux-gnueabihf,sun9i-a80-optimus
 
+jethub_j100,JetHub J100,JetHome,meson-axg,jethub_j100_defconfig,aarch64-linux-gnu,meson-axg-jethome-jethub-j100
+amlogic_s400,S400,Amlogic,meson-axg,s400_defconfig,aarch64-linux-gnu,meson-axg-s400
+
+radxa_zero,Zero,Radxa,meson-g12a,radxa-zero_defconfig,aarch64-linux-gnu,meson-g12a-radxa-zero
+amlogic_u200,U200,Amlogic,meson-g12a,u200_defconfig,aarch64-linux-gnu,meson-g12a-u200
+
+khadas_vim3,VIM3,Khadas,meson-g12b,khadas-vim3_defconfig,aarch64-linux-gnu,meson-g12b-a311d-khadas-vim3
+beelink_gt_king_x,GT-King X,Beelink,meson-g12b,beelink-gsking-x_defconfig,aarch64-linux-gnu,meson-g12b-gsking-x
+beelink_gt_king,GT-King,Beelink,meson-g12b,beelink-gtking_defconfig,aarch64-linux-gnu,meson-g12b-gtking
+beelink_gt_king_pro,GT-King Pro,Beelink,meson-g12b,beelink-gtkingpro_defconfig,aarch64-linux-gnu,meson-g12b-gtking-pro
+odroid_n2,ODROID N2,Hardkernel,meson-g12b,odroid-n2_defconfig,aarch64-linux-gnu,meson-g12b-odroid-n2
+
+nano_pi_k2,Nano Pi K2,FriendlyElec,meson-gxbb,nanopi-k2_defconfig,aarch64-linux-gnu,meson-gxbb-nanopi-k2
+odroid_c2,ODROID C2,Hardkernel,meson-gxbb,odroid-c2_defconfig,aarch64-linux-gnu,meson-gxbb-odroidc2
+amlogic_p200,P200,Amlogic,meson-gxbb,p200_defconfig,aarch64-linux-gnu,meson-gxbb-p200
+amlogic_p201,P201,Amlogic,meson-gxbb,p201_defconfig,aarch64-linux-gnu,meson-gxbb-p201
+
+libretech_s805x_ac,AML-S805X-AC (La Frite),Libre Computer,meson-gxl,libretech-ac_defconfig,aarch64-linux-gnu,meson-gxl-s805x-libretech-ac
+libretech_s905d_pc,AML-S905D-PC (Tartiflette),Libre Computer,meson-gxl,libretech-s905d-pc_defconfig,aarch64-linux-gnu,meson-gxl-s905d-libretech-pc
+jethub_j80,JetHub J80,JetHome,meson-gxl,jethub_j80_defconfig,aarch64-linux-gnu,meson-gxl-s905w-jethome-jethub-j80
+khadas_vim,VIM,Khadas,meson-gxl,khadas-vim_defconfig,aarch64-linux-gnu,meson-gxl-s905x-khadas-vim
+libretech_cc,AML-S905X-CC (Le Potato),Libre Computer,meson-gxl,libretech-cc_defconfig,aarch64-linux-gnu,meson-gxl-s905x-libretech-cc
+libretech_cc_v2,AML-S905X-CC V2 (Le Potato),Libre Computer,meson-gxl,libretech-cc_v2_defconfig,aarch64-linux-gnu,meson-gxl-s905x-libretech-cc-v2
+amlogic_p212,P212,Amlogic,meson-gxl,p212_defconfig,aarch64-linux-gnu,meson-gxl-s905x-p212
+
+khadas_vim2,VIM2,Khadas,meson-gxm,khadas-vim2_defconfig,aarch64-linux-gnu,meson-gxm-khadas-vim2
+libretech_s912_pc,AML-S912-PC (Tartiflette),Libre Computer,meson-gxm,libretech-s912-pc_defconfig,aarch64-linux-gnu,meson-gxm-s912-libretech-pc
+
+banana_pi_m5,Banana Pi M5,Sinovoip,meson-sm1,bananapi-m5_defconfig,aarch64-linux-gnu,meson-sm1-bananapi-m5
+khadas_vim3l,VIM3L,Khadas,meson-sm1,khadas-vim3l_defconfig,aarch64-linux-gnu,meson-sm1-khadas-vim3l
+odroid_c4,ODROID C4,Hardkernel,meson-sm1,odroid-c4_defconfig,aarch64-linux-gnu,meson-sm1-odroid-c4
+odroid_hc4,ODROID HC4,Hardkernel,meson-sm1,odroid-hc4_defconfig,aarch64-linux-gnu,meson-sm1-odroid-hc4
+
 qemu_arm_virt,QEMU arm virt,QEMU,qemu-arm,qemu_arm_defconfig,arm-linux-gnueabihf,N/A
 qemu_aarch64_virt,QEMU aarch64 virt,QEMU,qemu-aarch64,qemu_arm64_defconfig,aarch64-linux-gnu,N/A
 qemu_x86_virt,QEMU x86 virt,QEMU,qemu-x86,qemu-x86_defconfig,i686-linux-gnu,N/A
