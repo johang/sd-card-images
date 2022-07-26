@@ -73,6 +73,7 @@ libretech_all_h3_it_h5,ALL-H3-IT H5,Libre Computer,allwinner-h5,libretech_all_h3
 libretech_all_h5_cc_h5,ALL-H5-CC H5,Libre Computer,allwinner-h5,libretech_all_h5_cc_h5_defconfig,aarch64-linux-gnu,sun50i-h5-libretech-all-h5-cc
 nano_pi_neo_plus2,Nano Pi Neo Plus2,FriendlyElec,allwinner-h5,nanopi_neo_plus2_defconfig,aarch64-linux-gnu,sun50i-h5-nanopi-neo-plus2
 nano_pi_neo2,Nano Pi Neo2,FriendlyElec,allwinner-h5,nanopi_neo2_defconfig,aarch64-linux-gnu,sun50i-h5-nanopi-neo2
+nano_pi_r1s,Nano Pi R1S,FriendlyElec,allwinner-h5,nanopi_r1s_h5_defconfig,aarch64-linux-gnu,sun50i-h5-nanopi-r1s-h5
 orange_pi_pc2,Orange Pi PC2,Xunlong,allwinner-h5,orangepi_pc2_defconfig,aarch64-linux-gnu,sun50i-h5-orangepi-pc2
 orange_pi_prime,Orange Pi Prime,Xunlong,allwinner-h5,orangepi_prime_defconfig,aarch64-linux-gnu,sun50i-h5-orangepi-prime
 orange_pi_zero_plus,Orange Pi Zero Plus,Xunlong,allwinner-h5,orangepi_zero_plus_defconfig,aarch64-linux-gnu,sun50i-h5-orangepi-zero-plus
