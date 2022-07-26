@@ -1,5 +1,5 @@
 ---
 os: ubuntu
-dist: hirsute
+dist: jammy
 arch: arm64
 ---
