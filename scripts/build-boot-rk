@@ -13,6 +13,10 @@ rk3328|rk3368|rk3399)
     build-atf "${CHIP_ID}" "${TUPLE}"
     export BL31="$(pwd)/arm-trusted-firmware/build/${CHIP_ID}/debug/bl31/bl31.elf"
     ;;
+rk3399pro)
+    build-atf rk3399 "${TUPLE}"
+    export BL31="$(pwd)/arm-trusted-firmware/build/rk3399/debug/bl31/bl31.elf"
+    ;;
 *)
     ;;
 esac

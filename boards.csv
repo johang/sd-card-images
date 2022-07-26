@@ -46,6 +46,7 @@ rock_pi_4,ROCK Pi 4,Radxa,rk3399,rock-pi-4-rk3399_defconfig,aarch64-linux-gnu,rk
 rock_pi_4c,ROCK Pi 4 model C,Radxa,rk3399,rock-pi-4c-rk3399_defconfig,aarch64-linux-gnu,rk3399-rock-pi-4c
 rock960,Rock960,96boards,rk3399,rock960-rk3399_defconfig,aarch64-linux-gnu,rk3399-rock960
 rockpro64,ROCKPro64,Pine64,rk3399,rockpro64-rk3399_defconfig,aarch64-linux-gnu,rk3399-rockpro64
+rock_pi_n10,ROCK Pi N10,Radxa,rk3399pro,rock-pi-n10-rk3399pro_defconfig,aarch64-linux-gnu,rk3399pro-rock-pi-n10
 
 mele_a1000,Mele A1000,Mele,allwinner-a10,Mele_A1000_defconfig,arm-linux-gnueabihf,sun4i-a10-a1000
 cubieboard,Cubieboard,Cubieboard,allwinner-a10,Cubieboard_defconfig,arm-linux-gnueabihf,sun4i-a10-cubieboard
