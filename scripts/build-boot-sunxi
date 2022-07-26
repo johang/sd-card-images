@@ -17,6 +17,10 @@ case "${CHIP_ID}" in
     build-atf sun50i_h6 "${TUPLE}"
     export BL31="$(pwd)/arm-trusted-firmware/build/sun50i_h6/debug/bl31.bin"
     ;;
+*h616)
+    build-atf sun50i_h616 "${TUPLE}"
+    export BL31="$(pwd)/arm-trusted-firmware/build/sun50i_h616/debug/bl31.bin"
+    ;;
 *)
     ;;
 esac
