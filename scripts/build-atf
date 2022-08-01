@@ -32,4 +32,4 @@ fi
 export CROSS_COMPILE=$(dirname $(which "${TUPLE}-gcc"))/"${TUPLE}-"
 
 # Build ATF
-make ${MAKEFLAGS} PLAT="${PLAT}" DEBUG=1 bl31
+make ${MAKEFLAGS:--j$(nproc)} PLAT="${PLAT}" DEBUG=1 bl31

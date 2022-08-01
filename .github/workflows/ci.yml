@@ -13,9 +13,6 @@ permissions:
       id-token: write
       contents: read
 
-env:
-  MAKEFLAGS: -j2
-
 jobs:
   build-boot-x86:
     runs-on: ubuntu-latest

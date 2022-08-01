@@ -32,4 +32,4 @@ fi
 export CROSS_COMPILE=$(dirname $(which "${TUPLE}-gcc"))/"${TUPLE}-"
 
 # Build U-Boot
-make ${MAKEFLAGS} "${DEFCONFIG}" && make ${MAKEFLAGS}
+make ${MAKEFLAGS} "${DEFCONFIG}" && make ${MAKEFLAGS:--j$(nproc)}
