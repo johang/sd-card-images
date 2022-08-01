@@ -1,0 +1,18 @@
+#!/bin/sh
+# Build one boot image as part of a AWS Batch array job
+
+ARRAY_S3_URI_BASE="${1}" # For example "s3://bucket/folder"
+ARTIFACTS_S3_URI_BASE="${2}" # For example "s3://bucket/folder"
+
+set -ex
+
+# Download parameters for this run
+aws s3 cp "${ARRAY_S3_URI_BASE}/${AWS_BATCH_JOB_ARRAY_INDEX}" args
+
+# Source parameters
+. args
+
+build-boot "${BOARD_ID}" "${CHIP_ID}" "${DEFCONFIG}" "${TUPLE}"
+
+# Upload artifacts from this run
+aws s3 cp "${ARTIFACTS_DIR:-/artifacts}" "${ARTIFACTS_S3_URI_BASE}" --recursive
