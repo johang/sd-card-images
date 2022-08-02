@@ -6,11 +6,14 @@ ARTIFACTS_S3_URI_BASE="${2}" # For example "s3://bucket/folder"
 
 set -ex
 
+ARGS=$(mktemp --tmpdir args-XXXXXX.sh)
+trap 'rm -f "${ARGS}"' EXIT INT TERM
+
 # Download parameters for this run
-aws s3 cp "${ARRAY_S3_URI_BASE}/${AWS_BATCH_JOB_ARRAY_INDEX}" args
+aws s3 cp "${ARRAY_S3_URI_BASE}/${AWS_BATCH_JOB_ARRAY_INDEX}" "${ARGS}"
 
 # Source parameters
-. args
+. "${ARGS}"
 
 build-debian "${OS}" "${ARCH}" "${DIST}"
 
