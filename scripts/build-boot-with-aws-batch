@@ -3,6 +3,8 @@
 
 ARRAY_S3_URI_BASE="${1}" # For example "s3://bucket/folder"
 ARTIFACTS_S3_URI_BASE="${2}" # For example "s3://bucket/folder"
+U_BOOT_GIT_REV="${3}" # For example "v2022.07"
+ATF_GIT_REV="${4}" # For example "v2.7"
 
 set -ex
 
@@ -15,6 +17,8 @@ aws s3 cp "${ARRAY_S3_URI_BASE}/${AWS_BATCH_JOB_ARRAY_INDEX}" "${ARGS}"
 # Source parameters
 . "${ARGS}"
 
+export U_BOOT_GIT_REV
+export ATF_GIT_REV
 build-boot "${BOARD_ID}" "${CHIP_ID}" "${DEFCONFIG}" "${TUPLE}"
 
 # Upload artifacts from this run
