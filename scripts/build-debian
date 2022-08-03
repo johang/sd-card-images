@@ -146,12 +146,12 @@ ln -sf /run/systemd/resolve/stub-resolv.conf debian/etc/resolv.conf
 # List all files
 find debian ! -type d -printf "/%P\n" | sort > files.txt
 
-cp files.txt "${ARTIFACTS_DIR:-/artifacts}/${OS}-${DIST}-${ARCH}-${PASSWORD}.bin.gz.files.txt"
-
 # Make a ext4 filesystem of this and put it into the image
 rm -f ext4.img
 fallocate -l 1874MiB ext4.img
 mkfs.ext4 -d debian ext4.img
 pigz ext4.img
 
+mkdir -p "${ARTIFACTS_DIR:-/artifacts}"
+cp -v files.txt "${ARTIFACTS_DIR:-/artifacts}/${OS}-${DIST}-${ARCH}-${PASSWORD}.bin.gz.files.txt"
 cp -v ext4.img.gz "${ARTIFACTS_DIR:-/artifacts}/${OS}-${DIST}-${ARCH}-${PASSWORD}.bin.gz"
