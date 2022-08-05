@@ -22,7 +22,8 @@ layout: default
 				</tr>
 			</thead>
 			<tbody>
-{% for board in site.boards %}
+{% assign x = site.boards | sort_natural: "board_name" %}
+{% for board in x %}
 				<tr data-href="/boards/{{ board.board_id }}.html">
 					<td><a href="/boards/{{ board.board_id }}.html">{{ board.board_name }}</a></td>
 					<td>{{ board.board_maker_name }}</td>

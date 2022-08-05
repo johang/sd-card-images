@@ -188,7 +188,7 @@ layout: default
 					<td><i>{{ page.board_soc_name }}</i></td>
 					<td><i>{{ page.board_cpu_name }}</i></td>
 				</tr>
-{% assign x = site.boards | where_exp: "item", "item.board_maker_name == page.board_maker_name" | where_exp: "item", "item.board_id != page.board_id" | sort: "board_name" %}
+{% assign x = site.boards | where_exp: "item", "item.board_maker_name == page.board_maker_name" | where_exp: "item", "item.board_id != page.board_id" | sort_natural: "board_name" %}
 {% for board in x %}
 {% capture i %}{{ debian.os }}{{ debian.dist }}{% endcapture %}
 				<tr data-href="/boards/{{ board.board_id }}.html">
@@ -221,7 +221,7 @@ layout: default
 					<td><i>{{ page.board_soc_name }}</i></td>
 					<td><i>{{ page.board_cpu_name }}</i></td>
 				</tr>
-{% assign x = site.boards | where_exp: "item", "item.board_soc_name == page.board_soc_name" | where_exp: "item", "item.board_id != page.board_id" | sort: "board_name" %}
+{% assign x = site.boards | where_exp: "item", "item.board_soc_name == page.board_soc_name" | where_exp: "item", "item.board_id != page.board_id" | sort_natural: "board_name" %}
 {% for board in x %}
 {% capture i %}{{ debian.os }}{{ debian.dist }}{% endcapture %}
 				<tr data-href="/boards/{{ board.board_id }}.html">
