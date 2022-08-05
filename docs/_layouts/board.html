@@ -51,10 +51,10 @@ layout: default
 {% if debian.os == "ubuntu" %}
 						<div class="alert alert-danger" role="alert">Ubuntu images are experimental</div>
 {% endif %}
+						<p>When the <code>dd</code> command is done, put the SD card in your board and power it on. The board will boot up and assign itself an IP address using DHCP. The last part of the Debian/Ubuntu image filename is the default root password ("<span id="install-{{ i }}-password">PLACEHOLDER</span>" for this image).</p>
 					</div>
 {% endfor %}
 				</div>
-				<p>When the <code>dd</code> command is done, put the SD card in your board and power it on. The board will boot up and assign itself an IP address using DHCP. The last part of the Debian/Ubuntu image filename is the default root password.</p>
 			</div>
 		</div>
 		<hr />
@@ -151,6 +151,7 @@ layout: default
 				// Update install instructions
 				$("#install-" + i + "-debian_file").text(basename(debian["path"]));
 				$("#install-" + i + "-debian_path").text(debian["path"]);
+				$("#install-" + i + "-password").text(debian["password"]);
 				$("#install-" + i + "-tab").removeClass("hidden").addClass("show");
 				$("#install-" + i).removeClass("hidden").addClass("show");
 				// Update downloads list
