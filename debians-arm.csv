@@ -9,8 +9,5 @@ debian,bookworm,arm64
 debian,sid,armhf
 debian,sid,arm64
 
-ubuntu,focal,armhf
-ubuntu,focal,arm64
-
 ubuntu,jammy,armhf
 ubuntu,jammy,arm64
