@@ -66,4 +66,4 @@ mkfs.vfat vfat.img
 mcopy -v -i vfat.img u-boot/u-boot.bin config.txt fixup*.dat start*.elf bootcode.bin ::
 
 # Copy FAT partition to image
-dd if=vfat.img of=tmp.img bs=1K seek=1K conv=notrunc
+dd if=vfat.img of=tmp.img bs=1K seek=4K conv=notrunc
