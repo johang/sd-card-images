@@ -43,7 +43,7 @@ beelink-gsking*)
 	;;
 *)
 	# X_Y_defconfig -> x-y
-	BOARD=`"${DEFCONFIG%_defconfig}" | tr _ -`
+	BOARD=`echo "${DEFCONFIG%_defconfig}" | tr _ -`
 	;;
 esac
 mkdir ../amlogic-boot-fip-output
