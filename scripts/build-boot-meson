@@ -26,19 +26,19 @@ build-u_boot "${DEFCONFIG}" "${TUPLE}"
 
 cd amlogic-boot-fip
 case "${BOARD_ID}" in
-libretech_cc*)
+libretech_s905x_cc*)
 	BOARD=lepotato
 	;;
-libretech_ac*)
+libretech_s805x_ac*)
 	BOARD=lafrite
 	;;
-libretech_s905d*)
+libretech_s905d_pc*)
 	BOARD=tartiflette-s905d
 	;;
-libretech_s912*)
+libretech_s912_pc*)
 	BOARD=tartiflette-s912
 	;;
-beelink-gsking*)
+beelink_gt_king*)
 	BOARD=beelink-s922x
 	;;
 *)
