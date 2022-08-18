@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: http://sd-card-images.johang.se/sitemap.txt
