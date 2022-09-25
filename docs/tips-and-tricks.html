@@ -1,0 +1,67 @@
+---
+title: All SD card images
+layout: default
+---
+<main role="main">
+	<div class="container">
+		<h2>Tips and tricks</h2>
+		<p>Here's a collections of tips and tricks for setting up the images.</p>
+		<hr />
+	</div>
+	<div class="container">
+{% include digitalocean.html %}
+	</div>
+	<div class="container">
+		<hr />
+		<h3>Change root password</h3>
+		<p>You should change root password.</p>
+<pre class="bg-dark text-light p-3"><samp># passwd
+Changing password for root.
+Current password: 
+New password: 
+Retype new password:
+...
+#
+</samp></pre>
+		<h3>perl: warning: Setting locale failed</h3>
+		<p>If you you get the following (or similar) warnings, fix it by installing and configuring <code>locale</code>.</p>
+<pre class="bg-danger text-light p-3"><samp>perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_TIME = "sv_SE.UTF-8",
+	LC_MONETARY = "sv_SE.UTF-8",
+	LC_ADDRESS = "sv_SE.UTF-8",
+	LC_TELEPHONE = "sv_SE.UTF-8",
+	LC_NAME = "sv_SE.UTF-8",
+	LC_MEASUREMENT = "sv_SE.UTF-8",
+	LC_IDENTIFICATION = "sv_SE.UTF-8",
+	LC_NUMERIC = "sv_SE.UTF-8",
+	LC_PAPER = "sv_SE.UTF-8",
+	LANG = "en_US.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the standard locale ("C").
+</samp></pre>
+
+<pre class="bg-dark text-light p-3"><samp># apt-get install locales
+...
+# dpkg-reconfigure locales
+...
+</samp></pre>
+
+		<h3>debconf: unable to initialize frontend: Dialog</h3>
+		<p>If you you get the following (or similar) warnings, fix it by installing <code>dialog</code>.</p>
+<pre class="bg-danger text-light p-3"><samp>debconf: unable to initialize frontend: Dialog
+debconf: (No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 76.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/aarch64-linux-gnu/perl/5.28.1 /usr/local/share/perl/5.28.1 /usr/lib/aarch64-linux-gnu/perl5/5.28 /usr/share/perl5 /usr/lib/aarch64-linux-gnu/perl/5.28 /usr/share/perl/5.28 /usr/local/lib/site_perl /usr/lib/aarch64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+</samp></pre>
+
+<pre class="bg-dark text-light p-3"><samp>apt-get install dialog
+</samp></pre>
+
+		<hr />
+	</div>
+</main>
