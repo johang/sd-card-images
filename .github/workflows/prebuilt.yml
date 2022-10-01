@@ -15,25 +15,34 @@ jobs:
           # Debian armhf
           - boot: boot-qemu_arm_virt
             debian: debian-bullseye-armhf
+            debian_index: /index-debians-armhf.txt
           - boot: boot-qemu_arm_virt
             debian: debian-bookworm-armhf
+            debian_index: /index-debians-armhf.txt
           - boot: boot-qemu_arm_virt
             debian: debian-sid-armhf
+            debian_index: /index-debians-armhf.txt
           # Debian arm64
           - boot: boot-qemu_aarch64_virt
             debian: debian-bullseye-arm64
+            debian_index: /index-debians-arm64.txt
           - boot: boot-qemu_aarch64_virt
             debian: debian-bookworm-arm64
+            debian_index: /index-debians-arm64.txt
           - boot: boot-qemu_aarch64_virt
             debian: debian-sid-arm64
+            debian_index: /index-debians-arm64.txt
           # Ubuntu arm64
           - boot: boot-qemu_aarch64_virt
             debian: ubuntu-jammy-arm64
+            debian_index: /index-debians-arm64.txt
       fail-fast: false
 
     env:
       BOOT: ${{ matrix.boot }}
+      BOOT_INDEX: /index-boots.txt
       DEBIAN: ${{ matrix.debian }}
+      DEBIAN_INDEX: ${{ matrix.debian_index }}
 
     steps:
     - name: Install dependencies
@@ -57,10 +66,11 @@ jobs:
     - name: Download
       timeout-minutes: 1
       env:
-        BASE: https://ftp.sd-card-images.johang.se
+        CDN_BASE: https://cdn.sd-card-images.johang.se
+        DL_BASE: https://dl.sd-card-images.johang.se
       run: |
-        wget $BASE/$(wget -O - $BASE/latest.txt | grep $BOOT || echo 404)
-        wget $BASE/$(wget -O - $BASE/latest.txt | grep $DEBIAN || echo 404)
+        wget $DL_BASE$(wget -O - $CDN_BASE$BOOT_INDEX | grep $BOOT || echo /404)
+        wget $DL_BASE$(wget -O - $CDN_BASE$DEBIAN_INDEX | grep $DEBIAN || echo /404)
 
     - name: Test
       timeout-minutes: 5
