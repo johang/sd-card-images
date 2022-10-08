@@ -69,8 +69,8 @@ jobs:
         CDN_BASE: https://cdn.sd-card-images.johang.se
         DL_BASE: https://dl.sd-card-images.johang.se
       run: |
-        wget $DL_BASE$(wget -O - $CDN_BASE$BOOT_INDEX | grep $BOOT || echo /404)
-        wget $DL_BASE$(wget -O - $CDN_BASE$DEBIAN_INDEX | grep $DEBIAN || echo /404)
+        wget $DL_BASE$(wget -O - $CDN_BASE$BOOT_INDEX | grep $BOOT | sort | tail -n 1 || echo /404)
+        wget $DL_BASE$(wget -O - $CDN_BASE$DEBIAN_INDEX | grep $DEBIAN | sort | tail -n 1 || echo /404)
 
     - name: Test
       timeout-minutes: 5
