@@ -21,5 +21,9 @@ rm -f vfat.img
 fallocate -l 28MiB vfat.img
 mkfs.vfat vfat.img
 
+# Leave a friendly note about this partition
+echo "The boot process for this SoC does not use this partition." >> PARTITION_INTENTIONALLY_EMPTY.TXT
+mcopy -v -i vfat.img PARTITION_INTENTIONALLY_EMPTY.TXT ::
+
 # Copy FAT partition to image
 dd if=vfat.img of="${IMAGE}" bs=1K seek=4K conv=notrunc
