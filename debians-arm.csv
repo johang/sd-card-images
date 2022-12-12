@@ -11,3 +11,6 @@ debian,sid,arm64
 
 ubuntu,jammy,armhf
 ubuntu,jammy,arm64
+
+ubuntu,kinetic,armhf
+ubuntu,kinetic,arm64
