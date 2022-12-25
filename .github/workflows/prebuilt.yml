@@ -64,7 +64,7 @@ jobs:
                              wget
 
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Download
       timeout-minutes: 1
