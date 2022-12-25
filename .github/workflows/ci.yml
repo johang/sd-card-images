@@ -61,7 +61,7 @@ jobs:
                        qemu-x86_defconfig \
                        i686-linux-gnu
 
-    - uses: actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v3
       with:
         name: boot-qemu_x86_virt-master
         path: ${{ runner.temp }}/boot-qemu_x86_virt.bin.gz
@@ -124,7 +124,7 @@ jobs:
                               $DEBIAN_ARCH \
                               $DEBIAN_SUITE
 
-    - uses: actions/download-artifact@v2
+    - uses: actions/download-artifact@v3
       with:
         name: boot-qemu_x86_virt-master
         path: ${{ runner.temp }}
