@@ -20,8 +20,11 @@ echo "Using password ${SSHPASS}"
 # Build image
 zcat "${BOOT}" "${DEBIAN}" > image.bin
 
-# Assume 4GB virtual disk
-fallocate -l 4GB image.bin
+# Assume 8GB virtual disk
+fallocate -l 8GB image.bin
+
+# Extend second partition
+parted -s -a opt image.bin "resizepart 2 100%"
 
 # Extract U-Boot (u-boot.rom in x86 case)
 dd if=image.bin of=bios.bin count=2048 skip=16
@@ -78,15 +81,39 @@ sleep 15
 # Pass password to sshpass
 export SSHPASS
 
-# SSH into QEMU and shut it down
+# Wait for start up
 until sshpass -e ssh -o "ConnectTimeout=5" \
                      -o "StrictHostKeyChecking=no" \
                      -o "UserKnownHostsFile=/dev/null" \
                      -p 5555 \
                      -q \
-                     root@localhost "sleep 5 && apt-get update && poweroff"; do
+                     root@localhost /bin/true; do
 	sleep 1
 done
+
+sleep 5
+
+# Run test
+sshpass -e ssh -o "ConnectTimeout=5" \
+               -o "StrictHostKeyChecking=no" \
+               -o "UserKnownHostsFile=/dev/null" \
+               -p 5555 \
+               -q \
+               root@localhost <<END
+# Abort on error
+set -ex
+
+# Resize root filesystem
+resize2fs /dev/sda2
+
+# Install updates
+export DEBIAN_FRONTEND=noninteractive
+apt-get update
+apt-get upgrade -y
+
+# Shut down
+poweroff
+END
 
 # Wait for QEMU to exit
 wait

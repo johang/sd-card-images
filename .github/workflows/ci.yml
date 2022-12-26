@@ -106,6 +106,7 @@ jobs:
                              debian-archive-keyring \
                              debootstrap \
                              e2fsprogs \
+                             parted \
                              pigz \
                              pwgen \
                              qemu-system-x86 \
