@@ -23,6 +23,17 @@ Retype new password:
 ...
 #
 </samp></pre>
+
+		<h3>Extend root filesystem</h3>
+		<p>If your SD card is larger than 4 GB, you can extend the root filesystem after writing it to the SD card.</p>
+<pre class="bg-dark text-light p-3"><samp># parted -s -a opt /dev/sdXXX "resizepart 2 100%"
+...
+# partprobe
+...
+# resize2fs /dev/sdXXX2
+...
+</samp></pre>
+
 		<h3>perl: warning: Setting locale failed</h3>
 		<p>If you you get the following (or similar) warnings, fix it by installing and configuring <code>locale</code>.</p>
 <pre class="bg-danger text-light p-3"><samp>perl: warning: Setting locale failed.
@@ -47,6 +58,7 @@ perl: warning: Falling back to the standard locale ("C").
 ...
 # dpkg-reconfigure locales
 ...
+#
 </samp></pre>
 
 		<h3>debconf: unable to initialize frontend: Dialog</h3>
@@ -59,7 +71,9 @@ debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Ter
 debconf: falling back to frontend: Teletype
 </samp></pre>
 
-<pre class="bg-dark text-light p-3"><samp>apt-get install dialog
+<pre class="bg-dark text-light p-3"><samp># apt-get install dialog
+...
+#
 </samp></pre>
 
 		<hr />
