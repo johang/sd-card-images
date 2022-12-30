@@ -104,7 +104,8 @@ sshpass -e ssh -o "ConnectTimeout=5" \
 set -ex
 
 # Resize root filesystem
-resize2fs /dev/sda2
+[ ! -e /dev/sda2 ] || resize2fs /dev/sda2 # For i386
+[ ! -e /dev/vda2 ] || resize2fs /dev/vda2 # For armhf/arm64
 
 # Install updates
 export DEBIAN_FRONTEND=noninteractive
