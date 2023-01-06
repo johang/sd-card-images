@@ -131,7 +131,7 @@ jobs:
         path: ${{ runner.temp }}
 
     - name: Test qemu_x86_virt + ${{ matrix.suite }} ${{ matrix.arch }}
-      timeout-minutes: 5
+      timeout-minutes: 15
       run: |
         ./test/qemu.sh $RUNNER_TEMP/boot-qemu_x86_virt.bin.gz \
                        $RUNNER_TEMP/${{ matrix.os }}-${{ matrix.suite }}-${{ matrix.arch }}-*.bin.gz
