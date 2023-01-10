@@ -153,8 +153,6 @@ banana_pi_m2m,Banana Pi M2M,Sinovoip,allwinner-r16,Bananapi_m2m_defconfig,arm-li
 
 banana_pi_m2_ultra,Banana Pi M2 Ultra,Sinovoip,allwinner-r40,Bananapi_M2_Ultra_defconfig,arm-linux-gnueabihf,sun8i-r40-bananapi-m2-ultra
 
-lichee_pi_zero,LicheePi Zero,Zepan,allwinner-v3s,LicheePi_Zero_defconfig,arm-linux-gnueabihf,sun8i-v3s-licheepi-zero
-
 banana_pi_m2_berry,Banana Pi M2 Berry,Sinovoip,allwinner-v40,bananapi_m2_berry_defconfig,arm-linux-gnueabihf,sun8i-v40-bananapi-m2-berry
 
 cubieboard4,Cubieboard 4,Cubieboard,allwinner-a80,Cubieboard4_defconfig,arm-linux-gnueabihf,sun9i-a80-cubieboard4

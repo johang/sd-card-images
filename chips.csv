@@ -19,7 +19,6 @@ allwinner-h2+,H2+,Allwinner,ARM Cortex A7,armv7
 allwinner-h3,H3,Allwinner,ARM Cortex A7,armv7
 allwinner-r16,R16,Allwinner,ARM Cortex A7,armv7
 allwinner-r40,R40,Allwinner,ARM Cortex A7,armv7
-allwinner-v3s,V3s,Allwinner,ARM Cortex A7,armv7
 allwinner-v40,V40,Allwinner,ARM Cortex A7,armv7
 allwinner-a80,A80,Allwinner,ARM Cortex A15/A7,armv7
 allwinner-a64,A64,Allwinner,ARM Cortex A53,armv8
