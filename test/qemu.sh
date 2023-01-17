@@ -68,6 +68,7 @@ esac
 # Launch QEMU with U-Boot and image
 qemu-system-${QEMU_ARCH} -machine ${QEMU_MACHINE} \
                          -cpu ${QEMU_CPU} \
+                         -smp $(nproc) \
                          -m 512 \
                          -bios bios.bin \
                          -serial stdio \
