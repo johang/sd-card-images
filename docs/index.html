@@ -40,10 +40,6 @@ layout: default
 		<hr />
 	</div>
 	<div class="container">
-{% include digitalocean.html %}
-		<hr />
-	</div>
-	<div class="container">
 		<h3>Supported boards</h3>
 		<ul class="list-inline">
 {% for board in site.boards %}<li class="list-inline-item board-button my-1 mr-2 "><a href="/boards/{{ board.board_id }}.html" class="btn btn-outline-primary pill" role="button">{{ board.board_name }}</a></li>{% endfor %}
