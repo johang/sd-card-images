@@ -68,7 +68,7 @@ openssh-server \
   "${SCRIPT}"
 
 # Randomly generated root password
-PASSWORD=$(pwgen -B -A 6 1)
+PASSWORD="${PASSWORD_OVERRIDE:-$(pwgen -B -A 6 1)}"
 
 # Write apt sources config
 case "${OS}-${ARCH}-${DIST}" in
