@@ -136,10 +136,10 @@ jobs:
         ./test/qemu.sh $RUNNER_TEMP/boot-qemu_x86_virt.bin.gz \
                        $RUNNER_TEMP/${{ matrix.os }}-${{ matrix.suite }}-${{ matrix.arch }}-*.bin.gz
 
-  deploy-docker:
+  build-docker:
     runs-on: ubuntu-latest
     needs: test-debian-x86
-    name: deploy docker images
+    name: build docker images
 
     steps:
       - name: Checkout
