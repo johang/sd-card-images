@@ -9,8 +9,14 @@ debian,bookworm,arm64
 debian,sid,armhf
 debian,sid,arm64
 
+debian,experimental,armhf
+debian,experimental,arm64
+
 ubuntu,jammy,armhf
 ubuntu,jammy,arm64
 
 ubuntu,kinetic,armhf
 ubuntu,kinetic,arm64
+
+ubuntu,lunar,armhf
+ubuntu,lunar,arm64

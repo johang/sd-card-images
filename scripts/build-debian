@@ -44,6 +44,15 @@ ubuntu-armhf|ubuntu-arm64)
 	;;
 esac
 
+case "${OS}-${ARCH}-${DIST}" in
+debian-*-rc-buggy|debian-*-experimental)
+	TARGET=testing
+	;;
+*)
+	TARGET="${DIST}"
+	;;
+esac
+
 # Create fresh empty directory
 TMP=$(mktemp -d -p "${PWD}" tmp-XXXXXX)
 trap 'rm -rf "${TMP}"' EXIT INT TERM
@@ -62,7 +71,7 @@ systemd-sysv,\
 u-boot-tools,\
 initramfs-tools,\
 openssh-server \
-  "${DIST}" \
+  "${TARGET}" \
   debian \
   "${URL}" \
   "${SCRIPT}"
@@ -72,7 +81,15 @@ PASSWORD="${PASSWORD_OVERRIDE:-$(pwgen -B -A 6 1)}"
 
 # Write apt sources config
 case "${OS}-${ARCH}-${DIST}" in
-debian-*-sid)
+debian-*-rc-buggy|debian-*-experimental)
+	tee debian/tmp/sources.list <<- EOF
+deb http://deb.debian.org/debian ${TARGET} main
+deb-src http://deb.debian.org/debian ${TARGET} main
+deb http://deb.debian.org/debian ${DIST} main
+deb-src http://deb.debian.org/debian ${DIST} main
+EOF
+	;;
+debian-*-sid|debian-*-testing)
 	tee debian/tmp/sources.list <<- EOF
 deb http://deb.debian.org/debian ${DIST} main
 deb-src http://deb.debian.org/debian ${DIST} main
@@ -110,6 +127,19 @@ EOF
 	;;
 esac
 
+case "${OS}-${ARCH}-${DIST}" in
+debian-*-rc-buggy|debian-*-experimental)
+	# For Debian Experimental, set higher priority to "experimental"
+	tee debian/tmp/priority-experimental <<- EOF
+Package: *
+Pin: release o=Debian,a=experimental
+Pin-Priority: 700
+EOF
+	;;
+*)
+	;;
+esac
+
 cp -rv --preserve=mode ../2nd-stage-files/pre-2nd-stage-files/* debian
 cp -rv --preserve=mode ../2nd-stage-files/pre-2nd-stage-files-${ARCH}/* debian
 
@@ -120,6 +150,7 @@ cp -v /usr/bin/qemu-*-static debian/usr/bin || :
 chroot debian /bin/sh -ex <<- EOF
 /debootstrap/debootstrap --second-stage
 /bin/mv /tmp/sources.list /etc/apt/sources.list
+/bin/mv /tmp/priority-experimental /etc/apt/preferences.d/priority-experimental || :
 /usr/bin/apt-get update
 /usr/bin/apt-get -y --no-install-recommends install ${KERNEL}
 /usr/bin/apt-get -y upgrade

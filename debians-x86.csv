@@ -9,6 +9,11 @@ debian,bookworm,amd64
 debian,sid,i386
 debian,sid,amd64
 
+debian,experimental,i386
+debian,experimental,amd64
+
 ubuntu,jammy,amd64
 
 ubuntu,kinetic,amd64
+
+ubuntu,lunar,amd64
