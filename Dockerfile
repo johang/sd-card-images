@@ -22,6 +22,7 @@ RUN apt-get update && \
                     python2-dev \
                     python3-dev \
                     python3-pkg-resources \
+                    python3-setuptools \
                     swig \
                     parted \
                     e2fsprogs \
