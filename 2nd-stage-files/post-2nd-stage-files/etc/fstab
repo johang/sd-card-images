@@ -1,3 +1,2 @@
 # <file system> <mount point>   <type>  <options>       <dump>  <pass>
 tmpfs           /tmp            tmpfs   nodev,nosuid    0       0
-tmpfs           /var/tmp        tmpfs   nodev,nosuid    0       0
