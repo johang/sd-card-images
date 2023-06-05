@@ -9,68 +9,9 @@ on:
   schedule:
     - cron: "00 03 * * 0"
 
-permissions:
-      id-token: write
-      contents: read
-
 jobs:
-  build-boot-x86:
-    runs-on: ubuntu-latest
-    name: build x86
-
-    steps:
-    - name: Install dependencies
-      timeout-minutes: 5
-      env:
-        DEBIAN_FRONTEND: noninteractive
-      run: |
-        sudo apt-get update
-        sudo apt-get --assume-yes \
-                     --no-install-recommends \
-                     install bc \
-                             bison \
-                             bzip2 \
-                             ca-certificates \
-                             device-tree-compiler \
-                             dosfstools \
-                             flex \
-                             gcc \
-                             gcc-arm-none-eabi \
-                             gcc-i686-linux-gnu \
-                             git \
-                             libssl-dev \
-                             make \
-                             mtools \
-                             parted \
-                             pigz \
-                             python2-dev \
-                             python3-dev \
-                             python3-pkg-resources \
-                             swig
-
-    - name: Checkout
-      uses: actions/checkout@v3
-
-    - name: Build qemu_x86_virt
-      timeout-minutes: 5
-      run: |
-        env PATH=$GITHUB_WORKSPACE/scripts:$PATH \
-            ARTIFACTS_DIR=$RUNNER_TEMP \
-            build-boot qemu_x86_virt \
-                       qemu-x86 \
-                       qemu-x86_defconfig \
-                       i686-linux-gnu
-
-    - uses: actions/upload-artifact@v3
-      with:
-        name: boot-qemu_x86_virt-master
-        path: ${{ runner.temp }}/boot-qemu_x86_virt.bin.gz
-        if-no-files-found: error
-        retention-days: 1
-
   test-debian-x86:
     runs-on: ubuntu-latest
-    needs: build-boot-x86
     name: test ${{ matrix.os }} ${{ matrix.arch }} ${{ matrix.suite }}
 
     strategy:
@@ -101,20 +42,47 @@ jobs:
         sudo apt-get update
         sudo apt-get --assume-yes \
                      --no-install-recommends \
-                     install bzip2 \
+                     install bc \
+                             bison \
+                             bzip2 \
                              ca-certificates \
                              debian-archive-keyring \
                              debootstrap \
+                             device-tree-compiler \
+                             dosfstools \
                              e2fsprogs \
+                             flex \
+                             gcc \
+                             gcc-arm-none-eabi \
+                             gcc-i686-linux-gnu \
+                             git \
+                             libssl-dev \
+                             make \
+                             mtools \
                              parted \
                              pigz \
                              pwgen \
-                             qemu-system-x86 \
+                             python2-dev \
+                             python3-dev \
+                             python3-pkg-resources \
                              ssh \
-                             sshpass
+                             sshpass \
+                             swig \
+                             qemu-system-x86
 
     - name: Checkout
       uses: actions/checkout@v3
+
+    - name: Build qemu_x86_virt
+      timeout-minutes: 5
+      run: |
+        env PATH=$GITHUB_WORKSPACE/scripts:$PATH \
+            ARTIFACTS_DIR=$RUNNER_TEMP \
+            U_BOOT_GIT_URL="https://github.com/u-boot/u-boot.git" \
+            build-boot qemu_x86_virt \
+                       qemu-x86 \
+                       qemu-x86_defconfig \
+                       i686-linux-gnu
 
     - name: Build ${{ matrix.suite }} ${{ matrix.arch }}
       timeout-minutes: 5
@@ -124,11 +92,6 @@ jobs:
                  build-debian $DEBIAN_OS \
                               $DEBIAN_ARCH \
                               $DEBIAN_SUITE
-
-    - uses: actions/download-artifact@v3
-      with:
-        name: boot-qemu_x86_virt-master
-        path: ${{ runner.temp }}
 
     - name: Test qemu_x86_virt + ${{ matrix.suite }} ${{ matrix.arch }}
       timeout-minutes: 15
