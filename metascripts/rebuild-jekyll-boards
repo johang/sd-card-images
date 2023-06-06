@@ -1,58 +1,92 @@
 #!/usr/bin/env python3
-import csv, os, glob
-for x in glob.glob("docs/_boards/*.md"):
-	os.remove(x)
-for x in glob.glob("docs/_debians/*.md"):
-	os.remove(x)
-chips = {}
-isa_to_arch = {
-	"armv7": "armhf",
-	"armv8": "arm64",
-	"x86": "i386",
-	"x86-64": "amd64",
-}
-with open("chips.csv") as csvfile:
-	chipsf = csv.reader(csvfile)
-	next(chipsf)
-	for row in chipsf:
-		if not row:
-			continue
-		if row[0].strip().startswith("#"):
-			continue
-		chips[row[0]] = row
-with open("boards.csv") as csvfile:
-	boardsf = csv.reader(csvfile)
-	next(boardsf)
-	for row in boardsf:
-		if not row:
-			continue
-		if row[0].strip().startswith("#"):
-			continue
-		with open("docs/_boards/%s.md" % row[0], "w") as boardf:
-			boardf.write("---\n")
-			boardf.write("layout: board\n")
-			boardf.write("title: %s SD card images\n" % (row[1]))
-			boardf.write("description: \"Minimal, pure and up-to-date vanilla Debian/Ubuntu %s SD card images for %s by %s, SoC: %s %s, CPU ISA: %s\"\n" % (isa_to_arch[chips[row[3]][4]], row[1], row[2], chips[row[3]][2], chips[row[3]][1], chips[row[3]][4]))
-			boardf.write("board_id: %s\n" % (row[0]))
-			boardf.write("board_dtb_name: %s\n" % (row[6]))
-			boardf.write("board_name: %s\n" % (row[1]))
-			boardf.write("board_maker_name: %s\n" % (row[2]))
-			boardf.write("board_soc_name: %s %s\n" % (chips[row[3]][2], chips[row[3]][1]))
-			boardf.write("board_cpu_name: %s (%s)\n" % (chips[row[3]][3], chips[row[3]][4]))
-			boardf.write("board_cpu_arch_isa: %s\n" % (chips[row[3]][4]))
-			boardf.write("board_cpu_arch_debian: %s\n" % (isa_to_arch[chips[row[3]][4]]))
-			boardf.write("---\n")
-with open("debians-arm.csv") as csvfile:
-	debiansf = csv.reader(csvfile)
-	next(debiansf)
-	for row in debiansf:
-		if not row:
-			continue
-		if row[0].strip().startswith("#"):
-			continue
-		with open("docs/_debians/%s-%s-%s.md" % (row[0], row[1], row[2]), "w") as debiansf:
-			debiansf.write("---\n")
-			debiansf.write("os: %s\n" % (row[0], ))
-			debiansf.write("dist: %s\n" % (row[1], ))
-			debiansf.write("arch: %s\n" % (row[2], ))
-			debiansf.write("---\n")
+
+import csv
+import logging
+import os
+import glob
+
+
+logging.basicConfig()
+logger = logging.getLogger("rebuild-jekyll-boards")
+logger.setLevel(logging.DEBUG)
+
+
+BOARD_TEMPLATE = """\
+---
+layout: board
+title: {board_name} SD card images
+description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu \
+{debian_architecture} SD card images for {board_name} by {board_maker}, SoC: \
+{chip_maker} {chip_name}, CPU ISA: {cpu_architecture}"
+board_id: {board_id}
+board_dtb_name: {device_tree}
+board_name: {board_name}
+board_maker_name: {board_maker}
+board_soc_name: {chip_maker} {chip_name}
+board_cpu_name: {cpu} ({cpu_architecture})
+board_cpu_arch_isa: {cpu_architecture}
+board_cpu_arch_debian: {debian_architecture}
+---
+"""
+
+DEBIAN_TEMPLATE = """\
+---
+os: {os}
+dist: {dist}
+arch: {arch}
+name: {name}
+exp: {exp}
+---
+"""
+
+
+def norm(d):
+    return {k.lower().replace(" ", "_"): v for k, v in d.items()}
+
+
+def read_boards():
+    logger.debug("Reading boards...")
+    with open("boards.csv") as csvfile:
+        return {row["Board ID"]: norm(row) for row in csv.DictReader(csvfile)}
+
+
+def read_chips():
+    logger.debug("Reading chips...")
+    with open("chips.csv") as csvfile:
+        return {row["Chip ID"]: norm(row) for row in csv.DictReader(csvfile)}
+
+
+def read_debians():
+    logger.debug("Reading debians...")
+    with open("debians-arm.csv") as csvfile:
+        def key(row):
+            return "-".join((row["OS"], row["Dist"], row["Arch"]))
+        return {key(row): norm(row) for row in csv.DictReader(csvfile)}
+
+
+def write_boards(boards, chips):
+    for x in glob.glob("docs/_boards/*.md"):
+        os.remove(x)
+    logger.info("Removed boards")
+
+    for k, board in boards.items():
+        board.update(chips[board["chip_id"]])
+        with open(f"docs/_boards/{k}.md", "w") as boardf:
+            boardf.write(BOARD_TEMPLATE.format(**board))
+    logger.info("Wrote %d boards", len(boards))
+
+
+def write_debians(debians):
+    for x in glob.glob("docs/_debians/*.md"):
+        os.remove(x)
+    logger.info("Removed debians")
+
+    for k, debian in debians.items():
+        with open(f"docs/_debians/{k}.md", "w") as debiansf:
+            debiansf.write(DEBIAN_TEMPLATE.format(**debian))
+    logger.info("Wrote %d debians", len(debians))
+
+
+if __name__ == "__main__":
+    write_boards(read_boards(), read_chips())
+    write_debians(read_debians())
