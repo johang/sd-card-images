@@ -1,0 +1,158 @@
+#!/usr/bin/env python3
+
+from datetime import timedelta, date, datetime
+from io import BytesIO
+from csv import DictWriter
+
+import ftplib
+import logging
+
+
+logging.basicConfig()
+logger = logging.getLogger("rebuild-debian-csv")
+logger.setLevel(logging.DEBUG)
+
+
+class Release:
+    def __init__(self, fileobj):
+        params = {}
+        for line in fileobj:
+            line = line.decode("utf-8")
+            if line.startswith(" ") or ": " not in line:
+                continue
+
+            k, v = line.strip().split(": ", 1)
+            params[k] = v
+
+        self.label = params.get("Label")
+        self.suite = params.get("Suite")
+        self.version = params.get("Version")
+        self.codename = params.get("Codename")
+        self.architectures = params.get("Architectures", "").split(" ")
+
+    def __repr__(self):
+        name = self.label
+        if self.version and self.suite and self.suite != self.codename:
+            name += f" {self.suite}/{self.version}"
+        elif self.version:
+            name += f" {self.version}"
+        elif self.suite:
+            name += f" {self.suite}"
+        if self.is_lts():
+            name += " LTS"
+        if self.codename:
+            name += f" (\"{self.codename}\")"
+
+        return name
+
+    def __eq__(self, other):
+        return repr(self) == repr(other)
+
+    def __lt__(self, other):
+        return repr(self) < repr(other)
+
+    def __hash__(self):
+        return hash(repr(self))
+
+    def release_date(self):
+        if self.label == "Ubuntu" and self.version:
+            try:
+                return datetime.strptime(self.version, "%y.%m").date()
+            except ValueError as e:
+                logger.warning("Can't parse calver %s: %s", self.version, e)
+
+    def is_lts(self):
+        release_date = self.release_date()
+        if release_date:
+            return release_date.year % 2 == 0 and release_date.month == 4
+        else:
+            return False
+
+    def age(self):
+        release_date = self.release_date()
+        if release_date:
+            return date.today() - release_date
+
+    def is_relevant(self):
+        if self.label not in ("Debian", "Ubuntu", ):
+            return False
+
+        bl1 = ("oldoldstable", "oldstable", "devel", )
+        if self.suite in bl1:
+            return False
+
+        bl2 = ("-updates", "-backports", "-security", "-proposed", "-sloppy", )
+        if any(self.suite.endswith(suffix) for suffix in bl2):
+            return False
+
+        if self.label == "Ubuntu":
+            if self.is_lts():
+                return self.age() < 4 * timedelta(days=365)
+            else:
+                return self.age() < timedelta(days=365)
+
+        return True
+
+    def is_experimental(self):
+        if self.label == "Debian" and self.suite == "experimental":
+            return True
+        if self.label == "Ubuntu" and self.age() < timedelta(days=0):
+            return True
+
+        return False
+
+
+def get_releases():
+    ftp = ftplib.FTP("mirror.nl.leaseweb.net")
+    ftp.login()
+    logger.debug("Connected to FTP")
+
+    for distdir in ("/debian/dists", "/ubuntu/dists", ):
+        ftp.cwd(distdir)
+        distsubdirs = ftp.nlst()
+        logger.debug("Found %d items in %s", len(distsubdirs), distdir)
+
+        for x in distsubdirs:
+            data = BytesIO()
+            try:
+                ftp.retrbinary(f"RETR {x}/Release", data.write)
+                data.seek(0)
+                logger.debug("Downloaded %s/%s/Release", distdir, x)
+
+                yield Release(data)
+            except ftplib.error_perm:
+                pass
+
+
+if __name__ == "__main__":
+    logger.info("Downloading releases...")
+    releases = list(sorted(set(get_releases())))
+    assert len(releases) > 0
+    logger.info("Found %d releases", len(releases))
+
+    with open("debians-arm.csv", "w", newline="") as f:
+        w = DictWriter(f, fieldnames=("OS", "Dist", "Arch", "Name", "Exp", ))
+        w.writeheader()
+
+        for r in releases:
+            if not r.is_relevant():
+                continue
+
+            for arch in ("armhf", "arm64", ):
+                if arch not in r.architectures:
+                    continue
+
+                dist = r.codename.lower()
+                if dist == "rc-buggy":
+                    dist = "experimental"
+
+                w.writerow({
+                    "OS": r.label.lower(),
+                    "Dist": dist,
+                    "Arch": arch,
+                    "Name": repr(r),
+                    "Exp": r.is_experimental(),
+                })
+                logger.debug("Wrote %s to file", r)
+
+    logger.info("Wrote debians-arm.csv")
