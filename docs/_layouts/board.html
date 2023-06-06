@@ -27,16 +27,16 @@ layout: default
 	<div class="container" id="install-instructions">
 		<h3>Install instructions</h3>
 		<div class="row">
-			<div class="col-3">
+			<div class="col-4">
 				<div class="nav flex-column nav-pills" id="install-tab" role="tablist" aria-orientation="vertical">
 {% assign x = site.debians | where: "arch", page.board_cpu_arch_debian | sort %}
 {% for debian in x %}
 {% capture i %}{{ debian.os }}{{ debian.dist }}{{ debian.arch }}{% endcapture %}
-					<a class="nav-link hidden" id="install-{{ i }}-tab" data-toggle="pill" href="#install-{{ i }}" role="tab" aria-controls="install-{{ i }}" aria-selected="true">{{ debian.os | capitalize }} {{ debian.dist | capitalize }}</a>
+					<a class="nav-link hidden" id="install-{{ i }}-tab" data-toggle="pill" href="#install-{{ i }}" role="tab" aria-controls="install-{{ i }}" aria-selected="true">{{ debian.name }}</a>
 {% endfor %}
 				</div>
 			</div>
-			<div class="col-9">
+			<div class="col-8">
 				<div class="tab-content" id="install-tabContent">
 {% assign x = site.debians | where: "arch", page.board_cpu_arch_debian | sort %}
 {% for debian in x %}
@@ -48,8 +48,8 @@ layout: default
 							<code class="shell-normal text-light">zcat <span class="install-boot_file">boot.bin.gz</span> <span id="install-{{ i }}-debian_file">debian.bin.gz</span> &gt; sd-card.img</code><br />
 							<code class="shell-root text-light">dd if=sd-card.img of=/dev/sdXXX <span class="text-info"># ...where /dev/sdXXX is your SD card</span></code><br />
 						</p>
-{% if debian.os == "ubuntu" %}
-						<div class="alert alert-danger" role="alert">Ubuntu images are experimental</div>
+{% if debian.exp == true %}
+						<div class="alert alert-danger" role="alert">This image is experimental</div>
 {% endif %}
 						<p>When the <code>dd</code> command is done, put the SD card in your board and power it on. The board will boot up and assign itself an IP address using DHCP. The last part of the Debian/Ubuntu image filename is the default root password ("<span id="install-{{ i }}-password">PLACEHOLDER</span>" for this image).</p>
 					</div>
@@ -67,7 +67,7 @@ layout: default
 				<tr>
 					<th scope="col">Name</th>
 					<th scope="col">Type</th>
-					<th scope="col">Build</th>
+					<th scope="col">Build date</th>
 					<th scope="col">Size</th>
 				</tr>
 			</thead>
@@ -82,9 +82,8 @@ layout: default
 {% for debian in x %}
 {% capture i %}{{ debian.os }}{{ debian.dist }}{{ debian.arch }}{% endcapture %}
 				<tr id="downloads-{{ i }}" class="hidden">
-					<td><i class="bi-download"></i>
- <a href="" id="downloads-{{ i }}-link">PLACEHOLDER</a> {% if debian.os == "ubuntu" %}<span class="badge badge-danger">Experimental</span>{% endif %}</td>
-					<td>{{ debian.os | capitalize }} {{ debian.dist | capitalize }} root filesystem image</td>
+					<td><i class="bi-download"></i> <a href="" id="downloads-{{ i }}-link">PLACEHOLDER</a> {% if debian.exp == true %}<span class="badge badge-danger">Experimental</span>{% endif %}</td>
+					<td>{{ debian.name }} root filesystem image</td>
 					<td id="downloads-{{ i }}-build">PLACEHOLDER</td>
 					<td id="downloads-{{ i }}-size">PLACEHOLDER</td>
 				</tr>
