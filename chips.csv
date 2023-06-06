@@ -1,46 +1,46 @@
-Chip ID,Chip name,Chip maker,CPU,CPU architecture
+Chip ID,Chip name,Chip maker,CPU,CPU architecture,Debian architecture
 
-bcm2836,BCM2836,Broadcom,ARM Cortex A7,armv7
-bcm2837,BCM2837,Broadcom,ARM Cortex A53,armv8
-bcm2711,BCM2711,Broadcom,ARM Cortex A72,armv8
+bcm2836,BCM2836,Broadcom,ARM Cortex A7,armv7,armhf
+bcm2837,BCM2837,Broadcom,ARM Cortex A53,armv8,arm64
+bcm2711,BCM2711,Broadcom,ARM Cortex A72,armv8,arm64
 
-allwinner-a10,A10,Allwinner,ARM Cortex A8,armv7
-allwinner-a10s,A10s,Allwinner,ARM Cortex A8,armv7
-allwinner-a13,A13,Allwinner,ARM Cortex A8,armv7
-allwinner-gr8,GR8,Allwinner,ARM Cortex A8,armv7
-allwinner-r8,R8,Allwinner,ARM Cortex A8,armv7
-allwinner-a31,A31,Allwinner,ARM Cortex A7,armv7
-allwinner-a31s,A31s,Allwinner,ARM Cortex A7,armv7
-allwinner-a20,A20,Allwinner,ARM Cortex A7,armv7
-allwinner-a23,A23,Allwinner,ARM Cortex A7,armv7
-allwinner-a33,A33,Allwinner,ARM Cortex A7,armv7
-allwinner-a83t,A83T,Allwinner,ARM Cortex A7,armv7
-allwinner-h2+,H2+,Allwinner,ARM Cortex A7,armv7
-allwinner-h3,H3,Allwinner,ARM Cortex A7,armv7
-allwinner-r16,R16,Allwinner,ARM Cortex A7,armv7
-allwinner-r40,R40,Allwinner,ARM Cortex A7,armv7
-allwinner-v40,V40,Allwinner,ARM Cortex A7,armv7
-allwinner-a80,A80,Allwinner,ARM Cortex A15/A7,armv7
-allwinner-a64,A64,Allwinner,ARM Cortex A53,armv8
-allwinner-h5,H5,Allwinner,ARM Cortex A53,armv8
-allwinner-h6,H6,Allwinner,ARM Cortex A53,armv8
-allwinner-h616,H616,Allwinner,ARM Cortex A53,armv8
+allwinner-a10,A10,Allwinner,ARM Cortex A8,armv7,armhf
+allwinner-a10s,A10s,Allwinner,ARM Cortex A8,armv7,armhf
+allwinner-a13,A13,Allwinner,ARM Cortex A8,armv7,armhf
+allwinner-gr8,GR8,Allwinner,ARM Cortex A8,armv7,armhf
+allwinner-r8,R8,Allwinner,ARM Cortex A8,armv7,armhf
+allwinner-a31,A31,Allwinner,ARM Cortex A7,armv7,armhf
+allwinner-a31s,A31s,Allwinner,ARM Cortex A7,armv7,armhf
+allwinner-a20,A20,Allwinner,ARM Cortex A7,armv7,armhf
+allwinner-a23,A23,Allwinner,ARM Cortex A7,armv7,armhf
+allwinner-a33,A33,Allwinner,ARM Cortex A7,armv7,armhf
+allwinner-a83t,A83T,Allwinner,ARM Cortex A7,armv7,armhf
+allwinner-h2+,H2+,Allwinner,ARM Cortex A7,armv7,armhf
+allwinner-h3,H3,Allwinner,ARM Cortex A7,armv7,armhf
+allwinner-r16,R16,Allwinner,ARM Cortex A7,armv7,armhf
+allwinner-r40,R40,Allwinner,ARM Cortex A7,armv7,armhf
+allwinner-v40,V40,Allwinner,ARM Cortex A7,armv7,armhf
+allwinner-a80,A80,Allwinner,ARM Cortex A15/A7,armv7,armhf
+allwinner-a64,A64,Allwinner,ARM Cortex A53,armv8,arm64
+allwinner-h5,H5,Allwinner,ARM Cortex A53,armv8,arm64
+allwinner-h6,H6,Allwinner,ARM Cortex A53,armv8,arm64
+allwinner-h616,H616,Allwinner,ARM Cortex A53,armv8,arm64
 
-rk3288,RK3288,Rockchip,ARM Cortex A17,armv7
-rk3328,RK3328,Rockchip,ARM Cortex A53,armv8
-rk3368,RK3368,Rockchip,ARM Cortex A53,armv8
-rk3399,RK3399,Rockchip,ARM Cortex A72/A53,armv8
-rk3399pro,RK3399Pro,Rockchip,ARM Cortex A72/A53,armv8
+rk3288,RK3288,Rockchip,ARM Cortex A17,armv7,armhf
+rk3328,RK3328,Rockchip,ARM Cortex A53,armv8,arm64
+rk3368,RK3368,Rockchip,ARM Cortex A53,armv8,arm64
+rk3399,RK3399,Rockchip,ARM Cortex A72/A53,armv8,arm64
+rk3399pro,RK3399Pro,Rockchip,ARM Cortex A72/A53,armv8,arm64
 
-meson-gxbb,S905,Amlogic,ARM Cortex A53,armv8
-meson-gxl,S905X/S905W/S905D/S805X,Amlogic,ARM Cortex A53,armv8
-meson-gxm,S912,Amlogic,ARM Cortex A53,armv8
-meson-axg,A113X/A113D,Amlogic,ARM Cortex A53,armv8
-meson-g12a,S905X2/S905Y2/S905D2,Amlogic,ARM Cortex A53,armv8
-meson-g12b,S922X/A311D,Amlogic,ARM Cortex A73/A53,armv8
-meson-sm1,S905X3/S905Y3/S905D3,Amlogic,ARM Cortex A55,armv8
+meson-gxbb,S905,Amlogic,ARM Cortex A53,armv8,arm64
+meson-gxl,S905X/S905W/S905D/S805X,Amlogic,ARM Cortex A53,armv8,arm64
+meson-gxm,S912,Amlogic,ARM Cortex A53,armv8,arm64
+meson-axg,A113X/A113D,Amlogic,ARM Cortex A53,armv8,arm64
+meson-g12a,S905X2/S905Y2/S905D2,Amlogic,ARM Cortex A53,armv8,arm64
+meson-g12b,S922X/A311D,Amlogic,ARM Cortex A73/A53,armv8,arm64
+meson-sm1,S905X3/S905Y3/S905D3,Amlogic,ARM Cortex A55,armv8,arm64
 
-qemu-arm,arm,QEMU,ARM Cortex A15,armv7
-qemu-aarch64,aarch64,QEMU,ARM Cortex A53,armv8
-qemu-x86_64,x86_64,QEMU,x86 qemu64,x86-64
-qemu-x86,x86,QEMU,x86 qemu64,x86
+qemu-arm,arm,QEMU,ARM Cortex A15,armv7,armhf
+qemu-aarch64,aarch64,QEMU,ARM Cortex A53,armv8,arm64
+qemu-x86_64,x86_64,QEMU,x86 qemu64,x86-64,amd64
+qemu-x86,x86,QEMU,x86 qemu32,x86,i386
