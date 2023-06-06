@@ -7,7 +7,7 @@ board_dtb_name: N/A
 board_name: QEMU x86 virt
 board_maker_name: QEMU
 board_soc_name: QEMU x86
-board_cpu_name: x86 qemu64 (x86)
+board_cpu_name: x86 qemu32 (x86)
 board_cpu_arch_isa: x86
 board_cpu_arch_debian: i386
 ---
