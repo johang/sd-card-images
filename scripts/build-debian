@@ -187,5 +187,5 @@ mkfs.ext4 -d debian ext4.img
 pigz ext4.img
 
 mkdir -p "${ARTIFACTS_DIR:-/artifacts}"
-cp -v files.txt "${ARTIFACTS_DIR:-/artifacts}/${OS}-${DIST//-/_}-${ARCH}-${PASSWORD}.bin.gz.files.txt"
-cp -v ext4.img.gz "${ARTIFACTS_DIR:-/artifacts}/${OS}-${DIST//-/_}-${ARCH}-${PASSWORD}.bin.gz"
+cp -v files.txt "${ARTIFACTS_DIR:-/artifacts}/${OS}-${DIST}-${ARCH}-${PASSWORD}.bin.gz.files.txt"
+cp -v ext4.img.gz "${ARTIFACTS_DIR:-/artifacts}/${OS}-${DIST}-${ARCH}-${PASSWORD}.bin.gz"
