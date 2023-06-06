@@ -181,8 +181,10 @@ ln -sf /run/systemd/resolve/stub-resolv.conf debian/etc/resolv.conf
 find debian ! -type d -printf "/%P\n" | sort > files.txt
 
 # Make a ext4 filesystem of this and put it into the image
+# >>> 3800000000 - (32 * 1024 * 1024)
+# 3766445568
 rm -f ext4.img
-fallocate -l 1874MiB ext4.img
+fallocate -l 3766445568 ext4.img
 mkfs.ext4 -d debian ext4.img
 pigz ext4.img
 
