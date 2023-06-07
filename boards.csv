@@ -19,6 +19,7 @@ tinker_board_s,Tinker Board S,ASUS,rk3288,tinker-s-rk3288_defconfig,arm-linux-gn
 vyasa,Vyasa,Amarula,rk3288,vyasa-rk3288_defconfig,arm-linux-gnueabihf,rk3288-vyasa
 
 rk3328_evb,RK3328 EVB,Rockchip,rk3328,evb-rk3328_defconfig,aarch64-linux-gnu,rk3328-evb
+nanopi_r2c,Nano Pi R2C,FriendlyElec,rk3328,nanopi-r2c-rk3328_defconfig,aarch64-linux-gnu,rk3328-nanopi-r2c
 nanopi_r2s,Nano Pi R2S,FriendlyElec,rk3328,nanopi-r2s-rk3328_defconfig,aarch64-linux-gnu,rk3328-nanopi-r2s
 roc_rk3328_cc,ROC-RK3328-CC,Firefly,rk3328,roc-cc-rk3328_defconfig,aarch64-linux-gnu,rk3328-roc-cc
 rock_pi_e,ROCK Pi E,Radxa,rk3328,rock-pi-e-rk3328_defconfig,aarch64-linux-gnu,rk3328-rock-pi-e
@@ -40,6 +41,7 @@ nanopi_r4s,Nano Pi R4S,FriendlyElec,rk3399,nanopi-r4s-rk3399_defconfig,aarch64-l
 orangepi_rk3399,Orange Pi rk3399,Xunlong,rk3399,orangepi-rk3399_defconfig,aarch64-linux-gnu,rk3399-orangepi
 pinebook_pro,Pinebook Pro,Pine64,rk3399,pinebook-pro-rk3399_defconfig,aarch64-linux-gnu,rk3399-pinebook-pro
 roc_rk3399_pc,ROC-RK3399-PC,Firefly,rk3399,roc-pc-rk3399_defconfig,aarch64-linux-gnu,rk3399-roc-pc
+rock_pi_4c_plus,ROCK Pi 4 model C plus,Radxa,rk3399,rock-4c-plus-rk3399_defconfig,aarch64-linux-gnu,rk3399-rock-4c-plus
 rock_pi_4,ROCK Pi 4 model B,Radxa,rk3399,rock-pi-4-rk3399_defconfig,aarch64-linux-gnu,rk3399-rock-pi-4b
 rock_pi_4c,ROCK Pi 4 model C,Radxa,rk3399,rock-pi-4c-rk3399_defconfig,aarch64-linux-gnu,rk3399-rock-pi-4c
 rock960,Rock960,96boards,rk3399,rock960-rk3399_defconfig,aarch64-linux-gnu,rk3399-rock960
@@ -164,11 +166,15 @@ amlogic_s400,S400,Amlogic,meson-axg,s400_defconfig,aarch64-linux-gnu,meson-axg-s
 radxa_zero,Zero,Radxa,meson-g12a,radxa-zero_defconfig,aarch64-linux-gnu,meson-g12a-radxa-zero
 amlogic_u200,U200,Amlogic,meson-g12a,u200_defconfig,aarch64-linux-gnu,meson-g12a-u200
 
+banana_pi_m2s,Banana Pi M2S,Sinovoip,meson-g12b,bananapi-m2s_defconfig,aarch64-linux-gnu,meson-g12b-a311d-bananapi-m2s
 khadas_vim3,VIM3,Khadas,meson-g12b,khadas-vim3_defconfig,aarch64-linux-gnu,meson-g12b-a311d-khadas-vim3
 beelink_gt_king_x,GT-King X,Beelink,meson-g12b,beelink-gsking-x_defconfig,aarch64-linux-gnu,meson-g12b-gsking-x
 beelink_gt_king,GT-King,Beelink,meson-g12b,beelink-gtking_defconfig,aarch64-linux-gnu,meson-g12b-gtking
 beelink_gt_king_pro,GT-King Pro,Beelink,meson-g12b,beelink-gtkingpro_defconfig,aarch64-linux-gnu,meson-g12b-gtking-pro
+odroid_go_ultra,ODROID GO Ultra,Hardkernel,meson-g12b,odroid-go-ultra_defconfig,aarch64-linux-gnu,meson-g12b-odroid-go-ultra
 odroid_n2,ODROID N2,Hardkernel,meson-g12b,odroid-n2_defconfig,aarch64-linux-gnu,meson-g12b-odroid-n2
+odroid_n2l,ODROID N2L,Hardkernel,meson-g12b,odroid-n2l_defconfig,aarch64-linux-gnu,meson-g12b-odroid-n2l
+radxa_zero2,Zero2,Hardkernel,meson-g12b,radxa-zero2_defconfig,aarch64-linux-gnu,meson-g12b-radxa-zero2
 
 nano_pi_k2,Nano Pi K2,FriendlyElec,meson-gxbb,nanopi-k2_defconfig,aarch64-linux-gnu,meson-gxbb-nanopi-k2
 odroid_c2,ODROID C2,Hardkernel,meson-gxbb,odroid-c2_defconfig,aarch64-linux-gnu,meson-gxbb-odroidc2
@@ -186,6 +192,7 @@ amlogic_p212,P212,Amlogic,meson-gxl,p212_defconfig,aarch64-linux-gnu,meson-gxl-s
 khadas_vim2,VIM2,Khadas,meson-gxm,khadas-vim2_defconfig,aarch64-linux-gnu,meson-gxm-khadas-vim2
 libretech_s912_pc,AML-S912-PC (Tartiflette),Libre Computer,meson-gxm,libretech-s912-pc_defconfig,aarch64-linux-gnu,meson-gxm-s912-libretech-pc
 
+banana_pi_m2_pro,Banana Pi M2 Pro,Sinovoip,meson-sm1,bananapi-m2-pro_defconfig,aarch64-linux-gnu,meson-sm1-bananapi-m2-pro
 banana_pi_m5,Banana Pi M5,Sinovoip,meson-sm1,bananapi-m5_defconfig,aarch64-linux-gnu,meson-sm1-bananapi-m5
 khadas_vim3l,VIM3L,Khadas,meson-sm1,khadas-vim3l_defconfig,aarch64-linux-gnu,meson-sm1-khadas-vim3l
 odroid_c4,ODROID C4,Hardkernel,meson-sm1,odroid-c4_defconfig,aarch64-linux-gnu,meson-sm1-odroid-c4
