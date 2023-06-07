@@ -8,6 +8,21 @@ TUPLE="${4}" # For example "arm-linux-gnueabihf"
 
 set -ex
 
+RPI_FIRMWARE_GIT_URL_DEFAULT="https://github.com/raspberrypi/firmware/"
+
+if [ ! -z "${RPI_FIRMWARE_GIT_REV}" ]
+then
+	git clone --depth 1 \
+	          --reference-if-able "${WORKDIR}/rpi-firmware" \
+	          --branch "${RPI_FIRMWARE_GIT_REV}" \
+	          "${RPI_FIRMWARE_GIT_URL:-${RPI_FIRMWARE_GIT_URL_DEFAULT}}" rpi-firmware
+else
+	git clone --depth 1 \
+	          --reference-if-able "${WORKDIR}/rpi-firmware" \
+	          --branch stable \
+	          "${RPI_FIRMWARE_GIT_URL:-${RPI_FIRMWARE_GIT_URL_DEFAULT}}" rpi-firmware
+fi
+
 build-u_boot "${DEFCONFIG}" "${TUPLE}"
 
 # Write Raspberry Pi boot config
@@ -24,34 +39,30 @@ then
     echo "arm_64bit=1" >> config.txt
 fi
 
-# Download Raspberry Pi boot files
-FIRMWARE="https://github.com/raspberrypi/firmware/raw/stable"
 if [ "${CHIP_ID}" = "bcm2711" ]; then
-    wget --tries 3 \
-         --retry-on-http-error 500,502,503,504 \
-         --no-verbose \
-         "${FIRMWARE}/boot/fixup4.dat" \
-         "${FIRMWARE}/boot/fixup4x.dat" \
-         "${FIRMWARE}/boot/fixup4cd.dat" \
-         "${FIRMWARE}/boot/fixup4db.dat" \
-         "${FIRMWARE}/boot/start4.elf" \
-         "${FIRMWARE}/boot/start4x.elf" \
-         "${FIRMWARE}/boot/start4cd.elf" \
-         "${FIRMWARE}/boot/start4db.elf" \
-         "${FIRMWARE}/boot/bootcode.bin"
+    # Copy Raspberry Pi 4 boot files
+    cp -v rpi-firmware/boot/fixup4.dat \
+          rpi-firmware/boot/fixup4x.dat \
+          rpi-firmware/boot/fixup4cd.dat \
+          rpi-firmware/boot/fixup4db.dat \
+          rpi-firmware/boot/start4.elf \
+          rpi-firmware/boot/start4x.elf \
+          rpi-firmware/boot/start4cd.elf \
+          rpi-firmware/boot/start4db.elf \
+          rpi-firmware/boot/bootcode.bin \
+          .
 else
-    wget --tries 3 \
-         --retry-on-http-error 500,502,503,504 \
-         --no-verbose \
-         "${FIRMWARE}/boot/fixup.dat" \
-         "${FIRMWARE}/boot/fixup_x.dat" \
-         "${FIRMWARE}/boot/fixup_cd.dat" \
-         "${FIRMWARE}/boot/fixup_db.dat" \
-         "${FIRMWARE}/boot/start.elf" \
-         "${FIRMWARE}/boot/start_x.elf" \
-         "${FIRMWARE}/boot/start_cd.elf" \
-         "${FIRMWARE}/boot/start_db.elf" \
-         "${FIRMWARE}/boot/bootcode.bin"
+    # Copy Raspberry Pi boot files
+    cp -v rpi-firmware/boot/fixup.dat \
+          rpi-firmware/boot/fixup_x.dat \
+          rpi-firmware/boot/fixup_cd.dat \
+          rpi-firmware/boot/fixup_db.dat \
+          rpi-firmware/boot/start.elf \
+          rpi-firmware/boot/start_x.elf \
+          rpi-firmware/boot/start_cd.elf \
+          rpi-firmware/boot/start_db.elf \
+          rpi-firmware/boot/bootcode.bin \
+          .
 fi
 
 # Magic thing to get debug output
