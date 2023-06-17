@@ -1,0 +1,21 @@
+name: Delete packages
+
+on:
+  schedule:
+    # Every Monday morning
+    - cron: "0 3 * 1 *"
+
+jobs:
+  update-versions:
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+
+    steps:
+      - name: Delete container images
+      - uses: actions/delete-package-versions@v4
+        with: 
+          package-name: sd-card-images
+          package-type: container
+          min-versions-to-keep: 5
+          delete-only-untagged-versions: true
