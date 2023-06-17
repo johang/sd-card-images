@@ -110,12 +110,14 @@ def get_releases():
     for distdir in ("/debian/dists", "/ubuntu/dists", ):
         ftp.cwd(distdir)
         distsubdirs = ftp.nlst()
+        assert len(distsubdirs) > 0
         logger.debug("Found %d items in %s", len(distsubdirs), distdir)
 
         for x in distsubdirs:
             data = BytesIO()
             try:
                 ftp.retrbinary(f"RETR {x}/Release", data.write)
+                assert data.tell() > 0
                 data.seek(0)
                 logger.debug("Downloaded %s/%s/Release", distdir, x)
 
@@ -124,13 +126,8 @@ def get_releases():
                 pass
 
 
-if __name__ == "__main__":
-    logger.info("Downloading releases...")
-    releases = list(sorted(set(get_releases())))
-    assert len(releases) > 0
-    logger.info("Found %d releases", len(releases))
-
-    with open("debians-arm.csv", "w", newline="") as f:
+def write_csv(filename, releases, archs):
+    with open(filename, "w", newline="") as f:
         w = DictWriter(f, fieldnames=("OS", "Dist", "Arch", "Name", "Exp", ))
         w.writeheader()
 
@@ -138,7 +135,7 @@ if __name__ == "__main__":
             if not r.is_relevant():
                 continue
 
-            for arch in ("armhf", "arm64", ):
+            for arch in archs:
                 if arch not in r.architectures:
                     continue
 
@@ -153,6 +150,17 @@ if __name__ == "__main__":
                     "Name": repr(r),
                     "Exp": r.is_experimental(),
                 })
-                logger.debug("Wrote %s to file", r)
+                logger.debug("Wrote %s to file %s", r, filename)
 
+
+if __name__ == "__main__":
+    logger.info("Downloading releases...")
+    releases = list(sorted(set(get_releases())))
+    assert len(releases) > 0
+    logger.info("Found %d releases", len(releases))
+
+    write_csv("debians-arm.csv", releases, ("armhf", "arm64"))
     logger.info("Wrote debians-arm.csv")
+
+    write_csv("debians-x86.csv", releases, ("i386", "amd64"))
+    logger.info("Wrote debians-x86.csv")
