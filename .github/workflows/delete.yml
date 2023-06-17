@@ -13,7 +13,7 @@ jobs:
 
     steps:
       - name: Delete container images
-      - uses: actions/delete-package-versions@v4
+        uses: actions/delete-package-versions@v4
         with: 
           package-name: sd-card-images
           package-type: container
