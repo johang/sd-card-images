@@ -1,0 +1,43 @@
+name: Rebuild debian-*.csv
+
+on:
+  schedule:
+    # Every Saturday afternoon
+    - cron: "0 14 * * 6"
+
+jobs:
+  update-versions:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        timeout-minutes: 5
+        env:
+          DEBIAN_FRONTEND: noninteractive
+        run: |
+          sudo apt-get update
+          sudo apt-get --assume-yes \
+                       --no-install-recommends \
+                       install python
+
+      - name: Regenerate
+        timeout-minutes: 5
+        shell: bash -e
+        run: |
+          ./metascripts/rebuild-debian-csv
+          git add debians-arm.csv
+          git add debians-x86.csv
+          if git commit -m "debians: Update Debian/Ubuntu versions"; then
+            ./metascripts/rebuild-jekyll-boards
+            git add -A docs
+            if git commit -m "docs: Regenerate boards"; then
+              git config user.name "Johan Gunnarsson"
+              git config user.email "johan.gunnarsson@gmail.com"
+              git push origin
+            fi
+          fi
