@@ -1,19 +1,19 @@
-OS,Dist,Arch
-
-debian,bullseye,i386
-debian,bullseye,amd64
-
-debian,bookworm,i386
-debian,bookworm,amd64
-
-debian,sid,i386
-debian,sid,amd64
-
-debian,experimental,i386
-debian,experimental,amd64
-
-ubuntu,jammy,amd64
-
-ubuntu,kinetic,amd64
-
-ubuntu,lunar,amd64
+OS,Dist,Arch,Name,Exp
+debian,experimental,i386,"Debian experimental (""rc-buggy"")",True
+debian,experimental,amd64,"Debian experimental (""rc-buggy"")",True
+debian,bookworm,i386,"Debian stable/12.0 (""bookworm"")",False
+debian,bookworm,amd64,"Debian stable/12.0 (""bookworm"")",False
+debian,trixie,i386,"Debian testing (""trixie"")",False
+debian,trixie,amd64,"Debian testing (""trixie"")",False
+debian,sid,i386,"Debian unstable (""sid"")",False
+debian,sid,amd64,"Debian unstable (""sid"")",False
+ubuntu,focal,i386,"Ubuntu 20.04 LTS (""focal"")",False
+ubuntu,focal,amd64,"Ubuntu 20.04 LTS (""focal"")",False
+ubuntu,jammy,i386,"Ubuntu 22.04 LTS (""jammy"")",False
+ubuntu,jammy,amd64,"Ubuntu 22.04 LTS (""jammy"")",False
+ubuntu,kinetic,i386,"Ubuntu 22.10 (""kinetic"")",False
+ubuntu,kinetic,amd64,"Ubuntu 22.10 (""kinetic"")",False
+ubuntu,lunar,i386,"Ubuntu 23.04 (""lunar"")",False
+ubuntu,lunar,amd64,"Ubuntu 23.04 (""lunar"")",False
+ubuntu,mantic,i386,"Ubuntu 23.10 (""mantic"")",True
+ubuntu,mantic,amd64,"Ubuntu 23.10 (""mantic"")",True
