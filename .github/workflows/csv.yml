@@ -23,7 +23,7 @@ jobs:
           sudo apt-get update
           sudo apt-get --assume-yes \
                        --no-install-recommends \
-                       install python
+                       install python3
 
       - name: Regenerate
         timeout-minutes: 5
