@@ -20,11 +20,30 @@ echo "Using password ${SSHPASS}"
 # Build image
 zcat "${BOOT}" "${DEBIAN}" > image.bin
 
+# Check integrity
+LOOP1=$(losetup -f -P --show image.bin) && {
+    trap 'losetup -d "${LOOP1}"' ERR
+    fsck.vfat -p -f "${LOOP1}p1"
+    fsck.ext4 -p -f "${LOOP1}p2"
+    trap '-' ERR
+    losetup -d "${LOOP1}"
+}
+
 # Assume 8GB virtual disk
 fallocate -l 8GB image.bin
 
 # Extend second partition
 parted -s -a opt image.bin "resizepart 2 100%"
+
+# Check integrity again
+LOOP2=$(losetup -f -P --show image.bin) && {
+    trap 'losetup -d "${LOOP2}"' ERR
+    fsck.vfat -p -f "${LOOP2}p1"
+    fsck.ext4 -p -f "${LOOP2}p2"
+    resize2fs "${LOOP2}p2"
+    trap '-' ERR
+    losetup -d "${LOOP2}"
+}
 
 # Extract U-Boot (u-boot.rom in x86 case)
 dd if=image.bin of=bios.bin count=2048 skip=16

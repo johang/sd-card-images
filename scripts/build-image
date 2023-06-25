@@ -12,7 +12,7 @@ rm -f "${IMAGE}"
 fallocate -v -l 3800000000 "${IMAGE}" # 3,800,000,000 bytes
 
 parted -s "${IMAGE}" mklabel msdos
-parted -s "${IMAGE}" mkpart primary fat32 -- 4MiB 32MiB # 28 MiB (50,331,648 bytes)
+parted -s "${IMAGE}" mkpart primary fat32 -- 4MiB 32MiB # 28 MiB (29,360,128 bytes)
 parted -s "${IMAGE}" mkpart primary ext2 -- 32MiB -1
 parted -s "${IMAGE}" set 2 boot on
 
