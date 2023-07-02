@@ -12,14 +12,17 @@ case "${CHIP_ID}" in
 *a64|*h5)
     build-atf sun50i_a64 "${TUPLE}"
     export BL31="$(pwd)/arm-trusted-firmware/build/sun50i_a64/debug/bl31.bin"
+    export SCP=/dev/null
     ;;
 *h6)
     build-atf sun50i_h6 "${TUPLE}"
     export BL31="$(pwd)/arm-trusted-firmware/build/sun50i_h6/debug/bl31.bin"
+    export SCP=/dev/null
     ;;
 *h616)
     build-atf sun50i_h616 "${TUPLE}"
     export BL31="$(pwd)/arm-trusted-firmware/build/sun50i_h616/debug/bl31.bin"
+    export SCP=/dev/null
     ;;
 *)
     ;;
