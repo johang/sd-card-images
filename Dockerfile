@@ -6,6 +6,7 @@ RUN apt-get update && \
             install debootstrap \
                     debian-archive-keyring \
                     ca-certificates \
+                    qemu-user \
                     qemu-user-static \
                     qemu-system-arm \
                     qemu-system-x86 \
