@@ -20,6 +20,9 @@ else
 	          "${U_BOOT_GIT_URL:-${U_BOOT_GIT_URL_DEFAULT}}" u-boot
 fi
 
+# Collect version of U-Boot
+(echo -n u-boot,; git -C u-boot describe --tags --always --abbrev=10) >> versions.csv
+
 # Step into U-Boot directory
 cd u-boot
 

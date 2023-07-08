@@ -23,6 +23,9 @@ else
 	          "${RPI_FIRMWARE_GIT_URL:-${RPI_FIRMWARE_GIT_URL_DEFAULT}}" rpi-firmware
 fi
 
+# Collect version of firmware
+(echo -n rpi-firmware,; git -C rpi-firmware describe --tags --always --abbrev=10) >> versions.csv
+
 build-u_boot "${DEFCONFIG}" "${TUPLE}"
 
 # Write Raspberry Pi boot config

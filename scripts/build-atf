@@ -20,6 +20,9 @@ else
 	          "${ATF_GIT_URL:-${ATF_GIT_URL_DEFAULT}}" arm-trusted-firmware
 fi
 
+# Collect version of ATF
+(echo -n atf,; git -C arm-trusted-firmware describe --tags --always --abbrev=10) >> versions.csv
+
 # Step into ATF directory
 cd arm-trusted-firmware
 

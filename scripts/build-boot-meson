@@ -22,6 +22,9 @@ else
 	          "${AMLOGIC_BOOT_FIP_GIT_URL:-${AMLOGIC_BOOT_FIP_GIT_URL_DEFAULT}}" amlogic-boot-fip
 fi
 
+# Collect version of amlogic-boot-fip
+(echo -n amlogic-boot-fip,; git -C amlogic-boot-fip describe --tags --always --abbrev=10) >> versions.csv
+
 build-u_boot "${DEFCONFIG}" "${TUPLE}"
 
 cd amlogic-boot-fip

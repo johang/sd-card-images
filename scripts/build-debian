@@ -158,6 +158,7 @@ chroot debian /bin/sh -ex <<- EOF
 /usr/bin/apt-get -y install systemd-resolved || :
 /usr/bin/apt-get clean
 /bin/rm -rf /var/lib/apt/lists/*
+/usr/bin/dpkg-query --showformat='kernel,\${Version}\n' --show ${KERNEL} > /tmp/versions.csv
 /usr/bin/systemctl enable systemd-networkd.service
 /usr/bin/systemctl enable systemd-resolved.service
 /usr/bin/systemctl enable systemd-timesyncd.service
@@ -180,6 +181,8 @@ ln -sf /run/systemd/resolve/stub-resolv.conf debian/etc/resolv.conf
 # List all files
 find debian ! -type d -printf "/%P\n" | sort > files.txt
 
+mv debian/tmp/versions.csv versions.csv
+
 # Make a ext4 filesystem of this and put it into the image
 # >>> ((3800000000 - 32 * 1024 * 1024) // (1024 * 1024)) * (1024 * 1024)
 # 3765436416
@@ -190,4 +193,5 @@ pigz ext4.img
 
 mkdir -p "${ARTIFACTS_DIR:-/artifacts}"
 cp -v files.txt "${ARTIFACTS_DIR:-/artifacts}/${OS}-${DIST}-${ARCH}-${PASSWORD}.bin.gz.files.txt"
+cp -v versions.csv "${ARTIFACTS_DIR:-/artifacts}/${OS}-${DIST}-${ARCH}-${PASSWORD}.bin.gz.versions.csv"
 cp -v ext4.img.gz "${ARTIFACTS_DIR:-/artifacts}/${OS}-${DIST}-${ARCH}-${PASSWORD}.bin.gz"
