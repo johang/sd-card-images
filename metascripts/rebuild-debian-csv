@@ -77,7 +77,7 @@ class Release:
         if self.label not in ("Debian", "Ubuntu", ):
             return False
 
-        bl1 = ("oldoldstable", "oldstable", "devel", )
+        bl1 = ("oldoldstable", "devel", )
         if self.suite in bl1:
             return False
 

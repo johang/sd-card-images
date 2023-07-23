@@ -1,6 +1,8 @@
 OS,Dist,Arch,Name,Exp
 debian,experimental,armhf,"Debian experimental (""rc-buggy"")",True
 debian,experimental,arm64,"Debian experimental (""rc-buggy"")",True
+debian,bullseye,armhf,"Debian oldstable/11.7 (""bullseye"")",False
+debian,bullseye,arm64,"Debian oldstable/11.7 (""bullseye"")",False
 debian,bookworm,armhf,"Debian stable/12.1 (""bookworm"")",False
 debian,bookworm,arm64,"Debian stable/12.1 (""bookworm"")",False
 debian,trixie,armhf,"Debian testing (""trixie"")",False
