@@ -2,11 +2,11 @@ name: Rebuild debian-*.csv
 
 on:
   schedule:
-    # Every Saturday afternoon
-    - cron: "0 15 * * 6"
+    # Every Sunday evening
+    - cron: "00 21 * * 0"
 
 jobs:
-  update-versions:
+  rebuild-debian-csv:
     runs-on: ubuntu-latest
     permissions:
       contents: write

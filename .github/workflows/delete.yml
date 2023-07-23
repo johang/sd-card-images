@@ -3,10 +3,10 @@ name: Delete packages
 on:
   schedule:
     # Every Monday morning
-    - cron: "0 3 * * 1"
+    - cron: "00 03 * * 1"
 
 jobs:
-  update-versions:
+  delete-packages:
     runs-on: ubuntu-latest
     permissions:
       packages: write
