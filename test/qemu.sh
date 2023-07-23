@@ -23,6 +23,7 @@ zcat "${BOOT}" "${DEBIAN}" > image.bin
 # Check integrity
 LOOP1=$(losetup -f -P --show image.bin) && {
     trap 'losetup -d "${LOOP1}"' ERR
+    sleep 1
     fsck.vfat -p -f "${LOOP1}p1"
     fsck.ext4 -p -f "${LOOP1}p2"
     trap '-' ERR
@@ -38,6 +39,7 @@ parted -s -a opt image.bin "resizepart 2 100%"
 # Check integrity again
 LOOP2=$(losetup -f -P --show image.bin) && {
     trap 'losetup -d "${LOOP2}"' ERR
+    sleep 1
     fsck.vfat -p -f "${LOOP2}p1"
     fsck.ext4 -p -f "${LOOP2}p2"
     resize2fs "${LOOP2}p2"
