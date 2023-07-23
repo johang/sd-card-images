@@ -46,7 +46,7 @@ esac
 
 case "${OS}-${ARCH}-${DIST}" in
 debian-*-rc-buggy|debian-*-experimental)
-	TARGET=testing
+	TARGET=unstable
 	;;
 *)
 	TARGET="${DIST}"
