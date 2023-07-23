@@ -89,7 +89,7 @@ deb http://deb.debian.org/debian ${DIST} main
 deb-src http://deb.debian.org/debian ${DIST} main
 EOF
 	;;
-debian-*-sid|debian-*-testing)
+debian-*-sid|debian-*-unstable)
 	tee debian/tmp/sources.list <<- EOF
 deb http://deb.debian.org/debian ${DIST} main
 deb-src http://deb.debian.org/debian ${DIST} main
