@@ -4,9 +4,6 @@
 # Kernel ABI string
 ABI="${1}"
 
-# Create U-Boot ramdisk image
-mkimage -A arm -T ramdisk -C none -d "/boot/initrd.img-${ABI}" "/boot/initrd.uimg-${ABI}"
-
 # List of paths to search for fdtfile in
 FDT="\
 /lib/firmware/${ABI}/device-tree/\${vendor} \
@@ -19,7 +16,7 @@ FDT="\
 # Create U-Boot boot script
 cat << EOF > /boot/boot.cmd
 load \${devtype} \${devnum}:\${distro_bootpart} \${kernel_addr_r} /boot/vmlinuz-${ABI}
-load \${devtype} \${devnum}:\${distro_bootpart} \${ramdisk_addr_r} /boot/initrd.uimg-${ABI}
+load \${devtype} \${devnum}:\${distro_bootpart} \${ramdisk_addr_r} /boot/initrd.img-${ABI}
 setenv ramdisk_size \${filesize}
 part uuid \${devtype} \${devnum}:\${distro_bootpart} partuuid
 setenv bootargs root=PARTUUID=\${partuuid} rw rootwait
