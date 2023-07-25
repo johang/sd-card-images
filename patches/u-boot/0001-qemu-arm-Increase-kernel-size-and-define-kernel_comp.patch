@@ -1,0 +1,25 @@
+From ede357eede35e312b921133586719c262cb0d11a Mon Sep 17 00:00:00 2001
+From: Johan Gunnarsson <johan.gunnarsson@gmail.com>
+Date: Fri, 14 Jul 2023 22:57:23 +0200
+Subject: [PATCH 1/3] qemu-arm: Increase kernel size and define kernel_comp_*
+
+---
+ board/emulation/qemu-arm/qemu-arm.env | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/board/emulation/qemu-arm/qemu-arm.env b/board/emulation/qemu-arm/qemu-arm.env
+index e658d5ee7d..1e4eb3e49c 100644
+--- a/board/emulation/qemu-arm/qemu-arm.env
++++ b/board/emulation/qemu-arm/qemu-arm.env
+@@ -8,5 +8,7 @@ fdt_addr=0x40000000
+ scriptaddr=0x40200000
+ pxefile_addr_r=0x40300000
+ kernel_addr_r=0x40400000
+-ramdisk_addr_r=0x44000000
++ramdisk_addr_r=0x45000000
++kernel_comp_addr_r=0x48000000
++kernel_comp_size=0x2000000
+ boot_targets=qfw usb scsi virtio nvme dhcp
+-- 
+2.25.1
+

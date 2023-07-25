@@ -1,0 +1,27 @@
+From e88e40e7094d925bc2295cf92d224154a46eb385 Mon Sep 17 00:00:00 2001
+From: Johan Gunnarsson <johan.gunnarsson@gmail.com>
+Date: Fri, 14 Jul 2023 22:57:50 +0200
+Subject: [PATCH 2/3] rk3368: Define kernel_comp_*
+
+---
+ include/configs/rk3368_common.h | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/include/configs/rk3368_common.h b/include/configs/rk3368_common.h
+index ccb5369b90..a9cf0ed76d 100644
+--- a/include/configs/rk3368_common.h
++++ b/include/configs/rk3368_common.h
+@@ -21,7 +21,9 @@
+ 	"pxefile_addr_r=0x00600000\0" \
+ 	"fdt_addr_r=0x5600000\0" \
+ 	"kernel_addr_r=0x280000\0" \
+-	"ramdisk_addr_r=0x5bf0000\0"
++	"ramdisk_addr_r=0x5bf0000\0" \
++	"kernel_comp_addr_r=0x8bf0000\0" \
++	"kernel_comp_size=0x2000000\0"
+ 
+ #define CFG_EXTRA_ENV_SETTINGS \
+ 	"fdtfile=" CONFIG_DEFAULT_DEVICE_TREE ".dtb\0" \
+-- 
+2.25.1
+

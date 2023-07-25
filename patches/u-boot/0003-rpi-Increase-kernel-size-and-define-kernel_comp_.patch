@@ -1,0 +1,33 @@
+From 46e63ab6a4cfb4d98ad732f245107e82739887b8 Mon Sep 17 00:00:00 2001
+From: Johan Gunnarsson <johan.gunnarsson@gmail.com>
+Date: Fri, 14 Jul 2023 22:58:17 +0200
+Subject: [PATCH 3/3] rpi: Increase kernel size and define kernel_comp_*
+
+---
+ include/configs/rpi.h | 10 ++++++----
+ 1 file changed, 6 insertions(+), 4 deletions(-)
+
+diff --git a/include/configs/rpi.h b/include/configs/rpi.h
+index 4da982f735..9d68b27384 100644
+--- a/include/configs/rpi.h
++++ b/include/configs/rpi.h
+@@ -117,10 +117,12 @@
+ 	"fdt_high=" FDT_HIGH "\0" \
+ 	"initrd_high=" INITRD_HIGH "\0" \
+ 	"kernel_addr_r=0x00080000\0" \
+-	"scriptaddr=0x02400000\0" \
+-	"pxefile_addr_r=0x02500000\0" \
+-	"fdt_addr_r=0x02600000\0" \
+-	"ramdisk_addr_r=0x02700000\0"
++	"scriptaddr=0x05000000\0" \
++	"pxefile_addr_r=0x05100000\0" \
++	"fdt_addr_r=0x05200000\0" \
++	"ramdisk_addr_r=0x05300000\0" \
++	"kernel_comp_addr_r=0x08300000\0" \
++	"kernel_comp_size=0x2000000\0"
+ 
+ #if IS_ENABLED(CONFIG_CMD_MMC)
+ 	#define BOOT_TARGET_MMC(func) \
+-- 
+2.25.1
+
