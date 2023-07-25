@@ -17,8 +17,6 @@ FDT="\
 cat << EOF > /boot/boot.cmd
 load \${devtype} \${devnum}:\${distro_bootpart} \${kernel_addr_r} /boot/vmlinuz-${ABI}
 load \${devtype} \${devnum}:\${distro_bootpart} \${ramdisk_addr_r} /boot/initrd.img-${ABI}
-setexpr kernel_comp_addr_r \${ramdisk_addr_r} + \${filesize}
-setexpr kernel_comp_size 0x4000000
 setenv ramdisk_size \${filesize}
 part uuid \${devtype} \${devnum}:\${distro_bootpart} partuuid
 setenv bootargs root=PARTUUID=\${partuuid} rw rootwait
