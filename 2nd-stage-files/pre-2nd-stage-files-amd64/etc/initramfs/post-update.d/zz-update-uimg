@@ -8,9 +8,10 @@ ABI="${1}"
 cat << EOF > /boot/boot.cmd
 load \${devtype} \${devnum}:\${distro_bootpart} \${kernel_addr_r} /boot/vmlinuz-${ABI}
 load \${devtype} \${devnum}:\${distro_bootpart} \${ramdisk_addr_r} /boot/initrd.img-${ABI}
+setenv ramdisk_size \${filesize}
 part uuid \${devtype} \${devnum}:\${distro_bootpart} partuuid
 setenv bootargs root=PARTUUID=\${partuuid} rw rootwait
-zboot \${kernel_addr_r} - \${ramdisk_addr_r} 0x2000000
+zboot \${kernel_addr_r} - \${ramdisk_addr_r} \${ramdisk_size}
 EOF
 
 # Create U-Boot boot script

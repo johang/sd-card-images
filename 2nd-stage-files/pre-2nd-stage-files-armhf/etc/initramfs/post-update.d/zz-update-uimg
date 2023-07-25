@@ -20,15 +20,16 @@ FDT="\
 cat << EOF > /boot/boot.cmd
 load \${devtype} \${devnum}:\${distro_bootpart} \${kernel_addr_r} /boot/vmlinuz-${ABI}
 load \${devtype} \${devnum}:\${distro_bootpart} \${ramdisk_addr_r} /boot/initrd.uimg-${ABI}
+setenv ramdisk_size \${filesize}
 part uuid \${devtype} \${devnum}:\${distro_bootpart} partuuid
 setenv bootargs root=PARTUUID=\${partuuid} rw rootwait
 for fdtpath in ${FDT}; do
   if test -e \${devtype} \${devnum}:\${distro_bootpart} \${fdtpath}/\${fdtfile}; then
     load \${devtype} \${devnum}:\${distro_bootpart} \${fdt_addr_r} \${fdtpath}/\${fdtfile}
-    bootz \${kernel_addr_r} \${ramdisk_addr_r} \${fdt_addr_r}
+    bootz \${kernel_addr_r} \${ramdisk_addr_r}:\${ramdisk_size} \${fdt_addr_r}
   fi
 done
-bootz \${kernel_addr_r} \${ramdisk_addr_r} \${fdtcontroladdr}
+bootz \${kernel_addr_r} \${ramdisk_addr_r}:\${ramdisk_size} \${fdtcontroladdr}
 EOF
 
 # Create U-Boot boot script
