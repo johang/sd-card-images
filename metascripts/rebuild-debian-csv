@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 
 from datetime import timedelta, date, datetime
-from io import BytesIO
 from csv import DictWriter
 
-import ftplib
+import gzip
 import logging
+import re
+import urllib.request
+import urllib.error
 
 
 logging.basicConfig()
@@ -102,28 +104,66 @@ class Release:
         return False
 
 
-def get_releases():
-    ftp = ftplib.FTP("mirror.nl.leaseweb.net")
-    ftp.login()
-    logger.debug("Connected to FTP")
+def get_releases(url):
+    dirlinepattern = re.compile(
+        r"\.(/dists/[\w\-]+):"
+    )
 
-    for distdir in ("/debian/dists", "/ubuntu/dists", ):
-        ftp.cwd(distdir)
-        distsubdirs = ftp.nlst()
-        assert len(distsubdirs) > 0
-        logger.debug("Found %d items in %s", len(distsubdirs), distdir)
+    filelinepattern = re.compile(
+        r"([\w\-]+)"  # permissions (1)
+        r"\s+"
+        r"(\d+)"  # inodes (2)
+        r"\s+"
+        r"(\w+)"  # user (3)
+        r"\s+"
+        r"(\w+)"  # group (4)
+        r"\s+"
+        r"(\d+)"  # size (5)
+        r"\s+"
+        r"(\w+\s+\d+\s+\d+:\d+|\w+\s+\d+\s+\d+)"  # datetime (6)
+        r"\s+"
+        r"(.*)"  # filename (7)
+    )
 
-        for x in distsubdirs:
-            data = BytesIO()
+    listurl = url + "/ls-lR.gz"
+    with gzip.open(urllib.request.urlopen(listurl), "rt") as f:
+        logger.debug("Downloaded %s", listurl)
+
+        while f:
             try:
-                ftp.retrbinary(f"RETR {x}/Release", data.write)
-                assert data.tell() > 0
-                data.seek(0)
-                logger.debug("Downloaded %s/%s/Release", distdir, x)
+                dirnameline = next(f).strip()
+                assert dirnameline.startswith(".")
+                totalline = next(f).strip()
+                assert totalline.startswith("total ")
+            except StopIteration:
+                break
 
-                yield Release(data)
-            except ftplib.error_perm:
-                pass
+            skipdir = True
+            dirlinematch = dirlinepattern.fullmatch(dirnameline)
+            if dirlinematch:
+                debiandir = dirlinematch.group(1)
+                skipdir = False
+
+            for a in f:
+                fileline = a.strip()
+                if fileline == "":
+                    break
+                if skipdir:
+                    continue
+
+                filelinematch = filelinepattern.fullmatch(fileline)
+                if not filelinematch:
+                    continue
+                filename = filelinematch.group(7)
+                if filename == "Release" or filename.startswith("Release ->"):
+                    relurl = url + debiandir + "/Release"
+                    try:
+                        with urllib.request.urlopen(relurl) as u:
+                            logger.debug("Downloaded %s", relurl)
+
+                            yield Release(u)
+                    except urllib.error.URLError as e:
+                        logger.warning("Failed to download %s: %s", relurl, e)
 
 
 def write_csv(filename, releases, archs):
@@ -155,7 +195,11 @@ def write_csv(filename, releases, archs):
 
 if __name__ == "__main__":
     logger.info("Downloading releases...")
-    releases = list(sorted(set(get_releases())))
+    debianreleases = set(get_releases("http://ftp.debian.org/debian"))
+    assert len(debianreleases) > 0
+    ubuntureleases = set(get_releases("http://ftp.ubuntu.com/ubuntu"))
+    assert len(ubuntureleases) > 0
+    releases = list(sorted(debianreleases | ubuntureleases))
     assert len(releases) > 0
     logger.info("Found %d releases", len(releases))
 
