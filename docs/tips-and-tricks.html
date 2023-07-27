@@ -1,18 +1,17 @@
 ---
-title: All SD card images
+title: Tips and tricks - SD card images
 layout: default
 ---
-<main role="main">
+<main>
 	<div class="container">
 		<h2>Tips and tricks</h2>
 		<p>Here's a collections of tips and tricks for setting up the images.</p>
-		<hr />
+		<hr>
 	</div>
 	<div class="container">
-		<hr />
 		<h3>Change root password</h3>
 		<p>You should change root password.</p>
-<pre class="bg-dark text-light p-3"><samp># passwd
+<pre class="bg-dark rounded text-light p-3 wrap"><samp># passwd
 Changing password for root.
 Current password: 
 New password: 
@@ -23,7 +22,7 @@ Retype new password:
 
 		<h3>Extend root filesystem</h3>
 		<p>If your SD card is larger than 4 GB, you can extend the root filesystem after writing it to the SD card.</p>
-<pre class="bg-dark text-light p-3"><samp># parted -s -a opt /dev/sdXXX "resizepart 2 100%"
+<pre class="bg-dark rounded text-light p-3 wrap"><samp># parted -a opt /dev/sdXXX "resizepart 2 100%"
 ...
 # partprobe
 ...
@@ -34,14 +33,14 @@ Retype new password:
 
 		<h3>Set time zone</h3>
 		<p>Set correct time zone to get correct system time.</p>
-<pre class="bg-dark text-light p-3"><samp># timedatectl set-timezone Europe/Stockholm
+<pre class="bg-dark rounded text-light p-3 wrap"><samp># timedatectl set-timezone Europe/Stockholm
 ...
 #
 </samp></pre>
 
 		<h3>perl: warning: Setting locale failed</h3>
 		<p>If you you get the following (or similar) warnings, fix it by installing and configuring <code>locale</code>.</p>
-<pre class="bg-danger text-light p-3"><samp>perl: warning: Setting locale failed.
+<pre class="bg-danger rounded text-light p-3 wrap"><samp>perl: warning: Setting locale failed.
 perl: warning: Please check that your locale settings:
 	LANGUAGE = (unset),
 	LC_ALL = (unset),
@@ -59,7 +58,7 @@ perl: warning: Please check that your locale settings:
 perl: warning: Falling back to the standard locale ("C").
 </samp></pre>
 
-<pre class="bg-dark text-light p-3"><samp># apt-get install locales
+<pre class="bg-dark rounded text-light p-3 wrap"><samp># apt-get install locales
 ...
 # dpkg-reconfigure locales
 ...
@@ -68,7 +67,7 @@ perl: warning: Falling back to the standard locale ("C").
 
 		<h3>debconf: unable to initialize frontend: Dialog</h3>
 		<p>If you you get the following (or similar) warnings, fix it by installing <code>dialog</code>.</p>
-<pre class="bg-danger text-light p-3"><samp>debconf: unable to initialize frontend: Dialog
+<pre class="bg-danger rounded text-light p-3 wrap"><samp>debconf: unable to initialize frontend: Dialog
 debconf: (No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 76.)
 debconf: falling back to frontend: Readline
 debconf: unable to initialize frontend: Readline
@@ -76,11 +75,11 @@ debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Ter
 debconf: falling back to frontend: Teletype
 </samp></pre>
 
-<pre class="bg-dark text-light p-3"><samp># apt-get install dialog
+<pre class="bg-dark rounded text-light p-3 wrap"><samp># apt-get install dialog
 ...
 #
 </samp></pre>
 
-		<hr />
+		<hr>
 	</div>
 </main>

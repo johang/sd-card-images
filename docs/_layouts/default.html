@@ -6,10 +6,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<meta name="description" content="{{ page.description }}">
 		<title>{{ page.title }}</title>
-		<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css" crossorigin="anonymous">
+		<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/moment@2.29.4/moment.min.js" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.min.css" crossorigin="anonymous">
 		<style>
 			body {
 				padding-top: 4.5rem;
@@ -23,6 +24,9 @@
 			code.shell-normal:before {
 				content: "$ ";
 			}
+			pre.wrap {
+				white-space: pre-wrap;
+			}
 		</style>
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-V2XK1QS92P"></script>
 		<script>
@@ -35,40 +39,41 @@
 	<body>
 		<header>
 			<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-				<a class="navbar-brand" href="/">SD card images</a> 
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarCollapse">
-					<ul class="navbar-nav mr-auto">
-						<li class="nav-item">
-							<a class="nav-link" href="/boards.html">Supported boards</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="https://github.com/johang/sd-card-images">Source code</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="https://github.com/johang/sd-card-images/issues">Bugs</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="https://github.com/johang/sd-card-images/discussions">Support</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="/tips-and-tricks.html">Tips and tricks</a>
-						</li>
-					</ul>
-<!--
-					<form class="form-inline my-2 my-lg-0">
-						<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-						<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-					</form>
--->
+				<div class="container-fluid">
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<a class="navbar-brand" href="/">SD card images</a> 
+					<div class="collapse navbar-collapse" id="navbarCollapse">
+						<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+							<li class="nav-item">
+								<a class="nav-link" href="/boards.html">Supported boards</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="https://github.com/johang/sd-card-images">Source code</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="https://github.com/johang/sd-card-images/issues">Bugs</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="https://github.com/johang/sd-card-images/discussions">Support</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="/tips-and-tricks.html">Tips and tricks</a>
+							</li>
+						</ul>
+						<form class="d-flex" autocomplete="off" role="search" method="GET" action="https://www.google.com/search">
+							<input type="hidden" name="as_sitesearch" value="sd-card-images.johang.se">
+							<input class="form-control me-2" type="search" name="q" placeholder="Search" aria-label="Search">
+							<button class="btn btn-outline-success" type="submit">Search</button>
+						</form>
+					</div>
 				</div>
 			</nav>
 		</header>
 {{ content }}
 		<footer class="container">
-			<p class="float-right"><a href="#">Back to top</a></p>
+			<p class="float-end"><a href="#">Back to top</a></p>
 			<p>This project is not affiliated with Debian. Debian is a registered trademark owned by Software in the Public Interest, Inc.</p>
 		</footer>
 	</body>

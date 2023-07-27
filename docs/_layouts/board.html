@@ -1,63 +1,56 @@
 ---
 layout: default
 ---
-<main role="main">
+<main>
 	<div class="container">
 		<h2>{{ page.board_name }}</h2>
 		<p>Minimal, pure and up-to-date vanilla Debian/Ubuntu Linux SD card image for <i>{{ page.board_name }}</i>.</p>
-		<hr />
+		<hr>
 	</div>
 	<div class="container">
 		<dl class="row">
-			<dt class="col-6 text-right"><strong>Board name</strong></dt>
+			<dt class="col-6 text-end"><strong>Board name</strong></dt>
 			<dd class="col-6">{{ page.board_name }}</dd>
-			<dt class="col-6 text-right"><strong>Board maker</strong></dt>
+			<dt class="col-6 text-end"><strong>Board maker</strong></dt>
 			<dd class="col-6">{{ page.board_maker_name }}</dd>
-			<dt class="col-6 text-right"><strong>SoC</strong></dt>
+			<dt class="col-6 text-end"><strong>SoC</strong></dt>
 			<dd class="col-6">{{ page.board_soc_name }}</dd>
-			<dt class="col-6 text-right"><strong>CPU</strong></dt>
+			<dt class="col-6 text-end"><strong>CPU</strong></dt>
 			<dd class="col-6">{{ page.board_cpu_name }}</dd>
 		</dl>
-		<hr />
+		<hr>
 	</div>
-	<div class="container" style="display: none;" id="unsupported-warning">
-		<div class="alert alert-warning" role="alert">This board is not supported by any boot image</div>
-		<hr />
-	</div>
-	<div class="container" id="install-instructions">
+	<div class="container">
 		<h3>Install instructions</h3>
-		<div class="row">
-			<div class="col-4">
-				<div class="nav flex-column nav-pills" id="install-tab" role="tablist" aria-orientation="vertical">
+		<div class="alert alert-warning d-none" id="unsupported-warning" role="alert">This board is not supported by any boot image and/or Debian/Ubuntu image</div>
+		<div class="d-flex align-items-start" id="install-instructions">
+			<div class="col-3 nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
 {% assign x = site.debians | where: "arch", page.board_cpu_arch_debian | sort %}
 {% for debian in x %}
 {% capture i %}{{ debian.os }}{{ debian.dist }}{{ debian.arch }}{% endcapture %}
-					<a class="nav-link hidden" id="install-{{ i }}-tab" data-toggle="pill" href="#install-{{ i }}" role="tab" aria-controls="install-{{ i }}" aria-selected="true">{{ debian.name }}</a>
+				<button class="nav-link text-start d-none" id="v-pills-install-{{ i }}-tab" data-bs-toggle="pill" data-bs-target="#v-pills-install-{{ i }}" type="button" role="tab" aria-controls="v-pills-install-{{ i }}" aria-selected="true">{{ debian.name }}</button>
 {% endfor %}
-				</div>
 			</div>
-			<div class="col-8">
-				<div class="tab-content" id="install-tabContent">
+			<div class="col-9 tab-content" id="v-pills-tab-content">
 {% assign x = site.debians | where: "arch", page.board_cpu_arch_debian | sort %}
 {% for debian in x %}
 {% capture i %}{{ debian.os }}{{ debian.dist }}{{ debian.arch }}{% endcapture %}
-					<div class="tab-pane fade hidden" id="install-{{ i }}" role="tabpanel" aria-labelledby="install-{{ i }}-tab">
-						<p class="bg-dark py-2 px-3">
-							<code class="shell-normal text-light">wget http://dl.sd-card-images.johang.se<span class="install-boot_path">/PLACEHOLDER1.bin.gz</span></code><br />
-							<code class="shell-normal text-light">wget http://dl.sd-card-images.johang.se<span id="install-{{ i }}-debian_path">/PLACEHOLDER2.bin.gz</span></code><br />
-							<code class="shell-normal text-light">zcat <span class="install-boot_file">boot.bin.gz</span> <span id="install-{{ i }}-debian_file">debian.bin.gz</span> &gt; sd-card.img</code><br />
-							<code class="shell-root text-light">dd if=sd-card.img of=/dev/sdXXX <span class="text-info"># ...where /dev/sdXXX is your SD card</span></code><br />
-						</p>
+				<div class="tab-pane fade d-none" id="v-pills-install-{{ i }}" role="tabpanel" aria-labelledby="v-pills-install-{{ i }}-tab" tabindex="0">
+					<p class="bg-dark rounded py-2 px-3">
+						<code class="shell-normal text-light">wget http://dl.sd-card-images.johang.se<span id="install-{{ i }}-boot_path">/PLACEHOLDER1.bin.gz</span></code><br>
+						<code class="shell-normal text-light">wget http://dl.sd-card-images.johang.se<span id="install-{{ i }}-debian_path">/PLACEHOLDER2.bin.gz</span></code><br>
+						<code class="shell-normal text-light">zcat <span id="install-{{ i }}-boot_file">boot.bin.gz</span> <span id="install-{{ i }}-debian_file">debian.bin.gz</span> &gt; sd-card.img</code><br>
+						<code class="shell-root text-light">dd if=sd-card.img of=/dev/sdXXX <span class="text-info"># ...where /dev/sdXXX is your SD card</span></code><br>
+					</p>
 {% if debian.exp == true %}
-						<div class="alert alert-danger" role="alert">This image is experimental</div>
+					<div class="alert alert-danger" role="alert">This image is experimental</div>
 {% endif %}
-						<p>When the <code>dd</code> command is done, put the SD card in your board and power it on. The board will boot up and assign itself an IP address using DHCP. The last part of the Debian/Ubuntu image filename is the default root password ("<span id="install-{{ i }}-password">PLACEHOLDER</span>" for this image).</p>
-					</div>
-{% endfor %}
+					<p>When the <code>dd</code> command is done, put the SD card in your board and power it on. The board will boot up and assign itself an IP address using DHCP. The last part of the Debian/Ubuntu image filename is the default root password ("<span id="install-{{ i }}-password">PLACEHOLDER</span>" for this image).</p>
 				</div>
+{% endfor %}
 			</div>
 		</div>
-		<hr />
+		<hr>
 	</div>
 	<div class="container" id="downloads">
 		<h3>Downloads for {{ page.board_name }}</h3>
@@ -65,106 +58,33 @@ layout: default
 			<caption>Downloads relevant to {{ page.board_name }}.</caption>
 			<thead>
 				<tr>
-					<th scope="col">Name</th>
-					<th scope="col">Type</th>
+					<th scope="col">File</th>
+					<th scope="col">Description</th>
 					<th scope="col">Build date</th>
 					<th scope="col">Size</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr id="downloads-boot" class="show">
+				<tr id="downloads-boot" class="d-none">
 					<td><i class="bi-download"></i> <a href="" id="downloads-boot-link">PLACEHOLDER</a></td>
-					<td>Boot image</td>
+					<td>Boot image <a class="badge text-bg-primary text-decoration-none d-none" id="downloads-boot-u-boot" href="https://source.denx.de/u-boot/u-boot">U-Boot PLACEHOLDER</a> <a class="badge text-bg-secondary text-decoration-none d-none" id="downloads-boot-atf" href="https://github.com/ARM-software/arm-trusted-firmware">TF-A PLACEHOLDER</a> <a class="badge text-bg-secondary text-decoration-none d-none" id="downloads-boot-raspberry-pi-firmware" href="https://github.com/raspberrypi/firmware">RPi boot FW PLACEHOLDER</a> <a class="badge text-bg-secondary text-decoration-none d-none" id="downloads-boot-amlogic-boot-fip" href="https://github.com/LibreELEC/amlogic-boot-fip">AmL boot FW PLACEHOLDER</a></td>
 					<td id="downloads-boot-build">PLACEHOLDER</td>
 					<td id="downloads-boot-size">PLACEHOLDER</td>
 				</tr>
 {% assign x = site.debians | where: "arch", page.board_cpu_arch_debian | sort %}
 {% for debian in x %}
 {% capture i %}{{ debian.os }}{{ debian.dist }}{{ debian.arch }}{% endcapture %}
-				<tr id="downloads-{{ i }}" class="hidden">
-					<td><i class="bi-download"></i> <a href="" id="downloads-{{ i }}-link">PLACEHOLDER</a> {% if debian.exp == true %}<span class="badge badge-danger">Experimental</span>{% endif %}</td>
-					<td>{{ debian.name }} root filesystem image</td>
+				<tr id="downloads-{{ i }}" class="d-none">
+					<td><i class="bi-download"></i> <a href="" id="downloads-{{ i }}-link">PLACEHOLDER</a></td>
+					<td>{{ debian.name }} image {% if debian.exp == true %}<span class="badge text-bg-danger">Experimental</span>{% endif %} <span class="badge text-bg-primary d-none" id="downloads-{{ i }}-kernel">Kernel PLACEHOLDER</span></td>
 					<td id="downloads-{{ i }}-build">PLACEHOLDER</td>
 					<td id="downloads-{{ i }}-size">PLACEHOLDER</td>
 				</tr>
 {% endfor %}
 			</tbody>
 		</table>
-		<hr />
+		<hr>
 	</div>
-	<script>
-		base_url = "http://dl.sd-card-images.johang.se";
-		board = "{{ page.board_id }}";
-		arch = "{{ page.board_cpu_arch_debian }}";
-		dtb = "{{ page.board_dtb_name }}";
-		function basename(path) {
-			return path.substring(Math.max(0, path.lastIndexOf("/") + 1));
-		}
-		function handle_boots(boots) {
-			supported = 0;
-			boots.forEach(function(boot) {
-				if (boot["board"] != board)
-					return;
-				supported++;
-				// Update install instructions
-				$("span.install-boot_file").text(basename(boot["path"]));
-				$("span.install-boot_path").text(boot["path"]);
-				// Update downloads list
-				$("#downloads-boot-link").text(basename(boot["path"])).attr("href", base_url + boot["path"]);
-				$("#downloads-boot-build").text(boot["build"]);
-				$("#downloads-boot-size").text(Math.round(boot["size"] / 1024) + " kB");
-			});
-			if (supported <= 0) {
-				// Board's unsupported
-				$("#install-instructions").hide();
-				$("#downloads").hide();
-				$("#unsupported-warning").show();
-			}
-		}
-		function handle_debians(debians) {
-			supported = [];
-			debians.forEach(function(debian) {
-				if (debian["arch"] != arch)
-					return;
-				if (dtb == "N/A") {
-					supported.push(debian);
-				} else {
-					debian["dtbs"].forEach(function(_dtb) {
-						if (_dtb == dtb)
-							supported.push(debian);
-					});
-				}
-			});
-			if (supported.length <= 0) {
-				// Board's unsupported
-				$("#install-instructions").hide();
-				$("#downloads").hide();
-				$("#unsupported-warning").show();
-			}
-			supported.forEach(function(debian) {
-				i = debian["os"] + debian["dist"] + debian["arch"];
-				// Update install instructions
-				$("#install-" + i + "-debian_file").text(basename(debian["path"]));
-				$("#install-" + i + "-debian_path").text(debian["path"]);
-				$("#install-" + i + "-password").text(debian["password"]);
-				$("#install-" + i + "-tab").removeClass("hidden").addClass("show");
-				$("#install-" + i).removeClass("hidden").addClass("show");
-				// Update downloads list
-				$("#downloads-" + i + "-link").text(basename(debian["path"])).attr("href", base_url + debian["path"]);
-				$("#downloads-" + i + "-build").text(debian["build"]);
-				$("#downloads-" + i + "-size").text(Math.round(debian["size"] / (1024 * 1024)) + " MB");
-				$("#downloads-" + i).removeClass("hidden").addClass("show");
-			});
-			// Hide irrelevant stuff
-			$("#install-instructions .nav a.hidden").hide();
-			$("#downloads table tbody tr.hidden").hide();
-			// Set first visible tab to active
-			$("#install-instructions .nav a.show:first").addClass("active");
-			$("#install-instructions .tab-content div.show:first").addClass(["active"]);
-		}
-	</script>
-	<script src="https://cdn.sd-card-images.johang.se/index-boots.js" type="text/javascript"></script>
-	<script src="https://cdn.sd-card-images.johang.se/index-debians-{{ page.board_cpu_arch_debian }}.js" type="text/javascript"></script>
 	<div class="container">
 		<h3>Boards by {{ page.board_maker_name }}</h3>
 		<table class="table table-sm table-hover">
@@ -196,7 +116,7 @@ layout: default
 {% endfor %}
 			</tbody>
 		</table>
-		<hr />
+		<hr>
 	</div>
 	<div class="container">
 		<h3>Boards with {{ page.board_soc_name }}</h3>
@@ -229,6 +149,100 @@ layout: default
 {% endfor %}
 			</tbody>
 		</table>
-		<hr />
+		<hr>
 	</div>
 </main>
+<script type="text/javascript">
+	var base_url = "http://dl.sd-card-images.johang.se";
+	var board = "{{ page.board_id }}";
+	var arch = "{{ page.board_cpu_arch_debian }}";
+	var dtb = "{{ page.board_dtb_name }}";
+
+	var all_boots = [];
+	function handle_boots(boots) {
+		all_boots = boots;
+	}
+
+	var all_debians = [];
+	function handle_debians(debians) {
+		all_debians = debians;
+	}
+</script>
+<script src="https://cdn.sd-card-images.johang.se/index-boots.js"></script>
+<script src="https://cdn.sd-card-images.johang.se/index-debians-{{ page.board_cpu_arch_debian }}.js"></script>
+<script type="text/javascript">
+	function basename(path) {
+		return path.substring(Math.max(0, path.lastIndexOf("/") + 1));
+	}
+
+	// Find supported boots
+	supported_boots = [];
+	all_boots.forEach(function(boot) {
+		if (boot["board"] != board)
+			return;
+
+		supported_boots.push(boot);
+	});
+	console.log("Found " + supported_boots.length + " supported boot images");
+
+	// Find supported debians
+	supported_debians = [];
+	all_debians.forEach(function(debian) {
+		if (debian["arch"] != arch)
+			return;
+
+		if (dtb == "N/A") {
+			supported_debians.push(debian);
+		} else {
+			debian["dtbs"].forEach(function(_dtb) {
+				if (_dtb == dtb)
+					supported_debians.push(debian);
+			});
+		}
+	});
+	console.log("Found " + supported_debians.length + " supported Debian/Ubuntu images");
+
+	if (supported_boots.length > 0) {
+		boot = supported_boots[0];
+
+		// Update download list
+		$("#downloads-boot-link").text(basename(boot["path"])).attr("href", base_url + boot["path"]);
+		$("#downloads-boot-build").text(boot["build"] + " (" + moment(boot["builddate"]).fromNow() + ")");
+		$("#downloads-boot-size").text(Math.round(boot["size"] / 1024) + " kB");
+		$("#downloads-boot").removeClass("d-none").addClass("show");
+	}
+
+	supported_debians.forEach(function(debian) {
+		i = debian["os"] + debian["dist"] + debian["arch"];
+
+		// Update download list
+		$("#downloads-" + i + "-link").text(basename(debian["path"])).attr("href", base_url + debian["path"]);
+		$("#downloads-" + i + "-build").text(debian["build"] + " (" + moment(debian["builddate"]).fromNow() + ")");
+		$("#downloads-" + i + "-size").text(Math.round(debian["size"] / (1024 * 1024)) + " MB");
+		$("#downloads-" + i).removeClass("d-none").addClass("show");
+	});
+
+	if (supported_boots.length > 0 && supported_debians.length > 0) {
+		boot = supported_boots[0];
+
+		supported_debians.forEach(function(debian) {
+			i = debian["os"] + debian["dist"] + debian["arch"];
+
+			// Update install instructions
+			$("#install-" + i + "-boot_file").text(basename(boot["path"]));
+			$("#install-" + i + "-boot_path").text(boot["path"]);
+			$("#install-" + i + "-debian_file").text(basename(debian["path"]));
+			$("#install-" + i + "-debian_path").text(debian["path"]);
+			$("#install-" + i + "-password").text(debian["password"]);
+			$("#v-pills-install-" + i + "-tab").removeClass("d-none").addClass("show");
+			$("#v-pills-install-" + i).removeClass("d-none");
+		});
+
+		// Set first visible tab to active
+		$("#install-instructions button:not(.d-none):first").addClass("active");
+		$("#install-instructions #v-pills-tab-content div:not(.d-none):first").addClass(["active", "show"]);
+	} else {
+		$("#unsupported-warning").removeClass("d-none");
+		$("#install-instructions").addClass("d-none");
+	}
+</script>

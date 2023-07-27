@@ -2,11 +2,11 @@
 title: SD card images
 layout: default
 ---
-<main role="main">
+<main>
 	<div class="section section-header">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-6 text-left my-auto col-z-index" >
+				<div class="col-md-6 my-auto col-z-index">
 					<h1>Minimal Debian/Ubuntu Linux SD card images</h1>
 					<h4>Unoffical, minimal, pure and up-to-date vanilla Debian/Ubuntu Linux SD card images for various ARM-based single board computers (SBCs).</h4>
 					<p class="my-3">
@@ -14,7 +14,7 @@ layout: default
 					</p>
 				</div>
 				<div class="col-md-6">
-					<img src="/img/board.jpg" style="width: 100%;">
+					<img src="/img/board.jpg" alt="Single board computer" class="img-fluid">
 				</div>
 			</div>
 		</div>
@@ -22,28 +22,28 @@ layout: default
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-4">
-				<img src="/img/board.jpg" height="48">
+				<img src="/img/board.jpg" alt="Single board computer thumbnail" height="48">
 				<h3>Minimal image</h3>
 				<p>The images contains just enough to boot up. Great for development, testing and learning.</p>
 			</div>
 			<div class="col-lg-4">
-				<img src="/img/board.jpg" height="48">
+				<img src="/img/board.jpg" alt="Single board computer thumbnail" height="48">
 				<h3>Pure image</h3>
 				<p>The images includes only official Debian/Ubuntu packages, including the official Debian/Ubuntu Linux kernel, downloaded from the offical Debian/Ubuntu mirrors.</p>
 			</div>
 			<div class="col-lg-4">
-				<img src="/img/board.jpg" height="48">
+				<img src="/img/board.jpg" alt="Single board computer thumbnail" height="48">
 				<h3>Up-to-date image</h3>
 				<p>The images are rebuilt once per week to include the latest versions and security patches for each of the Debian/Ubuntu suites.</p>
 			</div>
 		</div>
-		<hr />
+		<hr>
 	</div>
 	<div class="container">
 		<h3>Supported boards</h3>
 		<ul class="list-inline">
-{% for board in site.boards %}<li class="list-inline-item board-button my-1 mr-2 "><a href="/boards/{{ board.board_id }}.html" class="btn btn-outline-primary pill" role="button">{{ board.board_name }}</a></li>{% endfor %}
+{% for board in site.boards %}<li class="list-inline-item board-button my-1 mr-2"><a href="/boards/{{ board.board_id }}.html" class="btn btn-outline-primary pill" role="button">{{ board.board_name }}</a></li>{% endfor %}
 		</ul>
-		<hr />
+		<hr>
 	</div>
 </main>
