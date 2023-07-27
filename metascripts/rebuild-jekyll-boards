@@ -71,6 +71,8 @@ def write_boards(boards, chips):
 
     for k, board in boards.items():
         board.update(chips[board["chip_id"]])
+        if board["debian_architecture"] not in ("armhf", "arm64", ):
+            continue
         with open(f"docs/_boards/{k}.md", "w") as boardf:
             boardf.write(BOARD_TEMPLATE.format(**board))
     logger.info("Wrote %d boards", len(boards))
