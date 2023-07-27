@@ -32,6 +32,14 @@ class Release:
         self.codename = params.get("Codename")
         self.architectures = params.get("Architectures", "").split(" ")
 
+        SUITE_TO_VERSION = {
+            "testing": "96",
+            "unstable": "97",
+            "experimental": "98",
+        }
+        self.sortkey = self.label + \
+                       (self.version or SUITE_TO_VERSION.get(self.suite, "99"))
+
     def __repr__(self):
         name = self.label
         if self.version and self.suite and self.suite != self.codename:
@@ -51,7 +59,7 @@ class Release:
         return repr(self) == repr(other)
 
     def __lt__(self, other):
-        return repr(self) < repr(other)
+        return self.sortkey < other.sortkey
 
     def __hash__(self):
         return hash(repr(self))

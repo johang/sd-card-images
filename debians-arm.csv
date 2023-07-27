@@ -1,6 +1,4 @@
 OS,Dist,Arch,Name,Exp
-debian,experimental,armhf,"Debian experimental (""rc-buggy"")",True
-debian,experimental,arm64,"Debian experimental (""rc-buggy"")",True
 debian,bullseye,armhf,"Debian oldstable/11.7 (""bullseye"")",False
 debian,bullseye,arm64,"Debian oldstable/11.7 (""bullseye"")",False
 debian,bookworm,armhf,"Debian stable/12.1 (""bookworm"")",False
@@ -9,6 +7,8 @@ debian,trixie,armhf,"Debian testing (""trixie"")",False
 debian,trixie,arm64,"Debian testing (""trixie"")",False
 debian,sid,armhf,"Debian unstable (""sid"")",False
 debian,sid,arm64,"Debian unstable (""sid"")",False
+debian,experimental,armhf,"Debian experimental (""rc-buggy"")",True
+debian,experimental,arm64,"Debian experimental (""rc-buggy"")",True
 ubuntu,focal,armhf,"Ubuntu 20.04 LTS (""focal"")",False
 ubuntu,focal,arm64,"Ubuntu 20.04 LTS (""focal"")",False
 ubuntu,jammy,armhf,"Ubuntu 22.04 LTS (""jammy"")",False
