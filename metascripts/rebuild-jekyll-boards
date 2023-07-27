@@ -81,8 +81,8 @@ def write_debians(debians):
         os.remove(x)
     logger.info("Removed debians")
 
-    for k, debian in debians.items():
-        with open(f"docs/_debians/{k}.md", "w") as debiansf:
+    for i, (k, debian) in enumerate(debians.items()):
+        with open(f"docs/_debians/{i:02}-{k}.md", "w") as debiansf:
             debiansf.write(DEBIAN_TEMPLATE.format(**debian))
     logger.info("Wrote %d debians", len(debians))
 
