@@ -32,6 +32,7 @@ RUN apt-get update && \
                     mtools \
                     pwgen \
                     libssl-dev \
+                    libgnutls28-dev \
                     uuid-dev \
                     parallel \
                     ssh \
