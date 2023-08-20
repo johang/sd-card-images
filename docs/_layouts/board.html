@@ -24,7 +24,7 @@ layout: default
 		<h3>Install instructions</h3>
 		<div class="alert alert-warning d-none" id="unsupported-warning" role="alert">This board is not supported by any boot image and/or Debian/Ubuntu image</div>
 		<div class="d-flex align-items-start" id="install-instructions">
-			<div class="col-3 nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+			<div class="col-3 nav flex-column nav-pills pe-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
 {% assign x = site.debians | where: "arch", page.board_cpu_arch_debian | sort %}
 {% for debian in x %}
 {% capture i %}{{ debian.os }}{{ debian.dist }}{{ debian.arch }}{% endcapture %}
