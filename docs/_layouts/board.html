@@ -67,7 +67,7 @@ layout: default
 			<tbody>
 				<tr id="downloads-boot" class="d-none">
 					<td><i class="bi-download"></i> <a href="" id="downloads-boot-link">PLACEHOLDER</a></td>
-					<td>Boot image <a class="badge text-bg-primary text-decoration-none d-none" id="downloads-boot-u-boot" href="https://source.denx.de/u-boot/u-boot">U-Boot PLACEHOLDER</a> <a class="badge text-bg-secondary text-decoration-none d-none" id="downloads-boot-atf" href="https://github.com/ARM-software/arm-trusted-firmware">TF-A PLACEHOLDER</a> <a class="badge text-bg-secondary text-decoration-none d-none" id="downloads-boot-raspberry-pi-firmware" href="https://github.com/raspberrypi/firmware">RPi boot FW PLACEHOLDER</a> <a class="badge text-bg-secondary text-decoration-none d-none" id="downloads-boot-amlogic-boot-fip" href="https://github.com/LibreELEC/amlogic-boot-fip">AmL boot FW PLACEHOLDER</a></td>
+					<td>Boot image <a class="badge text-bg-primary text-decoration-none d-none" id="downloads-boot-u-boot" href="https://source.denx.de/u-boot/u-boot">U-Boot PLACEHOLDER</a> <a class="badge text-bg-secondary text-decoration-none d-none" id="downloads-boot-atf" href="https://github.com/ARM-software/arm-trusted-firmware">TF-A PLACEHOLDER</a> <a class="badge text-bg-secondary text-decoration-none d-none" id="downloads-boot-rpi-firmware" href="https://github.com/raspberrypi/firmware">RPi boot FW PLACEHOLDER</a> <a class="badge text-bg-secondary text-decoration-none d-none" id="downloads-boot-amlogic-boot-fip" href="https://github.com/LibreELEC/amlogic-boot-fip">AML boot FW PLACEHOLDER</a></td>
 					<td id="downloads-boot-build">PLACEHOLDER</td>
 					<td id="downloads-boot-size">PLACEHOLDER</td>
 				</tr>
@@ -209,6 +209,14 @@ layout: default
 		$("#downloads-boot-link").text(basename(boot["path"])).attr("href", base_url + boot["path"]);
 		$("#downloads-boot-build").text(boot["build"] + " (" + moment(boot["builddate"]).fromNow() + ")");
 		$("#downloads-boot-size").text(Math.round(boot["size"] / 1024) + " kB");
+		if ("u-boot" in boot["versions"])
+			$("#downloads-boot-u-boot").text("U-Boot " + boot["versions"]["u-boot"]).removeClass("d-none");
+		if ("atf" in boot["versions"])
+			$("#downloads-boot-atf").text("TF-A " + boot["versions"]["atf"]).removeClass("d-none");
+		if ("rpi-firmware" in boot["versions"])
+			$("#downloads-boot-rpi-firmware").text("RPi boot FW " + boot["versions"]["rpi-firmware"]).removeClass("d-none");
+		if ("amlogic-boot-fip" in boot["versions"])
+			$("#downloads-boot-amlogic-boot-fip").text("AML boot FIP " + boot["versions"]["amlogic-boot-fip"]).removeClass("d-none");
 		$("#downloads-boot").removeClass("d-none").addClass("show");
 	}
 
@@ -219,6 +227,8 @@ layout: default
 		$("#downloads-" + i + "-link").text(basename(debian["path"])).attr("href", base_url + debian["path"]);
 		$("#downloads-" + i + "-build").text(debian["build"] + " (" + moment(debian["builddate"]).fromNow() + ")");
 		$("#downloads-" + i + "-size").text(Math.round(debian["size"] / (1024 * 1024)) + " MB");
+		if ("kernel" in debian["versions"])
+			$("#downloads-" + i + "-kernel").text("Kernel " + debian["versions"]["kernel"]).removeClass("d-none");
 		$("#downloads-" + i).removeClass("d-none").addClass("show");
 	});
 
