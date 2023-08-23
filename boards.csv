@@ -51,6 +51,7 @@ rock_pi_n10,ROCK Pi N10,Radxa,rk3399pro,rock-pi-n10-rk3399pro_defconfig,aarch64-
 mele_a1000,Mele A1000,Mele,allwinner-a10,Mele_A1000_defconfig,arm-linux-gnueabihf,sun4i-a10-a1000
 cubieboard,Cubieboard,Cubieboard,allwinner-a10,Cubieboard_defconfig,arm-linux-gnueabihf,sun4i-a10-cubieboard
 marsboard_a10,Marsboard A10,HAOYU Electronics,allwinner-a10,Marsboard_A10_defconfig,arm-linux-gnueabihf,sun4i-a10-marsboard
+pineriver_mini_xplus,Mini X-Plus,PineRiver,allwinner-a10,Mini-X_defconfig,arm-linux-gnueabihf,sun4i-a10-mini-xplus
 mk802,MK802,Rikomagic,allwinner-a10,mk802_defconfig,arm-linux-gnueabihf,sun4i-a10-mk802
 mk802ii,MK802ii,Rikomagic,allwinner-a10,mk802ii_defconfig,arm-linux-gnueabihf,sun4i-a10-mk802ii
 a10_olinuxino_lime,A10-OLinuXino-Lime,Olimex,allwinner-a10,A10-OLinuXino-Lime_defconfig,arm-linux-gnueabihf,sun4i-a10-olinuxino-lime
