@@ -13,8 +13,6 @@ ubuntu,focal,i386,"Ubuntu 20.04 LTS (""focal"")",False
 ubuntu,focal,amd64,"Ubuntu 20.04 LTS (""focal"")",False
 ubuntu,jammy,i386,"Ubuntu 22.04 LTS (""jammy"")",False
 ubuntu,jammy,amd64,"Ubuntu 22.04 LTS (""jammy"")",False
-ubuntu,kinetic,i386,"Ubuntu 22.10 (""kinetic"")",False
-ubuntu,kinetic,amd64,"Ubuntu 22.10 (""kinetic"")",False
 ubuntu,lunar,i386,"Ubuntu 23.04 (""lunar"")",False
 ubuntu,lunar,amd64,"Ubuntu 23.04 (""lunar"")",False
 ubuntu,mantic,i386,"Ubuntu 23.10 (""mantic"")",True

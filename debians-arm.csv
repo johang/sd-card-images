@@ -13,8 +13,6 @@ ubuntu,focal,armhf,"Ubuntu 20.04 LTS (""focal"")",False
 ubuntu,focal,arm64,"Ubuntu 20.04 LTS (""focal"")",False
 ubuntu,jammy,armhf,"Ubuntu 22.04 LTS (""jammy"")",False
 ubuntu,jammy,arm64,"Ubuntu 22.04 LTS (""jammy"")",False
-ubuntu,kinetic,armhf,"Ubuntu 22.10 (""kinetic"")",False
-ubuntu,kinetic,arm64,"Ubuntu 22.10 (""kinetic"")",False
 ubuntu,lunar,armhf,"Ubuntu 23.04 (""lunar"")",False
 ubuntu,lunar,arm64,"Ubuntu 23.04 (""lunar"")",False
 ubuntu,mantic,armhf,"Ubuntu 23.10 (""mantic"")",True
