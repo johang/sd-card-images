@@ -15,5 +15,5 @@ ubuntu,jammy,armhf,"Ubuntu 22.04 LTS (""jammy"")",False
 ubuntu,jammy,arm64,"Ubuntu 22.04 LTS (""jammy"")",False
 ubuntu,lunar,armhf,"Ubuntu 23.04 (""lunar"")",False
 ubuntu,lunar,arm64,"Ubuntu 23.04 (""lunar"")",False
-ubuntu,mantic,armhf,"Ubuntu 23.10 (""mantic"")",True
-ubuntu,mantic,arm64,"Ubuntu 23.10 (""mantic"")",True
+ubuntu,mantic,armhf,"Ubuntu 23.10 (""mantic"")",False
+ubuntu,mantic,arm64,"Ubuntu 23.10 (""mantic"")",False
