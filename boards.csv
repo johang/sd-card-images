@@ -175,7 +175,7 @@ beelink_gt_king_pro,GT-King Pro,Beelink,meson-g12b,beelink-gtkingpro_defconfig,a
 odroid_go_ultra,ODROID GO Ultra,Hardkernel,meson-g12b,odroid-go-ultra_defconfig,aarch64-linux-gnu,meson-g12b-odroid-go-ultra
 odroid_n2,ODROID N2,Hardkernel,meson-g12b,odroid-n2_defconfig,aarch64-linux-gnu,meson-g12b-odroid-n2
 odroid_n2l,ODROID N2L,Hardkernel,meson-g12b,odroid-n2l_defconfig,aarch64-linux-gnu,meson-g12b-odroid-n2l
-radxa_zero2,Zero2,Hardkernel,meson-g12b,radxa-zero2_defconfig,aarch64-linux-gnu,meson-g12b-radxa-zero2
+radxa_zero2,Zero2,Radxa,meson-g12b,radxa-zero2_defconfig,aarch64-linux-gnu,meson-g12b-radxa-zero2
 
 nano_pi_k2,Nano Pi K2,FriendlyElec,meson-gxbb,nanopi-k2_defconfig,aarch64-linux-gnu,meson-gxbb-nanopi-k2
 odroid_c2,ODROID C2,Hardkernel,meson-gxbb,odroid-c2_defconfig,aarch64-linux-gnu,meson-gxbb-odroidc2
