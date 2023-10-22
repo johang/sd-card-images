@@ -21,6 +21,8 @@ vyasa,Vyasa,Amarula,rk3288,vyasa-rk3288_defconfig,arm-linux-gnueabihf,rk3288-vya
 rk3328_evb,RK3328 EVB,Rockchip,rk3328,evb-rk3328_defconfig,aarch64-linux-gnu,rk3328-evb
 nanopi_r2c,Nano Pi R2C,FriendlyElec,rk3328,nanopi-r2c-rk3328_defconfig,aarch64-linux-gnu,rk3328-nanopi-r2c
 nanopi_r2s,Nano Pi R2S,FriendlyElec,rk3328,nanopi-r2s-rk3328_defconfig,aarch64-linux-gnu,rk3328-nanopi-r2s
+orangepi_r1_plus,Orange Pi R1 Plus,Xunlong,rk3328,orangepi-r1-plus-rk3328_defconfig,aarch64-linux-gnu,rk3328-orangepi-r1-plus
+orangepi_r1_plus_lts,Orange Pi R1 Plus LTS,Xunlong,rk3328,orangepi-r1-plus-lts-rk3328_defconfig,aarch64-linux-gnu,rk3328-orangepi-r1-plus-lts
 roc_rk3328_cc,ROC-RK3328-CC,Firefly,rk3328,roc-cc-rk3328_defconfig,aarch64-linux-gnu,rk3328-roc-cc
 rock_pi_e,ROCK Pi E,Radxa,rk3328,rock-pi-e-rk3328_defconfig,aarch64-linux-gnu,rk3328-rock-pi-e
 rock64,ROCK64,Pine64,rk3328,rock64-rk3328_defconfig,aarch64-linux-gnu,rk3328-rock64
