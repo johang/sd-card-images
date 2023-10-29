@@ -17,3 +17,5 @@ ubuntu,lunar,i386,"Ubuntu 23.04 (""lunar"")",False
 ubuntu,lunar,amd64,"Ubuntu 23.04 (""lunar"")",False
 ubuntu,mantic,i386,"Ubuntu 23.10 (""mantic"")",False
 ubuntu,mantic,amd64,"Ubuntu 23.10 (""mantic"")",False
+ubuntu,noble,i386,"Ubuntu 24.04 LTS (""noble"")",True
+ubuntu,noble,amd64,"Ubuntu 24.04 LTS (""noble"")",True
