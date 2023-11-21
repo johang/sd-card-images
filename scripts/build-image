@@ -14,7 +14,7 @@ if [ $IMAGE_SIZE -lt 1000000000 ]; then
   exit 1
 fi
 rm -f "${IMAGE}"
-fallocate -v -l ${IMAGE_SIZE} "${IMAGE}" # 3,800,000,000 bytes
+fallocate -v -l "${IMAGE_SIZE}" "${IMAGE}" # 3,800,000,000 bytes
 
 parted -s "${IMAGE}" mklabel msdos
 parted -s "${IMAGE}" mkpart primary fat32 -- 4MiB 32MiB # 28 MiB (29,360,128 bytes)
