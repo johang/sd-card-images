@@ -5,11 +5,16 @@ IMAGE="${1}"
 
 set -ex
 
-# Aim for a 4 GB card but with 5% unpartitioned as a margin
+# Aim for a 4 GB image default but with 5% unpartitioned as a margin, and a minimum of 1 GB
 # >>> (0.95 * 4000000000 // 512) * 512
-# 3800000000.0
+# 3800000000.0 
+IMAGE_SIZE=${IMAGE_SIZE:-3800000000}
+if [ $IMAGE_SIZE -lt 1000000000 ]; then
+  echo "IMAGE_SIZE of 1GB or less unsupported!"
+  exit 1
+fi
 rm -f "${IMAGE}"
-fallocate -v -l 3800000000 "${IMAGE}" # 3,800,000,000 bytes
+fallocate -v -l "${IMAGE_SIZE}" "${IMAGE}" # 3,800,000,000 bytes
 
 parted -s "${IMAGE}" mklabel msdos
 parted -s "${IMAGE}" mkpart primary fat32 -- 4MiB 32MiB # 28 MiB (29,360,128 bytes)
