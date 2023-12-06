@@ -1,6 +1,6 @@
 <!doctype html>
 <!-- Hi :) -->
-<html lang="en">
+<html lang="en" data-bs-theme="auto">
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -34,6 +34,17 @@
 			function gtag() { dataLayer.push(arguments); }
 			gtag('js', new Date());
 			gtag('config', 'G-V2XK1QS92P');
+		</script>
+		<script>
+			if ($("html").attr("data-bs-theme") == "auto") {
+				const prefersColorSchemeQuery = "(prefers-color-scheme: dark)";
+				function updateTheme() {
+					const prefersDark = window.matchMedia(prefersColorSchemeQuery).matches;
+					$("html").attr("data-bs-theme", prefersDark ? "dark" : "light");
+				}
+				window.matchMedia(prefersColorSchemeQuery).addEventListener("change", updateTheme);
+				updateTheme();
+			}
 		</script>
 	</head>
 	<body>
