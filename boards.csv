@@ -44,11 +44,30 @@ orangepi_rk3399,Orange Pi rk3399,Xunlong,rk3399,orangepi-rk3399_defconfig,aarch6
 pinebook_pro,Pinebook Pro,Pine64,rk3399,pinebook-pro-rk3399_defconfig,aarch64-linux-gnu,rk3399-pinebook-pro
 roc_rk3399_pc,ROC-RK3399-PC,Firefly,rk3399,roc-pc-rk3399_defconfig,aarch64-linux-gnu,rk3399-roc-pc
 rock_pi_4c_plus,ROCK Pi 4 model C plus,Radxa,rk3399,rock-4c-plus-rk3399_defconfig,aarch64-linux-gnu,rk3399-rock-4c-plus
+rock_pi_4se,ROCK Pi 4 SE,Radxa,rk3399,rock-4se-rk3399_defconfig,aarch64-linux-gnu,rk3399-rock-4se
 rock_pi_4,ROCK Pi 4 model B,Radxa,rk3399,rock-pi-4-rk3399_defconfig,aarch64-linux-gnu,rk3399-rock-pi-4b
 rock_pi_4c,ROCK Pi 4 model C,Radxa,rk3399,rock-pi-4c-rk3399_defconfig,aarch64-linux-gnu,rk3399-rock-pi-4c
 rock960,Rock960,96boards,rk3399,rock960-rk3399_defconfig,aarch64-linux-gnu,rk3399-rock960
 rockpro64,ROCKPro64,Pine64,rk3399,rockpro64-rk3399_defconfig,aarch64-linux-gnu,rk3399-rockpro64
 rock_pi_n10,ROCK Pi N10,Radxa,rk3399pro,rock-pi-n10-rk3399pro_defconfig,aarch64-linux-gnu,rk3399pro-rock-pi-n10
+
+rk3568_evb,RK3568 EVB,Rockchip,rk3568,evb-rk3568_defconfig,aarch64-linux-gnu,rk3568-evb
+lubancat_2,LubanCat 2,EmbedFire,rk3568,lubancat-2-rk3568_defconfig,aarch64-linux-gnu,rk3568-lubancat-2
+nanopi_r5c,Nano Pi R5C,FriendlyElec,rk3568,nanopi-r5c-rk3568_defconfig,aarch64-linux-gnu,rk3568-nanopi-r5c
+nanopi_r5s,Nano Pi R5S,FriendlyElec,rk3568,nanopi-r5s-rk3568_defconfig,aarch64-linux-gnu,rk3568-nanopi-r5s
+odroid_m1,ODROID M1,Hardkernel,rk3568,odroid-m1-rk3568_defconfig,aarch64-linux-gnu,rk3568-odroid-m1
+radxa_e25,E25,Radxa,rk3568,radxa-e25-rk3568_defconfig,aarch64-linux-gnu,rk3568-radxa-e25
+rock_3a,ROCK 3A,Radxa,rk3568,rock-3a-rk3568_defconfig,aarch64-linux-gnu,rk3568-rock-3a
+
+neu6a_io,IO-NCM6A,Edgeble,rk3588,neu6a-io-rk3588_defconfig,aarch64-linux-gnu,rk3588-edgeble-neu6a-io
+neu6b_io,IO-NCM6B,Edgeble,rk3588,neu6b-io-rk3588_defconfig,aarch64-linux-gnu,rk3588-edgeble-neu6b-io
+evb_rk3588,RK3588 EVB,Rockchip,rk3588,evb-rk3588_defconfig,aarch64-linux-gnu,rk3588-evb1-v10
+nanopc_t6,NanoPC-T6,FriendlyElec,rk3588,nanopc-t6-rk3588_defconfig,aarch64-linux-gnu,rk3588-nanopc-t6
+orangepi_5_plus,Orange Pi 5 Plus,Xunlong,rk3588,orangepi-5-plus-rk3588_defconfig,aarch64-linux-gnu,rk3588-orangepi-5-plus
+quartzpro64,QuartzPro64,PINE64,rk3588,quartzpro64-rk3588_defconfig,aarch64-linux-gnu,rk3588-quartzpro64
+rock_5b,ROCK 5B,Radxa,rk3588,rock5b-rk3588_defconfig,aarch64-linux-gnu,rk3588-rock-5b
+orangepi_5,Orange Pi 5,Xunlong,rk3588,orangepi-5-rk3588s_defconfig,aarch64-linux-gnu,rk3588s-orangepi-5
+rock_5a,ROCK 5A,Radxa,rk3588,rock5a-rk3588s_defconfig,aarch64-linux-gnu,rk3588s-rock-5a
 
 mele_a1000,Mele A1000,Mele,allwinner-a10,Mele_A1000_defconfig,arm-linux-gnueabihf,sun4i-a10-a1000
 cubieboard,Cubieboard,Cubieboard,allwinner-a10,Cubieboard_defconfig,arm-linux-gnueabihf,sun4i-a10-cubieboard

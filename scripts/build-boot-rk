@@ -8,6 +8,20 @@ TUPLE="${4}" # For example "arm-linux-gnueabihf"
 
 set -ex
 
+RKBIN_GIT_URL_DEFAULT="https://github.com/rockchip-linux/rkbin.git"
+RKBIN_GIT_REV_DEFAULT="b4558da0860ca48bf1a571dd33ccba580b9abe23"
+
+if [ ! -z "${RKBIN_GIT_REV}" ]
+then
+    git clone --depth 1 \
+              --reference-if-able "${WORKDIR}/rkbin" \
+              "${RKBIN_GIT_URL:-${RKBIN_GIT_URL_DEFAULT}}" rkbin
+else
+    git clone --reference-if-able "${WORKDIR}/rkbin" \
+              "${RKBIN_GIT_URL:-${RKBIN_GIT_URL_DEFAULT}}" rkbin
+    git -C rkbin checkout "${RKBIN_GIT_REV_DEFAULT}"
+fi
+
 case "${CHIP_ID}" in
 rk3328|rk3368|rk3399)
     build-atf "${CHIP_ID}" "${TUPLE}"
@@ -16,6 +30,18 @@ rk3328|rk3368|rk3399)
 rk3399pro)
     build-atf rk3399 "${TUPLE}"
     export BL31="$(pwd)/arm-trusted-firmware/build/rk3399/debug/bl31/bl31.elf"
+    ;;
+rk3568)
+    export BL31="$(pwd)/rkbin/bin/rk35/rk3568_bl31_v1.43.elf"
+    export ROCKCHIP_TPL="$(pwd)/rkbin/bin/rk35/rk3568_ddr_1560MHz_v1.18.bin"
+    # Collect version of rkbin
+    (echo -n rkbin,; git -C rkbin describe --tags --always --abbrev=10) >> versions.csv
+    ;;
+rk3588)
+    export BL31="$(pwd)/rkbin/bin/rk35/rk3588_bl31_v1.40.elf"
+    export ROCKCHIP_TPL="$(pwd)/rkbin/bin/rk35/rk3588_ddr_lp4_2112MHz_lp5_2736MHz_v1.12.bin"
+    # Collect version of rkbin
+    (echo -n rkbin,; git -C rkbin describe --tags --always --abbrev=10) >> versions.csv
     ;;
 *)
     ;;
