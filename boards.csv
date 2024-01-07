@@ -108,6 +108,8 @@ pine_h64,Pine H64,Pine64,allwinner-h6,pine_h64_defconfig,aarch64-linux-gnu,sun50
 
 orange_pi_zero2,Orange Pi Zero2,Xunlong,allwinner-h616,orangepi_zero2_defconfig,aarch64-linux-gnu,sun50i-h616-orangepi-zero2
 
+orange_pi_zero3,Orange Pi Zero 3,Xunlong,allwinner-h618,orangepi_zero3_defconfig,aarch64-linux-gnu,sun50i-h618-orangepi-zero3
+
 semitime_g2,G2 (MK802+),Semitime,allwinner-a10s,mk802_a10s_defconfig,arm-linux-gnueabihf,sun5i-a10s-mk802
 a10s_olinuxino_micro,A10s OLinuXino MICRO,Olimex,allwinner-a10s,A10s-OLinuXino-M_defconfig,arm-linux-gnueabihf,sun5i-a10s-olinuxino-micro
 

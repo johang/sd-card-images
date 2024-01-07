@@ -25,6 +25,7 @@ allwinner-a64,A64,Allwinner,ARM Cortex A53,armv8,arm64
 allwinner-h5,H5,Allwinner,ARM Cortex A53,armv8,arm64
 allwinner-h6,H6,Allwinner,ARM Cortex A53,armv8,arm64
 allwinner-h616,H616,Allwinner,ARM Cortex A53,armv8,arm64
+allwinner-h618,H618,Allwinner,ARM Cortex A53,armv8,arm64
 
 rk3288,RK3288,Rockchip,ARM Cortex A17,armv7,armhf
 rk3328,RK3328,Rockchip,ARM Cortex A53,armv8,arm64
