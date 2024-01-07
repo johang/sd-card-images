@@ -72,7 +72,8 @@ net-tools,\
 systemd-sysv,\
 u-boot-tools,\
 initramfs-tools,\
-openssh-server \
+openssh-server,\
+nano \
   "${TARGET}" \
   debian \
   "${URL}" \
