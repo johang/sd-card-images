@@ -51,6 +51,7 @@ rock960,Rock960,96boards,rk3399,rock960-rk3399_defconfig,aarch64-linux-gnu,rk339
 rockpro64,ROCKPro64,Pine64,rk3399,rockpro64-rk3399_defconfig,aarch64-linux-gnu,rk3399-rockpro64
 rock_pi_n10,ROCK Pi N10,Radxa,rk3399pro,rock-pi-n10-rk3399pro_defconfig,aarch64-linux-gnu,rk3399pro-rock-pi-n10
 
+banana_pi_r2_pro,Banana Pi BPI-R2 Pro,Sinovoip,rk3568,bpi-r2-pro-rk3568_defconfig,aarch64-linux-gnu,rk3568-bpi-r2-pro
 rk3568_evb,RK3568 EVB,Rockchip,rk3568,evb-rk3568_defconfig,aarch64-linux-gnu,rk3568-evb
 lubancat_2,LubanCat 2,EmbedFire,rk3568,lubancat-2-rk3568_defconfig,aarch64-linux-gnu,rk3568-lubancat-2
 nanopi_r5c,Nano Pi R5C,FriendlyElec,rk3568,nanopi-r5c-rk3568_defconfig,aarch64-linux-gnu,rk3568-nanopi-r5c
