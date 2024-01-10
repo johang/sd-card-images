@@ -31,6 +31,9 @@ if [ -d "${U_BOOT_PATCHES_DIR}" ]; then
 	git apply "${U_BOOT_PATCHES_DIR}"/*.patch || :
 fi
 
+# Set localversion
+export LOCALVERSION="johang"
+
 # CROSS_COMPILE must point to a valid compiler path prefix
 export CROSS_COMPILE=$(dirname $(which "${TUPLE}-gcc"))/"${TUPLE}-"
 
