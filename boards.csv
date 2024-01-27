@@ -76,13 +76,13 @@ marsboard_a10,Marsboard A10,HAOYU Electronics,allwinner-a10,Marsboard_A10_defcon
 pineriver_mini_xplus,Mini X-Plus,PineRiver,allwinner-a10,Mini-X_defconfig,arm-linux-gnueabihf,sun4i-a10-mini-xplus
 mk802,MK802,Rikomagic,allwinner-a10,mk802_defconfig,arm-linux-gnueabihf,sun4i-a10-mk802
 mk802ii,MK802ii,Rikomagic,allwinner-a10,mk802ii_defconfig,arm-linux-gnueabihf,sun4i-a10-mk802ii
-a10_olinuxino_lime,A10-OLinuXino-Lime,Olimex,allwinner-a10,A10-OLinuXino-Lime_defconfig,arm-linux-gnueabihf,sun4i-a10-olinuxino-lime
+a10_olinuxino_lime,A10-OLinuXino-LIME,Olimex,allwinner-a10,A10-OLinuXino-Lime_defconfig,arm-linux-gnueabihf,sun4i-a10-olinuxino-lime
 pcduino,pcDuino,LinkSprite,allwinner-a10,Linksprite_pcDuino_defconfig,arm-linux-gnueabihf,sun4i-a10-pcduino
 
 banana_pi_m64,Banana Pi M64,Sinovoip,allwinner-a64,bananapi_m64_defconfig,aarch64-linux-gnu,sun50i-a64-bananapi-m64
 nano_pi_a64,Nano Pi A64,FriendlyElec,allwinner-a64,nanopi_a64_defconfig,aarch64-linux-gnu,sun50i-a64-nanopi-a64
-a64_olinuxino,A64 OLinuXino,Olimex,allwinner-a64,a64-olinuxino_defconfig,aarch64-linux-gnu,sun50i-a64-olinuxino
-a64_olinuxino_emmc,A64 OLinuXino w/ eMMC,Olimex,allwinner-a64,a64-olinuxino-emmc_defconfig,aarch64-linux-gnu,sun50i-a64-olinuxino-emmc
+a64_olinuxino,A64-OLinuXino,Olimex,allwinner-a64,a64-olinuxino_defconfig,aarch64-linux-gnu,sun50i-a64-olinuxino
+a64_olinuxino_emmc,A64-OLinuXino w/ eMMC,Olimex,allwinner-a64,a64-olinuxino-emmc_defconfig,aarch64-linux-gnu,sun50i-a64-olinuxino-emmc
 orange_pi_win,Orange Pi Win,Xunlong,allwinner-a64,orangepi_win_defconfig,aarch64-linux-gnu,sun50i-a64-orangepi-win
 pine64_lts,Pine64 LTS,Pine64,allwinner-a64,pine64-lts_defconfig,aarch64-linux-gnu,sun50i-a64-pine64-lts
 pine64_plus,Pine64+,Pine64,allwinner-a64,pine64_plus_defconfig,aarch64-linux-gnu,sun50i-a64-pine64-plus
@@ -112,10 +112,10 @@ orange_pi_zero2,Orange Pi Zero2,Xunlong,allwinner-h616,orangepi_zero2_defconfig,
 orange_pi_zero3,Orange Pi Zero 3,Xunlong,allwinner-h618,orangepi_zero3_defconfig,aarch64-linux-gnu,sun50i-h618-orangepi-zero3
 
 semitime_g2,G2 (MK802+),Semitime,allwinner-a10s,mk802_a10s_defconfig,arm-linux-gnueabihf,sun5i-a10s-mk802
-a10s_olinuxino_micro,A10s OLinuXino MICRO,Olimex,allwinner-a10s,A10s-OLinuXino-M_defconfig,arm-linux-gnueabihf,sun5i-a10s-olinuxino-micro
+a10s_olinuxino_micro,A10s-OLinuXino MICRO,Olimex,allwinner-a10s,A10s-OLinuXino-M_defconfig,arm-linux-gnueabihf,sun5i-a10s-olinuxino-micro
 
-a13_olinuxino,A13 OLinuXino,Olimex,allwinner-a13,A13-OLinuXino_defconfig,arm-linux-gnueabihf,sun5i-a13-olinuxino
-a13_olinuxino_micro,A13 OLinuXino MICRO,Olimex,allwinner-a13,A13-OLinuXinoM_defconfig,arm-linux-gnueabihf,sun5i-a13-olinuxino-micro
+a13_olinuxino,A13-OLinuXino,Olimex,allwinner-a13,A13-OLinuXino_defconfig,arm-linux-gnueabihf,sun5i-a13-olinuxino
+a13_olinuxino_micro,A13-OLinuXino MICRO,Olimex,allwinner-a13,A13-OLinuXinoM_defconfig,arm-linux-gnueabihf,sun5i-a13-olinuxino-micro
 
 chip_pro,CHIP Pro,Next Thing,allwinner-gr8,CHIP_pro_defconfig,arm-linux-gnueabihf,sun5i-gr8-chip-pro
 
@@ -140,17 +140,17 @@ mele_m3,Mele M3,Mele,allwinner-a20,Mele_M3_defconfig,arm-linux-gnueabihf,sun7i-a
 olimex_a20_som_evb,A20-SOM-EVB,Olimex,allwinner-a20,A20-Olimex-SOM-EVB_defconfig,arm-linux-gnueabihf,sun7i-a20-olimex-som-evb
 olimex_a20_som204_evb,A20-SOM204-EVB,Olimex,allwinner-a20,A20-Olimex-SOM204-EVB_defconfig,arm-linux-gnueabihf,sun7i-a20-olimex-som204-evb
 olimex_a20_som204_evb_emmc,A20-SOM204-EVB w/ eMMC,Olimex,allwinner-a20,A20-Olimex-SOM204-EVB-eMMC_defconfig,arm-linux-gnueabihf,sun7i-a20-olimex-som204-evb-emmc
-olinuxino_lime,OLinuXino Lime,Olimex,allwinner-a20,A20-OLinuXino-Lime_defconfig,arm-linux-gnueabihf,sun7i-a20-olinuxino-lime
-olinuxino_lime2,OLinuXino Lime 2,Olimex,allwinner-a20,A20-OLinuXino-Lime2_defconfig,arm-linux-gnueabihf,sun7i-a20-olinuxino-lime2
-olinuxino_lime_emmc,OLinuXino Lime w/ eMMC,Olimex,allwinner-a20,A20-OLinuXino-Lime2-eMMC_defconfig,arm-linux-gnueabihf,sun7i-a20-olinuxino-lime2-emmc
-a20_olinuxino_micro,OLinuXino MICRO,Olimex,allwinner-a20,A20-OLinuXino_MICRO_defconfig,arm-linux-gnueabihf,sun7i-a20-olinuxino-micro
-a20_olinuxino_micro_emmc,OLinuXino MICRO w/ eMMC,Olimex,allwinner-a20,A20-OLinuXino_MICRO-eMMC_defconfig,arm-linux-gnueabihf,sun7i-a20-olinuxino-micro-emmc
+olinuxino_lime,A20-OLinuXino-LIME,Olimex,allwinner-a20,A20-OLinuXino-Lime_defconfig,arm-linux-gnueabihf,sun7i-a20-olinuxino-lime
+olinuxino_lime2,A20-OLinuXino-LIME2,Olimex,allwinner-a20,A20-OLinuXino-Lime2_defconfig,arm-linux-gnueabihf,sun7i-a20-olinuxino-lime2
+olinuxino_lime_emmc,A20-OLinuXino-LIME w/ eMMC,Olimex,allwinner-a20,A20-OLinuXino-Lime2-eMMC_defconfig,arm-linux-gnueabihf,sun7i-a20-olinuxino-lime2-emmc
+a20_olinuxino_micro,A20-OLinuXino-MICRO,Olimex,allwinner-a20,A20-OLinuXino_MICRO_defconfig,arm-linux-gnueabihf,sun7i-a20-olinuxino-micro
+a20_olinuxino_micro_emmc,A20-OLinuXino-MICRO w/ eMMC,Olimex,allwinner-a20,A20-OLinuXino_MICRO-eMMC_defconfig,arm-linux-gnueabihf,sun7i-a20-olinuxino-micro-emmc
 orangepi,Orange Pi,Xunlong,allwinner-a20,Orangepi_defconfig,arm-linux-gnueabihf,sun7i-a20-orangepi
 orangepi_mini,Orange Pi Mini,Xunlong,allwinner-a20,Orangepi_mini_defconfig,arm-linux-gnueabihf,sun7i-a20-orangepi-mini
 pcduino3,pcDuino3,LinkSprite,allwinner-a20,Linksprite_pcDuino3_defconfig,arm-linux-gnueabihf,sun7i-a20-pcduino3
 pcduino3_nano,pcDuino3 Nano,LinkSprite,allwinner-a20,Linksprite_pcDuino3_Nano_defconfig,arm-linux-gnueabihf,sun7i-a20-pcduino3-nano
 
-a33_olinuxino,A33 OLinuXino,Olimex,allwinner-a23,A33-OLinuXino_defconfig,arm-linux-gnueabihf,sun8i-a33-olinuxino
+a33_olinuxino,A33-OLinuXino,Olimex,allwinner-a23,A33-OLinuXino_defconfig,arm-linux-gnueabihf,sun8i-a33-olinuxino
 sinlinx_a23,SinA33,Sinlinx,allwinner-a23,Sinlinx_SinA33_defconfig,arm-linux-gnueabihf,sun8i-a33-sinlinx-sina33
 
 banana_pi_m3,Banana Pi M3,Sinovoip,allwinner-a83t,Sinovoip_BPI_M3_defconfig,arm-linux-gnueabihf,sun8i-a83t-bananapi-m3
