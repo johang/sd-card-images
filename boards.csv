@@ -106,6 +106,7 @@ orange_pi_lite2,Orange Pi Lite2,Xunlong,allwinner-h6,orangepi_lite2_defconfig,aa
 orange_pi_one_plus,Orange Pi One Plus,Xunlong,allwinner-h6,orangepi_one_plus_defconfig,aarch64-linux-gnu,sun50i-h6-orangepi-one-plus
 orange_pi_3,Orange Pi 3,Xunlong,allwinner-h6,orangepi_3_defconfig,aarch64-linux-gnu,sun50i-h6-orangepi-3
 pine_h64,Pine H64,Pine64,allwinner-h6,pine_h64_defconfig,aarch64-linux-gnu,sun50i-h6-pine-h64
+tanix_tx6,TX6,Tanix,allwinner-h6,tanix_tx6_defconfig,aarch64-linux-gnu,sun50i-h6-tanix-tx6
 
 orange_pi_zero2,Orange Pi Zero2,Xunlong,allwinner-h616,orangepi_zero2_defconfig,aarch64-linux-gnu,sun50i-h616-orangepi-zero2
 
