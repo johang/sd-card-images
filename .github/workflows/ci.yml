@@ -78,7 +78,7 @@ jobs:
                              qemu-system-x86
 
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Build qemu_x86_virt
       timeout-minutes: 5
@@ -114,7 +114,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up QEMU
         timeout-minutes: 1
