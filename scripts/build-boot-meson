@@ -54,5 +54,5 @@ mkdir ../amlogic-boot-fip-output
 cd ..
 
 # Copy U-Boot but don't overwrite the partition table
-dd if=amlogic-boot-fip-output/u-boot.bin.sd.bin of=tmp.img conv=notrunc bs=1 count=446
-dd if=amlogic-boot-fip-output/u-boot.bin.sd.bin of=tmp.img conv=notrunc bs=512 skip=1 seek=1
+dd if=amlogic-boot-fip-output/u-boot.bin.sd.bin of=tmp.img conv=fsync,notrunc bs=512 skip=1 seek=1
+dd if=amlogic-boot-fip-output/u-boot.bin.sd.bin of=tmp.img conv=fsync,notrunc bs=1 count=440
