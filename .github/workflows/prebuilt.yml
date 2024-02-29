@@ -4,6 +4,8 @@ on:
   schedule:
     # Every Monday evening
     - cron: "00 21 * * 1"
+    # Every first day of month evening
+    - cron: "00 21 1 * *"
 
 jobs:
   test-prebuilt:
@@ -72,7 +74,7 @@ jobs:
                              wget
 
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Download
       timeout-minutes: 1
