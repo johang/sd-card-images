@@ -20,7 +20,6 @@ RUN apt-get update && \
                     pigz \
                     bison \
                     flex \
-                    python2-dev \
                     python3-dev \
                     python3-pkg-resources \
                     python3-pyelftools \
