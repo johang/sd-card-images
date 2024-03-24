@@ -11,31 +11,37 @@ case "${OS}-${ARCH}" in
 debian-armhf)
 	KERNEL=linux-image-armmp
 	URL=http://deb.debian.org/debian
+	KERNEL_URL=http://packages.debian.org/"${DIST}"/"${KERNEL}"
 	SCRIPT=/usr/share/debootstrap/scripts/sid
 	;;
 debian-arm64)
 	KERNEL=linux-image-arm64
 	URL=http://deb.debian.org/debian
+	KERNEL_URL=http://packages.debian.org/"${DIST}"/"${KERNEL}"
 	SCRIPT=/usr/share/debootstrap/scripts/sid
 	;;
 debian-i386)
 	KERNEL=linux-image-686
 	URL=http://deb.debian.org/debian
+	KERNEL_URL=http://packages.debian.org/"${DIST}"/"${KERNEL}"
 	SCRIPT=/usr/share/debootstrap/scripts/sid
 	;;
 debian-amd64)
 	KERNEL=linux-image-amd64
 	URL=http://deb.debian.org/debian
+	KERNEL_URL=http://packages.debian.org/"${DIST}"/"${KERNEL}"
 	SCRIPT=/usr/share/debootstrap/scripts/sid
 	;;
 ubuntu-amd64)
 	KERNEL=linux-image-generic
 	URL=http://archive.ubuntu.com/ubuntu
+	KERNEL_URL=http://packages.ubuntu.com/"${DIST}"/"${KERNEL}"
 	SCRIPT=/usr/share/debootstrap/scripts/gutsy
 	;;
 ubuntu-armhf|ubuntu-arm64)
 	KERNEL=linux-image-generic
 	URL=http://ports.ubuntu.com/ubuntu-ports
+	KERNEL_URL=http://packages.ubuntu.com/"${DIST}"/"${KERNEL}"
 	SCRIPT=/usr/share/debootstrap/scripts/gutsy
 	;;
 *)
@@ -156,17 +162,18 @@ chroot debian /bin/sh -ex <<- EOF
 /bin/mv /tmp/priority-experimental /etc/apt/preferences.d/priority-experimental || :
 /usr/bin/apt-get update
 /usr/bin/apt-get -y upgrade
-/usr/bin/apt-get -y --no-install-recommends ${KERNELSUITE} install ${KERNEL}
+/usr/bin/apt-get -y --no-install-recommends "${KERNELSUITE}" install "${KERNEL}"
 /usr/bin/apt-get -y install systemd-timesyncd || :
 /usr/bin/apt-get -y install systemd-resolved || :
 /usr/bin/apt-get clean
 /bin/rm -rf /var/lib/apt/lists/*
-/usr/bin/dpkg-query --showformat='kernel,\${Version}\n' --show ${KERNEL} > /tmp/versions.csv
+echo "kernel-url,${KERNEL_URL}\n" >> /tmp/versions.csv
+/usr/bin/dpkg-query --showformat='kernel,\${Version}\n' --show "${KERNEL}" >> /tmp/versions.csv
 /usr/bin/systemctl enable systemd-networkd.service
 /usr/bin/systemctl enable systemd-resolved.service
 /usr/bin/systemctl enable systemd-timesyncd.service
 /bin/rm -f /var/log/*.log
-/bin/echo root:${PASSWORD} | /usr/sbin/chpasswd
+/bin/echo "root:${PASSWORD}" | /usr/sbin/chpasswd
 /bin/sed -i "s/#*\s*PermitRootLogin .*/PermitRootLogin yes/" /etc/ssh/sshd_config
 EOF
 
