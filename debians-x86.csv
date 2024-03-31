@@ -9,12 +9,8 @@ debian,sid,i386,"Debian unstable (""sid"")",False
 debian,sid,amd64,"Debian unstable (""sid"")",False
 debian,experimental,i386,"Debian experimental (""rc-buggy"")",True
 debian,experimental,amd64,"Debian experimental (""rc-buggy"")",True
-ubuntu,focal,i386,"Ubuntu 20.04 LTS (""focal"")",False
-ubuntu,focal,amd64,"Ubuntu 20.04 LTS (""focal"")",False
 ubuntu,jammy,i386,"Ubuntu 22.04 LTS (""jammy"")",False
 ubuntu,jammy,amd64,"Ubuntu 22.04 LTS (""jammy"")",False
-ubuntu,lunar,i386,"Ubuntu 23.04 (""lunar"")",False
-ubuntu,lunar,amd64,"Ubuntu 23.04 (""lunar"")",False
 ubuntu,mantic,i386,"Ubuntu 23.10 (""mantic"")",False
 ubuntu,mantic,amd64,"Ubuntu 23.10 (""mantic"")",False
 ubuntu,noble,i386,"Ubuntu 24.04 LTS (""noble"")",True
