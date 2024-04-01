@@ -213,7 +213,7 @@ libretech_s905d_pc,AML-S905D-PC (Tartiflette),Libre Computer,meson-gxl,libretech
 jethub_j80,JetHub J80,JetHome,meson-gxl,jethub_j80_defconfig,aarch64-linux-gnu,meson-gxl-s905w-jethome-jethub-j80
 khadas_vim,VIM,Khadas,meson-gxl,khadas-vim_defconfig,aarch64-linux-gnu,meson-gxl-s905x-khadas-vim
 libretech_s905x_cc,AML-S905X-CC (Le Potato),Libre Computer,meson-gxl,libretech-cc_defconfig,aarch64-linux-gnu,meson-gxl-s905x-libretech-cc
-libretech_s905x_cc_v2,AML-S905X-CC V2 (Le Potato),Libre Computer,meson-gxl,libretech-cc_v2_defconfig,aarch64-linux-gnu,meson-gxl-s905x-libretech-cc-v2
+libretech_s905x_cc_v2,AML-S905X-CC V2 (Sweet Potato),Libre Computer,meson-gxl,libretech-cc_v2_defconfig,aarch64-linux-gnu,meson-gxl-s905x-libretech-cc-v2
 amlogic_p212,P212,Amlogic,meson-gxl,p212_defconfig,aarch64-linux-gnu,meson-gxl-s905x-p212
 
 khadas_vim2,VIM2,Khadas,meson-gxm,khadas-vim2_defconfig,aarch64-linux-gnu,meson-gxm-khadas-vim2
