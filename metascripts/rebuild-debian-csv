@@ -97,7 +97,7 @@ class Release:
 
         if self.label == "Ubuntu":
             if self.is_lts():
-                return self.age() < 4 * timedelta(days=365)
+                return self.age() < 5 * timedelta(days=365)
             else:
                 return self.age() < timedelta(days=365)
 
