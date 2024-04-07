@@ -9,9 +9,11 @@ debian,sid,armhf,"Debian unstable (""sid"")",False
 debian,sid,arm64,"Debian unstable (""sid"")",False
 debian,experimental,armhf,"Debian experimental (""rc-buggy"")",True
 debian,experimental,arm64,"Debian experimental (""rc-buggy"")",True
+ubuntu,focal,armhf,"Ubuntu 20.04 LTS (""focal"")",False
+ubuntu,focal,arm64,"Ubuntu 20.04 LTS (""focal"")",False
 ubuntu,jammy,armhf,"Ubuntu 22.04 LTS (""jammy"")",False
 ubuntu,jammy,arm64,"Ubuntu 22.04 LTS (""jammy"")",False
 ubuntu,mantic,armhf,"Ubuntu 23.10 (""mantic"")",False
 ubuntu,mantic,arm64,"Ubuntu 23.10 (""mantic"")",False
-ubuntu,noble,armhf,"Ubuntu 24.04 LTS (""noble"")",True
-ubuntu,noble,arm64,"Ubuntu 24.04 LTS (""noble"")",True
+ubuntu,noble,armhf,"Ubuntu 24.04 LTS (""noble"")",False
+ubuntu,noble,arm64,"Ubuntu 24.04 LTS (""noble"")",False
