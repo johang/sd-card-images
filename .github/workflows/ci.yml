@@ -30,9 +30,6 @@ jobs:
           - os: debian
             suite: sid
             arch: i386
-          - os: debian
-            suite: experimental
-            arch: i386
       fail-fast: false
 
     env:

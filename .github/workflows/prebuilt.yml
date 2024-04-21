@@ -40,9 +40,6 @@ jobs:
             debian: ubuntu-jammy-arm64
             debian_index: /index-debians-arm64.txt
           - boot: boot-qemu_aarch64_virt
-            debian: ubuntu-lunar-arm64
-            debian_index: /index-debians-arm64.txt
-          - boot: boot-qemu_aarch64_virt
             debian: ubuntu-mantic-arm64
             debian_index: /index-debians-arm64.txt
           - boot: boot-qemu_aarch64_virt
