@@ -17,3 +17,4 @@ ubuntu,mantic,armhf,"Ubuntu 23.10 (""mantic"")",False
 ubuntu,mantic,arm64,"Ubuntu 23.10 (""mantic"")",False
 ubuntu,noble,armhf,"Ubuntu 24.04 LTS (""noble"")",False
 ubuntu,noble,arm64,"Ubuntu 24.04 LTS (""noble"")",False
+ubuntu,oracular,arm64,"Ubuntu 24.10 (""oracular"")",True

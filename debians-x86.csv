@@ -17,3 +17,5 @@ ubuntu,mantic,i386,"Ubuntu 23.10 (""mantic"")",False
 ubuntu,mantic,amd64,"Ubuntu 23.10 (""mantic"")",False
 ubuntu,noble,i386,"Ubuntu 24.04 LTS (""noble"")",False
 ubuntu,noble,amd64,"Ubuntu 24.04 LTS (""noble"")",False
+ubuntu,oracular,i386,"Ubuntu 24.10 (""oracular"")",True
+ubuntu,oracular,amd64,"Ubuntu 24.10 (""oracular"")",True
