@@ -197,7 +197,8 @@ mv debian/tmp/versions.csv versions.csv
 # >>> ((3800000000 - 32 * 1024 * 1024) // (1024 * 1024)) * (1024 * 1024)
 # 3765436416
 rm -f ext4.img
-fallocate -l 3765436416 ext4.img
+# fallocate fails on some (git CI) COW filesystems, so have a coreutils alternative.
+fallocate -l 3765436416 ext4.img || truncate --size=3765436416 ext4.img
 mkfs.ext4 -d debian ext4.img
 pigz ext4.img
 

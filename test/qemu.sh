@@ -31,7 +31,8 @@ LOOP1=$(losetup -f -P --show image.bin) && {
 }
 
 # Assume 8GB virtual disk
-fallocate -l 8GB image.bin
+# fallocate fails on some (git CI) COW filesystems, so have a coreutils alternative.
+fallocate -l 8GB image.bin || truncate --size 8GB image.bin
 
 # Extend second partition
 parted -s -a opt image.bin "resizepart 2 100%"

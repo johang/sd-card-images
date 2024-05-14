@@ -14,7 +14,8 @@ if [ $IMAGE_SIZE -lt 1000000000 ]; then
   exit 1
 fi
 rm -f "${IMAGE}"
-fallocate -v -l "${IMAGE_SIZE}" "${IMAGE}" # 3,800,000,000 bytes
+# fallocate fails on some (git CI) COW filesystems, so have a coreutils alternative.
+fallocate -v -l "${IMAGE_SIZE}" "${IMAGE}" || truncate --size "${IMAGE_SIZE}" "${IMAGE}" # 3,800,000,000 bytes
 
 parted -s "${IMAGE}" mklabel msdos
 parted -s "${IMAGE}" mkpart primary fat32 -- 4MiB 32MiB # 28 MiB (29,360,128 bytes)
@@ -23,7 +24,8 @@ parted -s "${IMAGE}" set 2 boot on
 
 # Create empty FAT partition
 rm -f vfat.img
-fallocate -l 28MiB vfat.img
+# fallocate fails on some (git CI) COW filesystems, so have a coreutils alternative.
+fallocate -l 28MiB vfat.img || truncate --size 28MiB vfat.img
 mkfs.vfat vfat.img
 
 # Leave a friendly note about this partition

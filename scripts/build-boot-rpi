@@ -73,7 +73,8 @@ sed -i -e "s/BOOT_UART=0/BOOT_UART=1/" bootcode.bin
 
 # Create empty FAT partition
 rm -f vfat.img
-fallocate -l 28MiB vfat.img
+# fallocate fails on some (git CI) COW filesystems, so have a coreutils alternative.
+fallocate -l 28MiB vfat.img || truncate --size 28MiB vfat.img
 mkfs.vfat vfat.img
 
 # Copy boot files to FAT partition
