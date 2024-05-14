@@ -19,11 +19,13 @@ class Release:
     def __init__(self, fileobj):
         params = {}
         for line in fileobj:
-            line = line.decode("utf-8")
-            if line.startswith(" ") or ": " not in line:
-                continue
+            line = line.decode('utf-8').strip()
+            # Header of "Release" finishes at:
+            #   "MD5Sum:"	Debian/Ubuntu
+            if line == "MD5Sum:":
+                break
 
-            k, v = line.strip().split(": ", 1)
+            k, v = line.split(": ", 1)
             params[k] = v
 
         self.label = params.get("Label")
@@ -112,6 +114,13 @@ class Release:
         return False
 
 
+"""
+# Note: get_releases(url) is deprecated because it can not work with Devuan.
+# Instead, use get_dist_releases(url).
+# 
+# get_releases(url) requires the file ls-lR.gz to be present.
+# This is not available in Devuan.
+#
 def get_releases(url):
     dirlinepattern = re.compile(
         r"\.(/dists/[\w\-]+):"
@@ -172,6 +181,65 @@ def get_releases(url):
                             yield Release(u)
                     except urllib.error.URLError as e:
                         logger.warning("Failed to download %s: %s", relurl, e)
+"""
+
+
+def get_dist_releases(url):
+
+    from lxml import html
+
+    # Open the web page listurl and use an xpath to extract the dist names.
+    listurl = url + "/dists/"
+
+    try:
+        tree = html.fromstring(urllib.request.urlopen(listurl).read())
+        logger.debug("Downloaded %s", listurl)
+    except urllib.error.URLError as e:
+        logger.warning("Failed to download %s: %s", listurl, e)
+    else:
+        # Extract dist names from the web links.
+        """
+        Finds <a href="{debiandir}"> in the web page.
+
+        Using Xpath 1.0:
+          matches: buster/, daedalus/, noble/, oldstable, stable/, unstable/
+          does not match: ../, /debian/, daedalus-updates/, 6.0/
+
+
+        The chosen xpath:
+
+            dist_path = "//a[contains(@href,'/') \
+                                      and not(starts-with(@href,'/')) \
+                                      and not(contains(@href,'-')) \
+                                      and not(contains(@href,'.')) \
+                                     ]/@href"
+
+        will select only hrefs which are:
+            not, e.g., /debian/         not(starts-with(@href,'/'))
+            directories                 contains(@href,'/')
+            codenames                   not(contains(@href,'-'))
+            not numbers or ../          not(contains(@href,'.'))
+
+        This excludes all "-updates", "-backports", "-security", "-proposed", etc.
+        """
+        dist_path = "//a[contains(@href,'/') \
+                         and not(starts-with(@href,'/')) \
+                         and not(contains(@href,'-')) \
+                         and not(contains(@href,'.')) \
+                        ]/@href"
+
+        dist_names = tree.xpath(dist_path)
+
+        for debiandir in dist_names:
+            relurl = listurl + debiandir + "Release"
+
+            try:
+                with urllib.request.urlopen(relurl) as u:
+                    logger.debug("Downloaded %s", relurl)
+
+                    yield Release(u)
+            except urllib.error.URLError as e:
+                logger.warning("Failed to download %s: %s", relurl, e)
 
 
 def write_csv(filename, releases, archs):
@@ -203,9 +271,9 @@ def write_csv(filename, releases, archs):
 
 if __name__ == "__main__":
     logger.info("Downloading releases...")
-    debianreleases = set(get_releases("http://ftp.debian.org/debian"))
+    debianreleases = set(get_dist_releases("http://ftp.debian.org/debian"))
     assert len(debianreleases) > 0
-    ubuntureleases = set(get_releases("http://ftp.ubuntu.com/ubuntu"))
+    ubuntureleases = set(get_dist_releases("http://ftp.ubuntu.com/ubuntu"))
     assert len(ubuntureleases) > 0
     releases = list(sorted(debianreleases | ubuntureleases))
     assert len(releases) > 0
