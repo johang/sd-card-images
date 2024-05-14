@@ -44,6 +44,31 @@ ubuntu-armhf|ubuntu-arm64)
 	KERNEL_URL=http://packages.ubuntu.com/"${DIST}"/"${KERNEL}"
 	SCRIPT=/usr/share/debootstrap/scripts/gutsy
 	;;
+devuan-armhf)
+	KERNEL=linux-image-armmp
+	URL=http://deb.devuan.org/merged
+	# 2024-05-01 pkginfo.devuan.org does not have info for armhf.
+	KERNEL_URL=https://pkginfo.devuan.org/cgi-bin/policy-query.html?c=package&q=${KERNEL}
+	SCRIPT=/usr/share/debootstrap/scripts/ceres
+	;;
+devuan-arm64)
+	KERNEL=linux-image-arm64
+	URL=http://deb.devuan.org/merged
+	KERNEL_URL=https://pkginfo.devuan.org/cgi-bin/policy-query.html?c=package&q=${KERNEL}
+	SCRIPT=/usr/share/debootstrap/scripts/ceres
+	;;
+devuan-i386)
+	KERNEL=linux-image-686
+	URL=http://deb.devuan.org/merged
+	KERNEL_URL=https://pkginfo.devuan.org/cgi-bin/policy-query.html?c=package&q=${KERNEL}
+	SCRIPT=/usr/share/debootstrap/scripts/ceres
+	;;
+devuan-amd64)
+	KERNEL=linux-image-amd64
+	URL=http://deb.devuan.org/merged
+	KERNEL_URL=https://pkginfo.devuan.org/cgi-bin/policy-query.html?c=package&q=${KERNEL}
+	SCRIPT=/usr/share/debootstrap/scripts/ceres
+	;;
 *)
 	echo "Can't decide kernel package for \"${ARCH}\""
 	exit 1
@@ -67,6 +92,8 @@ trap 'rm -rf "${TMP}"' EXIT INT TERM
 cd "${TMP}"
 
 # Build a Debian root filesystem (first stage)
+case ${OS} in
+debian | ubuntu)
 debootstrap \
   --arch="${ARCH}" \
   --verbose \
@@ -84,6 +111,28 @@ nano \
   debian \
   "${URL}" \
   "${SCRIPT}"
+	;;
+devuan)
+debootstrap \
+  --arch="${ARCH}" \
+  --verbose \
+  --variant=minbase \
+  --foreign \
+  --include=\
+netbase,\
+net-tools,\
+sysvinit,\
+u-boot-tools,\
+initramfs-tools,\
+openssh-server,\
+nano,\
+vim-tiny \
+  "${TARGET}" \
+  debian \
+  "${URL}" \
+  "${SCRIPT}"
+	;;
+esac
 
 # Randomly generated root password
 PASSWORD="${PASSWORD_OVERRIDE:-$(pwgen -B -A 6 1)}"
@@ -134,6 +183,23 @@ deb http://ports.ubuntu.com/ubuntu-ports ${DIST}-security main universe
 deb-src http://ports.ubuntu.com/ubuntu-ports ${DIST}-security main universe
 EOF
 	;;
+devuan-*-ceres | devuan-*-unstable)
+	# https://pkginfo.devuan.org/sources.list.txt
+	tee debian/tmp/sources.list <<-EOF
+deb http://deb.devuan.org/merged ${DIST} main
+deb-src http://deb.devuan.org/merged ${DIST} main
+EOF
+	;;
+devuan-*)
+	tee debian/tmp/sources.list <<-EOF
+deb http://deb.devuan.org/merged ${DIST} main
+deb-src http://deb.devuan.org/merged ${DIST} main
+deb http://deb.devuan.org/merged ${DIST}-updates main
+deb-src http://deb.devuan.org/merged ${DIST}-updates main
+deb http://deb.devuan.org/merged ${DIST}-security main
+deb-src http://deb.devuan.org/merged ${DIST}-security main
+EOF
+	;;
 esac
 
 case "${OS}-${ARCH}-${DIST}" in
@@ -156,7 +222,10 @@ cp -rv --preserve=mode ../2nd-stage-files/pre-2nd-stage-files-${ARCH}/* debian
 cp -v /usr/bin/qemu-*-static debian/usr/bin || :
 
 # Build a Debian root filesystem (second stage)
-chroot debian /bin/sh -ex <<- EOF
+case "${OS}" in
+debian | ubuntu)
+	# Build a Debian root filesystem (second stage)
+chroot debian /bin/sh -ex <<-EOF
 /debootstrap/debootstrap --second-stage
 /bin/mv /tmp/sources.list /etc/apt/sources.list
 /bin/mv /tmp/priority-experimental /etc/apt/preferences.d/priority-experimental || :
@@ -176,6 +245,28 @@ echo "kernel-url,${KERNEL_URL}\n" >> /tmp/versions.csv
 /bin/echo "root:${PASSWORD}" | /usr/sbin/chpasswd
 /bin/sed -i "s/#*\s*PermitRootLogin .*/PermitRootLogin yes/" /etc/ssh/sshd_config
 EOF
+	;;
+devuan)
+	# Build a Devuan root filesystem (second stage)
+chroot debian /bin/sh -ex <<-EOF
+/debootstrap/debootstrap --second-stage
+/bin/mv /tmp/sources.list /etc/apt/sources.list
+# /usr/bin/apt-key add /etc/apt/trusted.gpg.d/devuan_key.gpg
+/usr/bin/apt-get update
+/usr/bin/apt-get -y upgrade
+/usr/bin/apt-get -y --no-install-recommends "${KERNELSUITE}" install "${KERNEL}"
+/usr/bin/apt-get -y install connman || :
+/usr/bin/apt-get -y install openntpd || :
+/usr/bin/apt-get clean
+/bin/rm -rf /var/lib/apt/lists/*
+echo "kernel-url,${KERNEL_URL}\n" >> /tmp/versions.csv
+/usr/bin/dpkg-query --showformat='kernel,\${Version}\n' --show "${KERNEL}" > /tmp/versions.csv
+/bin/rm -f /var/log/*.log
+/bin/echo "root:${PASSWORD}" | /usr/sbin/chpasswd
+/bin/sed -i "s/#*\s*PermitRootLogin .*/PermitRootLogin yes/" /etc/ssh/sshd_config
+EOF
+	;;
+esac
 
 # Remove ARM emulation stuff again
 rm -v debian/usr/bin/qemu-*-static || :
@@ -186,7 +277,14 @@ cp -rv --preserve=mode ../2nd-stage-files/post-2nd-stage-files/* debian
 echo "${OS}" > debian/etc/hostname
 
 # Set resolv.conf
-ln -sf /run/systemd/resolve/stub-resolv.conf debian/etc/resolv.conf
+case "${OS}" in
+debian | ubuntu)
+	ln -sf /run/systemd/resolve/stub-resolv.conf debian/etc/resolv.conf
+	;;
+devuan)
+	ln -sf /run/connman/resolv.conf debian/etc/resolv.conf
+	;;
+esac
 
 # List all files
 find debian ! -type d -printf "/%P\n" | sort > files.txt
