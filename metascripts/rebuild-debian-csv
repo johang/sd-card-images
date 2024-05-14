@@ -21,14 +21,26 @@ class Release:
         for line in fileobj:
             line = line.decode('utf-8').strip()
             # Header of "Release" finishes at:
-            #   "MD5Sum:"	Debian/Ubuntu
-            if line == "MD5Sum:":
+            #   "MD5Sum:" in Debian/Ubuntu
+            #   "SHA256:" in Devuan
+            if line == "MD5Sum:" or line == "SHA256:":
                 break
 
             k, v = line.split(": ", 1)
             params[k] = v
 
-        self.label = params.get("Label")
+        # In Release files,
+        #    e.g. https://ftp.debian.org/debian/dists/stable/Release
+        # "Origin" is Debian/Ubuntu/Devuan as expected.
+        # "Origin" = "Label" for Debian and Ubuntu, not always for Devuan.
+        # "Label" is "Debian"/"Ubuntu" for Debian/Ubuntu.
+        # "Label" is "Devuan" or "Master" for Devuan.
+        # "Label" of "Master" has no equivalent in Debian/Ubuntu.
+        #
+        # Where this program uses "label" it really wants "origin".
+        self.origin = params.get("Origin")
+        self.label = self.origin
+
         self.suite = params.get("Suite")
         self.version = params.get("Version")
         self.codename = params.get("Codename")
@@ -86,16 +98,29 @@ class Release:
             return date.today() - release_date
 
     def is_relevant(self):
-        if self.label not in ("Debian", "Ubuntu", ):
+        if self.label not in ("Debian", "Ubuntu", "Devuan", ):
             return False
 
-        bl1 = ("oldoldstable", "devel", )
-        if self.suite in bl1:
-            return False
+        if self.label == "Debian" or self.label == "Ubuntu":
+            bl1 = ("oldoldstable", "devel", )
+            if self.suite in bl1:
+                return False
 
-        bl2 = ("-updates", "-backports", "-security", "-proposed", "-sloppy", )
-        if any(self.suite.endswith(suffix) for suffix in bl2):
-            return False
+            bl2 = ("-updates", "-backports", "-security", "-proposed", "-sloppy", )
+            if any(self.suite.endswith(suffix) for suffix in bl2):
+                return False
+
+        if self.label == "Devuan":
+            # "oldoldstable" is maintained in Devuan.
+            # These are no longer maintained.
+            bl_ = ("jessie", "ascii", )
+            if self.suite in bl_:
+                return False
+
+            # For fine-grained control:
+            bl_ = ("-backports", "-security", "-proposed-updates", )
+            if any(self.suite.endswith(suffix) for suffix in bl_):
+                return False
 
         if self.label == "Ubuntu":
             if self.is_lts():
@@ -109,6 +134,8 @@ class Release:
         if self.label == "Debian" and self.suite == "experimental":
             return True
         if self.label == "Ubuntu" and self.age() < timedelta(days=0):
+            return True
+        if self.label == "Devuan" and self.suite == "experimental":
             return True
 
         return False
@@ -249,6 +276,7 @@ def write_csv(filename, releases, archs):
 
         for r in releases:
             if not r.is_relevant():
+                logger.debug("Discarding as not relevant: %s ", repr(r))
                 continue
 
             for arch in archs:
@@ -275,7 +303,9 @@ if __name__ == "__main__":
     assert len(debianreleases) > 0
     ubuntureleases = set(get_dist_releases("http://ftp.ubuntu.com/ubuntu"))
     assert len(ubuntureleases) > 0
-    releases = list(sorted(debianreleases | ubuntureleases))
+    devuanreleases = set(get_dist_releases("http://deb.devuan.org/merged"))
+    assert len(devuanreleases) > 0
+    releases = list(sorted(debianreleases | ubuntureleases | devuanreleases))
     assert len(releases) > 0
     logger.info("Found %d releases", len(releases))
 

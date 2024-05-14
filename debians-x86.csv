@@ -9,6 +9,16 @@ debian,sid,i386,"Debian unstable (""sid"")",False
 debian,sid,amd64,"Debian unstable (""sid"")",False
 debian,experimental,i386,"Debian experimental (""rc-buggy"")",True
 debian,experimental,amd64,"Debian experimental (""rc-buggy"")",True
+devuan,ceres,i386,"Devuan unstable/1.0.0 (""ceres"")",False
+devuan,ceres,amd64,"Devuan unstable/1.0.0 (""ceres"")",False
+devuan,beowulf,i386,"Devuan oldoldstable/3.0 (""beowulf"")",False
+devuan,beowulf,amd64,"Devuan oldoldstable/3.0 (""beowulf"")",False
+devuan,chimaera,i386,"Devuan oldstable/4.0 (""chimaera"")",False
+devuan,chimaera,amd64,"Devuan oldstable/4.0 (""chimaera"")",False
+devuan,daedalus,i386,"Devuan stable/5.0 (""daedalus"")",False
+devuan,daedalus,amd64,"Devuan stable/5.0 (""daedalus"")",False
+devuan,excalibur,i386,"Devuan testing/6.0 (""excalibur"")",False
+devuan,excalibur,amd64,"Devuan testing/6.0 (""excalibur"")",False
 ubuntu,focal,i386,"Ubuntu 20.04 LTS (""focal"")",False
 ubuntu,focal,amd64,"Ubuntu 20.04 LTS (""focal"")",False
 ubuntu,jammy,i386,"Ubuntu 22.04 LTS (""jammy"")",False
