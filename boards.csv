@@ -194,6 +194,7 @@ radxa_zero,Zero,Radxa,meson-g12a,radxa-zero_defconfig,aarch64-linux-gnu,meson-g1
 amlogic_u200,U200,Amlogic,meson-g12a,u200_defconfig,aarch64-linux-gnu,meson-g12a-u200
 
 banana_pi_m2s,Banana Pi M2S,Sinovoip,meson-g12b,bananapi-m2s_defconfig,aarch64-linux-gnu,meson-g12b-a311d-bananapi-m2s
+banana_pi_cm4io,Banana Pi CM4IO,Sinovoip,meson-g12b,bananapi-cm4-cm4io_defconfig,aarch64-linux-gnu,meson-g12b-bananapi-cm4io
 khadas_vim3,VIM3,Khadas,meson-g12b,khadas-vim3_defconfig,aarch64-linux-gnu,meson-g12b-a311d-khadas-vim3
 beelink_gt_king_x,GT-King X,Beelink,meson-g12b,beelink-gsking-x_defconfig,aarch64-linux-gnu,meson-g12b-gsking-x
 beelink_gt_king,GT-King,Beelink,meson-g12b,beelink-gtking_defconfig,aarch64-linux-gnu,meson-g12b-gtking
