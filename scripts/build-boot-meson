@@ -44,6 +44,9 @@ libretech_s912_pc*)
 beelink_gt_king*)
 	BOARD=beelink-s922x
 	;;
+banana_pi_cm4io)
+        BOARD=bananapi-cm4io
+        ;;
 *)
 	# X_Y_defconfig -> x-y
 	BOARD=`echo "${DEFCONFIG%_defconfig}" | tr _ -`
