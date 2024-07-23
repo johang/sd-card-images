@@ -162,7 +162,7 @@ chroot debian /bin/sh -ex <<- EOF
 /bin/mv /tmp/priority-experimental /etc/apt/preferences.d/priority-experimental || :
 /usr/bin/apt-get update
 /usr/bin/apt-get -y upgrade
-/usr/bin/apt-get -y --no-install-recommends "${KERNELSUITE}" install "${KERNEL}"
+/usr/bin/apt-get -y --no-install-recommends ${KERNELSUITE} install "${KERNEL}"
 /usr/bin/apt-get -y install systemd-timesyncd || :
 /usr/bin/apt-get -y install systemd-resolved || :
 /usr/bin/apt-get clean
