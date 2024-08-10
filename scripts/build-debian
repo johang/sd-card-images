@@ -172,6 +172,7 @@ echo "kernel-url,${KERNEL_URL}\n" >> /tmp/versions.csv
 /usr/bin/systemctl enable systemd-networkd.service
 /usr/bin/systemctl enable systemd-resolved.service
 /usr/bin/systemctl enable systemd-timesyncd.service
+/usr/bin/systemctl enable generate-ssh-host-keys.service
 /bin/rm -f /var/log/*.log
 /bin/echo "root:${PASSWORD}" | /usr/sbin/chpasswd
 /bin/sed -i "s/#*\s*PermitRootLogin .*/PermitRootLogin yes/" /etc/ssh/sshd_config
@@ -179,6 +180,9 @@ EOF
 
 # Remove ARM emulation stuff again
 rm -v debian/usr/bin/qemu-*-static || :
+
+# Remove ssh host keys, they will be generated on first boot by generate-ssh-host-keys.service
+rm -v debian/etc/ssh/ssh_host_*_key* || :
 
 cp -rv --preserve=mode ../2nd-stage-files/post-2nd-stage-files/* debian
 
