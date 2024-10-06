@@ -13,9 +13,7 @@ ubuntu,focal,armhf,"Ubuntu 20.04 LTS (""focal"")",False
 ubuntu,focal,arm64,"Ubuntu 20.04 LTS (""focal"")",False
 ubuntu,jammy,armhf,"Ubuntu 22.04 LTS (""jammy"")",False
 ubuntu,jammy,arm64,"Ubuntu 22.04 LTS (""jammy"")",False
-ubuntu,mantic,armhf,"Ubuntu 23.10 (""mantic"")",False
-ubuntu,mantic,arm64,"Ubuntu 23.10 (""mantic"")",False
 ubuntu,noble,armhf,"Ubuntu 24.04 LTS (""noble"")",False
 ubuntu,noble,arm64,"Ubuntu 24.04 LTS (""noble"")",False
-ubuntu,oracular,armhf,"Ubuntu 24.10 (""oracular"")",True
-ubuntu,oracular,arm64,"Ubuntu 24.10 (""oracular"")",True
+ubuntu,oracular,armhf,"Ubuntu 24.10 (""oracular"")",False
+ubuntu,oracular,arm64,"Ubuntu 24.10 (""oracular"")",False
