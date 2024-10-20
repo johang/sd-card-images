@@ -17,3 +17,5 @@ ubuntu,noble,i386,"Ubuntu 24.04 LTS (""noble"")",False
 ubuntu,noble,amd64,"Ubuntu 24.04 LTS (""noble"")",False
 ubuntu,oracular,i386,"Ubuntu 24.10 (""oracular"")",False
 ubuntu,oracular,amd64,"Ubuntu 24.10 (""oracular"")",False
+ubuntu,plucky,i386,"Ubuntu 25.04 (""plucky"")",True
+ubuntu,plucky,amd64,"Ubuntu 25.04 (""plucky"")",True
