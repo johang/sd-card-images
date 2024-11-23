@@ -25,9 +25,6 @@ jobs:
             suite: bookworm
             arch: i386
           - os: debian
-            suite: trixie
-            arch: i386
-          - os: debian
             suite: sid
             arch: i386
       fail-fast: false
