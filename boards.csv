@@ -194,6 +194,7 @@ radxa_zero,Zero,Radxa,meson-g12a,radxa-zero_defconfig,aarch64-linux-gnu,meson-g1
 amlogic_u200,U200,Amlogic,meson-g12a,u200_defconfig,aarch64-linux-gnu,meson-g12a-u200
 
 banana_pi_m2s,Banana Pi M2S,Sinovoip,meson-g12b,bananapi-m2s_defconfig,aarch64-linux-gnu,meson-g12b-a311d-bananapi-m2s
+libretech_a311d_cc,AML-A311D-CC (Alta),Libre Computer,meson-g12b,aml-a311d-cc_defconfig,aarch64-linux-gnu,meson-g12b-a311d-libretech-cc
 banana_pi_cm4io,Banana Pi CM4IO,Sinovoip,meson-g12b,bananapi-cm4-cm4io_defconfig,aarch64-linux-gnu,meson-g12b-bananapi-cm4-cm4io
 khadas_vim3,VIM3,Khadas,meson-g12b,khadas-vim3_defconfig,aarch64-linux-gnu,meson-g12b-a311d-khadas-vim3
 beelink_gt_king_x,GT-King X,Beelink,meson-g12b,beelink-gsking-x_defconfig,aarch64-linux-gnu,meson-g12b-gsking-x
@@ -225,6 +226,7 @@ banana_pi_m5,Banana Pi M5,Sinovoip,meson-sm1,bananapi-m5_defconfig,aarch64-linux
 khadas_vim3l,VIM3L,Khadas,meson-sm1,khadas-vim3l_defconfig,aarch64-linux-gnu,meson-sm1-khadas-vim3l
 odroid_c4,ODROID C4,Hardkernel,meson-sm1,odroid-c4_defconfig,aarch64-linux-gnu,meson-sm1-odroid-c4
 odroid_hc4,ODROID HC4,Hardkernel,meson-sm1,odroid-hc4_defconfig,aarch64-linux-gnu,meson-sm1-odroid-hc4
+libretech_s905d3_cc,AML-S905D3-CC (Solitude),Libre Computer,meson-sm1,aml-s905d3-cc_defconfig,aarch64-linux-gnu,meson-sm1-s905d3-libretech-cc
 
 qemu_arm_virt,QEMU arm virt,QEMU,qemu-arm,qemu_arm_defconfig,arm-linux-gnueabihf,N/A
 qemu_aarch64_virt,QEMU aarch64 virt,QEMU,qemu-aarch64,qemu_arm64_defconfig,aarch64-linux-gnu,N/A
