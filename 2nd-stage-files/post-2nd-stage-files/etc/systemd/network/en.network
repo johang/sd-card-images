@@ -3,3 +3,6 @@ Name=en*
 
 [Network]
 DHCP=true
+
+[DHCP]
+ClientIdentifier=mac

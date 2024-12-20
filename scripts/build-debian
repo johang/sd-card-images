@@ -184,6 +184,9 @@ rm -v debian/usr/bin/qemu-*-static || :
 # Remove ssh host keys, they will be generated on first boot by generate-ssh-host-keys.service
 rm -v debian/etc/ssh/ssh_host_*_key* || :
 
+# Remove machine-id
+rm -v debian/etc/machine-id || :
+
 cp -rv --preserve=mode ../2nd-stage-files/post-2nd-stage-files/* debian
 
 # Set hostname
