@@ -18,11 +18,12 @@ jobs:
     strategy:
       matrix:
         include:
-          - os: debian
-            suite: bullseye
-            arch: armhf
+          # Debian armhf
           - os: debian
             suite: bookworm
+            arch: armhf
+          - os: debian
+            suite: trixie
             arch: armhf
           - os: debian
             suite: sid
