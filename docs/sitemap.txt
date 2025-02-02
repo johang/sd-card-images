@@ -2,7 +2,6 @@
 ---
 https://sd-card-images.johang.se/
 https://sd-card-images.johang.se/boards.html
-https://sd-card-images.johang.se/tips-and-tricks.html
 {% for board in site.boards -%}
 https://sd-card-images.johang.se/boards/{{ board.board_id }}.html
 {% endfor -%}
