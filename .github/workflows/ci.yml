@@ -11,8 +11,8 @@ on:
     - cron: "00 03 * * 0"
 
 jobs:
-  test-debian-x86:
-    runs-on: ubuntu-latest
+  test-debian-arm:
+    runs-on: ubuntu-24.04-arm
     name: test ${{ matrix.os }} ${{ matrix.arch }} ${{ matrix.suite }}
 
     strategy:
@@ -20,13 +20,13 @@ jobs:
         include:
           - os: debian
             suite: bullseye
-            arch: i386
+            arch: armhf
           - os: debian
             suite: bookworm
-            arch: i386
+            arch: armhf
           - os: debian
             suite: sid
-            arch: i386
+            arch: armhf
       fail-fast: false
 
     env:
@@ -56,6 +56,8 @@ jobs:
                              gcc \
                              gcc-arm-none-eabi \
                              gcc-i686-linux-gnu \
+                             gcc-arm-linux-gnueabihf \
+                             gcc-aarch64-linux-gnu \
                              git \
                              libssl-dev \
                              make \
@@ -68,22 +70,23 @@ jobs:
                              ssh \
                              sshpass \
                              swig \
+                             qemu-system-arm \
                              qemu-system-x86
 
     - name: Checkout
       uses: actions/checkout@v4
 
-    - name: Build qemu_x86_virt
+    - name: Build qemu_arm_virt
       timeout-minutes: 5
       run: |
         env PATH=$GITHUB_WORKSPACE/scripts:$PATH \
             ARTIFACTS_DIR=$RUNNER_TEMP \
             U_BOOT_GIT_REV="v2023.07" \
             U_BOOT_GIT_URL="https://github.com/u-boot/u-boot.git" \
-            build-boot qemu_x86_virt \
-                       qemu-x86 \
-                       qemu-x86_defconfig \
-                       i686-linux-gnu
+            build-boot qemu_arm_virt \
+                       qemu-arm \
+                       qemu_arm_defconfig \
+                       arm-linux-gnueabihf
 
     - name: Build ${{ matrix.suite }} ${{ matrix.arch }}
       timeout-minutes: 5
@@ -94,15 +97,15 @@ jobs:
                               $DEBIAN_ARCH \
                               $DEBIAN_SUITE
 
-    - name: Test qemu_x86_virt + ${{ matrix.suite }} ${{ matrix.arch }}
+    - name: Test qemu_arm_virt + ${{ matrix.suite }} ${{ matrix.arch }}
       timeout-minutes: 15
       run: |
-        sudo ./test/qemu.sh $RUNNER_TEMP/boot-qemu_x86_virt.bin.gz \
+        sudo ./test/qemu.sh $RUNNER_TEMP/boot-qemu_arm_virt.bin.gz \
                             $RUNNER_TEMP/${{ matrix.os }}-${{ matrix.suite }}-${{ matrix.arch }}-*.bin.gz
 
   build-docker:
     runs-on: ubuntu-latest
-    needs: test-debian-x86
+    needs: test-debian-arm
     name: build docker images
 
     steps:
