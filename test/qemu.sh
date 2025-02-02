@@ -132,10 +132,15 @@ set -ex
 # Install updates
 export DEBIAN_FRONTEND=noninteractive
 apt-get update
-
-# Shut down
-poweroff
 END
+
+# Power off
+sshpass -e ssh -o "ConnectTimeout=5" \
+               -o "StrictHostKeyChecking=no" \
+               -o "UserKnownHostsFile=/dev/null" \
+               -p 5555 \
+               -q \
+               root@localhost poweroff || :
 
 # Wait for QEMU to exit
 wait
