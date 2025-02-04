@@ -1,6 +1,6 @@
 ---
 layout: board
-title: ROC-RK3328-CC SD card images
+title: ROC-RK3328-CC SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for ROC-RK3328-CC by Firefly, SoC: Rockchip RK3328, CPU ISA: armv8"
 board_id: roc_rk3328_cc
 board_dtb_name: rk3328-roc-cc

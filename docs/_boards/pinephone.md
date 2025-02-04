@@ -1,6 +1,6 @@
 ---
 layout: board
-title: Pinephone SD card images
+title: Pinephone SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for Pinephone by Pine64, SoC: Allwinner A64, CPU ISA: armv8"
 board_id: pinephone
 board_dtb_name: sun50i-a64-pinephone-1.2

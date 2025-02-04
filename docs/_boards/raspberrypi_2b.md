@@ -1,6 +1,6 @@
 ---
 layout: board
-title: Raspberry Pi 2 B SD card images
+title: Raspberry Pi 2 B SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu armhf SD card images for Raspberry Pi 2 B by Raspberry Pi Foundation, SoC: Broadcom BCM2836, CPU ISA: armv7"
 board_id: raspberrypi_2b
 board_dtb_name: bcm2836-rpi-2-b

@@ -1,6 +1,6 @@
 ---
 layout: board
-title: Hummingbird SD card images
+title: Hummingbird SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu armhf SD card images for Hummingbird by Merrii, SoC: Allwinner A31, CPU ISA: armv7"
 board_id: hummingbird
 board_dtb_name: sun6i-a31-hummingbird

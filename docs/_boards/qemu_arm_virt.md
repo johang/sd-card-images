@@ -1,6 +1,6 @@
 ---
 layout: board
-title: QEMU arm virt SD card images
+title: QEMU arm virt SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu armhf SD card images for QEMU arm virt by QEMU, SoC: QEMU arm, CPU ISA: armv7"
 board_id: qemu_arm_virt
 board_dtb_name: N/A

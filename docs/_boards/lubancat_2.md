@@ -1,6 +1,6 @@
 ---
 layout: board
-title: LubanCat 2 SD card images
+title: LubanCat 2 SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for LubanCat 2 by EmbedFire, SoC: Rockchip RK3568, CPU ISA: armv8"
 board_id: lubancat_2
 board_dtb_name: rk3568-lubancat-2

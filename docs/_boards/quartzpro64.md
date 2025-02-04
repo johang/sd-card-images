@@ -1,6 +1,6 @@
 ---
 layout: board
-title: QuartzPro64 SD card images
+title: QuartzPro64 SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for QuartzPro64 by PINE64, SoC: Rockchip RK3588, CPU ISA: armv8"
 board_id: quartzpro64
 board_dtb_name: rk3588-quartzpro64

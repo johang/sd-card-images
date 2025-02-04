@@ -1,6 +1,6 @@
 ---
 layout: board
-title: A20-OLinuXino-MICRO SD card images
+title: A20-OLinuXino-MICRO SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu armhf SD card images for A20-OLinuXino-MICRO by Olimex, SoC: Allwinner A20, CPU ISA: armv7"
 board_id: a20_olinuxino_micro
 board_dtb_name: sun7i-a20-olinuxino-micro

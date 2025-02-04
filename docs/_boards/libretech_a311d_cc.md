@@ -1,6 +1,6 @@
 ---
 layout: board
-title: AML-A311D-CC (Alta) SD card images
+title: AML-A311D-CC (Alta) SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for AML-A311D-CC (Alta) by Libre Computer, SoC: Amlogic S922X/A311D, CPU ISA: armv8"
 board_id: libretech_a311d_cc
 board_dtb_name: meson-g12b-a311d-libretech-cc

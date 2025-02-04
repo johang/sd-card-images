@@ -1,6 +1,6 @@
 ---
 layout: board
-title: CHIP Pro SD card images
+title: CHIP Pro SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu armhf SD card images for CHIP Pro by Next Thing, SoC: Allwinner GR8, CPU ISA: armv7"
 board_id: chip_pro
 board_dtb_name: sun5i-gr8-chip-pro

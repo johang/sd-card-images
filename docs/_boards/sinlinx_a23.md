@@ -1,6 +1,6 @@
 ---
 layout: board
-title: SinA33 SD card images
+title: SinA33 SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu armhf SD card images for SinA33 by Sinlinx, SoC: Allwinner A23, CPU ISA: armv7"
 board_id: sinlinx_a23
 board_dtb_name: sun8i-a33-sinlinx-sina33

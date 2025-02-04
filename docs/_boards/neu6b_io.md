@@ -1,6 +1,6 @@
 ---
 layout: board
-title: IO-NCM6B SD card images
+title: IO-NCM6B SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for IO-NCM6B by Edgeble, SoC: Rockchip RK3588, CPU ISA: armv8"
 board_id: neu6b_io
 board_dtb_name: rk3588-edgeble-neu6b-io

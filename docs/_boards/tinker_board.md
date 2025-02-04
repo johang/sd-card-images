@@ -1,6 +1,6 @@
 ---
 layout: board
-title: Tinker Board SD card images
+title: Tinker Board SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu armhf SD card images for Tinker Board by ASUS, SoC: Rockchip RK3288, CPU ISA: armv7"
 board_id: tinker_board
 board_dtb_name: rk3288-tinker

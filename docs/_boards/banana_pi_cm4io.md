@@ -1,6 +1,6 @@
 ---
 layout: board
-title: Banana Pi CM4IO SD card images
+title: Banana Pi CM4IO SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for Banana Pi CM4IO by Sinovoip, SoC: Amlogic S922X/A311D, CPU ISA: armv8"
 board_id: banana_pi_cm4io
 board_dtb_name: meson-g12b-bananapi-cm4-cm4io

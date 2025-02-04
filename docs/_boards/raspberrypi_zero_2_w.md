@@ -1,6 +1,6 @@
 ---
 layout: board
-title: Raspberry Pi Zero 2 W SD card images
+title: Raspberry Pi Zero 2 W SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for Raspberry Pi Zero 2 W by Raspberry Pi Foundation, SoC: Broadcom BCM2837, CPU ISA: armv8"
 board_id: raspberrypi_zero_2_w
 board_dtb_name: bcm2837-rpi-zero-2-w

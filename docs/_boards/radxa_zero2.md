@@ -1,6 +1,6 @@
 ---
 layout: board
-title: Zero2 SD card images
+title: Zero2 SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for Zero2 by Radxa, SoC: Amlogic S922X/A311D, CPU ISA: armv8"
 board_id: radxa_zero2
 board_dtb_name: meson-g12b-radxa-zero2

@@ -1,6 +1,6 @@
 ---
 layout: board
-title: Pine64+ SD card images
+title: Pine64+ SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for Pine64+ by Pine64, SoC: Allwinner A64, CPU ISA: armv8"
 board_id: pine64_plus
 board_dtb_name: sun50i-a64-pine64-plus

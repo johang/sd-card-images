@@ -1,6 +1,6 @@
 ---
 layout: board
-title: Lamobo R1 SD card images
+title: Lamobo R1 SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu armhf SD card images for Lamobo R1 by Lamobo, SoC: Allwinner A20, CPU ISA: armv7"
 board_id: lamobo_r1
 board_dtb_name: sun7i-a20-lamobo-r1

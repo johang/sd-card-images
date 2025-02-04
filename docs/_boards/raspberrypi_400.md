@@ -1,6 +1,6 @@
 ---
 layout: board
-title: Raspberry Pi 400 SD card images
+title: Raspberry Pi 400 SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for Raspberry Pi 400 by Raspberry Pi Foundation, SoC: Broadcom BCM2711, CPU ISA: armv8"
 board_id: raspberrypi_400
 board_dtb_name: bcm2711-rpi-400

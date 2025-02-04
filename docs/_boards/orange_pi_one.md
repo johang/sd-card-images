@@ -1,6 +1,6 @@
 ---
 layout: board
-title: Orange Pi One SD card images
+title: Orange Pi One SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu armhf SD card images for Orange Pi One by Xunlong, SoC: Allwinner H3, CPU ISA: armv7"
 board_id: orange_pi_one
 board_dtb_name: sun8i-h3-orangepi-one

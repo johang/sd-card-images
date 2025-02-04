@@ -1,6 +1,6 @@
 ---
 layout: board
-title: Orange Pi R1 Plus SD card images
+title: Orange Pi R1 Plus SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for Orange Pi R1 Plus by Xunlong, SoC: Rockchip RK3328, CPU ISA: armv8"
 board_id: orangepi_r1_plus
 board_dtb_name: rk3328-orangepi-r1-plus

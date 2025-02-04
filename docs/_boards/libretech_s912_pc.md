@@ -1,6 +1,6 @@
 ---
 layout: board
-title: AML-S912-PC (Tartiflette) SD card images
+title: AML-S912-PC (Tartiflette) SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for AML-S912-PC (Tartiflette) by Libre Computer, SoC: Amlogic S912, CPU ISA: armv8"
 board_id: libretech_s912_pc
 board_dtb_name: meson-gxm-s912-libretech-pc

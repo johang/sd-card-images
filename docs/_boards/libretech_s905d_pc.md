@@ -1,6 +1,6 @@
 ---
 layout: board
-title: AML-S905D-PC (Tartiflette) SD card images
+title: AML-S905D-PC (Tartiflette) SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for AML-S905D-PC (Tartiflette) by Libre Computer, SoC: Amlogic S905X/S905W/S905D/S805X, CPU ISA: armv8"
 board_id: libretech_s905d_pc
 board_dtb_name: meson-gxl-s905d-libretech-pc

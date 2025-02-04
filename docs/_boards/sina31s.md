@@ -1,6 +1,6 @@
 ---
 layout: board
-title: SinA31s SD card images
+title: SinA31s SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu armhf SD card images for SinA31s by Sinlinx, SoC: Allwinner A31s, CPU ISA: armv7"
 board_id: sina31s
 board_dtb_name: sun6i-a31s-sina31s

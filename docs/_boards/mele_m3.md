@@ -1,6 +1,6 @@
 ---
 layout: board
-title: Mele M3 SD card images
+title: Mele M3 SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu armhf SD card images for Mele M3 by Mele, SoC: Allwinner A20, CPU ISA: armv7"
 board_id: mele_m3
 board_dtb_name: sun7i-a20-m3

@@ -1,6 +1,6 @@
 ---
 layout: board
-title: GT-King SD card images
+title: GT-King SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for GT-King by Beelink, SoC: Amlogic S922X/A311D, CPU ISA: armv8"
 board_id: beelink_gt_king
 board_dtb_name: meson-g12b-gtking

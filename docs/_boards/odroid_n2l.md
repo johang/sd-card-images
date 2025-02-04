@@ -1,6 +1,6 @@
 ---
 layout: board
-title: ODROID N2L SD card images
+title: ODROID N2L SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for ODROID N2L by Hardkernel, SoC: Amlogic S922X/A311D, CPU ISA: armv8"
 board_id: odroid_n2l
 board_dtb_name: meson-g12b-odroid-n2l

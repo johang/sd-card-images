@@ -1,6 +1,6 @@
 ---
 layout: board
-title: ROCK 5A SD card images
+title: ROCK 5A SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for ROCK 5A by Radxa, SoC: Rockchip RK3588, CPU ISA: armv8"
 board_id: rock_5a
 board_dtb_name: rk3588s-rock-5a

@@ -1,6 +1,6 @@
 ---
 layout: board
-title: ROCK64 SD card images
+title: ROCK64 SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for ROCK64 by Pine64, SoC: Rockchip RK3328, CPU ISA: armv8"
 board_id: rock64
 board_dtb_name: rk3328-rock64

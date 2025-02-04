@@ -1,6 +1,6 @@
 ---
 layout: board
-title: Banana Pro SD card images
+title: Banana Pro SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu armhf SD card images for Banana Pro by LeMaker, SoC: Allwinner A20, CPU ISA: armv7"
 board_id: bananapro
 board_dtb_name: sun7i-a20-bananapro

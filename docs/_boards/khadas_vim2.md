@@ -1,6 +1,6 @@
 ---
 layout: board
-title: VIM2 SD card images
+title: VIM2 SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for VIM2 by Khadas, SoC: Amlogic S912, CPU ISA: armv8"
 board_id: khadas_vim2
 board_dtb_name: meson-gxm-khadas-vim2

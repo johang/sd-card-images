@@ -1,6 +1,6 @@
 ---
 layout: board
-title: Cool Pi 4B SD card images
+title: Cool Pi 4B SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for Cool Pi 4B by Yanyi Tech, SoC: Rockchip RK3588, CPU ISA: armv8"
 board_id: cool_pi_4b
 board_dtb_name: rk3588s-coolpi-4b

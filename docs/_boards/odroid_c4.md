@@ -1,6 +1,6 @@
 ---
 layout: board
-title: ODROID C4 SD card images
+title: ODROID C4 SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for ODROID C4 by Hardkernel, SoC: Amlogic S905X3/S905Y3/S905D3, CPU ISA: armv8"
 board_id: odroid_c4
 board_dtb_name: meson-sm1-odroid-c4

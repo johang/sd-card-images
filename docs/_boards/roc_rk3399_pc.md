@@ -1,6 +1,6 @@
 ---
 layout: board
-title: ROC-RK3399-PC SD card images
+title: ROC-RK3399-PC SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for ROC-RK3399-PC by Firefly, SoC: Rockchip RK3399, CPU ISA: armv8"
 board_id: roc_rk3399_pc
 board_dtb_name: rk3399-roc-pc

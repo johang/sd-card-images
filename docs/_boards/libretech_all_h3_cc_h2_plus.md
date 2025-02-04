@@ -1,6 +1,6 @@
 ---
 layout: board
-title: ALL-H3-CC H2+ (Tritium) SD card images
+title: ALL-H3-CC H2+ (Tritium) SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu armhf SD card images for ALL-H3-CC H2+ (Tritium) by Libre Computer, SoC: Allwinner H2+, CPU ISA: armv7"
 board_id: libretech_all_h3_cc_h2_plus
 board_dtb_name: sun8i-h2-plus-libretech-all-h3-cc

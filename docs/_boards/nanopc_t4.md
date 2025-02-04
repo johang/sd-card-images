@@ -1,6 +1,6 @@
 ---
 layout: board
-title: NanoPC-T4 SD card images
+title: NanoPC-T4 SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for NanoPC-T4 by FriendlyElec, SoC: Rockchip RK3399, CPU ISA: armv8"
 board_id: nanopc_t4
 board_dtb_name: rk3399-nanopc-t4

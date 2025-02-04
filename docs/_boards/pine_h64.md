@@ -1,6 +1,6 @@
 ---
 layout: board
-title: Pine H64 SD card images
+title: Pine H64 SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for Pine H64 by Pine64, SoC: Allwinner H6, CPU ISA: armv8"
 board_id: pine_h64
 board_dtb_name: sun50i-h6-pine-h64

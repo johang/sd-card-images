@@ -1,6 +1,6 @@
 ---
 layout: board
-title: Banana Pi M2+ H3 SD card images
+title: Banana Pi M2+ H3 SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu armhf SD card images for Banana Pi M2+ H3 by Sinovoip, SoC: Allwinner H3, CPU ISA: armv7"
 board_id: banana_pi_m2_plus_h3
 board_dtb_name: sun8i-h3-bananapi-m2-plus

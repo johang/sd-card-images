@@ -1,6 +1,6 @@
 ---
 layout: board
-title: P200 SD card images
+title: P200 SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for P200 by Amlogic, SoC: Amlogic S905, CPU ISA: armv8"
 board_id: amlogic_p200
 board_dtb_name: meson-gxbb-p200

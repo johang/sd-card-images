@@ -1,6 +1,6 @@
 ---
 layout: board
-title: Orange Pi One Plus SD card images
+title: Orange Pi One Plus SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for Orange Pi One Plus by Xunlong, SoC: Allwinner H6, CPU ISA: armv8"
 board_id: orange_pi_one_plus
 board_dtb_name: sun50i-h6-orangepi-one-plus

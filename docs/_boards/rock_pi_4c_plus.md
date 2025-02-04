@@ -1,6 +1,6 @@
 ---
 layout: board
-title: ROCK Pi 4 model C plus SD card images
+title: ROCK Pi 4 model C plus SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for ROCK Pi 4 model C plus by Radxa, SoC: Rockchip RK3399, CPU ISA: armv8"
 board_id: rock_pi_4c_plus
 board_dtb_name: rk3399-rock-4c-plus

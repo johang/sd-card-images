@@ -1,6 +1,6 @@
 ---
 layout: board
-title: ROCK 3A SD card images
+title: ROCK 3A SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for ROCK 3A by Radxa, SoC: Rockchip RK3568, CPU ISA: armv8"
 board_id: rock_3a
 board_dtb_name: rk3568-rock-3a

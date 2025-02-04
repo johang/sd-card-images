@@ -1,6 +1,6 @@
 ---
 layout: board
-title: P201 SD card images
+title: P201 SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for P201 by Amlogic, SoC: Amlogic S905, CPU ISA: armv8"
 board_id: amlogic_p201
 board_dtb_name: meson-gxbb-p201

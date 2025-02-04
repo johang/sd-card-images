@@ -1,6 +1,6 @@
 ---
 layout: board
-title: Orange Pi PC Plus SD card images
+title: Orange Pi PC Plus SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu armhf SD card images for Orange Pi PC Plus by Xunlong, SoC: Allwinner H3, CPU ISA: armv7"
 board_id: orange_pi_pc_plus
 board_dtb_name: sun8i-h3-orangepi-pc-plus

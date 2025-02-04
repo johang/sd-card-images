@@ -1,6 +1,6 @@
 ---
 layout: board
-title: ODROID M1 SD card images
+title: ODROID M1 SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for ODROID M1 by Hardkernel, SoC: Rockchip RK3568, CPU ISA: armv8"
 board_id: odroid_m1
 board_dtb_name: rk3568-odroid-m1

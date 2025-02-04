@@ -1,6 +1,6 @@
 ---
 layout: board
-title: Rock2 SD card images
+title: Rock2 SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu armhf SD card images for Rock2 by Radxa, SoC: Rockchip RK3288, CPU ISA: armv7"
 board_id: rock2
 board_dtb_name: rk3288-rock2-square
