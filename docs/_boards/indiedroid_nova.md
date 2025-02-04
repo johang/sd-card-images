@@ -1,6 +1,6 @@
 ---
 layout: board
-title: Indiedroid Nova SD card images
+title: Indiedroid Nova SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for Indiedroid Nova by Indiedroid, SoC: Rockchip RK3588, CPU ISA: armv8"
 board_id: indiedroid_nova
 board_dtb_name: rk3588s-indiedroid-nova

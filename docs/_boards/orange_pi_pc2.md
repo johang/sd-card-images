@@ -1,6 +1,6 @@
 ---
 layout: board
-title: Orange Pi PC2 SD card images
+title: Orange Pi PC2 SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for Orange Pi PC2 by Xunlong, SoC: Allwinner H5, CPU ISA: armv8"
 board_id: orange_pi_pc2
 board_dtb_name: sun50i-h5-orangepi-pc2

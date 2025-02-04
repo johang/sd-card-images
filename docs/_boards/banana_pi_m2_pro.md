@@ -1,6 +1,6 @@
 ---
 layout: board
-title: Banana Pi M2 Pro SD card images
+title: Banana Pi M2 Pro SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for Banana Pi M2 Pro by Sinovoip, SoC: Amlogic S905X3/S905Y3/S905D3, CPU ISA: armv8"
 board_id: banana_pi_m2_pro
 board_dtb_name: meson-sm1-bananapi-m2-pro

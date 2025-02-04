@@ -1,6 +1,6 @@
 ---
 layout: board
-title: Nano Pi Neo Air SD card images
+title: Nano Pi Neo Air SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu armhf SD card images for Nano Pi Neo Air by FriendlyElec, SoC: Allwinner H3, CPU ISA: armv7"
 board_id: nano_pi_neo_air
 board_dtb_name: sun8i-h3-nanopi-neo-air

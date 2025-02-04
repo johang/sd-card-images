@@ -14,7 +14,7 @@ logger.setLevel(logging.DEBUG)
 BOARD_TEMPLATE = """\
 ---
 layout: board
-title: {board_name} SD card images
+title: {board_name} SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu \
 {debian_architecture} SD card images for {board_name} by {board_maker}, SoC: \
 {chip_maker} {chip_name}, CPU ISA: {cpu_architecture}"

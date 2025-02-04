@@ -1,6 +1,6 @@
 ---
 layout: board
-title: Nano Pi R4S SD card images
+title: Nano Pi R4S SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for Nano Pi R4S by FriendlyElec, SoC: Rockchip RK3399, CPU ISA: armv8"
 board_id: nanopi_r4s
 board_dtb_name: rk3399-nanopi-r4s

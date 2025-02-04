@@ -1,6 +1,6 @@
 ---
 layout: board
-title: Mele A1000G SD card images
+title: Mele A1000G SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu armhf SD card images for Mele A1000G by Mele, SoC: Allwinner A31, CPU ISA: armv7"
 board_id: mele_a1000g
 board_dtb_name: sun6i-a31-mele-a1000g-quad

@@ -1,6 +1,6 @@
 ---
 layout: board
-title: Nano Pi R6C SD card images
+title: Nano Pi R6C SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for Nano Pi R6C by FriendlyElec, SoC: Rockchip RK3588, CPU ISA: armv8"
 board_id: nanopi_r6c
 board_dtb_name: rk3588s-nanopi-r6c

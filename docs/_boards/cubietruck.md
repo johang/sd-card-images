@@ -1,6 +1,6 @@
 ---
 layout: board
-title: Cubietruck SD card images
+title: Cubietruck SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu armhf SD card images for Cubietruck by Cubieboard, SoC: Allwinner A20, CPU ISA: armv7"
 board_id: cubietruck
 board_dtb_name: sun7i-a20-cubietruck

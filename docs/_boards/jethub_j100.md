@@ -1,6 +1,6 @@
 ---
 layout: board
-title: JetHub J100 SD card images
+title: JetHub J100 SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for JetHub J100 by JetHome, SoC: Amlogic A113X/A113D, CPU ISA: armv8"
 board_id: jethub_j100
 board_dtb_name: meson-axg-jethome-jethub-j100

@@ -1,6 +1,6 @@
 ---
 layout: board
-title: NanoPC-T6 SD card images
+title: NanoPC-T6 SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for NanoPC-T6 by FriendlyElec, SoC: Rockchip RK3588, CPU ISA: armv8"
 board_id: nanopc_t6
 board_dtb_name: rk3588-nanopc-t6

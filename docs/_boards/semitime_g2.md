@@ -1,6 +1,6 @@
 ---
 layout: board
-title: G2 (MK802+) SD card images
+title: G2 (MK802+) SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu armhf SD card images for G2 (MK802+) by Semitime, SoC: Allwinner A10s, CPU ISA: armv7"
 board_id: semitime_g2
 board_dtb_name: sun5i-a10s-mk802

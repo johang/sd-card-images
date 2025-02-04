@@ -1,6 +1,6 @@
 ---
 layout: board
-title: AML-S905D3-CC (Solitude) SD card images
+title: AML-S905D3-CC (Solitude) SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for AML-S905D3-CC (Solitude) by Libre Computer, SoC: Amlogic S905X3/S905Y3/S905D3, CPU ISA: armv8"
 board_id: libretech_s905d3_cc
 board_dtb_name: meson-sm1-s905d3-libretech-cc

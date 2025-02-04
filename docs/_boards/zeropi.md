@@ -1,6 +1,6 @@
 ---
 layout: board
-title: Zero Pi SD card images
+title: Zero Pi SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu armhf SD card images for Zero Pi by FriendlyElec, SoC: Allwinner H3, CPU ISA: armv7"
 board_id: zeropi
 board_dtb_name: sun8i-h3-zeropi

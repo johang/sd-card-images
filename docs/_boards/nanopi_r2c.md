@@ -1,6 +1,6 @@
 ---
 layout: board
-title: Nano Pi R2C SD card images
+title: Nano Pi R2C SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for Nano Pi R2C by FriendlyElec, SoC: Rockchip RK3328, CPU ISA: armv8"
 board_id: nanopi_r2c
 board_dtb_name: rk3328-nanopi-r2c

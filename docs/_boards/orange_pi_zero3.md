@@ -1,6 +1,6 @@
 ---
 layout: board
-title: Orange Pi Zero 3 SD card images
+title: Orange Pi Zero 3 SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for Orange Pi Zero 3 by Xunlong, SoC: Allwinner H618, CPU ISA: armv8"
 board_id: orange_pi_zero3
 board_dtb_name: sun50i-h618-orangepi-zero3

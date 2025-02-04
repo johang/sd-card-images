@@ -1,6 +1,6 @@
 ---
 layout: board
-title: ROCK Pi N8 SD card images
+title: ROCK Pi N8 SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu armhf SD card images for ROCK Pi N8 by Radxa, SoC: Rockchip RK3288, CPU ISA: armv7"
 board_id: rock_pi_n8
 board_dtb_name: rk3288-rock-pi-n8

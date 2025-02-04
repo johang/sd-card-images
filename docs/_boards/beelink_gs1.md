@@ -1,6 +1,6 @@
 ---
 layout: board
-title: GS1 SD card images
+title: GS1 SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for GS1 by Beelink, SoC: Allwinner H6, CPU ISA: armv8"
 board_id: beelink_gs1
 board_dtb_name: sun50i-h6-beelink-gs1

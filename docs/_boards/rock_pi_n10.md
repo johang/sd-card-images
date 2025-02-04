@@ -1,6 +1,6 @@
 ---
 layout: board
-title: ROCK Pi N10 SD card images
+title: ROCK Pi N10 SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for ROCK Pi N10 by Radxa, SoC: Rockchip RK3399Pro, CPU ISA: armv8"
 board_id: rock_pi_n10
 board_dtb_name: rk3399pro-rock-pi-n10

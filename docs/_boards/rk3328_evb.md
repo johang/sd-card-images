@@ -1,6 +1,6 @@
 ---
 layout: board
-title: RK3328 EVB SD card images
+title: RK3328 EVB SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for RK3328 EVB by Rockchip, SoC: Rockchip RK3328, CPU ISA: armv8"
 board_id: rk3328_evb
 board_dtb_name: rk3328-evb

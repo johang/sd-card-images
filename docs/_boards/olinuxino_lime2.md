@@ -1,6 +1,6 @@
 ---
 layout: board
-title: A20-OLinuXino-LIME2 SD card images
+title: A20-OLinuXino-LIME2 SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu armhf SD card images for A20-OLinuXino-LIME2 by Olimex, SoC: Allwinner A20, CPU ISA: armv7"
 board_id: olinuxino_lime2
 board_dtb_name: sun7i-a20-olinuxino-lime2

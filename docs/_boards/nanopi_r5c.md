@@ -1,6 +1,6 @@
 ---
 layout: board
-title: Nano Pi R5C SD card images
+title: Nano Pi R5C SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for Nano Pi R5C by FriendlyElec, SoC: Rockchip RK3568, CPU ISA: armv8"
 board_id: nanopi_r5c
 board_dtb_name: rk3568-nanopi-r5c

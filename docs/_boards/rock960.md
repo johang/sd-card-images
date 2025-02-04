@@ -1,6 +1,6 @@
 ---
 layout: board
-title: Rock960 SD card images
+title: Rock960 SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for Rock960 by 96boards, SoC: Rockchip RK3399, CPU ISA: armv8"
 board_id: rock960
 board_dtb_name: rk3399-rock960

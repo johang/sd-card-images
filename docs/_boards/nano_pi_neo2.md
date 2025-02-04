@@ -1,6 +1,6 @@
 ---
 layout: board
-title: Nano Pi Neo2 SD card images
+title: Nano Pi Neo2 SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for Nano Pi Neo2 by FriendlyElec, SoC: Allwinner H5, CPU ISA: armv8"
 board_id: nano_pi_neo2
 board_dtb_name: sun50i-h5-nanopi-neo2

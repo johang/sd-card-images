@@ -1,6 +1,6 @@
 ---
 layout: board
-title: Leez P720 SD card images
+title: Leez P720 SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for Leez P720 by Lenovo, SoC: Rockchip RK3399, CPU ISA: armv8"
 board_id: leez_p710
 board_dtb_name: rk3399-leez-p710

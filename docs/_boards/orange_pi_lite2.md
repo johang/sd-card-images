@@ -1,6 +1,6 @@
 ---
 layout: board
-title: Orange Pi Lite2 SD card images
+title: Orange Pi Lite2 SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for Orange Pi Lite2 by Xunlong, SoC: Allwinner H6, CPU ISA: armv8"
 board_id: orange_pi_lite2
 board_dtb_name: sun50i-h6-orangepi-lite2

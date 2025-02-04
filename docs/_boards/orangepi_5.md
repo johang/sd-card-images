@@ -1,6 +1,6 @@
 ---
 layout: board
-title: Orange Pi 5 SD card images
+title: Orange Pi 5 SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for Orange Pi 5 by Xunlong, SoC: Rockchip RK3588, CPU ISA: armv8"
 board_id: orangepi_5
 board_dtb_name: rk3588s-orangepi-5

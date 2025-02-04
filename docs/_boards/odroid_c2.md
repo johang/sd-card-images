@@ -1,6 +1,6 @@
 ---
 layout: board
-title: ODROID C2 SD card images
+title: ODROID C2 SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for ODROID C2 by Hardkernel, SoC: Amlogic S905, CPU ISA: armv8"
 board_id: odroid_c2
 board_dtb_name: meson-gxbb-odroidc2

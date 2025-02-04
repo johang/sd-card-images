@@ -1,6 +1,6 @@
 ---
 layout: board
-title: AML-S905X-CC (Le Potato) SD card images
+title: AML-S905X-CC (Le Potato) SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for AML-S905X-CC (Le Potato) by Libre Computer, SoC: Amlogic S905X/S905W/S905D/S805X, CPU ISA: armv8"
 board_id: libretech_s905x_cc
 board_dtb_name: meson-gxl-s905x-libretech-cc

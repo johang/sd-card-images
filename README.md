@@ -1,12 +1,12 @@
-# Debian SD card images
+# Debian/Ubuntu SD Card Images for Single Board Computers
 
 This repository is a bunch of scripts to build SD card images that various [single-board computers](https://en.wikipedia.org/wiki/Single-board_computer) (SBC) can boot. Emphasis is on pureness; pure Debian and pure mainline U-boot.
 
-## Pre-built images
+## Pre-Built SD Card Images
 
 Pre-built images ready for download are availble at [sd-card-images.johang.se](https://sd-card-images.johang.se).
 
-## Usage
+## How To Use
 
 The generated SD card images are made up of two separate images:
 
@@ -18,7 +18,7 @@ These two images are the concatenated to a single image, which is then written t
     $ zcat boot-raspberrypi_3b.bin.gz debian-buster-arm64-XXXXXX.bin.gz > sd-card.img
     # dd if=sd-card.img of=/dev/sdXXX
 
-### Build your own boot image
+### Build Your Own Boot Image
 
 To build a boot image for Raspberry Pi 3 B:
 
@@ -28,7 +28,7 @@ To build a boot image for Raspberry Pi 3 B:
 
 The image will end up in /tmp/sd-images on the host.
 
-### Build your own Debian ext4 root filesystem image
+### Build Your Own Debian/Ubuntu Ext4 Root Filesystem Image
 
 To build a Debian ext4 root filesystem image for arm64:
 

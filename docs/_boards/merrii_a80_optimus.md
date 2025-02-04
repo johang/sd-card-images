@@ -1,6 +1,6 @@
 ---
 layout: board
-title: Merrii A80 Optimus SD card images
+title: Merrii A80 Optimus SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu armhf SD card images for Merrii A80 Optimus by Merrii, SoC: Allwinner A80, CPU ISA: armv7"
 board_id: merrii_a80_optimus
 board_dtb_name: sun9i-a80-optimus

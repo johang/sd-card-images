@@ -1,6 +1,6 @@
 ---
 layout: board
-title: VIM3 SD card images
+title: VIM3 SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for VIM3 by Khadas, SoC: Amlogic S922X/A311D, CPU ISA: armv8"
 board_id: khadas_vim3
 board_dtb_name: meson-g12b-a311d-khadas-vim3

@@ -1,6 +1,6 @@
 ---
 layout: board
-title: Nano Pi K2 SD card images
+title: Nano Pi K2 SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for Nano Pi K2 by FriendlyElec, SoC: Amlogic S905, CPU ISA: armv8"
 board_id: nano_pi_k2
 board_dtb_name: meson-gxbb-nanopi-k2

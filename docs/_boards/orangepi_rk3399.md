@@ -1,6 +1,6 @@
 ---
 layout: board
-title: Orange Pi rk3399 SD card images
+title: Orange Pi rk3399 SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for Orange Pi rk3399 by Xunlong, SoC: Rockchip RK3399, CPU ISA: armv8"
 board_id: orangepi_rk3399
 board_dtb_name: rk3399-orangepi

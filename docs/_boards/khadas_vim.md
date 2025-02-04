@@ -1,6 +1,6 @@
 ---
 layout: board
-title: VIM SD card images
+title: VIM SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for VIM by Khadas, SoC: Amlogic S905X/S905W/S905D/S805X, CPU ISA: armv8"
 board_id: khadas_vim
 board_dtb_name: meson-gxl-s905x-khadas-vim

@@ -1,6 +1,6 @@
 ---
 layout: board
-title: Marsboard A10 SD card images
+title: Marsboard A10 SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu armhf SD card images for Marsboard A10 by HAOYU Electronics, SoC: Allwinner A10, CPU ISA: armv7"
 board_id: marsboard_a10
 board_dtb_name: sun4i-a10-marsboard

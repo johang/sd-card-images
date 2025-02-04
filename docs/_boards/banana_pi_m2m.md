@@ -1,6 +1,6 @@
 ---
 layout: board
-title: Banana Pi M2M SD card images
+title: Banana Pi M2M SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu armhf SD card images for Banana Pi M2M by Sinovoip, SoC: Allwinner R16, CPU ISA: armv7"
 board_id: banana_pi_m2m
 board_dtb_name: sun8i-r16-bananapi-m2m

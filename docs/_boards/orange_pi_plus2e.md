@@ -1,6 +1,6 @@
 ---
 layout: board
-title: Orange Pi Plus2E SD card images
+title: Orange Pi Plus2E SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu armhf SD card images for Orange Pi Plus2E by Xunlong, SoC: Allwinner H3, CPU ISA: armv7"
 board_id: orange_pi_plus2e
 board_dtb_name: sun8i-h3-orangepi-plus2e

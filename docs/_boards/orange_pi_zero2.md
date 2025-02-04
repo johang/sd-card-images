@@ -1,6 +1,6 @@
 ---
 layout: board
-title: Orange Pi Zero2 SD card images
+title: Orange Pi Zero2 SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for Orange Pi Zero2 by Xunlong, SoC: Allwinner H616, CPU ISA: armv8"
 board_id: orange_pi_zero2
 board_dtb_name: sun50i-h616-orangepi-zero2

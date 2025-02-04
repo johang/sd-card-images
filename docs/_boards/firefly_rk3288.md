@@ -1,6 +1,6 @@
 ---
 layout: board
-title: Firefly-RK3288 SD card images
+title: Firefly-RK3288 SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu armhf SD card images for Firefly-RK3288 by Firefly, SoC: Rockchip RK3288, CPU ISA: armv7"
 board_id: firefly_rk3288
 board_dtb_name: rk3288-firefly
