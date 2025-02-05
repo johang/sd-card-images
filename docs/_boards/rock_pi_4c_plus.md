@@ -2,7 +2,7 @@
 layout: board
 title: ROCK 4C+ SD Card Images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for ROCK 4C+ by Radxa, SoC: Rockchip RK3399, CPU ISA: armv8"
-board_id: rock_4c_plus
+board_id: rock_pi_4c_plus
 board_dtb_name: rk3399-rock-4c-plus
 board_name: ROCK 4C+
 board_maker_name: Radxa
