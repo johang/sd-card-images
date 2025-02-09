@@ -32,6 +32,7 @@ rk3328,RK3328,Rockchip,ARM Cortex A53,armv8,arm64
 rk3368,RK3368,Rockchip,ARM Cortex A53,armv8,arm64
 rk3399,RK3399,Rockchip,ARM Cortex A72/A53,armv8,arm64
 rk3399pro,RK3399Pro,Rockchip,ARM Cortex A72/A53,armv8,arm64
+rk3566,RK3566,Rockchip,ARM Cortex A55,armv8,arm64
 rk3568,RK3568,Rockchip,ARM Cortex A55,armv8,arm64
 rk3588,RK3588,Rockchip,ARM Cortex A76/A55,armv8,arm64
 

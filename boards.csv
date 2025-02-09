@@ -54,6 +54,12 @@ rock960,Rock960,96boards,rk3399,rock960-rk3399_defconfig,aarch64-linux-gnu,rk339
 rockpro64,ROCKPro64,Pine64,rk3399,rockpro64-rk3399_defconfig,aarch64-linux-gnu,rk3399-rockpro64
 rock_pi_n10,ROCK Pi N10,Radxa,rk3399pro,rock-pi-n10-rk3399pro_defconfig,aarch64-linux-gnu,rk3399pro-rock-pi-n10
 
+odroid_m1s,ODROID M1S,Hardkernel,rk3566,odroid-m1s-rk3566_defconfig,aarch64-linux-gnu,rk3566-odroid-m1s
+nanopi_r3s,Nano Pi R3S,FriendlyElec,rk3566,nanopi-r3s-rk3566_defconfig,aarch64-linux-gnu,rk3566-nanopi-r3s
+radxa_cm3_io,CM3 IO,Radxa,rk3566,radxa-cm3-io-rk3566_defconfig,aarch64-linux-gnu,rk3566-radxa-cm3-io
+radxa_zero_3,Zero 3,Radxa,rk3566,radxa-zero-3-rk3566_defconfig,aarch64-linux-gnu,rk3566-radxa-zero-3w
+rock_3c,Rock 3C,Radxa,rk3566,rock-3c-rk3566_defconfig,aarch64-linux-gnu,rk3566-rock-3c
+
 banana_pi_r2_pro,Banana Pi BPI-R2 Pro,Sinovoip,rk3568,bpi-r2-pro-rk3568_defconfig,aarch64-linux-gnu,rk3568-bpi-r2-pro
 rk3568_evb,RK3568 EVB,Rockchip,rk3568,evb-rk3568_defconfig,aarch64-linux-gnu,rk3568-evb
 lubancat_2,LubanCat 2,EmbedFire,rk3568,lubancat-2-rk3568_defconfig,aarch64-linux-gnu,rk3568-lubancat-2
