@@ -20,7 +20,9 @@ vyasa,Vyasa,Amarula,rk3288,vyasa-rk3288_defconfig,arm-linux-gnueabihf,rk3288-vya
 
 rk3328_evb,RK3328 EVB,Rockchip,rk3328,evb-rk3328_defconfig,aarch64-linux-gnu,rk3328-evb
 nanopi_r2c,Nano Pi R2C,FriendlyElec,rk3328,nanopi-r2c-rk3328_defconfig,aarch64-linux-gnu,rk3328-nanopi-r2c
+naonpi_r2c_plus,Nano Pi R2C Plus,FriendlyElec,rk3328,nanopi-r2c-plus-rk3328_defconfig,aarch64-linux-gnu,rk3328-nanopi-r2c-plus
 nanopi_r2s,Nano Pi R2S,FriendlyElec,rk3328,nanopi-r2s-rk3328_defconfig,aarch64-linux-gnu,rk3328-nanopi-r2s
+nanopi_r2s_plus,Nano Pi R2S Plus,FriendlyElec,rk3328,nanopi-r2s-plus-rk3328_defconfig,aarch64-linux-gnu,rk3328-nanopi-r2s-plus
 orangepi_r1_plus,Orange Pi R1 Plus,Xunlong,rk3328,orangepi-r1-plus-rk3328_defconfig,aarch64-linux-gnu,rk3328-orangepi-r1-plus
 orangepi_r1_plus_lts,Orange Pi R1 Plus LTS,Xunlong,rk3328,orangepi-r1-plus-lts-rk3328_defconfig,aarch64-linux-gnu,rk3328-orangepi-r1-plus-lts
 roc_rk3328_cc,ROC-RK3328-CC,Firefly,rk3328,roc-cc-rk3328_defconfig,aarch64-linux-gnu,rk3328-roc-cc
@@ -68,11 +70,13 @@ evb_rk3588,RK3588 EVB,Rockchip,rk3588,evb-rk3588_defconfig,aarch64-linux-gnu,rk3
 nanopc_t6,NanoPC-T6,FriendlyElec,rk3588,nanopc-t6-rk3588_defconfig,aarch64-linux-gnu,rk3588-nanopc-t6
 orangepi_5_plus,Orange Pi 5 Plus,Xunlong,rk3588,orangepi-5-plus-rk3588_defconfig,aarch64-linux-gnu,rk3588-orangepi-5-plus
 quartzpro64,QuartzPro64,PINE64,rk3588,quartzpro64-rk3588_defconfig,aarch64-linux-gnu,rk3588-quartzpro64
+rock_5_itx,ROCK 5 ITX,Radxa,rk3588,rock-5-itx-rk3588_defconfig,aarch64-linux-gnu,rk3588-rock-5-itx
 rock_5b,ROCK 5B,Radxa,rk3588,rock5b-rk3588_defconfig,aarch64-linux-gnu,rk3588-rock-5b
 orangepi_5,Orange Pi 5,Xunlong,rk3588,orangepi-5-rk3588s_defconfig,aarch64-linux-gnu,rk3588s-orangepi-5
 rock_5a,ROCK 5A,Radxa,rk3588,rock5a-rk3588s_defconfig,aarch64-linux-gnu,rk3588s-rock-5a
 cool_pi_4b,Cool Pi 4B,Yanyi Tech,rk3588,coolpi-4b-rk3588s_defconfig,aarch64-linux-gnu,rk3588s-coolpi-4b
 indiedroid_nova,Indiedroid Nova,Indiedroid,rk3588,nova-rk3588s_defconfig,aarch64-linux-gnu,rk3588s-indiedroid-nova
+khadas_edge2,Edge2,Khadas,rk3588,khadas-edge2-rk3588s_defconfig,aarch64-linux-gnu,rk3588s-khadas-edge2
 nanopi_r6c,Nano Pi R6C,FriendlyElec,rk3588,nanopi-r6c-rk3588s_defconfig,aarch64-linux-gnu,rk3588s-nanopi-r6c
 nanopi_r6s,Nano Pi R6S,FriendlyElec,rk3588,nanopi-r6s-rk3588s_defconfig,aarch64-linux-gnu,rk3588s-nanopi-r6s
 odroid_m2,ODROID M2,Hardkernel,rk3588,odroid-m2-rk3588s_defconfig,aarch64-linux-gnu,rk3588s-odroid-m2
@@ -172,7 +176,9 @@ orange_pi_r1,Orange Pi R1,Xunlong,allwinner-h2+,orangepi_r1_defconfig,arm-linux-
 orange_pi_zero,Orange Pi Zero,Xunlong,allwinner-h2+,orangepi_zero_defconfig,arm-linux-gnueabihf,sun8i-h2-plus-orangepi-zero
 
 banana_pi_m2_plus_h3,Banana Pi M2+ H3,Sinovoip,allwinner-h3,bananapi_m2_plus_h3_defconfig,arm-linux-gnueabihf,sun8i-h3-bananapi-m2-plus
+beelink_x2,Beelink X2,Beelink,allwinner-h3,beelink_x2_defconfig,arm-linux-gnueabihf,sun8i-h3-beelink-x2
 libretech_all_h3_cc_h3,ALL-H3-CC H3 (Tritium),Libre Computer,allwinner-h3,libretech_all_h3_cc_h3_defconfig,arm-linux-gnueabihf,sun8i-h3-libretech-all-h3-cc
+nano_pi_duo2,Nano Pi Duo2,FriendlyElec,allwinner-h3,nanopi_duo2_defconfig,arm-linux-gnueabihf,sun8i-h3-nanopi-duo2
 nano_pi_m1,Nano Pi M1,FriendlyElec,allwinner-h3,nanopi_m1_defconfig,arm-linux-gnueabihf,sun8i-h3-nanopi-m1
 nano_pi_m1_plus,Nano Pi M1+,FriendlyElec,allwinner-h3,nanopi_m1_plus_defconfig,arm-linux-gnueabihf,sun8i-h3-nanopi-m1-plus
 nano_pi_neo,Nano Pi Neo,FriendlyElec,allwinner-h3,nanopi_neo_defconfig,arm-linux-gnueabihf,sun8i-h3-nanopi-neo
