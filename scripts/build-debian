@@ -78,7 +78,8 @@ net-tools,\
 u-boot-tools,\
 initramfs-tools,\
 openssh-server,\
-nano \
+nano,\
+e2fsprogs \
   "${TARGET}" \
   debian \
   "${URL}" \
