@@ -37,8 +37,8 @@ layout: default
 {% capture i %}{{ debian.os }}{{ debian.dist }}{{ debian.arch }}{% endcapture %}
 				<div class="tab-pane fade d-none" id="v-pills-install-{{ i }}" role="tabpanel" aria-labelledby="v-pills-install-{{ i }}-tab" tabindex="0">
 					<p class="bg-dark-subtle border border-dark-subtle rounded py-2 px-3">
-						<code class="shell-normal text-body-emphasis">wget https://dl.sd-card-images.johang.se<span id="install-{{ i }}-boot_path">/PLACEHOLDER1.bin.gz</span></code><br>
-						<code class="shell-normal text-body-emphasis">wget https://dl.sd-card-images.johang.se<span id="install-{{ i }}-debian_path">/PLACEHOLDER2.bin.gz</span></code><br>
+						<code class="shell-normal text-body-emphasis">curl -O https://dl.sd-card-images.johang.se<span id="install-{{ i }}-boot_path">/PLACEHOLDER1.bin.gz</span></code><br>
+						<code class="shell-normal text-body-emphasis">curl -O https://dl.sd-card-images.johang.se<span id="install-{{ i }}-debian_path">/PLACEHOLDER2.bin.gz</span></code><br>
 						<code class="shell-normal text-body-emphasis">zcat <span id="install-{{ i }}-boot_file">boot.bin.gz</span> <span id="install-{{ i }}-debian_file">debian.bin.gz</span> &gt; sd-card.img</code><br>
 						<code class="shell-root text-body-emphasis">dd if=sd-card.img of=/dev/sdXXX <span class="text-info-emphasis"># ...where /dev/sdXXX is your SD card</span></code><br>
 					</p>
