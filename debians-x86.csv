@@ -9,13 +9,11 @@ debian,sid,i386,"Debian unstable (""sid"")",False
 debian,sid,amd64,"Debian unstable (""sid"")",False
 debian,experimental,i386,"Debian experimental (""rc-buggy"")",True
 debian,experimental,amd64,"Debian experimental (""rc-buggy"")",True
-ubuntu,focal,i386,"Ubuntu 20.04 LTS (""focal"")",False
-ubuntu,focal,amd64,"Ubuntu 20.04 LTS (""focal"")",False
 ubuntu,jammy,i386,"Ubuntu 22.04 LTS (""jammy"")",False
 ubuntu,jammy,amd64,"Ubuntu 22.04 LTS (""jammy"")",False
 ubuntu,noble,i386,"Ubuntu 24.04 LTS (""noble"")",False
 ubuntu,noble,amd64,"Ubuntu 24.04 LTS (""noble"")",False
 ubuntu,oracular,i386,"Ubuntu 24.10 (""oracular"")",False
 ubuntu,oracular,amd64,"Ubuntu 24.10 (""oracular"")",False
-ubuntu,plucky,i386,"Ubuntu 25.04 (""plucky"")",True
-ubuntu,plucky,amd64,"Ubuntu 25.04 (""plucky"")",True
+ubuntu,plucky,i386,"Ubuntu 25.04 (""plucky"")",False
+ubuntu,plucky,amd64,"Ubuntu 25.04 (""plucky"")",False
