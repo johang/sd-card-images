@@ -1,7 +1,7 @@
 ---
 os: ubuntu
 dist: plucky
-arch: armhf
+arch: arm64
 name: Ubuntu 25.04 ("plucky")
-exp: True
+exp: False
 ---
