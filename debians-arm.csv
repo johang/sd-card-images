@@ -17,3 +17,5 @@ ubuntu,oracular,armhf,"Ubuntu 24.10 (""oracular"")",False
 ubuntu,oracular,arm64,"Ubuntu 24.10 (""oracular"")",False
 ubuntu,plucky,armhf,"Ubuntu 25.04 (""plucky"")",False
 ubuntu,plucky,arm64,"Ubuntu 25.04 (""plucky"")",False
+ubuntu,questing,armhf,"Ubuntu 25.10 (""questing"")",True
+ubuntu,questing,arm64,"Ubuntu 25.10 (""questing"")",True
