@@ -1,8 +1,8 @@
 OS,Dist,Arch,Name,Exp
 debian,bullseye,armhf,"Debian oldstable/11.11 (""bullseye"")",False
 debian,bullseye,arm64,"Debian oldstable/11.11 (""bullseye"")",False
-debian,bookworm,armhf,"Debian stable/12.10 (""bookworm"")",False
-debian,bookworm,arm64,"Debian stable/12.10 (""bookworm"")",False
+debian,bookworm,armhf,"Debian stable/12.11 (""bookworm"")",False
+debian,bookworm,arm64,"Debian stable/12.11 (""bookworm"")",False
 debian,trixie,armhf,"Debian testing (""trixie"")",False
 debian,trixie,arm64,"Debian testing (""trixie"")",False
 debian,sid,armhf,"Debian unstable (""sid"")",False
