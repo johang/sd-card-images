@@ -1,0 +1,14 @@
+[Unit]
+Description=Generate sshd host keys on first boot
+ConditionFirstBoot=yes
+ConditionPathIsReadWrite=/etc/ssh
+ConditionPathIsSymbolicLink=!/etc/ssh
+Before=ssh.service sshd.service sshd@.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=ssh-keygen -A
+
+[Install]
+WantedBy=ssh.service sshd.service sshd@.service ssh.socket

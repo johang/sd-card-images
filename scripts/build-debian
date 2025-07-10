@@ -173,7 +173,7 @@ echo "kernel-url,${KERNEL_URL}\n" >> /tmp/versions.csv
 /usr/bin/systemctl enable systemd-networkd.service
 /usr/bin/systemctl enable systemd-resolved.service
 /usr/bin/systemctl enable systemd-timesyncd.service
-/usr/bin/systemctl enable generate-ssh-host-keys.service
+/usr/bin/systemctl enable sshd-keygen.service
 /bin/rm -f /var/log/*.log
 /bin/echo "root:${PASSWORD}" | /usr/sbin/chpasswd
 /bin/sed -i "s/#*\s*PermitRootLogin .*/PermitRootLogin yes/" /etc/ssh/sshd_config
