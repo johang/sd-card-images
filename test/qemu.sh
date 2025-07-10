@@ -98,22 +98,20 @@ qemu-system-${QEMU_ARCH} -machine ${QEMU_MACHINE} \
                          -drive file=image.bin,format=raw,media=disk \
                          -nic user,hostfwd=tcp:127.0.0.1:5555-:22 &
 
-sleep 15
+sleep 60
 
 # Pass password to sshpass
 export SSHPASS
 
-# Wait for start up
+# Wait for SSH to start up
 until sshpass -e ssh -o "ConnectTimeout=5" \
                      -o "StrictHostKeyChecking=no" \
                      -o "UserKnownHostsFile=/dev/null" \
                      -p 5555 \
                      -q \
                      root@localhost /bin/true; do
-	sleep 1
+    sleep 10
 done
-
-sleep 5
 
 # Run test
 sshpass -e ssh -o "ConnectTimeout=5" \
@@ -125,6 +123,9 @@ sshpass -e ssh -o "ConnectTimeout=5" \
 # Abort on error
 set -ex
 
+# Wait for complete startup
+systemctl is-system-running --wait
+
 # Resize root filesystem
 [ ! -e /dev/sda2 ] || resize2fs /dev/sda2 # For i386
 [ ! -e /dev/vda2 ] || resize2fs /dev/vda2 # For armhf/arm64
@@ -132,15 +133,9 @@ set -ex
 # Install updates
 export DEBIAN_FRONTEND=noninteractive
 apt-get update
+
+# Shutdown
+poweroff
 END
 
-# Power off
-sshpass -e ssh -o "ConnectTimeout=5" \
-               -o "StrictHostKeyChecking=no" \
-               -o "UserKnownHostsFile=/dev/null" \
-               -p 5555 \
-               -q \
-               root@localhost poweroff || :
-
-# Wait for QEMU to exit
 wait
