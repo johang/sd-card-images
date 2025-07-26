@@ -78,6 +78,7 @@ orangepi_5_plus,Orange Pi 5 Plus,Xunlong,rk3588,orangepi-5-plus-rk3588_defconfig
 quartzpro64,QuartzPro64,PINE64,rk3588,quartzpro64-rk3588_defconfig,aarch64-linux-gnu,rk3588-quartzpro64
 rock_5_itx,ROCK 5 ITX,Radxa,rk3588,rock-5-itx-rk3588_defconfig,aarch64-linux-gnu,rk3588-rock-5-itx
 rock_5b,ROCK 5B,Radxa,rk3588,rock5b-rk3588_defconfig,aarch64-linux-gnu,rk3588-rock-5b
+rock_5c,ROCK 5C,Radxa,rk3588,rock-5c-rk3588s_defconfig,aarch64-linux-gnu,rk3588s-rock-5c
 orangepi_5,Orange Pi 5,Xunlong,rk3588,orangepi-5-rk3588s_defconfig,aarch64-linux-gnu,rk3588s-orangepi-5
 rock_5a,ROCK 5A,Radxa,rk3588,rock5a-rk3588s_defconfig,aarch64-linux-gnu,rk3588s-rock-5a
 cool_pi_4b,Cool Pi 4B,Yanyi Tech,rk3588,coolpi-4b-rk3588s_defconfig,aarch64-linux-gnu,rk3588s-coolpi-4b
