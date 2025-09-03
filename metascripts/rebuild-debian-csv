@@ -211,8 +211,5 @@ if __name__ == "__main__":
     assert len(releases) > 0
     logger.info("Found %d releases", len(releases))
 
-    write_csv("debians-arm.csv", releases, ("armhf", "arm64"))
-    logger.info("Wrote debians-arm.csv")
-
-    write_csv("debians-x86.csv", releases, ("i386", "amd64"))
-    logger.info("Wrote debians-x86.csv")
+    write_csv("debians.csv", releases, ("armhf", "arm64"))
+    logger.info("Wrote debians.csv")

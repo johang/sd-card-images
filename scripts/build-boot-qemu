@@ -11,9 +11,6 @@ set -ex
 build-u_boot "${DEFCONFIG}" "${TUPLE}"
 
 case "${CHIP_ID}" in
-qemu-x86|qemu-x86_64)
-	FILE=u-boot.rom
-	;;
 qemu-arm|qemu-aarch64)
 	FILE=u-boot.bin
 	;;

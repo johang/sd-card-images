@@ -60,7 +60,7 @@ def read_chips():
 
 def read_debians():
     logger.debug("Reading debians...")
-    with open("debians-arm.csv") as csvfile:
+    with open("debians.csv") as csvfile:
         def key(row):
             return "-".join((row["OS"], row["Dist"], row["Arch"]))
         return {key(row): norm(row) for row in csv.DictReader(csvfile)}

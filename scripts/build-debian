@@ -20,24 +20,6 @@ debian-arm64)
 	KERNEL_URL=http://packages.debian.org/"${DIST}"/"${KERNEL}"
 	SCRIPT=/usr/share/debootstrap/scripts/sid
 	;;
-debian-i386)
-	KERNEL=linux-image-686
-	URL=http://deb.debian.org/debian
-	KERNEL_URL=http://packages.debian.org/"${DIST}"/"${KERNEL}"
-	SCRIPT=/usr/share/debootstrap/scripts/sid
-	;;
-debian-amd64)
-	KERNEL=linux-image-amd64
-	URL=http://deb.debian.org/debian
-	KERNEL_URL=http://packages.debian.org/"${DIST}"/"${KERNEL}"
-	SCRIPT=/usr/share/debootstrap/scripts/sid
-	;;
-ubuntu-amd64)
-	KERNEL=linux-image-generic
-	URL=http://archive.ubuntu.com/ubuntu
-	KERNEL_URL=http://packages.ubuntu.com/"${DIST}"/"${KERNEL}"
-	SCRIPT=/usr/share/debootstrap/scripts/gutsy
-	;;
 ubuntu-armhf|ubuntu-arm64)
 	KERNEL=linux-image-generic
 	URL=http://ports.ubuntu.com/ubuntu-ports
@@ -112,16 +94,6 @@ deb http://deb.debian.org/debian ${DIST}-updates main
 deb-src http://deb.debian.org/debian ${DIST}-updates main
 deb http://security.debian.org/debian-security ${DIST}-security main
 deb-src http://security.debian.org/debian-security ${DIST}-security main
-EOF
-	;;
-ubuntu-amd64-*)
-	tee debian/tmp/sources.list <<- EOF
-deb http://archive.ubuntu.com/ubuntu ${DIST} main universe
-deb-src http://archive.ubuntu.com/ubuntu ${DIST} main universe
-deb http://archive.ubuntu.com/ubuntu ${DIST}-updates main universe
-deb-src http://archive.ubuntu.com/ubuntu ${DIST}-updates main universe
-deb http://archive.ubuntu.com/ubuntu ${DIST}-security main universe
-deb-src http://archive.ubuntu.com/ubuntu ${DIST}-security main universe
 EOF
 	;;
 ubuntu-*)
