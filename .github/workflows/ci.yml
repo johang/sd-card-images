@@ -20,10 +20,10 @@ jobs:
         include:
           # Debian armhf
           - os: debian
-            suite: bookworm
+            suite: trixie
             arch: armhf
           - os: debian
-            suite: trixie
+            suite: forky
             arch: armhf
           - os: debian
             suite: sid

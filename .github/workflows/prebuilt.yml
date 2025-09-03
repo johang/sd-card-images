@@ -17,20 +17,20 @@ jobs:
         include:
           # Debian armhf
           - boot: boot-qemu_arm_virt
-            debian: debian-bookworm-armhf
+            debian: debian-trixie-armhf
             debian_index: /index-debians-armhf.txt
           - boot: boot-qemu_arm_virt
-            debian: debian-trixie-armhf
+            debian: debian-forky-armhf
             debian_index: /index-debians-armhf.txt
           - boot: boot-qemu_arm_virt
             debian: debian-sid-armhf
             debian_index: /index-debians-armhf.txt
           # Debian arm64
           - boot: boot-qemu_aarch64_virt
-            debian: debian-bookworm-arm64
+            debian: debian-trixie-arm64
             debian_index: /index-debians-arm64.txt
           - boot: boot-qemu_aarch64_virt
-            debian: debian-trixie-arm64
+            debian: debian-forky-arm64
             debian_index: /index-debians-arm64.txt
           - boot: boot-qemu_aarch64_virt
             debian: debian-sid-arm64
