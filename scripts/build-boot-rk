@@ -11,7 +11,7 @@ set -ex
 RKBIN_GIT_URL_DEFAULT="https://github.com/rockchip-linux/rkbin.git"
 RKBIN_GIT_REV_DEFAULT="0f8ac860f0479da56a1decae207ddc99e289f2e2"
 
-if [ ! -z "${RKBIN_GIT_REV}" ]
+if [ -n "${RKBIN_GIT_REV}" ]
 then
     git clone --depth 1 \
               --reference-if-able "${WORKDIR}/rkbin" \
@@ -25,29 +25,29 @@ fi
 case "${CHIP_ID}" in
 rk3328|rk3368|rk3399)
     build-atf "${CHIP_ID}" "${TUPLE}"
-    export BL31="$(pwd)/arm-trusted-firmware/build/${CHIP_ID}/debug/bl31/bl31.elf"
+    export BL31="$PWD/arm-trusted-firmware/build/${CHIP_ID}/debug/bl31/bl31.elf"
     ;;
 rk3399pro)
     build-atf rk3399 "${TUPLE}"
-    export BL31="$(pwd)/arm-trusted-firmware/build/rk3399/debug/bl31/bl31.elf"
+    export BL31="$PWD/arm-trusted-firmware/build/rk3399/debug/bl31/bl31.elf"
     ;;
 rk3366)
-    export BL31="$(pwd)/rkbin/bin/rk35/rk3568_bl31_v1.44.elf"
-    export ROCKCHIP_TPL="$(pwd)/rkbin/bin/rk35/rk3566_ddr_1056MHz_v1.23.bin"
+    export BL31="$PWD/rkbin/bin/rk35/rk3568_bl31_v1.44.elf"
+    export ROCKCHIP_TPL="$PWD/rkbin/bin/rk35/rk3566_ddr_1056MHz_v1.23.bin"
     # Collect version of rkbin
-    (echo -n rkbin,; git -C rkbin describe --tags --always --abbrev=10) >> versions.csv
+    printf "rkbin,%s\n" "$(git -C rkbin describe --tags --always --abbrev=10)" >> versions.csv
     ;;
 rk3568)
-    export BL31="$(pwd)/rkbin/bin/rk35/rk3568_bl31_v1.44.elf"
-    export ROCKCHIP_TPL="$(pwd)/rkbin/bin/rk35/rk3568_ddr_1560MHz_v1.23.bin"
+    export BL31="$PWD/rkbin/bin/rk35/rk3568_bl31_v1.44.elf"
+    export ROCKCHIP_TPL="$PWD/rkbin/bin/rk35/rk3568_ddr_1560MHz_v1.23.bin"
     # Collect version of rkbin
-    (echo -n rkbin,; git -C rkbin describe --tags --always --abbrev=10) >> versions.csv
+    printf "rkbin,%s\n" "$(git -C rkbin describe --tags --always --abbrev=10)" >> versions.csv
     ;;
 rk3588)
-    export BL31="$(pwd)/rkbin/bin/rk35/rk3588_bl31_v1.48.elf"
-    export ROCKCHIP_TPL="$(pwd)/rkbin/bin/rk35/rk3588_ddr_lp4_2112MHz_lp5_2400MHz_v1.18.bin"
+    export BL31="$PWD/rkbin/bin/rk35/rk3588_bl31_v1.48.elf"
+    export ROCKCHIP_TPL="$PWD/rkbin/bin/rk35/rk3588_ddr_lp4_2112MHz_lp5_2400MHz_v1.18.bin"
     # Collect version of rkbin
-    (echo -n rkbin,; git -C rkbin describe --tags --always --abbrev=10) >> versions.csv
+    printf "rkbin,%s\n" "$(git -C rkbin describe --tags --always --abbrev=10)" >> versions.csv
     ;;
 *)
     ;;

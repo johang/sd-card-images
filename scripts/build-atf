@@ -8,7 +8,7 @@ set -ex
 
 ATF_GIT_URL_DEFAULT="https://github.com/ARM-software/arm-trusted-firmware.git"
 
-if [ ! -z "${ATF_GIT_REV}" ]
+if [ -n "${ATF_GIT_REV}" ]
 then
 	git clone --depth 1 \
 	          --reference-if-able "${WORKDIR}/arm-trusted-firmware" \
@@ -21,7 +21,7 @@ else
 fi
 
 # Collect version of ATF
-(echo -n atf,; git -C arm-trusted-firmware describe --tags --always --abbrev=10) >> versions.csv
+printf "atf,%s\n" "$(git -C arm-trusted-firmware describe --tags --always --abbrev=10)" >> versions.csv
 
 # Step into ATF directory
 cd arm-trusted-firmware
@@ -32,7 +32,9 @@ if [ -d "${ATF_PATCHES_DIR}" ]; then
 fi
 
 # CROSS_COMPILE must point to a valid compiler path prefix
-export CROSS_COMPILE=$(dirname $(which "${TUPLE}-gcc"))/"${TUPLE}-"
+COMPILER="$(command -v "${TUPLE}-gcc")"
+export CROSS_COMPILE="${COMPILER%/*}/${TUPLE}-"
 
 # Build ATF
+# shellcheck disable=SC2086
 make ${MAKEFLAGS:--j$(nproc)} PLAT="${PLAT}" DEBUG=1 bl31

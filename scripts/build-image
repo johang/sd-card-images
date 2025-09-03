@@ -9,7 +9,7 @@ set -ex
 # >>> (0.95 * 4000000000 // 512) * 512
 # 3800000000.0 
 IMAGE_SIZE=${IMAGE_SIZE:-3800000000}
-if [ $IMAGE_SIZE -lt 1000000000 ]; then
+if [ "$IMAGE_SIZE" -lt 1000000000 ]; then
   echo "IMAGE_SIZE of 1GB or less unsupported!"
   exit 1
 fi

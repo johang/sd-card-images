@@ -10,7 +10,7 @@ set -ex
 
 AMLOGIC_BOOT_FIP_GIT_URL_DEFAULT="https://github.com/LibreELEC/amlogic-boot-fip/"
 
-if [ ! -z "${AMLOGIC_BOOT_FIP_GIT_REV}" ]
+if [ -n "${AMLOGIC_BOOT_FIP_GIT_REV}" ]
 then
 	git clone --depth 1 \
 	          --reference-if-able "${WORKDIR}/amlogic-boot-fip" \
@@ -23,7 +23,7 @@ else
 fi
 
 # Collect version of amlogic-boot-fip
-(echo -n amlogic-boot-fip,; git -C amlogic-boot-fip describe --tags --always --abbrev=10) >> versions.csv
+printf "amlogic-boot-fip,%s\n" "$(git -C amlogic-boot-fip describe --tags --always --abbrev=10)" >> versions.csv
 
 build-u_boot "${DEFCONFIG}" "${TUPLE}"
 
@@ -49,7 +49,7 @@ banana_pi_cm4io)
         ;;
 *)
 	# X_Y_defconfig -> x-y
-	BOARD=`echo "${DEFCONFIG%_defconfig}" | tr _ -`
+	BOARD=$(echo "${DEFCONFIG%_defconfig}" | tr _ -)
 	;;
 esac
 mkdir ../amlogic-boot-fip-output

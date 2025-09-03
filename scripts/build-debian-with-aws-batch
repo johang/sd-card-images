@@ -13,6 +13,7 @@ trap 'rm -f "${ARGS}"' EXIT INT TERM
 aws s3 cp "${ARRAY_S3_URI_BASE}/${AWS_BATCH_JOB_ARRAY_INDEX}" "${ARGS}"
 
 # Source parameters
+# shellcheck disable=SC1090
 . "${ARGS}"
 
 build-debian "${OS}" "${ARCH}" "${DIST}"

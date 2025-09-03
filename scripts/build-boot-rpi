@@ -10,7 +10,7 @@ set -ex
 
 RPI_FIRMWARE_GIT_URL_DEFAULT="https://github.com/raspberrypi/firmware/"
 
-if [ ! -z "${RPI_FIRMWARE_GIT_REV}" ]
+if [ -n "${RPI_FIRMWARE_GIT_REV}" ]
 then
 	git clone --depth 1 \
 	          --reference-if-able "${WORKDIR}/rpi-firmware" \
@@ -24,7 +24,7 @@ else
 fi
 
 # Collect version of firmware
-(echo -n rpi-firmware,; git -C rpi-firmware describe --tags --always --abbrev=10) >> versions.csv
+printf "rpi-firmware,%s\n" "$(git -C rpi-firmware describe --tags --always --abbrev=10)" >> versions.csv
 
 build-u_boot "${DEFCONFIG}" "${TUPLE}"
 

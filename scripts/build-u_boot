@@ -8,7 +8,7 @@ set -ex
 
 U_BOOT_GIT_URL_DEFAULT="https://source.denx.de/u-boot/u-boot.git/"
 
-if [ ! -z "${U_BOOT_GIT_REV}" ]
+if [ -n "${U_BOOT_GIT_REV}" ]
 then
 	git clone --depth 1 \
 	          --reference-if-able "${WORKDIR}/u-boot" \
@@ -21,7 +21,7 @@ else
 fi
 
 # Collect version of U-Boot
-(echo -n u-boot,; git -C u-boot describe --tags --always --abbrev=10) >> versions.csv
+printf "u-boot,%s\n" "$(git -C u-boot describe --tags --always --abbrev=10)" >> versions.csv
 
 # Step into U-Boot directory
 cd u-boot
@@ -35,7 +35,9 @@ fi
 export LOCALVERSION="johang"
 
 # CROSS_COMPILE must point to a valid compiler path prefix
-export CROSS_COMPILE=$(dirname $(which "${TUPLE}-gcc"))/"${TUPLE}-"
+COMPILER="$(command -v "${TUPLE}-gcc")"
+export CROSS_COMPILE="${COMPILER%/*}/${TUPLE}-"
 
 # Build U-Boot
+# shellcheck disable=SC2086
 make ${MAKEFLAGS} "${DEFCONFIG}" && make ${MAKEFLAGS:--j$(nproc)}

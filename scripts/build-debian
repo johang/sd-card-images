@@ -150,7 +150,7 @@ EOF
 esac
 
 cp -rv --preserve=mode ../2nd-stage-files/pre-2nd-stage-files/* debian
-cp -rv --preserve=mode ../2nd-stage-files/pre-2nd-stage-files-${ARCH}/* debian
+cp -rv --preserve=mode ../2nd-stage-files/pre-2nd-stage-files-"${ARCH}"/* debian
 
 # Copy ARM emulation stuff
 cp -v /usr/bin/qemu-*-static debian/usr/bin || :
@@ -168,7 +168,7 @@ chroot debian /bin/sh -ex <<- EOF
 /usr/bin/apt-get -y install systemd-resolved || :
 /usr/bin/apt-get clean
 /bin/rm -rf /var/lib/apt/lists/*
-echo "kernel-url,${KERNEL_URL}\n" >> /tmp/versions.csv
+/bin/echo "kernel-url,${KERNEL_URL}" >> /tmp/versions.csv
 /usr/bin/dpkg-query --showformat='kernel,\${Version}\n' --show "${KERNEL}" >> /tmp/versions.csv
 /usr/bin/systemctl enable systemd-networkd.service
 /usr/bin/systemctl enable systemd-resolved.service
