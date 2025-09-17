@@ -1,4 +1,4 @@
-name: Rebuild debian-*.csv
+name: Rebuild debian.csv
 
 on:
   schedule:
@@ -22,7 +22,7 @@ jobs:
           git config user.name "Johan Gunnarsson"
           git config user.email "johan.gunnarsson@gmail.com"
           ./metascripts/rebuild-debian-csv
-          git add debians-arm.csv debians-x86.csv
+          git add debians.csv
           if git commit -m "debians: Update Debian/Ubuntu versions"; then
             ./metascripts/rebuild-jekyll-boards
             git add -A docs
