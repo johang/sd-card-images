@@ -23,7 +23,7 @@ nanopi_r2c,Nano Pi R2C,FriendlyElec,rk3328,nanopi-r2c-rk3328_defconfig,aarch64-l
 naonpi_r2c_plus,Nano Pi R2C Plus,FriendlyElec,rk3328,nanopi-r2c-plus-rk3328_defconfig,aarch64-linux-gnu,rk3328-nanopi-r2c-plus
 nanopi_r2s,Nano Pi R2S,FriendlyElec,rk3328,nanopi-r2s-rk3328_defconfig,aarch64-linux-gnu,rk3328-nanopi-r2s
 nanopi_r2s_plus,Nano Pi R2S Plus,FriendlyElec,rk3328,nanopi-r2s-plus-rk3328_defconfig,aarch64-linux-gnu,rk3328-nanopi-r2s-plus
-nanopi_neo3,Nano Pi Neo3,FriendlyElec,rk3328,nanopi-r2s-rk3328_defconfig,aarch64-linux-gnu,rk3328-nanopi-neo3-rev02
+nanopi_neo3,Nano Pi Neo3,FriendlyElec,rk3328,nanopi-r2s-rk3328_defconfig,aarch64-linux-gnu,rk3328-nanopi-r2s
 orangepi_r1_plus,Orange Pi R1 Plus,Xunlong,rk3328,orangepi-r1-plus-rk3328_defconfig,aarch64-linux-gnu,rk3328-orangepi-r1-plus
 orangepi_r1_plus_lts,Orange Pi R1 Plus LTS,Xunlong,rk3328,orangepi-r1-plus-lts-rk3328_defconfig,aarch64-linux-gnu,rk3328-orangepi-r1-plus-lts
 roc_rk3328_cc,ROC-RK3328-CC,Firefly,rk3328,roc-cc-rk3328_defconfig,aarch64-linux-gnu,rk3328-roc-cc

@@ -4,7 +4,7 @@ layout: board
 title: Nano Pi Neo3 SD card images
 description: "Minimal, pure and up-to-date vanilla Debian/Ubuntu arm64 SD card images for Nano Pi Neo3 by FriendlyElec, SoC: Rockchip RK3328, CPU ISA: armv8"
 board_id: nanopi_neo3
-board_dtb_name: rk3328-nanopi-neo3-rev02
+board_dtb_name: rk3328-nanopi-r2s
 board_name: Nano Pi Neo3
 board_maker_name: FriendlyElec
 board_soc_name: Rockchip RK3328
