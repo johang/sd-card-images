@@ -1,9 +1,12 @@
 #!/bin/sh
 # Build Debian root filesystem
 
-OS="$1" # For example "debian"
-ARCH="$2" # For example "armhf"
-DIST="$3" # For example "buster"
+OS="${1:-debian}" # For example "debian"
+ARCH="${2:-arm64}" # For example "armhf"
+DIST="${3:-trixie}" # For example "buster"
+CACHE_DIR="./cache.${OS}-${ARCH}-${DIST}"
+EXTRA_PKGS="${DEB_EXTRA_PKGS:-}"
+SSH_KEY="${DEB_SSH_KEY}"
 
 set -ex
 
@@ -48,24 +51,41 @@ TMP=$(mktemp -d -p "${PWD}" tmp-XXXXXX)
 trap 'rm -rf "${TMP}"' EXIT INT TERM
 cd "${TMP}"
 
-# Build a Debian root filesystem (first stage)
-debootstrap \
-  --arch="${ARCH}" \
-  --verbose \
-  --variant=minbase \
-  --foreign \
-  --include=\
-netbase,\
-net-tools,\
-u-boot-tools,\
-initramfs-tools,\
-openssh-server,\
-nano,\
-e2fsprogs \
-  "${TARGET}" \
-  debian \
-  "${URL}" \
-  "${SCRIPT}"
+local DEBIAN_BOOTSTRAP_CACHE="${CACHE_DIR}/debootstrap"
+if [ ! -d "${DEBIAN_BOOTSTRAP_CACHE}" ]; then
+	echo "Building Debian from debootstrap >"
+	mkdir -p "${DEBIAN_BOOTSTRAP_CACHE}"
+	mkdir -p "${CACHE_DIR}/var/cache" "${CACHE_DIR}/var/lib/apt/lists"
+	mkdir -p "${DEBIAN_BOOTSTRAP_CACHE}/var/cache" "${DEBIAN_BOOTSTRAP_CACHE}_root/var/lib/apt/lists"
+	mount -o bind "${CACHE_DIR}/var/cache" "${DEBIAN_BOOTSTRAP_CACHE}/var/cache"
+	mount -o bind "${CACHE_DIR}/var/lib/apt/lists" "${DEBIAN_BOOTSTRAP_CACHE}/var/lib/apt/lists"
+
+	local PKGS="initramfs-tools, dhcpcd, libpam-systemd, openssh-server, systemd-timesyncd, \
+							curl, pciutils, unzip, wget, xxd, zip, zstd, dnsmasq, vim, nano, u-boot-tools, \
+							e2fsprogs"
+
+	debootstrap --arch arm64 --include "$pkgs, $extra_pkgs" --exclude "isc-dhcp-client" "$deb_dist" "$debian_root" 'https://deb.debian.org/debian/'
+	# Build a Debian root filesystem (first stage)
+	debootstrap \
+		--arch="${ARCH}" \
+		--verbose \
+		--variant=minbase \
+		--foreign \
+		--exclude="isc-dhcp-client" \
+		--include="${PKGS}, ${EXTRA_PKGS}"
+		"${TARGET}" \
+		"${DEBIAN_BOOTSTRAP_CACHE}" \
+		"${URL}" \
+		"${SCRIPT}"
+
+	umount "${DEBIAN_BOOTSTRAP_CACHE}/var/cache"
+	umount "${DEBIAN_BOOTSTRAP_CACHE}/var/lib/apt/lists"
+else
+	echo "Found built debian root at ${DEBIAN_BOOTSTRAP_CACHE}."
+fi
+
+rsync -aAXH "${DEBIAN_BOOTSTRAP_CACHE}/" "${TMP}/debian"
+cd "${TMP}"
 
 # Randomly generated root password
 PASSWORD="${PASSWORD_OVERRIDE:-$(pwgen -B -A 6 1)}"
@@ -173,15 +193,23 @@ find debian ! -type d -printf "/%P\n" | sort > files.txt
 
 mv debian/tmp/versions.csv versions.csv
 
+if [ -n "$SSH_KEY" ]; then
+	echo "Found ssh key $ssh_key"
+	mkdir "debian/root/.ssh"
+	chmod 700 "debian/root/.ssh"
+	echo -e "$ssh_key" | sudo tee "debian/root/.ssh/authorized_keys"
+	chmod 600 "debian/root/.ssh/authorized_keys"
+fi
+
 # Make a ext4 filesystem of this and put it into the image
 # >>> ((3800000000 - 32 * 1024 * 1024) // (1024 * 1024)) * (1024 * 1024)
 # 3765436416
 rm -f ext4.img
-fallocate -l 3765436416 ext4.img
+fallocate -l 2G ext4.img
 mkfs.ext4 -d debian ext4.img
-pigz ext4.img
+xz -zvf -T 0 ext4.img
 
 mkdir -p "${ARTIFACTS_DIR:-/artifacts}"
-cp -v files.txt "${ARTIFACTS_DIR:-/artifacts}/${OS}-${DIST}-${ARCH}-${PASSWORD}.bin.gz.files.txt"
-cp -v versions.csv "${ARTIFACTS_DIR:-/artifacts}/${OS}-${DIST}-${ARCH}-${PASSWORD}.bin.gz.versions.csv"
-cp -v ext4.img.gz "${ARTIFACTS_DIR:-/artifacts}/${OS}-${DIST}-${ARCH}-${PASSWORD}.bin.gz"
+cp -v files.txt "${ARTIFACTS_DIR:-/artifacts}/${OS}-${DIST}-${ARCH}-${PASSWORD}.bin.xz.files.txt"
+cp -v versions.csv "${ARTIFACTS_DIR:-/artifacts}/${OS}-${DIST}-${ARCH}-${PASSWORD}.bin.xz.versions.csv"
+cp -v ext4.img.xz "${ARTIFACTS_DIR:-/artifacts}/${OS}-${DIST}-${ARCH}-${PASSWORD}.bin.xz"
