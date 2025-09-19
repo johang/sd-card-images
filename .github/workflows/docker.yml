@@ -37,7 +37,7 @@ jobs:
 
       - name: Build and push
         timeout-minutes: 30
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: .
           platforms: linux/amd64,linux/arm64
