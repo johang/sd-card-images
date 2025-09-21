@@ -3,6 +3,6 @@
 os: debian
 dist: bookworm
 arch: arm64
-name: Debian oldstable/12.11 ("bookworm")
+name: Debian oldstable/12.12 ("bookworm")
 exp: False
 ---
