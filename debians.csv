@@ -17,3 +17,5 @@ ubuntu,plucky,armhf,"Ubuntu 25.04 (""plucky"")",False
 ubuntu,plucky,arm64,"Ubuntu 25.04 (""plucky"")",False
 ubuntu,questing,armhf,"Ubuntu 25.10 (""questing"")",False
 ubuntu,questing,arm64,"Ubuntu 25.10 (""questing"")",False
+ubuntu,resolute,armhf,"Ubuntu 26.04 LTS (""resolute"")",True
+ubuntu,resolute,arm64,"Ubuntu 26.04 LTS (""resolute"")",True
