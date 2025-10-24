@@ -1,9 +1,16 @@
 #!/bin/sh
 # Build Debian root filesystem
 
-OS="$1" # For example "debian"
-ARCH="$2" # For example "armhf"
-DIST="$3" # For example "buster"
+OS="${1:-debian}" # For example "debian"
+ARCH="${2:-arm64}" # For example "armhf"
+DIST="${3:-trixie}" # For example "buster"
+CACHE_DIR="./cache.${OS}-${ARCH}-${DIST}"
+PKGS=\
+"netbase, net-tools, u-boot-tools, initramfs-tools, openssh-server, nano, e2fsprogs, \
+dbus, libpam-systemd, dhcpcd, systemd-timesyncd, curl, pciutils, iproute2, dnsmasq, \
+ca-certificates, parted, fdisk, vim, zstd"
+EXTRA_PKGS="${DEB_EXTRA_PKGS:-}"
+SSH_KEY="${DEB_SSH_KEY}"
 
 set -ex
 
@@ -45,27 +52,40 @@ esac
 
 # Create fresh empty directory
 TMP=$(mktemp -d -p "${PWD}" tmp-XXXXXX)
-trap 'rm -rf "${TMP}"' EXIT INT TERM
-cd "${TMP}"
+trap 'rm -rf "${TMP}"; umount "${DEBIAN_BOOTSTRAP_CACHE}/var/cache"; umount "${DEBIAN_BOOTSTRAP_CACHE}/var/lib/apt/lists"' EXIT INT TERM
 
-# Build a Debian root filesystem (first stage)
-debootstrap \
-  --arch="${ARCH}" \
-  --verbose \
-  --variant=minbase \
-  --foreign \
-  --include=\
-netbase,\
-net-tools,\
-u-boot-tools,\
-initramfs-tools,\
-openssh-server,\
-nano,\
-e2fsprogs \
-  "${TARGET}" \
-  debian \
-  "${URL}" \
-  "${SCRIPT}"
+DEBIAN_BOOTSTRAP_CACHE="${CACHE_DIR}/debootstrap"
+if ! ([ -d "${DEBIAN_BOOTSTRAP_CACHE}" ] || \
+			[ -d "${CACHE_DIR}/var/cache" ] || \
+			[ -d "${CACHE_DIR}/var/lib/apt/lists" ]); then
+	echo "Building ${OS}-${ARCH}-${DIST} from debootstrap:"
+	mkdir -p "${DEBIAN_BOOTSTRAP_CACHE}"
+	mkdir -p "${CACHE_DIR}/var/cache" "${CACHE_DIR}/var/lib/apt/lists"
+	mkdir -p "${DEBIAN_BOOTSTRAP_CACHE}/var/cache" "${DEBIAN_BOOTSTRAP_CACHE}/var/lib/apt/lists"
+	mount -o bind "${CACHE_DIR}/var/cache" "${DEBIAN_BOOTSTRAP_CACHE}/var/cache"
+	mount -o bind "${CACHE_DIR}/var/lib/apt/lists" "${DEBIAN_BOOTSTRAP_CACHE}/var/lib/apt/lists"
+
+	# Build a Debian root filesystem (first stage)
+	debootstrap \
+		--arch="${ARCH}" \
+		--verbose \
+		--variant=minbase \
+		--foreign \
+		--exclude="isc-dhcp-client" \
+		--include="${PKGS}, ${EXTRA_PKGS}" \
+		"${TARGET}" \
+		"${DEBIAN_BOOTSTRAP_CACHE}" \
+		"${URL}" \
+		"${SCRIPT}"
+
+	umount "${DEBIAN_BOOTSTRAP_CACHE}/var/cache"
+	umount "${DEBIAN_BOOTSTRAP_CACHE}/var/lib/apt/lists"
+else
+	echo "Found built debian root at ${DEBIAN_BOOTSTRAP_CACHE}."
+fi
+
+rsync -aAXH "${DEBIAN_BOOTSTRAP_CACHE}/" "${TMP}/debian"
+cd "${TMP}"
 
 # Randomly generated root password
 PASSWORD="${PASSWORD_OVERRIDE:-$(pwgen -B -A 6 1)}"
@@ -127,6 +147,12 @@ cp -rv --preserve=mode ../2nd-stage-files/pre-2nd-stage-files-"${ARCH}"/* debian
 # Copy ARM emulation stuff
 cp -v /usr/bin/qemu-*-static debian/usr/bin || :
 
+# Mount apt cache
+mount -o bind "../${CACHE_DIR}/var/cache" "debian/var/cache"
+mount -o bind "../${CACHE_DIR}/var/lib/apt/lists" "debian/var/lib/apt/lists"
+
+trap 'umount "debian/var/cache"; umount "debian/var/cache"; rm -rf "${TMP}";' EXIT INT TERM
+
 # Build a Debian root filesystem (second stage)
 chroot debian /bin/sh -ex <<- EOF
 /debootstrap/debootstrap --second-stage
@@ -138,18 +164,23 @@ chroot debian /bin/sh -ex <<- EOF
 /usr/bin/apt-get -y install systemd systemd-sysv
 /usr/bin/apt-get -y install systemd-timesyncd || :
 /usr/bin/apt-get -y install systemd-resolved || :
-/usr/bin/apt-get clean
-/bin/rm -rf /var/lib/apt/lists/*
 /bin/echo "kernel-url,${KERNEL_URL}" >> /tmp/versions.csv
 /usr/bin/dpkg-query --showformat='kernel,\${Version}\n' --show "${KERNEL}" >> /tmp/versions.csv
 /usr/bin/systemctl enable systemd-networkd.service
 /usr/bin/systemctl enable systemd-resolved.service
 /usr/bin/systemctl enable systemd-timesyncd.service
 /usr/bin/systemctl enable sshd-keygen.service
+/usr/bin/systemctl disable dhcpcd.service
+/usr/bin/systemctl disable dnsmasq.service
 /bin/rm -f /var/log/*.log
 /bin/echo "root:${PASSWORD}" | /usr/sbin/chpasswd
 /bin/sed -i "s/#*\s*PermitRootLogin .*/PermitRootLogin yes/" /etc/ssh/sshd_config
 EOF
+
+umount "debian/var/cache"
+umount "debian/var/lib/apt/lists"
+
+trap 'rm -rf "${TMP}";' EXIT INT TERM
 
 # Remove ARM emulation stuff again
 rm -v debian/usr/bin/qemu-*-static || :
@@ -162,6 +193,10 @@ rm -v debian/etc/machine-id || :
 
 cp -rv --preserve=mode ../2nd-stage-files/post-2nd-stage-files/* debian
 
+if [ -d ../2nd-stage-files/post-custom-files ]; then
+	cp -rv --preserve=mode ../2nd-stage-files/post-custom-files/* debian
+fi
+
 # Set hostname
 echo "${OS}" > debian/etc/hostname
 
@@ -173,15 +208,25 @@ find debian ! -type d -printf "/%P\n" | sort > files.txt
 
 mv debian/tmp/versions.csv versions.csv
 
+if [ -n "$SSH_KEY" ]; then
+	echo "Found ssh key $ssh_key"
+	mkdir "debian/root/.ssh"
+	chmod 700 "debian/root/.ssh"
+	echo -e "$ssh_key" | sudo tee "debian/root/.ssh/authorized_keys"
+	chmod 600 "debian/root/.ssh/authorized_keys"
+fi
+
 # Make a ext4 filesystem of this and put it into the image
 # >>> ((3800000000 - 32 * 1024 * 1024) // (1024 * 1024)) * (1024 * 1024)
 # 3765436416
 rm -f ext4.img
-fallocate -l 3765436416 ext4.img
+fallocate -l 1G ext4.img
 mkfs.ext4 -d debian ext4.img
-pigz ext4.img
+xz -zvf -T 0 ext4.img
 
-mkdir -p "${ARTIFACTS_DIR:-/artifacts}"
-cp -v files.txt "${ARTIFACTS_DIR:-/artifacts}/${OS}-${DIST}-${ARCH}-${PASSWORD}.bin.gz.files.txt"
-cp -v versions.csv "${ARTIFACTS_DIR:-/artifacts}/${OS}-${DIST}-${ARCH}-${PASSWORD}.bin.gz.versions.csv"
-cp -v ext4.img.gz "${ARTIFACTS_DIR:-/artifacts}/${OS}-${DIST}-${ARCH}-${PASSWORD}.bin.gz"
+ARTIFACTS_DIR="${ARTIFACTS_DIR:-/artifacts}"
+mkdir -p "${ARTIFACTS_DIR}"
+cp -v files.txt "${ARTIFACTS_DIR}/${OS}-${DIST}-${ARCH}-${PASSWORD}.bin.xz.files.txt"
+cp -v versions.csv "${ARTIFACTS_DIR}/${OS}-${DIST}-${ARCH}-${PASSWORD}.bin.xz.versions.csv"
+cp -v ext4.img.xz "${ARTIFACTS_DIR}/${OS}-${DIST}-${ARCH}-${PASSWORD}.bin.xz"
+echo -e "\n ** To customize the kernel cmdline, edit /boot/boot.cmd in the root partition. **"

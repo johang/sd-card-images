@@ -19,7 +19,7 @@ load \${devtype} \${devnum}:\${distro_bootpart} \${kernel_addr_r} /boot/vmlinuz-
 load \${devtype} \${devnum}:\${distro_bootpart} \${ramdisk_addr_r} /boot/initrd.img-${ABI}
 setenv ramdisk_size \${filesize}
 part uuid \${devtype} \${devnum}:\${distro_bootpart} partuuid
-setenv bootargs root=PARTUUID=\${partuuid} rw rootwait
+setenv bootargs root=PARTUUID=\${partuuid} rw rootwait audit=0
 for fdtpath in ${FDT}; do
   if test -e \${devtype} \${devnum}:\${distro_bootpart} \${fdtpath}/\${fdtfile}; then
     load \${devtype} \${devnum}:\${distro_bootpart} \${fdt_addr_r} \${fdtpath}/\${fdtfile}
