@@ -144,6 +144,9 @@ jobs:
             suite: trixie
             arch: armhf
           - os: debian
+            suite: forky
+            arch: armhf
+          - os: debian
             suite: sid
             arch: armhf
       fail-fast: false
@@ -210,6 +213,9 @@ jobs:
             suite: trixie
             arch: arm64
           - os: debian
+            suite: forky
+            arch: arm64
+          - os: debian
             suite: sid
             arch: arm64
           # Ubuntu arm64
@@ -218,6 +224,9 @@ jobs:
             suite: jammy
           - os: ubuntu
             suite: noble
+            arch: arm64
+          - os: ubuntu
+            suite: resolute
             arch: arm64
       fail-fast: false
 
