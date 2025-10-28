@@ -57,8 +57,10 @@ jobs:
     - name: Build qemu_arm_virt
       timeout-minutes: 5
       run: |
-        env PATH=$GITHUB_WORKSPACE/scripts:$PATH \
-            ARTIFACTS_DIR=$RUNNER_TEMP \
+        env PATH="$GITHUB_WORKSPACE/scripts:$PATH" \
+            ARTIFACTS_DIR="$RUNNER_TEMP" \
+            ATF_PATCHES_DIR="$GITHUB_WORKSPACE/patches/atf" \
+            U_BOOT_PATCHES_DIR="$GITHUB_WORKSPACE/patches/u-boot" \
             U_BOOT_GIT_REV="v2023.10" \
             U_BOOT_GIT_URL="https://github.com/u-boot/u-boot.git" \
             build-boot qemu_arm_virt \
@@ -112,8 +114,10 @@ jobs:
     - name: Build qemu_aarch64_virt
       timeout-minutes: 5
       run: |
-        env PATH=$GITHUB_WORKSPACE/scripts:$PATH \
-            ARTIFACTS_DIR=$RUNNER_TEMP \
+        env PATH="$GITHUB_WORKSPACE/scripts:$PATH" \
+            ARTIFACTS_DIR="$RUNNER_TEMP" \
+            ATF_PATCHES_DIR="$GITHUB_WORKSPACE/patches/atf" \
+            U_BOOT_PATCHES_DIR="$GITHUB_WORKSPACE/patches/u-boot" \
             U_BOOT_GIT_REV="v2023.10" \
             U_BOOT_GIT_URL="https://github.com/u-boot/u-boot.git" \
             build-boot qemu_aarch64_virt \
