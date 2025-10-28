@@ -1,0 +1,22 @@
+name: Linters
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  linters:
+    name: Various linters
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: shellcheck
+      run: |
+        # SC2034: Unused variables
+        find scripts -type f -executable -exec shellcheck -e SC2034 {} +
+
+    - name: rebuild-jekyll-boards
+      run: ./metascripts/rebuild-jekyll-boards && git diff --exit-code
