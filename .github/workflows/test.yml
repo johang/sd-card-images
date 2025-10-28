@@ -59,7 +59,7 @@ jobs:
       run: |
         env PATH=$GITHUB_WORKSPACE/scripts:$PATH \
             ARTIFACTS_DIR=$RUNNER_TEMP \
-            U_BOOT_GIT_REV="v2023.07" \
+            U_BOOT_GIT_REV="v2023.10" \
             U_BOOT_GIT_URL="https://github.com/u-boot/u-boot.git" \
             build-boot qemu_arm_virt \
                        qemu-arm \
@@ -114,7 +114,7 @@ jobs:
       run: |
         env PATH=$GITHUB_WORKSPACE/scripts:$PATH \
             ARTIFACTS_DIR=$RUNNER_TEMP \
-            U_BOOT_GIT_REV="v2023.07" \
+            U_BOOT_GIT_REV="v2023.10" \
             U_BOOT_GIT_URL="https://github.com/u-boot/u-boot.git" \
             build-boot qemu_aarch64_virt \
                        qemu-aarch64 \
