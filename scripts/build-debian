@@ -61,6 +61,8 @@ u-boot-tools,\
 initramfs-tools,\
 openssh-server,\
 nano,\
+systemd,\
+systemd-sysv,\
 e2fsprogs \
   "${TARGET}" \
   debian \
@@ -135,7 +137,6 @@ chroot debian /bin/sh -ex <<- EOF
 /usr/bin/apt-get update
 /usr/bin/apt-get -y upgrade
 /usr/bin/apt-get -y --no-install-recommends ${KERNELSUITE} install "${KERNEL}"
-/usr/bin/apt-get -y install systemd systemd-sysv
 /usr/bin/apt-get -y install systemd-timesyncd || :
 /usr/bin/apt-get -y install systemd-resolved || :
 /usr/bin/apt-get clean
