@@ -13,6 +13,19 @@ FDT="\
 /usr/lib/linux/\${vendor} \
 /usr/lib/linux"
 
+file "/boot/vmlinuz-${ABI}"
+
+# Detect kernel type and set boot command
+FILE_INFO="$(file "/boot/vmlinuz-${ABI}")"
+case "${FILE_INFO}" in
+*"PE32 executable"*|*"PE32+ executable"*)
+    COMMAND=bootefi
+    ;;
+*)
+    COMMAND=booti
+    ;;
+esac
+
 # Create U-Boot boot script
 cat << EOF > /boot/boot.cmd
 load \${devtype} \${devnum}:\${distro_bootpart} \${kernel_addr_r} /boot/vmlinuz-${ABI}
@@ -23,10 +36,10 @@ setenv bootargs root=PARTUUID=\${partuuid} rw rootwait
 for fdtpath in ${FDT}; do
   if test -e \${devtype} \${devnum}:\${distro_bootpart} \${fdtpath}/\${fdtfile}; then
     load \${devtype} \${devnum}:\${distro_bootpart} \${fdt_addr_r} \${fdtpath}/\${fdtfile}
-    booti \${kernel_addr_r} \${ramdisk_addr_r}:\${ramdisk_size} \${fdt_addr_r}
+    ${COMMAND} \${kernel_addr_r} \${ramdisk_addr_r}:\${ramdisk_size} \${fdt_addr_r}
   fi
 done
-booti \${kernel_addr_r} \${ramdisk_addr_r}:\${ramdisk_size} \${fdtcontroladdr}
+${COMMAND} \${kernel_addr_r} \${ramdisk_addr_r}:\${ramdisk_size} \${fdtcontroladdr}
 EOF
 
 # Create U-Boot boot script
