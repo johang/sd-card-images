@@ -15,7 +15,7 @@ FDT="\
 
 file "/boot/vmlinuz-${ABI}"
 
-# Detect kernel type and set boot command
+# Detect kernel image type and set boot command
 FILE_INFO="$(file "/boot/vmlinuz-${ABI}")"
 case "${FILE_INFO}" in
 *"PE32 executable"*|*"PE32+ executable"*)

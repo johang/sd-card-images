@@ -229,9 +229,6 @@ jobs:
           - os: ubuntu
             suite: noble
             arch: arm64
-          - os: ubuntu
-            suite: resolute
-            arch: arm64
       fail-fast: false
 
     steps:
