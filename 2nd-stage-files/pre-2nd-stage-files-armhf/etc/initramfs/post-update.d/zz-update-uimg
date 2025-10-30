@@ -4,6 +4,8 @@
 # Kernel ABI string
 ABI="${1}"
 
+# TODO: move thiss to /etc/kernel/postinst.d/zz-update-bootscr
+
 # List of paths to search for fdtfile in
 FDT="\
 /lib/firmware/${ABI}/device-tree/\${vendor} \
@@ -12,6 +14,12 @@ FDT="\
 /usr/lib/linux-image-${ABI} \
 /usr/lib/linux/\${vendor} \
 /usr/lib/linux"
+
+echo ---
+ls -l /boot
+echo ---
+ls -l /
+echo ---
 
 # Create U-Boot boot script
 cat << EOF > /boot/boot.cmd
