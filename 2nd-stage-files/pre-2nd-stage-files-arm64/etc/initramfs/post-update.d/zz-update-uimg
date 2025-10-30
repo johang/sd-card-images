@@ -13,6 +13,12 @@ FDT="\
 /usr/lib/linux/\${vendor} \
 /usr/lib/linux"
 
+echo --- $ABI
+ls -l /boot
+echo ---
+ls -l /
+echo ---
+
 file "/boot/vmlinuz-${ABI}"
 
 # Detect kernel image type and set boot command
