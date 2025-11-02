@@ -134,6 +134,10 @@ chroot debian /bin/sh -ex <<- EOF
 /debootstrap/debootstrap --second-stage
 /bin/mv /tmp/sources.list /etc/apt/sources.list
 /bin/mv /tmp/priority-experimental /etc/apt/preferences.d/priority-experimental || :
+
+# Mount procfs (apt needs it)
+/usr/bin/mount -t proc proc /proc
+
 /usr/bin/apt-get update
 /usr/bin/apt-get -y upgrade
 /usr/bin/apt-get -y --no-install-recommends ${KERNELSUITE} install "${KERNEL}"
@@ -150,6 +154,9 @@ chroot debian /bin/sh -ex <<- EOF
 /bin/rm -f /var/log/*.log
 /bin/echo "root:${PASSWORD}" | /usr/sbin/chpasswd
 /bin/sed -i "s/#*\s*PermitRootLogin .*/PermitRootLogin yes/" /etc/ssh/sshd_config
+
+# Unmount procfs again
+/usr/bin/umount /proc
 EOF
 
 # Remove ARM emulation stuff again
