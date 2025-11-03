@@ -38,7 +38,7 @@ ficus,Ficus,96boards,rk3399,ficus-rk3399_defconfig,aarch64-linux-gnu,rk3399-ficu
 firefly_rk3399,Firefly-RK3399,Firefly,rk3399,firefly-rk3399_defconfig,aarch64-linux-gnu,rk3399-firefly
 khadas_edge,Edge,Khadas,rk3399,khadas-edge-rk3399_defconfig,aarch64-linux-gnu,rk3399-khadas-edge
 khadas_edge_v,Edge V,Khadas,rk3399,khadas-edge-v-rk3399_defconfig,aarch64-linux-gnu,rk3399-khadas-edge-v
-leez_p710,Leez P720,Lenovo,rk3399,leez-rk3399_defconfig,aarch64-linux-gnu,rk3399-leez-p710
+leez_p710,Leez P710,Lenovo,rk3399,leez-rk3399_defconfig,aarch64-linux-gnu,rk3399-leez-p710
 nanopc_t4,NanoPC-T4,FriendlyElec,rk3399,nanopc-t4-rk3399_defconfig,aarch64-linux-gnu,rk3399-nanopc-t4
 nanopi_m4,Nano Pi M4,FriendlyElec,rk3399,nanopi-m4-rk3399_defconfig,aarch64-linux-gnu,rk3399-nanopi-m4
 nanopi_m4b,Nano Pi M4 B,FriendlyElec,rk3399,nanopi-m4b-rk3399_defconfig,aarch64-linux-gnu,rk3399-nanopi-m4b
