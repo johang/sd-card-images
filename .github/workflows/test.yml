@@ -190,7 +190,7 @@ jobs:
 
     - name: Download qemu_arm_virt
       timeout-minutes: 5
-      uses: actions/download-artifact@v6
+      uses: actions/download-artifact@v7
       with:
         name: boot-qemu_arm_virt.bin.gz
         path: ${{ runner.temp }}
@@ -266,7 +266,7 @@ jobs:
 
     - name: Download qemu_aarch64_virt
       timeout-minutes: 5
-      uses: actions/download-artifact@v6
+      uses: actions/download-artifact@v7
       with:
         name: boot-qemu_aarch64_virt.bin.gz
         path: ${{ runner.temp }}
