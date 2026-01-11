@@ -1,8 +1,8 @@
 OS,Dist,Arch,Name,Exp
-debian,bookworm,armhf,"Debian oldstable/12.12 (""bookworm"")",False
-debian,bookworm,arm64,"Debian oldstable/12.12 (""bookworm"")",False
-debian,trixie,armhf,"Debian stable/13.2 (""trixie"")",False
-debian,trixie,arm64,"Debian stable/13.2 (""trixie"")",False
+debian,bookworm,armhf,"Debian oldstable/12.13 (""bookworm"")",False
+debian,bookworm,arm64,"Debian oldstable/12.13 (""bookworm"")",False
+debian,trixie,armhf,"Debian stable/13.3 (""trixie"")",False
+debian,trixie,arm64,"Debian stable/13.3 (""trixie"")",False
 debian,forky,armhf,"Debian testing (""forky"")",False
 debian,forky,arm64,"Debian testing (""forky"")",False
 debian,sid,armhf,"Debian unstable (""sid"")",False
