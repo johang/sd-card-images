@@ -11,6 +11,9 @@ on:
     # Only for Dockerfile changes
     paths:
       - 'Dockerfile'
+  schedule:
+    # Weekly rebuild every Saturday at 21:00 UTC
+    - cron: '0 21 * * 6'
 
 jobs:
   deploy-docker:
