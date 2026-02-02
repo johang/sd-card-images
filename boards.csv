@@ -75,7 +75,9 @@ neu6a_io,IO-NCM6A,Edgeble,rk3588,neu6a-io-rk3588_defconfig,aarch64-linux-gnu,rk3
 neu6b_io,IO-NCM6B,Edgeble,rk3588,neu6b-io-rk3588_defconfig,aarch64-linux-gnu,rk3588-edgeble-neu6b-io
 evb_rk3588,RK3588 EVB,Rockchip,rk3588,evb-rk3588_defconfig,aarch64-linux-gnu,rk3588-evb1-v10
 nanopc_t6,NanoPC-T6,FriendlyElec,rk3588,nanopc-t6-rk3588_defconfig,aarch64-linux-gnu,rk3588-nanopc-t6
+orangepi_5_max,Orange Pi 5 Max,Xunlong,rk3588,orangepi-5-max-rk3588_defconfig,aarch64-linux-gnu,rk3588-orangepi-5-max
 orangepi_5_plus,Orange Pi 5 Plus,Xunlong,rk3588,orangepi-5-plus-rk3588_defconfig,aarch64-linux-gnu,rk3588-orangepi-5-plus
+orangepi_5_ultra,Orange Pi 5 Ultra,Xunlong,rk3588,orangepi-5-ultra-rk3588_defconfig,aarch64-linux-gnu,rk3588-orangepi-5-ultra
 quartzpro64,QuartzPro64,PINE64,rk3588,quartzpro64-rk3588_defconfig,aarch64-linux-gnu,rk3588-quartzpro64
 rock_5_itx,ROCK 5 ITX,Radxa,rk3588,rock-5-itx-rk3588_defconfig,aarch64-linux-gnu,rk3588-rock-5-itx
 rock_5b,ROCK 5B,Radxa,rk3588,rock5b-rk3588_defconfig,aarch64-linux-gnu,rk3588-rock-5b
