@@ -3,6 +3,6 @@
 os: debian
 dist: trixie
 arch: armhf
-name: Debian stable/13.3 ("trixie")
+name: Debian stable/13.4 ("trixie")
 exp: False
 ---
