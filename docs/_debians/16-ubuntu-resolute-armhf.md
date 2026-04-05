@@ -4,5 +4,5 @@ os: ubuntu
 dist: resolute
 arch: armhf
 name: Ubuntu 26.04 LTS ("resolute")
-exp: True
+exp: False
 ---
