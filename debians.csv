@@ -17,3 +17,5 @@ ubuntu,questing,armhf,"Ubuntu 25.10 (""questing"")",False
 ubuntu,questing,arm64,"Ubuntu 25.10 (""questing"")",False
 ubuntu,resolute,armhf,"Ubuntu 26.04 LTS (""resolute"")",False
 ubuntu,resolute,arm64,"Ubuntu 26.04 LTS (""resolute"")",False
+ubuntu,stonking,armhf,"Ubuntu 26.10 (""stonking"")",True
+ubuntu,stonking,arm64,"Ubuntu 26.10 (""stonking"")",True
