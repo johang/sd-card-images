@@ -76,7 +76,7 @@ fallocate -l 28MiB vfat.img
 mkfs.vfat vfat.img
 
 # Copy boot files to FAT partition
-mcopy -v -i vfat.img u-boot/u-boot.bin config.txt fixup*.dat start*.elf bootcode.bin *.dtb ::
+mcopy -v -i vfat.img u-boot/u-boot.bin config.txt fixup*.dat start*.elf bootcode.bin ./*.dtb ::
 
 # Copy FAT partition to image
 dd if=vfat.img of=tmp.img bs=1K seek=4K conv=notrunc
