@@ -47,11 +47,9 @@ if [ "${CHIP_ID}" = "bcm2711" ]; then
     cp -v rpi-firmware/boot/fixup4.dat \
           rpi-firmware/boot/fixup4x.dat \
           rpi-firmware/boot/fixup4cd.dat \
-          rpi-firmware/boot/fixup4db.dat \
           rpi-firmware/boot/start4.elf \
           rpi-firmware/boot/start4x.elf \
           rpi-firmware/boot/start4cd.elf \
-          rpi-firmware/boot/start4db.elf \
           rpi-firmware/boot/bootcode.bin \
           .
 else
@@ -59,14 +57,15 @@ else
     cp -v rpi-firmware/boot/fixup.dat \
           rpi-firmware/boot/fixup_x.dat \
           rpi-firmware/boot/fixup_cd.dat \
-          rpi-firmware/boot/fixup_db.dat \
           rpi-firmware/boot/start.elf \
           rpi-firmware/boot/start_x.elf \
           rpi-firmware/boot/start_cd.elf \
-          rpi-firmware/boot/start_db.elf \
           rpi-firmware/boot/bootcode.bin \
           .
 fi
+
+# Copy all dtbs
+cp -v rpi-firmware/boot/*.dtb .
 
 # Magic thing to get debug output
 sed -i -e "s/BOOT_UART=0/BOOT_UART=1/" bootcode.bin
@@ -77,7 +76,7 @@ fallocate -l 28MiB vfat.img
 mkfs.vfat vfat.img
 
 # Copy boot files to FAT partition
-mcopy -v -i vfat.img u-boot/u-boot.bin config.txt fixup*.dat start*.elf bootcode.bin ::
+mcopy -v -i vfat.img u-boot/u-boot.bin config.txt fixup*.dat start*.elf bootcode.bin *.dtb ::
 
 # Copy FAT partition to image
 dd if=vfat.img of=tmp.img bs=1K seek=4K conv=notrunc
