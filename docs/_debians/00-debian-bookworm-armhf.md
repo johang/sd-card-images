@@ -3,6 +3,6 @@
 os: debian
 dist: bookworm
 arch: armhf
-name: Debian oldstable/12.13 ("bookworm")
+name: Debian oldstable/12.14 ("bookworm")
 exp: False
 ---
