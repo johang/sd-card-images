@@ -47,7 +47,7 @@ LOOP2=$(losetup -f -P --show image.bin) && {
     losetup -d "${LOOP2}"
 }
 
-# Extract U-Boot (u-boot.rom in x86 case)
+# Extract U-Boot
 dd if=image.bin of=bios.bin count=2048 skip=16
 
 case "${BOARD}" in
@@ -60,16 +60,6 @@ qemu*)
 esac
 
 case "${ARCH}" in
-amd64)
-	QEMU_ARCH="x86_64"
-	QEMU_MACHINE="pc"
-	QEMU_CPU="qemu64"
-	;;
-i386)
-	QEMU_ARCH="i386"
-	QEMU_MACHINE="pc"
-	QEMU_CPU="qemu32"
-	;;
 arm64)
 	QEMU_ARCH="aarch64"
 	QEMU_MACHINE="virt"
