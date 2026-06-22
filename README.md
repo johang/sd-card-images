@@ -4,7 +4,7 @@ This repository is a bunch of scripts to build SD card images that various [sing
 
 ## Pre-built images
 
-Pre-built images ready for download are availble at [sd-card-images.johang.se](https://sd-card-images.johang.se).
+Pre-built images ready for download are available at [sd-card-images.johang.se](https://sd-card-images.johang.se).
 
 ## Usage
 
