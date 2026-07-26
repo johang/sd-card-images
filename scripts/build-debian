@@ -127,6 +127,9 @@ esac
 cp -rv --preserve=mode ../2nd-stage-files/pre-2nd-stage-files/* debian
 cp -rv --preserve=mode ../2nd-stage-files/pre-2nd-stage-files-"${ARCH}"/* debian
 
+# Ensure there is no proc -> /proc symlink
+rm -v debian/proc || :
+
 # Copy ARM emulation stuff
 cp -v /usr/bin/qemu-*-static debian/usr/bin || :
 
