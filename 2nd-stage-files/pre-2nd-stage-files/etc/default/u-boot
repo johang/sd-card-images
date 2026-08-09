@@ -1,0 +1,3 @@
+# Configuration used by u-boot-update
+U_BOOT_ALTERNATIVES="default"
+U_BOOT_PARAMETERS="rw rootwait"

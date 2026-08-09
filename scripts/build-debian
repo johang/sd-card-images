@@ -57,6 +57,7 @@ debootstrap \
   --include=\
 netbase,\
 net-tools,\
+u-boot-menu,\
 u-boot-tools,\
 initramfs-tools,\
 openssh-server,\
@@ -138,6 +139,9 @@ chroot debian /bin/sh -ex <<- EOF
 # Mount procfs (apt needs it)
 /usr/bin/mount -t proc proc /proc
 
+# Special thing since we don't know the PARTUUID yet
+export U_BOOT_ROOT="root=LABEL=rootfs"
+
 /usr/bin/apt-get update
 /usr/bin/apt-get -y upgrade
 /usr/bin/apt-get -y --no-install-recommends ${KERNELSUITE} install "${KERNEL}"
@@ -186,7 +190,7 @@ mv debian/tmp/versions.csv versions.csv
 # 3765436416
 rm -f ext4.img
 fallocate -l 3765436416 ext4.img
-mkfs.ext4 -d debian ext4.img
+mkfs.ext4 -L rootfs -d debian ext4.img
 pigz ext4.img
 
 mkdir -p "${ARTIFACTS_DIR:-/artifacts}"
