@@ -135,12 +135,18 @@ cp -v /usr/bin/qemu-*-static debian/usr/bin || :
 
 # Build a Debian root filesystem (second stage)
 chroot debian /bin/sh -ex <<- EOF
+# Mount procfs (debootstrap needs it)
+mkdir -p /proc
+/usr/bin/mount -t proc proc /proc
+
 /debootstrap/debootstrap --second-stage
+
+# Mount procfs again (apt needs it)
+mkdir -p /proc
+/usr/bin/mount -t proc proc /proc
+
 /bin/mv /tmp/sources.list /etc/apt/sources.list
 /bin/mv /tmp/priority-experimental /etc/apt/preferences.d/priority-experimental || :
-
-# Mount procfs (apt needs it)
-/usr/bin/mount -t proc proc /proc
 
 # Special thing since we don't know the PARTUUID yet
 export U_BOOT_ROOT="root=LABEL=rootfs"
