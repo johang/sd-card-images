@@ -48,7 +48,7 @@ LOOP2=$(losetup -f -P --show image.bin) && {
 }
 
 # Extract U-Boot
-dd if=image.bin of=bios.bin count=2048 skip=16
+dd if=image.bin of=bios.bin count=4096 skip=16
 
 case "${BOARD}" in
 qemu*)
