@@ -15,6 +15,7 @@ case "${CHIP_ID}" in
     export BL31="$PWD/arm-trusted-firmware/build/imx8mp/debug/bl31.bin"
     export BINMAN_INDIRS="$PWD/firmware-imx"
     export SCP=/dev/null
+    export U_BOOT_PATCHES_DIR="/debimg/patches/u-boot"
     ;;
 *)
     ;;
