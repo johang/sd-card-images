@@ -1,0 +1,38 @@
+#!/bin/sh
+# Build SD card image
+
+BOARD_ID="${1}" # For example "apalis_imx6"
+CHIP_ID="${2}" # For example "imx6"
+DEFCONFIG="${3}" # For example "apalis_imx6_defconfig"
+TUPLE="${4}" # For example "arm-linux-gnueabihf"
+
+set -ex
+
+case "${CHIP_ID}" in
+*imx8)
+    build-atf imx8mp "${TUPLE}"
+    build-boot-imx-firmware
+    export BL31="$PWD/arm-trusted-firmware/build/imx8mp/debug/bl31.bin"
+    export BINMAN_INDIRS="$PWD/firmware-imx"
+    export SCP=/dev/null
+    export U_BOOT_PATCHES_DIR="/debimg/patches/u-boot"
+    ;;
+*)
+    ;;
+esac
+
+build-u_boot "${DEFCONFIG}" "${TUPLE}"
+
+case "${CHIP_ID}" in
+*imx6)
+    # Copy SPL to 1Kbyte and U-Boot to 69Kbytes from start on i.MX6
+    dd if=u-boot/spl/u-boot-spl.bin of=tmp.img bs=1K seek=1 conv=notrunc
+    dd if=u-boot/u-boot-dtb.img of=tmp.img bs=1K seek=69 conv=notrunc
+    ;;
+*imx8)
+    # Copy flash.bin on i.MX8 to 32Kbytes
+    dd if=u-boot/flash.bin of=tmp.img bs=1K seek=32 conv=notrunc
+    ;;
+*)
+    ;;
+esac

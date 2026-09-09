@@ -1,0 +1,18 @@
+#!/bin/sh
+# Download and build latest version of i.MX DDR firmware
+
+set -ex
+
+TMP=$PWD
+
+FWIMX_VER=8.28-994fa14
+FWIMX_URL_DEFAULT="https://www.nxp.com/lgfiles/NMG/MAD/YOCTO/"
+
+mkdir -p $TMP/firmware-imx
+wget ${FWIMX_URL_DEFAULT}/firmware-imx-${FWIMX_VER}.bin -O $TMP/firmware-imx/firmware-imx-${FWIMX_VER}.bin
+chmod a+x $TMP/firmware-imx/firmware-imx-${FWIMX_VER}.bin
+cd $TMP/firmware-imx && ./firmware-imx-${FWIMX_VER}.bin --auto-accept
+cd $TMP
+
+cp $TMP/firmware-imx/firmware-imx-${FWIMX_VER}/firmware/ddr/synopsys/* $PWD/firmware-imx
+cp $TMP/firmware-imx/firmware-imx-${FWIMX_VER}/firmware/hdmi/cadence/* $PWD/firmware-imx
