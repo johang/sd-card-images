@@ -28,6 +28,9 @@ rk*)
 meson-*)
     build-boot-meson "${BOARD_ID}" "${CHIP_ID}" "${DEFCONFIG}" "${TUPLE}"
     ;;
+samsung-*)
+    build-boot-samsung "${BOARD_ID}" "${CHIP_ID}" "${DEFCONFIG}" "${TUPLE}"
+    ;;
 qemu*)
     build-boot-qemu "${BOARD_ID}" "${CHIP_ID}" "${DEFCONFIG}" "${TUPLE}"
     ;;

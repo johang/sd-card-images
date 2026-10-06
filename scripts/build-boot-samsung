@@ -1,0 +1,49 @@
+#!/bin/sh
+# Build SD card image
+
+BOARD_ID="${1}" # For example "odroid-xu4"
+CHIP_ID="${2}" # For example "samsung-xu5422"
+DEFCONFIG="${3}" # For example "odroid_xu3_defconfig"
+TUPLE="${4}" # For example "arm-linux-gnueabihf"
+
+set -ex
+
+XU5422_UBOOT_BLX_GIT_URL_DEFAULT="https://github.com/hardkernel/u-boot"
+XU5422_UBOOT_BLX_BRANCH="odroidxu4-v2017.05"
+
+if [ -n "${XU5422_BLX_GIT_REV}" ]
+then
+    git clone --depth 1 \
+              --reference-if-able "bl1_bl2" \
+              --branch ${XU5422_UBOOT_BLX_BRANCH} \
+              "${XU5422_UBOOT_BLX_GIT_URL:-${XU5422_UBOOT_BLX_GIT_URL_DEFAULT}}" bl1_bl2
+else
+    git clone --depth 1 \
+              --reference-if-able "bl1_bl2" \
+              --branch ${XU5422_UBOOT_BLX_BRANCH} \
+              "${XU5422_UBOOT_BLX_GIT_URL:-${XU5422_UBOOT_BLX_GIT_URL_DEFAULT}}" bl1_bl2
+fi
+
+build-u_boot "${DEFCONFIG}" "${TUPLE}"
+
+# SD and eMMC offsets differ
+case "${CHIP_ID}" in
+samsung*)
+	FILE=u-boot.bin
+	BL1_OFFSET=1
+	BL2_OFFSET=31
+	UBOOT_OFFSET=63
+	TZSW_OFFSET=1503
+	;;
+*)
+	echo "Unknown CHIP_ID \"${CHIP_ID}\""
+	exit 1
+esac
+
+# Copy U-Boot to 63 sectors from start
+dd if=u-boot/"${FILE}" of=tmp.img seek=${UBOOT_OFFSET} bs=512 conv=notrunc
+
+# Copy BL1/BL2/TZSW images as required
+dd if=bl1_bl2/sd_fuse/bl1.bin.hardkernel of=tmp.img seek=${BL1_OFFSET} bs=512 conv=notrunc
+dd if=bl1_bl2/sd_fuse/bl2.bin.hardkernel.720k_uboot of=tmp.img seek=${BL2_OFFSET} bs=512 conv=notrunc
+dd if=bl1_bl2/sd_fuse/tzsw.bin.hardkernel of=tmp.img seek=${TZSW_OFFSET} bs=512 conv=notrunc
