@@ -48,3 +48,6 @@ qemu-arm,arm,QEMU,ARM Cortex A15,armv7,armhf
 qemu-aarch64,aarch64,QEMU,ARM Cortex A53,armv8,arm64
 qemu-x86_64,x86_64,QEMU,x86 qemu64,x86-64,amd64
 qemu-x86,x86,QEMU,x86 qemu32,x86,i386
+
+imx6,i.MX6,NXP/Freescale,ARM Cortex A9,armv7,armhf
+imx8,i.MX8,NXP/Freescale,ARM Cortex A53,armv8,arm64

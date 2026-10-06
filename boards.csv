@@ -257,3 +257,5 @@ qemu_arm_virt,QEMU arm virt,QEMU,qemu-arm,qemu_arm_defconfig,arm-linux-gnueabihf
 qemu_aarch64_virt,QEMU aarch64 virt,QEMU,qemu-aarch64,qemu_arm64_defconfig,aarch64-linux-gnu,N/A
 qemu_x86_virt,QEMU x86 virt,QEMU,qemu-x86,qemu-x86_defconfig,i686-linux-gnu,N/A
 qemu_x86_64_virt,QEMU x86_64 virt,QEMU,qemu-x86_64,qemu-x86_64_defconfig,x86_64-linux-gnu,N/A
+
+olimex_imx8_som_evb,Olimex i.MX8MP-SOM-EVB,Olimex,imx8,imx8mp_olimex_som_evb_defconfig,aarch64-linux-gnu,imx8mp-olimex-som-evb.dts
