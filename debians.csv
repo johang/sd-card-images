@@ -17,3 +17,5 @@ ubuntu,resolute,armhf,"Ubuntu 26.04 LTS (""resolute"")",False
 ubuntu,resolute,arm64,"Ubuntu 26.04 LTS (""resolute"")",False
 ubuntu,stonking,armhf,"Ubuntu 26.10 (""stonking"")",False
 ubuntu,stonking,arm64,"Ubuntu 26.10 (""stonking"")",False
+ubuntu,tenacious,armhf,"Ubuntu 27.04 (""tenacious"")",True
+ubuntu,tenacious,arm64,"Ubuntu 27.04 (""tenacious"")",True
