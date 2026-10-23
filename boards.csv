@@ -257,3 +257,5 @@ qemu_arm_virt,QEMU arm virt,QEMU,qemu-arm,qemu_arm_defconfig,arm-linux-gnueabihf
 qemu_aarch64_virt,QEMU aarch64 virt,QEMU,qemu-aarch64,qemu_arm64_defconfig,aarch64-linux-gnu,N/A
 qemu_x86_virt,QEMU x86 virt,QEMU,qemu-x86,qemu-x86_defconfig,i686-linux-gnu,N/A
 qemu_x86_64_virt,QEMU x86_64 virt,QEMU,qemu-x86_64,qemu-x86_64_defconfig,x86_64-linux-gnu,N/A
+
+odroid_xu4,Odroid XU3/XU4/HC1/HC2,HardKernel,samsung-xu5422,odroid_xu3_defconfig,arm-linux-gnueabihf,exynos5422-odroidxu4.dts
