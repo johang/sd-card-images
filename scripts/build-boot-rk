@@ -32,20 +32,20 @@ rk3399pro)
     export BL31="$PWD/arm-trusted-firmware/build/rk3399/debug/bl31/bl31.elf"
     ;;
 rk3366)
-    export BL31="$PWD/rkbin/bin/rk35/rk3568_bl31_v1.44.elf"
-    export ROCKCHIP_TPL="$PWD/rkbin/bin/rk35/rk3566_ddr_1056MHz_v1.23.bin"
+    export BL31="$PWD/rkbin/bin/rk35/rk3568_bl31_v1.46.elf"
+    export ROCKCHIP_TPL="$PWD/rkbin/bin/rk35/rk3566_ddr_1056MHz_v1.26.bin"
     # Collect version of rkbin
     printf "rkbin,%s\n" "$(git -C rkbin describe --tags --always --abbrev=10)" >> versions.csv
     ;;
 rk3568)
-    export BL31="$PWD/rkbin/bin/rk35/rk3568_bl31_v1.44.elf"
-    export ROCKCHIP_TPL="$PWD/rkbin/bin/rk35/rk3568_ddr_1560MHz_v1.23.bin"
+    export BL31="$PWD/rkbin/bin/rk35/rk3568_bl31_v1.46.elf"
+    export ROCKCHIP_TPL="$PWD/rkbin/bin/rk35/rk3568_ddr_1560MHz_v1.26.bin"
     # Collect version of rkbin
     printf "rkbin,%s\n" "$(git -C rkbin describe --tags --always --abbrev=10)" >> versions.csv
     ;;
 rk3588)
-    export BL31="$PWD/rkbin/bin/rk35/rk3588_bl31_v1.48.elf"
-    export ROCKCHIP_TPL="$PWD/rkbin/bin/rk35/rk3588_ddr_lp4_2112MHz_lp5_2400MHz_v1.18.bin"
+    export BL31="$PWD/rkbin/bin/rk35/rk3588_bl31_v1.56.elf"
+    export ROCKCHIP_TPL="$PWD/rkbin/bin/rk35/rk3588_ddr_lp4_2112MHz_lp5_2400MHz_v1.24.bin"
     # Collect version of rkbin
     printf "rkbin,%s\n" "$(git -C rkbin describe --tags --always --abbrev=10)" >> versions.csv
     ;;
