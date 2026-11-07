@@ -9,7 +9,7 @@ TUPLE="${4}" # For example "arm-linux-gnueabihf"
 set -ex
 
 RKBIN_GIT_URL_DEFAULT="https://github.com/rockchip-linux/rkbin.git"
-RKBIN_GIT_REV_DEFAULT="0f8ac860f0479da56a1decae207ddc99e289f2e2"
+RKBIN_GIT_REV_DEFAULT="3e288fe814e059dd06833495f845cab04ac20a5c"
 
 if [ -n "${RKBIN_GIT_REV}" ]
 then
