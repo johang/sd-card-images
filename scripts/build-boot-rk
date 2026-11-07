@@ -31,7 +31,7 @@ rk3399pro)
     build-atf rk3399 "${TUPLE}"
     export BL31="$PWD/arm-trusted-firmware/build/rk3399/debug/bl31/bl31.elf"
     ;;
-rk3366)
+rk3566)
     export BL31="$PWD/rkbin/bin/rk35/rk3568_bl31_v1.46.elf"
     export ROCKCHIP_TPL="$PWD/rkbin/bin/rk35/rk3566_ddr_1056MHz_v1.26.bin"
     # Collect version of rkbin
