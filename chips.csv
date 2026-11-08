@@ -46,5 +46,3 @@ meson-sm1,S905X3/S905Y3/S905D3,Amlogic,ARM Cortex A55,armv8,arm64
 
 qemu-arm,arm,QEMU,ARM Cortex A15,armv7,armhf
 qemu-aarch64,aarch64,QEMU,ARM Cortex A53,armv8,arm64
-qemu-x86_64,x86_64,QEMU,x86 qemu64,x86-64,amd64
-qemu-x86,x86,QEMU,x86 qemu32,x86,i386
